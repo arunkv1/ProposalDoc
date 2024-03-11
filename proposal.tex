@@ -1,0 +1,271 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{times}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[table,dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+
+\usepackage{tabularx}
+
+\usepackage{eqparbox}
+\usepackage{relsize}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[export]{adjustbox}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{soul}
+\usepackage{booktabs,rotating}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[normalem]{ulem}
+
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{listings}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\write18{}
+
+\lstdefinestyle{XMLStyle}{
+  language=XML,
+  keywordstyle=\color{blue},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  morekeywords={E,S,M,T,Failure,line},
+  basicstyle=\tiny\ttfamily,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=none,
+  breaklines=true,
+  aboveskip=10pt,
+  belowskip=10pt,
+  numbers=none,
+  xleftmargin=10.5em
+}
+
+ 
+% \usepackage{comment}
+% \excludecomment{figure}
+% \let\endfigure\relax
+
+% %%% Remove the next two lines if you want the figures and tables at their place    
+% \usepackage[nolists,nomarkers]{endfloat}
+% \renewcommand{\processdelayedfloats}{}
+
+%%% custom commands
+
+\newcommand{\code}[1] {{\smaller\texttt{#1}}}
+
+\usepackage{tikz}
+
+\newcommand*\emptycirc[1][black]{\tikz\draw[#1] (0,0) circle (1ex);} 
+\newcommand*\halfcirc[1][black]{%
+    \begin{tikzpicture}
+        \draw[fill=#1] (0,0)-- (90:1ex) arc (90:270:1ex) -- cycle[#1] ;
+        \draw[#1] (0,0) circle (1ex);
+    \end{tikzpicture}
+  }
+\newcommand*\fullcirc[1][black]{\tikz\fill[#1] (0,0) circle (1ex);} 
+
+\newcommand{\SAT}{{SAT}}
+\newcommand{\PAT}{{PAT}}
+\newcommand{\NLC}{\textsf{NLC}}
+\newcommand{\FC}{\textsf{FC}}
+
+\definecolor{cOrange}{rgb}{0.93, 0.35, 0.0}
+\definecolor{cPurple}{rgb}{0.55, 0.0, 0.55}
+
+
+
+
+% <http://psl.cs.columbia.edu/phdczar/proposal.html>:
+%
+% The standard departmental thesis proposal format is the following:
+%        30 pages
+%        12 point type
+%        1 inch margins all around = 6.5   inch column
+%        (Total:  30 * 6.5   = 195 page-inches)
+%
+% For letter-size paper: 8.5 in x 11 in
+% Latex Origin is 1''/1'', so measurements are relative to this.
+
+\topmargin      0.0in
+\headheight     0.0in
+\headsep        0.0in
+\oddsidemargin  0.0in
+\evensidemargin 0.0in
+\textheight     9.0in
+\textwidth      6.5in
+\linespread {1}
+
+
+
+\input{macros.tex}
+
+\begin{document}
+\pagestyle{plain}
+\pagenumbering{roman}
+% \maketitle
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{1cm}
+
+       \textbf{\LARGE Engineering Accessible Software}
+
+       \vspace{2.5cm}
+        \textit{Thesis proposal} 
+        
+       \vspace{2.5cm}
+
+       {\bf Arun Krishna Vajjala}  \\
+Department of Computer Science \\
+George Mason University\\
+Fairfax, VA 22030\\
+ akrishn@gmu.edu \\
+
+\vfill
+            
+\textbf{Committee}\\
+Kevin Moran, University of Central Florida (Chair)\\
+Brittany Johnson-Matthews, George Mason University \\
+Andrian Marcus, George Mason University \\ 
+Thomas LaToza, George Mason University \\
+Vivian Motti, George Mason University \\
+    
+\vspace{0.8cm}
+ 
+    
+\date{\today}
+\end{center}
+\end{titlepage}
+
+\pagebreak
+
+\begin{abstract}
+
+Continuous integration (\textbf{CI}) is a principle in current software development focusing on enhancing software quality by detecting bugs earlier. A primary task in \textbf{CI} is executing the test suite to ensure software correctness, particularly after code modifications. The expected outcome of these tests should be deterministic. However, certain tests may exhibit non-deterministic behavior even when run on an unchanged codebase. Such non-deterministic tests, known as \emph{Flaky Tests}, can pass or fail for the same version of the software. This inconsistent outcome reduces reliability and can complicate the \textbf{CI} process.
+
+The traditional way to detect flaky tests is to rerun them multiple times and if a test produces both passing and failing outcomes without any changes in the codebase, it is confirmed flaky~\cite{luo2014empirical}. 
+Rerunning tests can be costly, leading to unacceptable overhead expenses, and it may not detect flakiness in tests that behave inconsistently in different running environments. Hence, researchers have been exploring alternative methods to detect flaky tests effectively rather than rerunning them.
+
+
+To address the issue of flaky tests, I began by conducting a rerun experiment, aiming to understand the limitations of this technique beyond its obvious costs. From the data gathered during this experiment, I detect a set of flaky tests. Using this dataset, I developed a machine learning classifier, named FlakeFlagger, designed to predict if a test is flaky or not. The goal was to use FlakeFlagger without the need for reruns by finding the similar symptoms a test shares with other identified flaky tests. I evaluated the performance of FlakeFlagger against state-of-the-art tools to gain a better understanding of its effectiveness.
+
+Flaky tests could exist in their test suites even after being confirmed as flaky for various reasons (e.g. helpful to detect defects). Identifying which failure from these tests are flaky or not is another main challenges. Hence, I proposed machine learning and non machine learning approaches to identify which failure is flaky or not based on the tests failure logs. 
+% Flaky tests might exist in test suites even after being identified for many reasons~\cite{?}. 
+% Finding the differences between flaky and non-flaky failures from these tests shows a significant challenge. Hence, I proposed both machine learning and non-machine learning approaches designed to predict if a failure is flaky or not using its failure log. 
+Using the failure logs for each test, I am currently leveraging them to identify the root causes of test flakiness. This helps understanding the flaky failures and determining how to address them. 
+
+
+
+% \sout{In order to detect flaky tests without the need to run tests multiple times, I proposed a machine learning-based classifier called FlakeFlagger. The classifier is trained to identify flaky tests based on static and dynamic features collected from both flaky and non-flaky tests. The collected features are used as inputs to the classifier, which then learns to predict whether new tests are likely to be flaky or not. By using FlakeFlagger, the rerun task can be prioritized by focusing on tests that FlakeFlagger labels as flaky, but have not yet shown any flakiness. I evaluated the performance of FlakeFlagger against state-of-the-art tools to gain a better understanding of its effectiveness.
+
+% An alternative technique proposed to avoid rerunning tests to detect flakiness is to analyze failure logs. This approach involves examining failure logs to identify flaky tests. I conducted a comprehensive study of existing flaky failures to determine if there were any distinguishing characteristics in their logs compared to non-flaky failures. This led me to design a failure log classifier that takes failure logs as inputs and predicts whether new failure could be flaky. I am currently continuing to evaluate the classifier to gain a better understanding of how useful failure logs can be in detecting flakiness.}
+
+
+
+
+
+% Once the code is modified, regression testing is a best practice to ensure these modifications do not introduce failures in systems. 
+% Developers may link the failed tests to the recent modifications 
+% % Failed tests may let developers think about the recent modifications as a cause of the failures. 
+% However, a test may fail because of the test flakiness. Flaky tests non-deterministically pass and fail on the same version of the code. 
+% Given inconsistent results means less reliability and making the continuous integration complicated and delayed. 
+% Flaky tests, observed from large-scale projects down to smaller software systems, have encouraged both researchers and practitioners to investigate toward the problem of flaky tests.
+% % Given two outcomes of the same test reduce the reliability of the test outcome. The impacts on the reliability of the testing activities due to test flakiness encourage researchers and practitioners to investigate toward the problem of flaky tests.
+
+
+ 
+% However, several studies shows that there is no agreed-upon standard for the number of times a test should be run to detect flakiness~\cite{bell2018deflaker,luo2014empirical}. Additionally, rerunning tests can be costly, leading to unacceptable overhead expenses, and it may not detect flakiness in tests that behave inconsistently in different running environments. 
+% Hence, researchers have been exploring alternative methods to detect flaky tests effectively rather than rerunning them.
+
+
+\end{abstract}
+
+\pagebreak
+\tableofcontents
+\pagebreak
+\listoffigures
+\listoftables
+\newpage
+\cleardoublepage
+\pagenumbering{arabic}
+
+
+% input each section here .. 
+\input{Sections/Introduction}
+\input{Sections/Background}
+\input{Sections/Thesis}
+\input{Sections/Detecting}
+% \input{Sections/FlakeFlaggerStudy}
+% \input{Sections/FlakeFlaggerClassifier}
+\input{Sections/Living}
+% \input{Sections/FailureLogsStudy}
+% \input{Sections/FailureLogsApproach}
+\input{Sections/Categorizing}
+% \input{Sections/ProposedWork}
+\input{Sections/ResearchPlan}
+
+
+
+
+
+% \subsection{Flaky Tests and Their Impacts}
+% \subsection{Techniques in Detecting Flaky Tests}
+
+% \section{Detecting Flaky Tests Without Rerun}
+% \subsection{Rerun Study}
+% \subsection{Flaky Tests Classifier}
+% \subsubsection{Features Collections}
+% \subsubsection{Dataset}
+% \subsubsection{Evaluation of Flaky Tests Classifier}
+
+% \section{Detecting Flaky Failures Using Logs}
+% \subsection{Study Part}
+% \subsection{Approach Part}
+% \subsection{Evaluation of Detecting Using Failure Logs}
+
+% \section{Proposed Work}
+% \subsection{NA}
+% \begin{itemize}
+%     \item start with our already collected dataset ... 
+%     \item How many s a test flake with different failures. 
+%     \item OD NOD ( maybe both)
+%     \item Root causes based on the logs.. 
+%     \item fix a bug may eliminate the flakiness cause.. 
+%     \item 
+% \end{itemize}
+
+% \section{Research Plan}
+
+
+
+
+\newpage
+
+
+\begin{footnotesize}
+\bibliographystyle{plain}
+% \bibliography{string,itu,rfc,i-d}
+\bibliography{bibfile.bib}
+\end{footnotesize}
+
+\newpage
+
+
+
+\end{document}
+
+

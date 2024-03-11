@@ -1,0 +1,60 @@
+\section{RERUN: Empirical Study}
+\label{sec:flakeFlaggerStudy}
+%
+This section is a summary of the study conducted in my paper ``FlakeFlagger: Predicting Flakiness Without Rerunning Tests" published in ICSE2021 \cite{alshammari2021flakeflagger}.
+
+Running tests many times is the traditional way to find flaky tests. Unfortunately, there is little industrial and academic guidelines regarding how many times to rerun each test in order to check if there are flaky or not. Prior studies consider many different numbers to run each test such as 10 \cite{bell2018deflaker}, 16 \cite{lam2019idflakies}, 100 \cite{lam2019root} or, 4,000 times \cite{lam2020Understanding}.
+As there are various non-deterministic reasons behind flaky tests, it is hard to claim that developers will observe test flakiness within a fixed number of runs. 
+Running tests could not be a major problem if developers can ensure that within e.g. 5 runs flaky tests can be detected.
+Another problem related to rerun is that it could be hard to reproduce the flaky failure detected in the original environment using another environment (e.g. developers who locally debug flaky tests which failed on a server). This problem of reproducing flaky tests is due the lack of knowledge about the non-deterministic source that cause flaky failures whether it is due to Java version, network speed, etc. 
+
+I am motivated to conduct this study in order to answer these main research questions:
+
+\begin{itemize}
+\setlength{\itemindent}{3em}
+\item[\textbf{RQ1:}]
+How many flaky tests can be found by rerunning tests given different rerun budgets?
+\item[\textbf{RQ2:}] 
+How hard is it to reproduce a flaky test failure? 
+
+\end{itemize}
+
+\input{tables/FlakeFlaggerStudy}
+\subsection{Study Design}
+To gather data on flaky tests, 24 Java projects were selected and run, some of which had been previously studied for test flakiness using different revisions \cite{bell2018deflaker} \cite{lam2019idflakies}. With support from my advisors, the entire test suites of these projects were run 10,000 times, which differed from the previous work \cite{bell2018deflaker} \cite{lam2019idflakies}. Only a single revision of each project was considered, which was either the most recent revision at the time of writing or the same revision studied in \cite{bell2018deflaker} or \cite{lam2019idflakies}.
+
+The rerun scripts were used to break down large experiments into smaller units called "jobs," which were executed on virtual machines. A single job was the execution of a Java test suite on a specific revision of a project using the Maven build system. For each job, the Maven build log and XML reports for each test run were saved. This approach aimed to create a level of isolation between test runs and simulate how an actual integration server would compile, test, and run a project's test suite.
+
+
+The method I used to detect flaky tests through rerun is not the only approach available. There are other ways to increase the likelihood of detecting flaky tests. For instance, some flaky tests can be affected by the order in which they are run, and running them in different orders may uncover additional flaky tests \cite{lam2019idflakies}. However, this may also introduce a bias towards certain categories of flaky tests. Another way to detect more flaky tests is to run the experiment on different platforms and devices. However, my goal was to align the rerun experiment with standard development practices.
+
+
+\subsection{Study Result}
+
+By running each test 10,000 times, 811 flaky tests were detected: about \flakytestsrate\% of the total number of tests were flaky. The number of flaky tests in 24 projects are not equally distributed. For example, \projectsout~projects with less than 10 flaky tests, \projectsoneflaky~of which have only one, and one with none. On the other hand, there are \projectshundredsflaky~projects which have more than 100 flaky tests. \emph{Spring-boot} has \springbootFlaky~flaky tests, \highestflakyrate\% of the total observed flaky tests. Table \ref{table:rerun_result} summarizes these results. Based on the result from Table \ref{table:rerun_result}, I was able to answer the two main questions as follow:
+
+\textbf{How many flaky tests can be found by rerunning tests given different rerun budgets?}. I calculated the probability that each flaky test would have been detected with fewer reruns. It is important to consider that it is not possible to state the probability due to the fact that there could be uncontrolled unaware conditions that cause the failure. As a result, only roughly a quarter of all of the flaky tests that I found in 10,000 runs would have been found with 10 reruns, roughly half with 100 reruns and roughly two thirds with 1,000 reruns.
+
+Table \ref{table:rerun_result} categorizing each flaky test as failing either between 0 and 10 times, between 10 and 100 times, between 100 and 1,000 times, and finally over 1,000 times (out of the 10,000 runs).
+These sets are represented by colors as shown in Table \ref{table:rerun_result}. The \emph{red} bar, which refers to tests that flake less than or equal 10 times, takes the majority in \redbarsratio~projects. 
+In general, I found more than \NumFailingRunsTen\% of total flaky tests fail in less than or equal 10 times, \NumFailingRunsHundred\% of flaky tests fail more than 10 and less than or equal 100 out of 10,000.
+This suggests that flaky tests datasets with limited runs still not ensure to detect \emph{most} flaky tests.
+Furthermore, I acknowledge that even after 10,000 re-runs, it is still possible that all flaky tests in this dataset have been detected. 
+
+\textbf{How hard is it to reproduce a flaky test failure?}
+In the previous \textbf{RQ}, the rerun experiment aims to study the difficulty of identifying flaky tests by re-running them on the same platform. However, this does not capture the difficulty when a developer rerun the tests on different environment e.g. local machine. to meet this, I compared the set of flaky tests identified from our 10,000 reruns with those detected by prior researchers on the same versions of the same projects, but in different environments.
+The columns \emph{DeFlaker} and \emph{iDFlakies} in Table \ref{table:rerun_result} show the total number of flaky tests that that paper reported on that version of that project, along with the number of those tests that were also found to be flaky based on our reruns.
+A blank entry indicates that the revision of that project that I executed did not have any flaky tests reported by the prior work.
+The DeFlaker dataset contains flaky tests from many revisions of each project, but I only studied a single revision of each project, and hence, it is possible that DeFlaker had not identified any flaky tests in that revision.
+The iDFlakies dataset consists of both order dependent tests (which are detected by shuffling execution orders), and non-order dependent tests (which are flaky regardless of execution order).
+Since I purposefully did not shuffle the execution order of the tests (as described above), I include only the non-order dependent tests from iDFlakies for comparison. 
+
+Comparing to DeFlaker, I found \deflakerCommonFlaky~flaky tests out of the \deflakerRerunFlaky~tests identified as flaky by DeFlaker.
+Unfortunately, the DeFlaker authors did not retain the build logs from their test runs, so I are unable to diagnose why those tests appeared as flaky to DeFlaker but not to our reruns.
+Comparing to iDFlakies, I found \idflakiesCommonFlaky~flaky tests out of the \idflakiesRerunFlaky~non-order dependent tests that I reran.
+In the case of iDFlakies, the authors \emph{did} retain the build logs that show how these tests failed, and I confirmed by hand that the tests that I missed in our rerun experiment truly were flaky, and could have been detected as flaky if I had rerun them more.
+These results are indicative of the true non-determinism of flaky tests and the difficulties that developers face reproducing them: even with 10,000 reruns, I could not detect all flaky tests.
+
+
+\textbf{Study Summary:} 
+The result from rerunning tests emphasizes the importance of finding creative and automated tools to detect flaky tests that do not rely on rerunning them, since rerunning tests can be impractical in the necessary amount of time needed, and still may not observe all flaky tests. The experiment shows how it is hard to identify a fixed number of runs to observe flaky tests. I know that even running tests 10,000 times will \emph{still} not guarantee that all flaky tests have been found, since I did not succeed in reproducing many flaky test failures observed in prior work.

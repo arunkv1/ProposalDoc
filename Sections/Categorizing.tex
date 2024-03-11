@@ -1,0 +1,55 @@
+\newpage
+\section{Categorizing Flaky Failures}
+\label{sec:categotize}
+
+% I will limit the root causes to be OD / NOD 
+% 
+
+Throughout the rest of my PhD program, I plan to focus on categorizing flaky failures. This will involve the development and suggestion of tools to assist in the categorization process. 
+
+Addressing flaky tests, including the process of fixing them, faces challenges during software development. When developers come across a confirmed flaky test, their primary objective is to determine the appropriate action. The initial step developers take is to understand the reason causing a test being flaky. Numerous works have proposed categorizing flaky tests based on their root cause or predicting their categories\cite{akli2023flakycat}\cite{lam2019root}. 
+Flaky test failures can arise from various reasons, and they may or may not share the same root cause. Once a flaky failure is confirmed as a flaky, how likely to be caused with the same root cause of previous flaky failures. I am exploring if two flaky failures root causes could be distingushedable by their failure logs (espcially the \failures), and use them as indicator to identify the root causes of a new encountered flaky failure. If failures logs of flaky failures of the same tests differ because there are different root causes, I plan to utilize machine learning to construct a classifier that predicts the root causes of flaky failures. This prediction will be based on analyzing failure logs and dynamic information, which includes factors such as execution time.
+
+
+% but the effectiveness of these categorization methods when a flaky test can be triggered by multiple causes remains uncertain. Categorizing flaky tests by their failures is an unexplored area in research and categorizing root causes based on patterns of flaky test failures could help more addressing test flakiness. My current research involves using failure logs for this purpose and planning to develop a machine learning classifier to predict root causes of flaky failures based on failure logs and dynamic information, including execution time.
+
+
+
+
+
+
+% Addressing flaky tests, including the process of fixing them, faces challenges during software development. When developers come across a confirmed flaky failure, their primary objective is to determine the appropriate action. The initial step they take is to understand the reason causing a test being flaky. 
+% % This understanding not only aids in addressing the specific encountered failure but also indirectly helps in dealing with other flaky failures if exist. 
+% In many cases, certain root causes can impact multiple tests to fail, and rather than handling failures on a case-by-case basis, it is beneficial to address the root cause itself. By categorizing flaky failures based on their root causes, considerable time can be saved in the debugging and resolution process.
+
+
+% Understanding flaky failures is essential to identifying their root causes. Primarily, failure logs provide insight into the manner of the test failures. These logs are also accessible to developers. As mentioned in Section \ref{sec:failureLogsStudy}, developers manually go through these logs to determine whether a failure is due to flakiness. However, there is minimal effort on creating tools that use failure logs for flaky failure analysis. Beyond using failure logs to determine flakiness as outlined in Section~\ref{sec:livingTestFlakiness}, I will investigate the ability to build a tool based on these logs to categorize the root causes.
+
+% In addition to analyzing failures logs, I am planning to build a machine learning classifier to predict the root causes of flaky failures. I am planning to take the advantages of code coverage, libraries usages and failure logs exceptions to predict flakiness cause. With some cases where developers have no prior knowledge about other flaky test causes, and instead of debugging every failure log to know the cause, the tool should group the failure logs based on the similarity of the expected causes. 
+
+\subsection{Current Progress}
+
+I am searching for a dataset that labels flaky tests based on their root causes. Given the potential difficulty of obtaining such a dataset, I have come across a dataset that relies on collected commits from GitHub~\cite{akli2023flakycat}. I also have found another dataset that may categorize flakiness causes, focusing on whether they are order-dependent or not~\cite{lam2019idflakies}. Due to the need to have failure logs for this purpose, I will start with two types of root causes (order dependent and non-order dependent) as reported in iDFlakies dataset~\cite{lam2019idflakies}. 
+I am exploring if the flaky tests could be caused by many root causes. I am exploring the accessibility of the failure logs of these flaky tests in order to find if a flaky tests which have been flaky for different root causes lead to have different failure logs. The initial research questions I am trying to investigate are as follow:
+
+
+
+\begin{description}
+    \item \textbf{RQ1}: \textbf{Is it possible for a flaky test to be triggered by multiple flakiness root causes?}\label{future1} Initially, I aim to validate whether a flaky test can exhibit flakiness due to a range of reasons. The first step in this validation process would involve examining if the same test has been reported in multi dataset with different root causes.
+    \item \textbf{RQ2}: \textbf{Can failure logs associate flaky failures with their root causes using machine learning?}\label{future2} I aim to determine if the root causes can be predicted using the features gathered from the failures, especially the information from the failure logs.
+\end{description}
+
+
+
+
+% I am aware that it is hard to find a public dataset of flaky tests labeled by their category of flakiness. Hence, I might be limited to some 
+% % This includes collecting flaky tests from multiple datasets which provide the root causes. 
+
+% The current work of categorizing the root causes of test flakiness, including predicting the root causes, focuses on the root causes of flaky tests \cite{akli2023flakycat}\cite{lam2020study}. Flaky tests could be caused by more than one flakiness root causes depends on a particular flaky failure. I am looking if the failure logs can tell the root causes of flakiness in a way that a flaky test can be labeled by more than one root causes. The initial research questions I am trying to investigate are as follow:
+
+% \begin{description}
+%     \item \textbf{RQ1}: \textbf{Is it possible for a flaky test to be triggered by multiple flakiness root causes?} Initially, I aim to validate whether a flaky test can exhibit flakiness due to a range of reasons. The first step in this validation process would involve examining the failure logs of the same test when it encounters flaky failures.
+%     \item \textbf{RQ2}: \textbf{Can failure logs successfully associate flaky failures with their root causes using machine learning}? I aim to determine if the root causes can be predicted using the features gathered from the failures, especially the information from the failure logs.
+% \end{description}
+
+These research questions are currently in the discussion phase and might be revised.  

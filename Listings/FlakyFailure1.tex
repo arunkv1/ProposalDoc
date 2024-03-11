@@ -1,0 +1,31 @@
+
+
+\vspace{5px}
+\begin{lstlisting}[style=XMLStyle, caption=Two flaky failures reported in Alluxio project after parsing their failure logs,label=lst:flakyFailures]
+
+<Failure>
+    <T project="alluxio">tachyon.JournalTest.TableTest</T>
+    <E>UnknownHostException</E>
+    <M>ip-172-31-48-81: ip-172-31-48-81: Temporary failure in name resolution</M>
+    <S><line>java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)</line>
+    <line>java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)</line>
+    <line>java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)</line>
+    <line>java.net.InetAddress.getLocalHost(InetAddress.java:1501)</line>
+    <line>tachyon.LocalTachyonCluster.start(LocalTachyonCluster.java:104)</line>
+    <line>tachyon.JournalTest.before(JournalTest.java:33</line></S>
+</Failure>
+    ...
+<Failure>
+    <T project="alluxio">tachyon.JournalTest.TableTest</T>
+    <E>UnknownHostException</E>
+    <M>ip-172-31-58-81: ip-172-31-58-81: Temporary failure in name resolution</M>
+    <S><line>java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)</line>             
+    <line>java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)</line>            
+    <line>java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)</line>            
+    <line>java.net.InetAddress.getLocalHost(InetAddress.java:1501)</line>
+    <line>tachyon.LocalTachyonCluster.start(LocalTachyonCluster.java:104)</line>
+    <line>tachyon.JournalTest.before(JournalTest.java:33)</line></S>
+</Failure>
+\end{lstlisting}
+
+\vspace{5px}

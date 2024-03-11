@@ -1,0 +1,134 @@
+% \begin{table*}[t]
+%     \caption{caption X}
+%     % by Test -> How many flaky tests in a certain project? Show number of tests that flake exactly once, then the minimum number of flakes per-test, max, and a sparkline
+%     % by Build -> How many builds have at least one flaky test? How many builds iwht exactly one flaky test, then min, max, and distribution of flaky tests 
+% \label{table:classifier_table}
+% \vspace{-5pt}
+% \setlength{\tabcolsep}{2.5pt}
+% \newcommand{\failureRateWidth}{2.5in}
+% \newcommand{\failureRateHeight}{4em}
+% \scriptsize
+% \centering
+%     \begin{tabular}{l|ccc|cc|rrrrrrr|rrrrrrr}
+%     \toprule
+%       & \multicolumn{3}{c}{\textbf{Text-Match-Approach}} & \multicolumn{2}{c}{\textbf{Text-Match-Approach}} & \multicolumn{7}{c}{\textbf{Failure Log Classifier}} & \multicolumn{7}{c}{\textbf{TF-IDF}}  \\ 
+     
+%      \textbf{Project}&\textbf{Failures}&\textbf{Flaky}&\textbf{Non-Flaky}&\textbf{UNMATCH}&\textbf{MATCH}&\textbf{TP}&\textbf{FN}&\textbf{FP}&\textbf{TN}&\textbf{P}&\textbf{R}&\textbf{F1}&\textbf{TP}&\textbf{FN}&\textbf{FP}&\textbf{TN}&\textbf{P}&\textbf{R}&\textbf{F1}\\
+%         \midrule
+
+% java-webSocket&3276&1977&1299&42&3&1942&35&854&445&69\%&98\%&81\%&1855&122&1158&141&62\%&94\%&74\%\\
+% assertj-core&30&13&17&1&0&9&4&1&16&90\%&69\%&78\%&10&3&1&16&91\%&77\%&83\%\\
+% % ninja&319&110&209&NA&NA&110&0&90&119&55\%&100\%&71\%&110&0&92&117&54\%&100\%&71\%\\
+% orbit&1035&213&822&2&5&202&11&69&753&75\%&95\%&83\%&108&105&236&586&31\%&51\%&39\%\\
+% % handlebars.java&183&36&147&NA&NA&36&0&16&131&69\%&100\%&82\%&36&0&16&131&69\%&100\%&82\%\\
+% achilles&499&57&442&2&3&54&3&61&381&47\%&95\%&63\%&39&18&105&337&27\%&68\%&39\%\\
+% logback&2948&334&2614&7&14&298&34&496&2118&38\%&90\%&53\%&186&146&34&2580&85\%&56\%&67\%\\
+% okhttp&36685&2419&34266&105&16&2261&158&3019&31247&43\%&93\%&59\%&717&1702&9968&24298&7\%&30\%&11\%\\
+% wro4j&576&36&540&12&9&26&8&45&495&37\%&76\%&50\%&23&11&14&526&62\%&68\%&65\%\\
+% activiti&48271&2171&46100&5&28&2136&35&7856&38244&21\%&98\%&35\%&480&1691&5544&40556&8\%&22\%&12\%\\
+% http-request&405&18&387&7&11&14&4&113&274&11\%&78\%&19\%&18&0&0&387&100\%&100\%&100\%\\
+% hbase&11895&571&11324&130&4&425&26&478&10846&47\%&94\%&63\%&269&182&2146&9178&11\%&60\%&19\%\\
+% alluxio&33317&709&32608&138&172&630&74&6996&25612&8\%&89\%&15\%&385&319&5649&26959&6\%&55\%&11\%\\
+% httpcore&8426&93&8333&1&21&52&41&1789&6544&3\%&56\%&5\%&39&54&2049&6284&2\%&42\%&4\%\\
+% hector&3638&34&3604&31&2&31&3&0&3604&100\%&91\%&95\%&33&1&0&3604&100\%&97\%&99\%\\
+% % io-undertow&2325&21&2304&NA&NA&17&4&1388&916&1\%&81\%&2\%&19&2&1719&585&1\%&90\%&2\%\\
+% spring-boot&2503&353&2150&13&0&5&9&516&1634&1\%&36\%&2\%&12&2&0&2150&100\%&86\%&92\%\\
+% ambari&11106&57&11049&52&2&49&7&439&10610&10\%&88\%&18\%&51&5&119&10930&30\%&91\%&45\%\\
+% wildfly&3863&16&3847&18&0&16&0&116&3731&12\%&100\%&22\%&16&0&0&3847&100\%&100\%&100\%\\
+    
+
+% \bottomrule 
+% \end{tabular}
+% \vspace{-10pt}
+% \end{table*}
+
+
+\begin{table*}[t]
+% \jon{New columns: Flaky tests, Flaky Failures, Non-Flaky Failures, Group of 3 columns with header "Synatx-based approach": (Flaky only, Both, Non-Flaky Only), Failure log classifier, TF-IDF}
+% \jon{Remove "Killed Mutant statistics" and instead do some analysis to determine how many flaky failures have fewer than N (N=1,2,3?) mutants to match against, and comment on these (and whether or not they match)}
+\caption[The Prediction of \classifier and TF-IDF of Flaky and True Failures]{The Result of \classifier and TF-IDF of Flaky and True Failures Prediction?\\
+\textnormal{The \classifier and TF-IDF show (per project) the confusion matrix, precision (P), recall (R), and F1 score of the overall prediction result. 
+% Compared to Table\ref{nonunique}, projects with fewer than 10 flaky failures have been opted out.
+}}
+    % by Test -> How many flaky tests in a certain project? Show number of tests that flake exactly once, then the minimum number of flakes per-test, max, and a sparkline
+    % by Build -> How many builds have at least one flaky test? How many builds iwht exactly one flaky test, then min, max, and distribution of flaky tests 
+\label{table:classifier_table}
+\vspace{-5pt}
+\setlength{\tabcolsep}{1.0pt}
+\newcommand{\failureRateWidth}{2.5in}
+\newcommand{\failureRateHeight}{4em}
+\scriptsize
+\centering
+    \begin{tabular}{l|rrrr|rrrrrrr|rrrrrrr}
+    \toprule
+      & \multicolumn{4}{c}{\textbf{Total Flaky Tests and Failures}} & \multicolumn{7}{c}{\textbf{Failure Log Classifier}} & \multicolumn{7}{c}{\textbf{TF-IDF}}\\ 
+     
+     \textbf{Project}&\textbf{Test}&\textbf{Failures}&\textbf{Flaky}&\textbf{True}&\textbf{TP}&\textbf{FN}&\textbf{FP}&\textbf{TN}&\textbf{P}&\textbf{R}&\textbf{F1}&\textbf{TP}&\textbf{FN}&\textbf{FP}&\textbf{TN}&\textbf{P}&\textbf{R}&\textbf{F1}\\
+        \midrule
+
+Alluxio-alluxio&114&49,466&16,858&32,608&16,014&844&1,104&31,504&93\%&94\%&94\%&16,580&278&394&32,214&97\%&98\%&98\%\\
+\cellcolor{gray!6}{square-okhttp}&\cellcolor{gray!6}{100}&\cellcolor{gray!6}{62,530}&\cellcolor{gray!6}{28,264}&\cellcolor{gray!6}{34,266}&\cellcolor{gray!6}{28,123}&\cellcolor{gray!6}{141}&\cellcolor{gray!6}{1,585}&\cellcolor{gray!6}{32,681}&\cellcolor{gray!6}{94\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{97\%}&\cellcolor{gray!6}{28,238}&\cellcolor{gray!6}{26}&\cellcolor{gray!6}{108}&\cellcolor{gray!6}{34,158}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{99\%}\\
+apache-hbase&62&31,146&19,822&11,324&19,782&40&369&10,955&98\%&99\%&98\%&19,676&146&19&11,305&99\%&99\%&99\%\\
+\cellcolor{gray!6}{apache-ambari}&\cellcolor{gray!6}{51}&\cellcolor{gray!6}{15,112}&\cellcolor{gray!6}{4,063}&\cellcolor{gray!6}{11,049}&\cellcolor{gray!6}{4,055}&\cellcolor{gray!6}{8}&\cellcolor{gray!6}{482}&\cellcolor{gray!6}{10,567}&\cellcolor{gray!6}{89\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{94\%}&\cellcolor{gray!6}{4,063}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{5}&\cellcolor{gray!6}{11,044}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{99\%}\\
+Hector&33&10,133&6,529&3,604&6,529&0&405&3,199&94\%&100\%&96\%&6,529&0&13&3,591&99\%&100\%&99\%\\
+\cellcolor{gray!6}{activiti-activiti}&\cellcolor{gray!6}{31}&\cellcolor{gray!6}{47,478}&\cellcolor{gray!6}{1,378}&\cellcolor{gray!6}{46,100}&\cellcolor{gray!6}{947}&\cellcolor{gray!6}{431}&\cellcolor{gray!6}{311}&\cellcolor{gray!6}{45,789}&\cellcolor{gray!6}{75\%}&\cellcolor{gray!6}{68\%}&\cellcolor{gray!6}{71\%}&\cellcolor{gray!6}{1,013}&\cellcolor{gray!6}{365}&\cellcolor{gray!6}{60}&\cellcolor{gray!6}{46,040}&\cellcolor{gray!6}{94\%}&\cellcolor{gray!6}{73\%}&\cellcolor{gray!6}{82\%}\\
+apache-httpcore&22&8,687&354&8,333&315&39&110&8,223&74\%&88\%&80\%&314&40&16&8,317&95\%&88\%&91\%\\
+\cellcolor{gray!6}{Java-websocket}&\cellcolor{gray!6}{22}&\cellcolor{gray!6}{3,394}&\cellcolor{gray!6}{2,095}&\cellcolor{gray!6}{1,299}&\cellcolor{gray!6}{2,082}&\cellcolor{gray!6}{13}&\cellcolor{gray!6}{721}&\cellcolor{gray!6}{578}&\cellcolor{gray!6}{74\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{85\%}&\cellcolor{gray!6}{2,082}&\cellcolor{gray!6}{13}&\cellcolor{gray!6}{722}&\cellcolor{gray!6}{577}&\cellcolor{gray!6}{74\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{84\%}\\
+qos-ch-logback&20&3,052&438&2,614&172&266&104&2,510&62\%&39\%&48\%&239&199&41&2,573&85\%&54\%&66\%\\
+\cellcolor{gray!6}{Http-request}&\cellcolor{gray!6}{18}&\cellcolor{gray!6}{3,888}&\cellcolor{gray!6}{3,501}&\cellcolor{gray!6}{387}&\cellcolor{gray!6}{3,498}&\cellcolor{gray!6}{3}&\cellcolor{gray!6}{124}&\cellcolor{gray!6}{263}&\cellcolor{gray!6}{96\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{98\%}&\cellcolor{gray!6}{3,498}&\cellcolor{gray!6}{3}&\cellcolor{gray!6}{54}&\cellcolor{gray!6}{333}&\cellcolor{gray!6}{98\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{99\%}\\
+wildfly-wildfly&18&3,895&48&3,847&0&48&0&3,847&0\%&0\%&0\%&48&0&0&3,847&100\%&100\%&100\%\\
+\cellcolor{gray!6}{wro4j-wro4j}&\cellcolor{gray!6}{14}&\cellcolor{gray!6}{11,373}&\cellcolor{gray!6}{10,833}&\cellcolor{gray!6}{540}&\cellcolor{gray!6}{10,833}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{65}&\cellcolor{gray!6}{475}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{10,833}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{29}&\cellcolor{gray!6}{511}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{99\%}\\
+Spring-boot&12&2,164&14&2,150&6&8&0&2,150&100\%&42\%&60\%&10&4&1&2,149&90\%&71\%&80\%\\
+\cellcolor{gray!6}{orbit-orbit}&\cellcolor{gray!6}{7}&\cellcolor{gray!6}{3,765}&\cellcolor{gray!6}{2,943}&\cellcolor{gray!6}{822}&\cellcolor{gray!6}{2,943}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{69}&\cellcolor{gray!6}{753}&\cellcolor{gray!6}{97\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{98\%}&\cellcolor{gray!6}{2,943}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{59}&\cellcolor{gray!6}{763}&\cellcolor{gray!6}{98\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{99\%}\\
+Undertow&7&2,396&92&2,304&3&89&0&2,304&100\%&3\%&6\%&5&87&0&2,304&100\%&5\%&10\%\\
+\cellcolor{gray!6}{Achilles}&\cellcolor{gray!6}{4}&\cellcolor{gray!6}{607}&\cellcolor{gray!6}{165}&\cellcolor{gray!6}{442}&\cellcolor{gray!6}{120}&\cellcolor{gray!6}{45}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{442}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{72\%}&\cellcolor{gray!6}{84\%}&\cellcolor{gray!6}{148}&\cellcolor{gray!6}{17}&\cellcolor{gray!6}{26}&\cellcolor{gray!6}{416}&\cellcolor{gray!6}{85\%}&\cellcolor{gray!6}{89\%}&\cellcolor{gray!6}{87\%}\\
+% elasticjob-elastic-job-lite&3&0&0&0&0&0&0&0&0\%&0\%&0\%&0&0&0&0&0\%&0\%&0\%\\
+Commons-exec&1&92&33&59&0&33&0&59&0\%&0\%&0\%&33&0&2&57&94\%&100\%&97\%\\
+\cellcolor{gray!6}{zxing-zxing}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{398}&\cellcolor{gray!6}{322}&\cellcolor{gray!6}{76}&\cellcolor{gray!6}{322}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{76}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{322}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{76}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{100\%}\\
+handlebars.java&1&558&411&147&411&0&16&131&96\%&100\%&98\%&411&0&16&131&96\%&100\%&98\%\\
+\cellcolor{gray!6}{assertj-core}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{991}&\cellcolor{gray!6}{974}&\cellcolor{gray!6}{17}&\cellcolor{gray!6}{974}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{16}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{974}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{17}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{100\%}\\
+ninja-ninja&1&685&476&209&476&0&90&119&84\%&100\%&91\%&476&0&90&119&84\%&100\%&91\%\\
+\midrule
+21 Projects Total &540&261,810&99,613&162,197&97,605&2,008&5,556&156,641&&&&98,435&1,178&1,655&160,542&&&\\
+
+\bottomrule
+
+
+% Alluxio-alluxio&114&49,466&16,858&32,608&16,014&844&1,104&31,504&93\%&94\%&94\%&16,565&293&389&32,219&97\%&98\%&97\%\\
+% \cellcolor{gray!6}{square-okhttp}&\cellcolor{gray!6}{100}&\cellcolor{gray!6}{62,530}&\cellcolor{gray!6}{28,264}&\cellcolor{gray!6}{34,266}&\cellcolor{gray!6}{28,123}&\cellcolor{gray!6}{141}&\cellcolor{gray!6}{1,585}&\cellcolor{gray!6}{32,681}&\cellcolor{gray!6}{94\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{97\%}&\cellcolor{gray!6}{28,239}&\cellcolor{gray!6}{25}&\cellcolor{gray!6}{108}&\cellcolor{gray!6}{34,158}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{99\%}\\
+% apache-hbase&62&31,174&19,850&11,324&19,809&41&369&10,955&98\%&99\%&98\%&19,676&146&19&11,305&99\%&99\%&99\%\\
+% \cellcolor{gray!6}{apache-ambari}&\cellcolor{gray!6}{51}&\cellcolor{gray!6}{15,112}&\cellcolor{gray!6}{4,063}&\cellcolor{gray!6}{11,049}&\cellcolor{gray!6}{4,055}&\cellcolor{gray!6}{8}&\cellcolor{gray!6}{481}&\cellcolor{gray!6}{10,568}&\cellcolor{gray!6}{89\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{94\%}&\cellcolor{gray!6}{4,063}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{5}&\cellcolor{gray!6}{11,044}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{99\%}\\
+% hector-client-hector&33&10,133&6,529&3,604&6,529&0&405&3,199&94\%&100\%&96\%&6,529&0&12&3,592&99\%&100\%&99\%\\
+% \cellcolor{gray!6}{activiti-activiti}&\cellcolor{gray!6}{31}&\cellcolor{gray!6}{47,478}&\cellcolor{gray!6}{1,378}&\cellcolor{gray!6}{46,100}&\cellcolor{gray!6}{1,303}&\cellcolor{gray!6}{75}&\cellcolor{gray!6}{5,421}&\cellcolor{gray!6}{40,679}&\cellcolor{gray!6}{19\%}&\cellcolor{gray!6}{94\%}&\cellcolor{gray!6}{32\%}&\cellcolor{gray!6}{1,038}&\cellcolor{gray!6}{340}&\cellcolor{gray!6}{70}&\cellcolor{gray!6}{46,030}&\cellcolor{gray!6}{93\%}&\cellcolor{gray!6}{75\%}&\cellcolor{gray!6}{83\%}\\
+% apache-httpcore&22&8,687&354&8,333&321&33&115&8,218&73\%&90\%&81\%&314&40&17&8,316&94\%&88\%&91\%\\
+% \cellcolor{gray!6}{tootallnate-java-websocket}&\cellcolor{gray!6}{22}&\cellcolor{gray!6}{3,394}&\cellcolor{gray!6}{2,095}&\cellcolor{gray!6}{1,299}&\cellcolor{gray!6}{2,082}&\cellcolor{gray!6}{13}&\cellcolor{gray!6}{721}&\cellcolor{gray!6}{578}&\cellcolor{gray!6}{74\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{85\%}&\cellcolor{gray!6}{2,082}&\cellcolor{gray!6}{13}&\cellcolor{gray!6}{722}&\cellcolor{gray!6}{577}&\cellcolor{gray!6}{74\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{84\%}\\
+% qos-ch-logback&20&3,052&438&2,614&172&266&104&2,510&62\%&39\%&48\%&245&193&49&2,565&83\%&55\%&66\%\\
+% \cellcolor{gray!6}{kevinsawicki-http-request}&\cellcolor{gray!6}{18}&\cellcolor{gray!6}{3,888}&\cellcolor{gray!6}{3,501}&\cellcolor{gray!6}{387}&\cellcolor{gray!6}{3,498}&\cellcolor{gray!6}{3}&\cellcolor{gray!6}{124}&\cellcolor{gray!6}{263}&\cellcolor{gray!6}{96\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{98\%}&\cellcolor{gray!6}{3,498}&\cellcolor{gray!6}{3}&\cellcolor{gray!6}{54}&\cellcolor{gray!6}{333}&\cellcolor{gray!6}{98\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{99\%}\\
+% wildfly-wildfly&18&3,895&48&3,847&48&0&116&3,731&29\%&100\%&45\%&48&0&0&3,847&100\%&100\%&100\%\\
+% \cellcolor{gray!6}{wro4j-wro4j}&\cellcolor{gray!6}{14}&\cellcolor{gray!6}{11,373}&\cellcolor{gray!6}{10,833}&\cellcolor{gray!6}{540}&\cellcolor{gray!6}{10,474}&\cellcolor{gray!6}{359}&\cellcolor{gray!6}{42}&\cellcolor{gray!6}{498}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{96\%}&\cellcolor{gray!6}{98\%}&\cellcolor{gray!6}{10,833}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{29}&\cellcolor{gray!6}{511}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{99\%}\\
+% spring-projects-spring-boot&12&2,164&14&2,150&13&1&850&1,300&1\%&92\%&2\%&10&4&2&2,148&83\%&71\%&76\%\\
+% \cellcolor{gray!6}{orbit-orbit}&\cellcolor{gray!6}{7}&\cellcolor{gray!6}{3,765}&\cellcolor{gray!6}{2,943}&\cellcolor{gray!6}{822}&\cellcolor{gray!6}{2,943}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{69}&\cellcolor{gray!6}{753}&\cellcolor{gray!6}{97\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{98\%}&\cellcolor{gray!6}{2,940}&\cellcolor{gray!6}{3}&\cellcolor{gray!6}{59}&\cellcolor{gray!6}{763}&\cellcolor{gray!6}{98\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{98\%}\\
+% undertow-io-undertow&7&2,396&92&2,304&57&35&148&2,156&27\%&61\%&38\%&5&87&0&2,304&100\%&5\%&10\%\\
+% \cellcolor{gray!6}{doanduyhai-Achilles}&\cellcolor{gray!6}{4}&\cellcolor{gray!6}{607}&\cellcolor{gray!6}{165}&\cellcolor{gray!6}{442}&\cellcolor{gray!6}{120}&\cellcolor{gray!6}{45}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{442}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{72\%}&\cellcolor{gray!6}{84\%}&\cellcolor{gray!6}{148}&\cellcolor{gray!6}{17}&\cellcolor{gray!6}{28}&\cellcolor{gray!6}{414}&\cellcolor{gray!6}{84\%}&\cellcolor{gray!6}{89\%}&\cellcolor{gray!6}{86\%}\\
+% \cellcolor{gray!6}{zxing-zxing}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{398}&\cellcolor{gray!6}{322}&\cellcolor{gray!6}{76}&\cellcolor{gray!6}{322}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{76}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{322}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{76}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{100\%}\\
+% assertj-core&1&991&974&17&974&0&1&16&99\%&100\%&99\%&974&0&0&17&100\%&100\%&100\%\\
+% \cellcolor{gray!6}{apache-commons-exec}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{92}&\cellcolor{gray!6}{33}&\cellcolor{gray!6}{59}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{33}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{59}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{33}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{2}&\cellcolor{gray!6}{57}&\cellcolor{gray!6}{94\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{97\%}\\
+% ninja-ninja&1&685&476&209&476&0&90&119&84\%&100\%&91\%&476&0&90&119&84\%&100\%&91\%\\
+% \cellcolor{gray!6}{handlebars.java}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{558}&\cellcolor{gray!6}{411}&\cellcolor{gray!6}{147}&\cellcolor{gray!6}{411}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{16}&\cellcolor{gray!6}{131}&\cellcolor{gray!6}{96\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{98\%}&\cellcolor{gray!6}{411}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{16}&\cellcolor{gray!6}{131}&\cellcolor{gray!6}{96\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{98\%}\\
+% \midrule
+% Total&543&261,838&99,641&162,197&97,744&1,897&11,761&150,436&&&&98,449&1,164&1,671&160,526&&&\\
+
+% \bottomrule
+
+
+
+% \bottomrule
+\end{tabular}
+\vspace{-10pt}
+\end{table*}
+
+
+
+
+
+

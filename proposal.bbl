@@ -1,0 +1,309 @@
+\begin{thebibliography}{10}
+
+\bibitem{ahmad2021empirical}
+Azeem Ahmad, Ola Leifler, and Kristian Sandahl.
+\newblock Empirical analysis of practitioners' perceptions of test flakiness
+  factors.
+\newblock {\em Software Testing, Verification and Reliability}, 31(8):e1791,
+  2021.
+
+\bibitem{tfidf}
+Akiko Aizawa.
+\newblock An information-theoretic perspective of tf--idf measures.
+\newblock {\em Information Processing \& Management}, 39(1):45--65, 2003.
+
+\bibitem{akli2023flakycat}
+Amal Akli, Guillaume Haben, Sarra Habchi, Mike Papadakis, and Yves Le~Traon.
+\newblock Flakycat: Predicting flaky tests categories using few-shot learning.
+\newblock In {\em 2023 IEEE/ACM International Conference on Automation of
+  Software Test (AST)}, pages 140--151. IEEE, 2023.
+
+\bibitem{alshammari2021flakeflagger}
+Abdulrahman Alshammari, Christopher Morris, Michael Hilton, and Jonathan Bell.
+\newblock Flakeflagger: Predicting flakiness without rerunning tests.
+\newblock In {\em 2021 IEEE/ACM 43rd International Conference on Software
+  Engineering (ICSE)}, pages 1572--1584. IEEE, 2021.
+
+\bibitem{An23JustInTime}
+Gabin An, Juyeon Yoon, Thomas Bach, Jingun Hong, and Shin Yoo.
+\newblock Just-in-time flaky test detection via abstracted failure symptom
+  matching, 2023.
+
+\bibitem{bell2018deflaker}
+Jonathan Bell, Owolabi Legunsen, Michael Hilton, Lamyaa Eloussi, Tifany Yung,
+  and Darko Marinov.
+\newblock Deflaker: Automatically detecting flaky tests.
+\newblock In {\em 2018 IEEE/ACM 40th International Conference on Software
+  Engineering (ICSE)}, pages 433--444. IEEE, 2018.
+
+\bibitem{crossValidation}
+Daniel Berrar et~al.
+\newblock Cross-validation., 2019.
+
+\bibitem{coles2016pit}
+Henry Coles, Thomas Laurent, Christopher Henard, Mike Papadakis, and Anthony
+  Ventresque.
+\newblock Pit: a practical mutation testing tool for java.
+\newblock In {\em Proceedings of the 25th international symposium on software
+  testing and analysis}, pages 449--452, 2016.
+
+\bibitem{cordy2019flakime}
+Maxime Cordy, Renaud Rwemalika, Mike Papadakis, and Mark Harman.
+\newblock Flakime: Laboratory-controlled test flakiness impact assessment. a
+  case study on mutation testing and program repair.
+\newblock {\em arXiv preprint arXiv:1912.03197}, 2019.
+
+\bibitem{durieux2020empirical}
+Thomas Durieux, Claire~Le Goues, Michael Hilton, and Rui Abreu.
+\newblock Empirical study of restarted and flaky builds on travis ci.
+\newblock In {\em 17th International Conference on Mining Software Repositories
+  (MSR ’20)}. ACM, 2020.
+
+\bibitem{eck2019understanding}
+Moritz Eck, Fabio Palomba, Marco Castelluccio, and Alberto Bacchelli.
+\newblock Understanding flaky tests: the developer’s perspective.
+\newblock In {\em Proceedings of the 2019 27th ACM Joint Meeting on European
+  Software Engineering Conference and Symposium on the Foundations of Software
+  Engineering}, pages 830--840, 2019.
+
+\bibitem{SMOTE}
+Alberto Fern{\'a}ndez, Salvador Garcia, Francisco Herrera, and Nitesh~V Chawla.
+\newblock Smote for learning from imbalanced data: progress and challenges,
+  marking the 15-year anniversary.
+\newblock {\em Journal of artificial intelligence research}, 61:863--905, 2018.
+
+\bibitem{garousi2018smells}
+Vahid Garousi and Bar{\i}{\c{s}} K{\"u}{\c{c}}{\"u}k.
+\newblock Smells in software test code: A survey of knowledge in industry and
+  academia.
+\newblock {\em Journal of systems and software}, 138:52--81, 2018.
+
+\bibitem{habchi2022qualitative}
+Sarra Habchi, Guillaume Haben, Mike Papadakis, Maxime Cordy, and Yves Le~Traon.
+\newblock A qualitative study on the sources, impacts, and mitigation
+  strategies of flaky tests.
+\newblock In {\em 2022 IEEE Conference on Software Testing, Verification and
+  Validation (ICST)}, pages 244--255. IEEE, 2022.
+
+\bibitem{haben2023importance}
+Guillaume Haben, Sarra Habchi, Mike Papadakis, Maxime Cordy, and Yves~Le Traon.
+\newblock The importance of discerning flaky from fault-triggering test
+  failures: A case study on the chromium ci.
+\newblock {\em arXiv preprint arXiv:2302.10594}, 2023.
+
+\bibitem{Jiang17WhatCauses}
+He~Jiang, Xiaochen Li, Zijiang Yang, and Jifeng Xuan.
+\newblock What causes my test alarm? automatic cause analysis for test alarms
+  in system and integration testing.
+\newblock In {\em Proceedings of the 39th International Conference on Software
+  Engineering}, ICSE '17, page 712–723. IEEE Press, 2017.
+
+\bibitem{tfidf1}
+Li-Ping Jing, Hou-Kuan Huang, and Hong-Bo Shi.
+\newblock Improved feature selection approach tfidf in text mining.
+\newblock In {\em Proceedings. International Conference on Machine Learning and
+  Cybernetics}, volume~2, pages 944--946. IEEE, 2002.
+
+\bibitem{just2014defects4j}
+Ren{\'e} Just, Darioush Jalali, and Michael~D Ernst.
+\newblock Defects4j: A database of existing faults to enable controlled testing
+  studies for java programs.
+\newblock In {\em Proceedings of the 2014 international symposium on software
+  testing and analysis}, pages 437--440, 2014.
+
+\bibitem{just2014mutants}
+Ren{\'e} Just, Darioush Jalali, Laura Inozemtseva, Michael~D Ernst, Reid
+  Holmes, and Gordon Fraser.
+\newblock Are mutants a valid substitute for real faults in software testing?
+\newblock In {\em Proceedings of the 22nd ACM SIGSOFT International Symposium
+  on Foundations of Software Engineering}, pages 654--665, 2014.
+
+\bibitem{kanneganti2020eliminating}
+Joshika Kanneganti and Krithi~Sameera Vadrevu.
+\newblock Eliminating effects of flakiness in embedded software testing: An
+  industrial case study, 2020.
+
+\bibitem{king2018towards}
+Tariq~M King, Dionny Santiago, Justin Phillips, and Peter~J Clarke.
+\newblock Towards a bayesian network model for predicting flaky automated
+  tests.
+\newblock In {\em 2018 IEEE International Conference on Software Quality,
+  Reliability and Security Companion (QRS-C)}, pages 100--107. IEEE, 2018.
+
+\bibitem{kohavi1995study}
+Ron Kohavi et~al.
+\newblock A study of cross-validation and bootstrap for accuracy estimation and
+  model selection.
+\newblock In {\em Ijcai}, volume~14, pages 1137--1145. Montreal, Canada, 1995.
+
+\bibitem{lam2019root}
+Wing Lam, Patrice Godefroid, Suman Nath, Anirudh Santhiar, and Suresh
+  Thummalapenta.
+\newblock Root causing flaky tests in a large-scale industrial setting.
+\newblock In {\em Proceedings of the 28th ACM SIGSOFT International Symposium
+  on Software Testing and Analysis}, pages 101--111, 2019.
+
+\bibitem{lam2019idflakies}
+Wing Lam, Reed Oei, August Shi, Darko Marinov, and Tao Xie.
+\newblock idflakies: A framework for detecting and partially classifying flaky
+  tests.
+\newblock In {\em 2019 12th ieee conference on software testing, validation and
+  verification (icst)}, pages 312--322. IEEE, 2019.
+
+\bibitem{lam2020Understanding}
+Wing Lam, Stefan Winter, Angello Astorga, Victoria Stodden, and Darko Marinov.
+\newblock Understanding reproducibility and characteristics of flaky tests
+  through test reruns in java projects.
+\newblock In {\em 2020 IEEE 31st International Symposium on Software
+  Reliability Engineering (ISSRE)}, pages 403--413. IEEE, 2020.
+
+\bibitem{lampel2021life}
+Johannes Lampel, Sascha Just, Sven Apel, and Andreas Zeller.
+\newblock When life gives you oranges: detecting and diagnosing intermittent
+  job failures at mozilla.
+\newblock In {\em Proceedings of the 29th ACM Joint Meeting on European
+  Software Engineering Conference and Symposium on the Foundations of Software
+  Engineering}, pages 1381--1392, 2021.
+
+\bibitem{lei2012feature}
+Shang Lei.
+\newblock A feature selection method based on information gain and genetic
+  algorithm.
+\newblock In {\em 2012 international conference on computer science and
+  electronics engineering}, volume~2, pages 355--358. IEEE, 2012.
+
+\bibitem{luo2014can}
+Qingzhou Luo, Lamyaa Eloussi, Farah Hariri, and Darko Marinov.
+\newblock Can we trust test outcomes?
+\newblock {\em Network}, 5:1, 2014.
+
+\bibitem{luo2014empirical}
+Qingzhou Luo, Farah Hariri, Lamyaa Eloussi, and Darko Marinov.
+\newblock An empirical analysis of flaky tests.
+\newblock In {\em Proceedings of the 22nd ACM SIGSOFT International Symposium
+  on Foundations of Software Engineering}, pages 643--653, 2014.
+
+\bibitem{bears}
+F.~Madeiral, S.~Urli, M.~Maia, and M.~Monperrus.
+\newblock Bears: An extensible java bug benchmark for automatic program repair
+  studies.
+\newblock In {\em 2019 IEEE 26th International Conference on Software Analysis,
+  Evolution and Reengineering (SANER)}, pages 468--478, Los Alamitos, CA, USA,
+  feb 2019. IEEE Computer Society.
+
+\bibitem{meszaros2007xunit}
+Gerard Meszaros.
+\newblock {\em xUnit test patterns: Refactoring test code}.
+\newblock Pearson Education, 2007.
+
+\bibitem{moran2019debugging}
+Jes{\'u}s Mor{\'a}n~Barb{\'o}n, Cristian Augusto~Alonso, Antonia Bertolino,
+  Claudio~A Riva~{\'A}lvarez, and Jos{\'e}~Florentino Garc{\'\i}a~Tuya.
+\newblock Debugging flaky tests on web applications.
+\newblock In {\em WEBIST 2019-Proceedings of the 15th International Conference
+  on Web Information Systems and Technologies}, 2019.
+
+\bibitem{DT}
+Arundhati Navada, Aamir~Nizam Ansari, Siddharth Patil, and Balwant~A Sonkamble.
+\newblock Overview of use of decision tree algorithms in machine learning.
+\newblock In {\em 2011 IEEE control and system graduate research colloquium},
+  pages 37--42. IEEE, 2011.
+
+\bibitem{pintovocabulary}
+Gustavo Pinto, Breno Miranda, Supun Dissanayake, Marcelo d'Amorim, Christoph
+  Treude, and Antonia Bertolino.
+\newblock What is the vocabulary of flaky tests?
+\newblock In {\em MSR '20: 17th Int'l. Conf. on Mining Software Repositories},
+  2020.
+
+\bibitem{pinto2020vocabulary}
+Gustavo Pinto, Breno Miranda, Supun Dissanayake, Marcelo d'Amorim, Christoph
+  Treude, and Antonia Bertolino.
+\newblock What is the vocabulary of flaky tests?
+\newblock In {\em Proceedings of the 17th International Conference on Mining
+  Software Repositories}, pages 492--502, 2020.
+
+\bibitem{Pinto2020WhatIT}
+Gustavo Pinto, Breno Miranda, Supun Dissanayake, Christoph Treude, Antonia
+  Bertolino, and Marcelo d'Amorim.
+\newblock What is the vocabulary of flaky tests?
+\newblock In {\em 17th International Conference on Mining Software Repositories
+  (MSR ’20)}. ACM, 2020.
+
+\bibitem{Podgurski03Automated}
+Andy Podgurski, David Leon, Patrick Francis, Wes Masri, Melinda Minch, Jiayang
+  Sun, and Bin Wang.
+\newblock Automated support for classifying software failure reports.
+\newblock In {\em Proceedings of the 25th International Conference on Software
+  Engineering}, ICSE '03, page 465–475, USA, 2003. IEEE Computer Society.
+
+\bibitem{presler2019wait}
+Kai Presler-Marshall, Eric Horton, Sarah Heckman, and Kathryn Stolee.
+\newblock Wait, wait. no, tell me. analyzing selenium configuration effects on
+  test flakiness.
+\newblock In {\em 2019 IEEE/ACM 14th International Workshop on Automation of
+  Software Test (AST)}, pages 7--13. IEEE, 2019.
+
+\bibitem{saha2018bugs}
+Ripon~K Saha, Yingjun Lyu, Wing Lam, Hiroaki Yoshida, and Mukul~R Prasad.
+\newblock Bugs. jar: A large-scale, diverse dataset of real-world java bugs.
+\newblock In {\em Proceedings of the 15th international conference on mining
+  software repositories}, pages 10--13, 2018.
+
+\bibitem{shi2019mitigating}
+August Shi, Jonathan Bell, and Darko Marinov.
+\newblock Mitigating the effects of flaky tests on mutation testing.
+\newblock In {\em Proceedings of the 28th ACM SIGSOFT International Symposium
+  on Software Testing and Analysis}, pages 112--122, 2019.
+
+\bibitem{shi2016detecting}
+August Shi, Alex Gyori, Owolabi Legunsen, and Darko Marinov.
+\newblock Detecting assumptions on deterministic implementations of
+  non-deterministic specifications.
+\newblock In {\em 2016 IEEE International Conference on Software Testing,
+  Verification and Validation (ICST)}, pages 80--90. IEEE, 2016.
+
+\bibitem{shi2019ifixflakies}
+August Shi, Wing Lam, Reed Oei, Tao Xie, and Darko Marinov.
+\newblock ifixflakies: A framework for automatically fixing order-dependent
+  flaky tests.
+\newblock In {\em Proceedings of the 2019 27th ACM Joint Meeting on European
+  Software Engineering Conference and Symposium on the Foundations of Software
+  Engineering}, pages 545--555, 2019.
+
+\bibitem{thorve2018empirical}
+Swapna Thorve, Chandani Sreshtha, and Na~Meng.
+\newblock An empirical study of flaky tests in android apps.
+\newblock In {\em 2018 IEEE International Conference on Software Maintenance
+  and Evolution (ICSME)}, pages 534--538. IEEE, 2018.
+
+\bibitem{tomassi2019bugswarm}
+David~A Tomassi, Naji Dmeiri, Yichen Wang, Antara Bhowmick, Yen-Chuan Liu,
+  Premkumar~T Devanbu, Bogdan Vasilescu, and Cindy Rubio-Gonz{\'a}lez.
+\newblock Bugswarm: Mining and continuously growing a dataset of reproducible
+  failures and fixes.
+\newblock In {\em 2019 IEEE/ACM 41st International Conference on Software
+  Engineering (ICSE)}, pages 339--349. IEEE, 2019.
+
+\bibitem{van2001refactoring}
+Arie Van~Deursen, Leon Moonen, Alex Van Den~Bergh, and Gerard Kok.
+\newblock Refactoring test code.
+\newblock In {\em Proceedings of the 2nd international conference on extreme
+  programming and flexible processes in software engineering (XP2001)}, pages
+  92--95. Citeseer, 2001.
+
+\bibitem{vancsics2020simulating}
+B{\'e}la Vancsics, Tam{\'a}s Gergely, and {\'A}rp{\'a}d Besz{\'e}des.
+\newblock Simulating the effect of test flakiness on fault localization
+  effectiveness.
+\newblock In {\em 2020 IEEE Workshop on Validation, Analysis and Evolution of
+  Software Tests (VST)}, pages 28--35. IEEE, 2020.
+
+\bibitem{gradlePreventingFlaky}
+Dennis Welter.
+\newblock {P}reventing {F}laky {T}ests from {R}uining your {T}est {S}uite ---
+  gradle.com.
+\newblock \url{https://gradle.com/blog/prevent-flaky-tests/}.
+\newblock [Accessed 29-May-2023].
+
+\end{thebibliography}

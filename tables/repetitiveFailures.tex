@@ -1,0 +1,89 @@
+
+
+
+
+
+
+
+
+\begin{table}[t]
+  \setlength{\tabcolsep}{2.5pt}
+
+% \jon{Resized table to try to fit bigger column headers. Not clear what unique means. Unique by stack trace?}
+\caption[Repetitive Flaky Failures within and across tests per project]{Repetitive Flaky Failures within and across tests per project. \\
+\textnormal{Failures column shows the number of flaky failures and the different failures (Set). The columns (1:n) and [1] refer to flaky failures that are and are not repetitives, respectively.  Per Test refers to matching the failures within the same test. Across Tests refers matching all flaky failures from all tests.}
+}
+\label{table:repetitive}
+\vspace{-4pt}
+%\resizebox{\textwidth}{!}{
+% \scriptsize
+\footnotesize
+\centering
+\begin{tabular}{l|r|rr|rr|rr}
+
+\toprule
+      & &\multicolumn{2}{c|}{\textbf{Failures}} & \multicolumn{2}{c|}{\textbf{Per Test}} & \multicolumn{2}{c}{\textbf{Across Tests}}\\
+      
+
+\textbf{Projects} & \textbf{Tests} & \textbf{Flaky}  & \textbf{Set}  & \textbf{[1]} & \textbf{(1:n)}  & \textbf{[1]} & \textbf{(1:n)} \\
+\midrule
+
+Alluxio-alluxio&114&16,858&310&11&16,847&5&16,853\\
+\cellcolor{gray!6}{square-okhttp}&\cellcolor{gray!6}{100}&\cellcolor{gray!6}{28,264}&\cellcolor{gray!6}{121}&\cellcolor{gray!6}{40}&\cellcolor{gray!6}{28,224}&\cellcolor{gray!6}{17}&\cellcolor{gray!6}{28,247}\\
+apache-hbase&62&19,822&100&14&19,808&5&19,817\\
+\cellcolor{gray!6}{apache-ambari}&\cellcolor{gray!6}{51}&\cellcolor{gray!6}{4,063}&\cellcolor{gray!6}{54}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{4,063}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{4,063}\\
+hector-client-hector&33&6,529&33&0&6,529&0&6,529\\
+\cellcolor{gray!6}{activiti-activiti}&\cellcolor{gray!6}{31}&\cellcolor{gray!6}{1,378}&\cellcolor{gray!6}{32}&\cellcolor{gray!6}{13}&\cellcolor{gray!6}{1,365}&\cellcolor{gray!6}{6}&\cellcolor{gray!6}{1,372}\\
+tootallnate-java-websocket&22&2,095&43&2&2,093&0&2,095\\
+\cellcolor{gray!6}{apache-httpcore}&\cellcolor{gray!6}{22}&\cellcolor{gray!6}{354}&\cellcolor{gray!6}{22}&\cellcolor{gray!6}{9}&\cellcolor{gray!6}{345}&\cellcolor{gray!6}{2}&\cellcolor{gray!6}{352}\\
+qos-ch-logback&20&438&21&8&430&4&434\\
+\cellcolor{gray!6}{kevinsawicki-http-request}&\cellcolor{gray!6}{18}&\cellcolor{gray!6}{3,501}&\cellcolor{gray!6}{18}&\cellcolor{gray!6}{3}&\cellcolor{gray!6}{3,498}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{3,501}\\
+wildfly-wildfly&18&50&18&12&38&4&46\\
+\cellcolor{gray!6}{wro4j-wro4j}&\cellcolor{gray!6}{14}&\cellcolor{gray!6}{10,833}&\cellcolor{gray!6}{21}&\cellcolor{gray!6}{3}&\cellcolor{gray!6}{10,830}&\cellcolor{gray!6}{2}&\cellcolor{gray!6}{10,831}\\
+spring-projects-spring-boot&12&14&13&12&2&5&9\\
+\cellcolor{gray!6}{orbit-orbit}&\cellcolor{gray!6}{7}&\cellcolor{gray!6}{2,943}&\cellcolor{gray!6}{7}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{2,943}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{2,943}\\
+undertow-io-undertow&7&92&12&3&89&1&91\\
+\cellcolor{gray!6}{doanduyhai-Achilles}&\cellcolor{gray!6}{4}&\cellcolor{gray!6}{165}&\cellcolor{gray!6}{5}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{164}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{164}\\
+elasticjob-elastic-job-lite&3&7&4&3&4&0&7\\
+\cellcolor{gray!6}{assertj-core}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{974}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{974}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{974}\\
+ninja-ninja&1&476&1&0&476&0&476\\
+\cellcolor{gray!6}{handlebars.java}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{411}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{411}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{411}\\
+apache-commons-exec&1&33&1&0&33&0&33\\
+\cellcolor{gray!6}{zxing-zxing}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{322}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{322}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{322}\\
+\midrule
+Total&543&99,622&839&134&99,488&52&99,570\\
+
+
+
+% --> Consider the test line in stacktraces 
+
+% Alluxio-alluxio&114&16,858&310&11&16,847&11&16,847\\
+% \cellcolor{gray!6}{square-okhttp}&\cellcolor{gray!6}{100}&\cellcolor{gray!6}{28,264}&\cellcolor{gray!6}{121}&\cellcolor{gray!6}{40}&\cellcolor{gray!6}{28,224}&\cellcolor{gray!6}{32}&\cellcolor{gray!6}{28,232}\\
+% apache-hbase&62&19,822&100&14&19,808&12&19,810\\
+% \cellcolor{gray!6}{apache-ambari}&\cellcolor{gray!6}{51}&\cellcolor{gray!6}{4,063}&\cellcolor{gray!6}{54}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{4,063}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{4,063}\\
+% hector-client-hector&33&6,529&33&0&6,529&0&6,529\\
+% \cellcolor{gray!6}{activiti-activiti}&\cellcolor{gray!6}{31}&\cellcolor{gray!6}{1,378}&\cellcolor{gray!6}{32}&\cellcolor{gray!6}{13}&\cellcolor{gray!6}{1,365}&\cellcolor{gray!6}{13}&\cellcolor{gray!6}{1,365}\\
+% tootallnate-java-websocket&22&2,095&43&2&2,093&1&2,094\\
+% \cellcolor{gray!6}{apache-httpcore}&\cellcolor{gray!6}{22}&\cellcolor{gray!6}{354}&\cellcolor{gray!6}{22}&\cellcolor{gray!6}{9}&\cellcolor{gray!6}{345}&\cellcolor{gray!6}{9}&\cellcolor{gray!6}{345}\\
+% qos-ch-logback&20&438&21&8&430&8&430\\
+% \cellcolor{gray!6}{kevinsawicki-http-request}&\cellcolor{gray!6}{18}&\cellcolor{gray!6}{3,501}&\cellcolor{gray!6}{18}&\cellcolor{gray!6}{3}&\cellcolor{gray!6}{3,498}&\cellcolor{gray!6}{3}&\cellcolor{gray!6}{3,498}\\
+% wildfly-wildfly&18&50&18&12&38&12&38\\
+% \cellcolor{gray!6}{wro4j-wro4j}&\cellcolor{gray!6}{14}&\cellcolor{gray!6}{10,833}&\cellcolor{gray!6}{21}&\cellcolor{gray!6}{3}&\cellcolor{gray!6}{10,830}&\cellcolor{gray!6}{3}&\cellcolor{gray!6}{10,830}\\
+% spring-projects-spring-boot&12&14&13&12&2&12&2\\
+% \cellcolor{gray!6}{orbit-orbit}&\cellcolor{gray!6}{7}&\cellcolor{gray!6}{2,943}&\cellcolor{gray!6}{7}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{2,943}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{2,943}\\
+% undertow-io-undertow&7&92&12&3&89&3&89\\
+% \cellcolor{gray!6}{doanduyhai-Achilles}&\cellcolor{gray!6}{4}&\cellcolor{gray!6}{165}&\cellcolor{gray!6}{5}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{164}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{164}\\
+% elasticjob-elastic-job-lite&3&7&4&3&4&3&4\\
+% \cellcolor{gray!6}{assertj-core}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{974}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{974}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{974}\\
+% ninja-ninja&1&476&1&0&476&0&476\\
+% \cellcolor{gray!6}{handlebars.java}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{411}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{411}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{411}\\
+% apache-commons-exec&1&33&1&0&33&0&33\\
+% \cellcolor{gray!6}{zxing-zxing}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{322}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{322}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{322}\\
+% \midrule
+% Total&543&99,622&839&134&99,488&123&99,499\\
+
+
+\bottomrule
+\end{tabular}
+\vspace{-10pt}
+\end{table}

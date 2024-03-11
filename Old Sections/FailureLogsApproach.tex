@@ -1,0 +1,120 @@
+
+\section{Flaky Failure Logs Based Approaches}
+\label{sec:failureLogsApproach}
+
+
+Chapter \ref{sec:failureLogsStudy} explored the accuracy of identifying new flaky failures as similar to previous confirmed flaky failures, both within and across different tests in the same project. Assuming that developers label a failure as flaky due to specific signals present in the stack trace, I hypothesize that these signals are present in flaky failure logs and absent in non-flaky ones. Otherwise, this could lead to misleading results. To clarify, if two failure logs (one flaky and one non-flaky) are identical, this could indicate that one of them was misclassified, or that the failure exception and stack trace lines are not sufficient for distinguishing between the two types of failures. Through this approach, my goal is to assess the likelihood of detecting the signals that differentiate flaky failures from non-flaky ones based on the failure exception and stack trace lines.
+
+To conduct this experiment, it is necessary to have access to logs of both flaky and non-flaky failures for the same tests. However, in datasets such as Deflaker \cite{bell2018deflaker} and iDFlakies \cite{lam2019idflakies}, there are no accompanying logs of non-flaky failures for the same flaky tests. Additionally, I am not aware of any available datasets that provide both types of failure logs for the same set of tests. In the previous section, I utilized my FlakeFlagger dataset, and one possible solution for obtaining non-flaky failures is to examine defects in the projects from this dataset. However, this approach may not be practical due to uncertainty regarding the number of collected failures and their non-flakiness status. Given the difficulty in obtaining all deterministic failures for a given test (as it is hard to anticipate all developer mistakes), a reasonable amount of deterministic failures per flaky test would suffice.
+
+It is possible to obtain alternative sources of non-flaky failures by utilizing mutation testing to gather data on the failures of killed mutants. Just et al. have explored the idea of replacing real test failures with the failures of killed mutants \cite{just2014mutants}. The use of killed mutant failures can increase the likelihood of non-flaky failures, although it should be noted that not every killed mutant failure is necessarily non-flaky, as recent studies have shown that mutants can also exhibit flakiness \cite{shi2019mitigating}. To mitigate this issue, the approach of
+Shi et al. has been used to filter out flaky mutants~\cite{shi2019mitigating}. I began by gathering mutants for each flaky test from FlakeFlagger dataset. For each test, mutants have been collected and executed 20 times in order to identify any potential flakiness. The failure messages and stack traces lines were recorded in a similar manner to the process outlined in Section~\ref{sec:failureLogsStudy}. I then updated the XML result file per test to include a list of mutant blocks. Each mutant block contains the failure exception, message, and stacktrace lines. 
+
+To compare flaky failures with non-flaky ones for each test, a \syntax will be employed, similar to the approach used in chapter \ref{sec:failureLogsStudy} when comparing two flaky failures. This approach aims to capture any differences, such as in the stack trace line number, as different lines of code being executed can result in different stack traces. Along with the \syntax, I explore the possibility of using a machine learning approach to develop a classifier that can learn from flaky failure logs and predict the status of others. While the syntax approach works better for comparing failures at the test level (within the test), the generality of the machine learning approach motivated me to apply it as well.
+% \jon{Before going into the two approaches, I suggest a 1-paragraph overview describing the different kinds of approaches that could be considered and their relative merits} \abdul{how does this sound?}\jon{Great!}
+
+\input{tables/Features}
+\subsection{Syntax Based Approach}
+
+I utilize a syntax-matching method to compare the exception and stack trace lines of two failures. The approach is simply detecting any differences (including line numbers) between two given failures logs. I will be relying on the exception type and the stack trace lines, similar to the discussed technique in Section \ref{sec:failureLogsStudy} of the study. The first step involves grouping failures per test based on their exception and stack trace lines. Each group will then be labeled as either flaky (consisting of failures that are exclusively flaky), non-flaky (groups containing only non-flaky failures), or a combination of both (groups that include both flaky and non-flaky failures). 
+
+The presence of flaky groups indicates that the failures within those groups do not match with any non-flaky failures. When a project has a higher number of flaky failure groups, this approach becomes valuable in distinguishing between flaky and non-flaky failures.
+For instance, if a new failure falls into a flaky group, it is more likely to be flaky because it matches the patterns of other flaky failures and does not match those of non-flaky ones.
+Moreover, applying this approach and analyzing the resulting groups can provide insights into the characteristics that differentiate flaky failures from non-flaky ones. When a group is labeled as a \emph{flaky group}, it means that the failure contains \emph{at least} one stack trace line that has never been observed in any of the non-flaky failures. This discovery raises suspicion and points to a possible link to the root cause of flakiness.
+\abdul{Do you think this should be well explained e.g. with more details and examples.}
+\jon{Yes, I think that a few ``For example" sentences here would be helpful.}\abdul{How about now?}
+
+
+\subsection{Failure Log Classifier}
+The earlier approach involves comparing the syntax of two failures, including the line number in the stack trace, which may not be suitable for comparing failures from different tests. Assuming that flaky failures exhibit differences compared to non-flaky ones, could a classifier be developed to predict if a failure is likely to be flaky based on other flaky failures from various tests?
+
+My proposal involves a failure log classifier, which employs a machine learning approach to learn from both flaky and non-flaky failure logs, enabling it to predict the status of a given failure log as either flaky or not. The classifier gathers specific features from the failure logs, which are outlined in Table~\ref{table:Features}. To ensure that the classifier can learn from various tests, the selected features should encompass all tests and not be influenced by the content of a particular test, such as whether the stack trace lines cover any line in the test suite rather than the test itself. Although the initial set of features is not final, I believe they are sufficient to begin training the classifier.
+
+To begin, I processed the data by extracting features from the failure exception and stack trace lines. These features require knowledge of all test names in the test suite, test names throughout the entire project, and all source code file names of the code under test to facilitate determining the feature values for each test failure. Next, I employed a simple \emph{Decision Tree} (\textbf{DT}) as the supervised learning algorithm and utilized stratified cross-validation to train on a portion of the data and predict the remaining. Additionally, I used SMOTE to balance the data due to its imbalanced nature. To evaluate the performance of the log classifier, I applied \emph{TF-IDF} (Term Frequency-Inverse Document Frequency~\cite{tfidf}), as a baseline for prediction results.
+
+
+\subsection{Failure logs Approaches: Initial Result}
+
+I am looking to emphasize the main findings of using the proposed approaches by answering the following questions:
+
+\begin{description}
+  \item[\textbf{RQ1:}] Is the \syntax able to discriminate the flaky failures?
+  \item[\textbf{RQ2:}] Are some exceptions related to flakiness more than non flaky failures?
+  \item[\textbf{RQ3:}] Can machine learning be utilized to predict flaky failures using the failure logs?
+
+ \end{description}
+
+\input{tables/FailureLogsClassifier}
+
+I am looking to evaluate the effectiveness of the \syntax as a method for detecting test flakiness. By distinguishing flaky failures based on their failure exception and stack trace lines, developers can employ this approach to determine if a failure is flaky or not by comparing it with non-flaky failures. Additionally, I am interested in exploring how machine learning can leverage failure logs to construct a classifier that predicts the likelihood of a failure being flaky. 
+
+\subsubsection{RQ1: Is the \syntax able to discriminate the flaky failures?}
+
+Table~\ref{table:classifier_table} illustrates the outcomes of applying the \syntax to flaky and non-flaky failures in different projects. The column labeled \textit{Failure by \syntax} is divided into three parts: \textit{OnlyFlaky}, \textit{Only Non-Flaky}, and \textit{Both}. The \textit{OnlyFlaky} column represents failure logs that are exclusively observed in flaky failures, while the \textit{Only Non-Flaky} column represents failures that are only present in non-flaky failures. The \textit{Both} column captures failure logs that are common to both flaky and non-flaky failures. If the number of occurrences in the \textit{Both} column is minimized, it suggests that the \syntax is more likely to be considered effective.
+
+The outcomes of the \syntax exhibit variations among the studied projects. Among the 15 projects analyzed, there are six projects in which at least 86\% of their flaky failures exclusively appear in the \emph{OnlyFlaky} category. Conversely, there are projects where this approach did not perform effectively, such as in the case of the \httpcore project, where it successfully distinguishes only one flaky failures. It is notable that the number of flaky failures is not a common key of these projects, as this approach perform well regardless to the number of flaky failures. These findings motivate further analysis of the failure exceptions and identification of common patterns across these projects.
+
+The primary observation in projects where it is challenging to distinguish flaky failures using the \syntax is that these failures often manifest as assertion exceptions. For instance, in both the \emph{java-webscoket} and \emph{http-request} projects, all the failures in the column \emph{Both} share the \textit{AssertionError} exception. Similarly, the majority of failures in projects like \emph{qos-ch-logback} and \emph{activiti} also fall under the \textit{AssertionError} exception.
+Conversely, in projects where flaky failures are exclusively present, the majority of failures are characterized by different exceptions, such as \emph{UnknownHostException} and \emph{IOException}. 
+In the context of the \emph{Alluxio} project, there are 164 failure groups (out of a total of 174 groups containing both flaky and non-flaky failures) that are attributed to a specific exception type: \emph{NullPointerException}. Despite having access to the stack trace lines, these exceptions prove to be challenging to distinguish, highlighting the difficulty of utilizing failure logs as a criteria for such exception types. It is worth noting that this exception is not detected in failure logs of other projects where it is not reported as an exception in only flaky failures.
+
+In general, leveraging the exception type and stack trace lines is a promising approach for developers and researchers to analyze failure logs and distinguish between flaky and non-flaky failures. When comparing flaky failures to non-flaky failures, focusing on the stack traces alone can often be effective without explicitly relying on the exception type. This is evident from the discovery that all failures identified as unique based on the exception types are also unique based on their stack trace lines. However, incorporating the exception types can enhance the analysis and provide supplementary information to aid in the classification of failure logs. The use of exception types will be further explored and discussed in detail in RQ3.
+
+\subsubsection{RQ2: Are some exceptions related to flakiness more than non flaky failures?}
+
+The column \emph{OnlyFlaky} in Table~\ref{table:classifier_table} illustrates the existence of groups of failures that are only appear in flaky side and never been detected in non-flaky failures.
+Among these failures, there are 284 failures groups where the exceptions alone never been reported in the non flaky failures of the same test, regardless of using stack trace lines in the comparison, which accounts for 55\% of the these failures. In other words, these exceptions have never been detected in the non-flaky failures obtained from the corresponding tests associated with these flaky failures.
+
+
+Table~\ref{table:exceptions} presents the top ten most frequently occurring exceptions observed in the analyzed flaky failures. Among them, two exceptions, namely \emph{UnknownHostException} and \emph{HCassandraInternalException}, consistently distinguish the failures from the non-flaky failures. Approximately 93\% of the failures involve the \emph{IOException} exception, while around 63\% of the failures involve the \emph{Exception} exception.
+The uniqueness of failures based on exceptions can be influenced by the project domain. For example, the \emph{HCassandraInternalException} exception is specific to one project, potentially affecting its uniqueness. The \emph{UnknownHostException} exception is encountered in six projects, with roughly 75\% of these exceptions originating from the \alluxio project.
+However, it is important to clarify that the presence of an exception like \emph{UnknownHostException} does not necessarily indicate a direct association with flaky failures. I have identified a few of the non-flaky failures reported with this exception in the \emph{okhttp} project. Interestingly, none of the flaky failures in that project have been reported with an \emph{UnknownHostException}.
+
+
+\input{tables/exceptions}
+
+It is crucial to emphasize that not all \emph{OnlyFlaky} failure groups can be identified by a unique exception type. I found some failures where failure exceptions belong to both the unique and non-unique failure categories, as indicated in Table~\ref{table:exceptions}. In the context of our experiment, the most frequently occurring exception is the \emph{AssertionError} which is almost evenly split between the two categories, with 58\% of occurrences in unique failures. However, when considering only the exception type and excluding stacktrace lines, the proportion of unique failures with this exception drops to less than 5\%.
+The reason behind this observation is the generality of the \emph{AssertionError} exception. For example, a test may have multiple assertion statements, and if they fail for different reasons, they match the exception but differ in the stack trace. Therefore, it becomes challenging to attribute this type of exception to a specific type of failure.
+
+
+
+I conducted an analysis of failures involving the \emph{AssertionError} exceptions and identified them as \emph{OnlyFlaky} failures when compared to other non-flaky failures, including stacktrace lines. One important observation I made is that the test name does not appear in 70\% of the stack traces for these failures. This suggests that these failures occur in setup methods, as observed in the majority of flaky failures in projects like \okhttp and \emph{tootallnate-java-websocket}. On the other hand, all of the \emph{Both} failures groups that contain an \emph{AssertionError} in their exception have the test name present in the stack trace lines.
+
+I have noticed that approximately half of the \emph{OnlyFlaky} failures groups can be identified by considering the exception type without examining the stack trace lines. This suggests that certain exceptions may be more likely to be associated with flaky failures under circumstances such as project domains.Also, I found that linking the \emph{AssertionError} exception to one of the two types of failures is challenging due to the general nature of this exception. 
+
+
+\subsubsection{RQ3: Can machine learning be utilized to predict flaky failures using the failure logs?}
+
+I utilized the dataset employed in the syntax-based approach to train and evaluate the \classifier. As part of the dataset preparation, I represent each failure with  a set of values, based on the features outlined in Table~\ref{table:Features}. For features that required accessing the code under test, I extracted all the \emph{java} file names from each project. During this process, I encountered missing values, such as two flaky tests in \emph{wildfly-wildfly}. Since the total number of missing values was minimal, I exclude all flaky tests associated with these failures.
+
+Next, I developed a decision tree model that employed stratified cross-validation per project. Since the proportion of flaky failures was quite low compared to the total number of failures, I balanced the training data using SMOTE. The \classifier column in Table~\ref{table:classifier_table} demonstrates the prediction results per project. For instance, out of 310 flaky failures in \emph{Alluxio-alluxio}, the classifier correctly identified 281 as flaky (\textbf{TP}), while the remaining 29 failures were incorrectly predicted as non-flaky. To evaluate the performance of the classifier per project, I utilized precision, recall, and F1 score as evaluation metrics. To ensure that each testing dataset fold contains at least one flaky failure, I excluded projects with fewer than 10 instances of flaky failures, as compared to the projects analyzed in Section~\ref{sec:failureLogsStudy}.
+
+In order to obtain a deeper understanding of the effectiveness of applying machine learning concepts, I conducted a thorough investigation to identify a state-of-the-art classifier specifically designed for failure logs. However, to the best of my knowledge, there is no currently publicly available and accessible machine learning approach for predicting test flakiness based on failure logs. As an alternative, I employed TF-IDF as a baseline to compare the prediction results of the classifier. The motivation behind using this approach is that the features of the classifier are directly extracted from the syntax of the failure log, without any dynamic features.
+
+
+
+
+In the \classifier, there is a considerable number of true positives (714 out of 818) when predicting flaky failures. However, this also leads to a high number of false positives, where non-flaky failures are incorrectly identified as flaky. As a result, the classifier exhibits high recall across most of the project but has low precision rates.
+Upon conducting a thorough analysis, I discovered that the type of exceptions has a significant impact on the overall performance of the classifier. In projects with a substantial number of false positives (e.g., more than 100 cases, as seen in project \emph{activiti-activiti}), general exceptions such as \emph{AssertionError} or \emph{NullPointerException} make up the majority of the failures classified as both flaky and non-flaky.
+On the other hand, in projects with \textbf{no} false positives, like \emph{hector-client-hector}, almost all flaky failures are distinct from non-flaky failures in terms of exception types.
+ 
+
+The \classifier exhibits a notable occurrence of false positives. In this experiment, these false positives originated from mutation testing. Despite multiple runs to exclude flaky mutants, there remains a possibility of misclassifying non-flaky failures that happen to group with flaky failures ones. It's essential to recognize that real-world scenarios may differ from these experimental results.
+
+In the \tfidf approach, I noticed that the number of true positives (\textbf{TP}) is relatively low compared to the \classifier. However, there is a significant reduction in the false positive rates. This approach performs well in projects that have a reasonable number of flaky failures, except for the \alluxio project, where a large number of flaky failures are associated with NullPointerExceptions, leading to challenges in classification.
+This \tfidf approach exhibits poor performance in projects where flaky failures are presented in an assertion format, such as in the \websocket. The model struggles to accurately identify flaky failures in such scenarios.
+Overall, the \tfidf approach shows promise in projects with a moderate number of flaky failures but requires careful consideration and adjustments to handle specific patterns, such as NullPointer and Assertion exceptions to achieve better performance. 
+
+
+
+The usability of different machine learning approaches varies based on the specific use case and objectives. If the main goal is to maximize the number of true positives (\textbf{TP}) without being overly concerned about the rate of false positives, the \classifier could be a good fit. In this scenario, the model is more focused on correctly identifying as many flaky failures as possible, even if it means accepting a higher number of false positives.
+One of the main advantages of the \classifier is its flexibility in extending the learned features. The model can be easily augmented with additional static and dynamic features extracted from each failure. The proposed features shown in Table~\ref{table:Features} are not exhaustive but serve as a starting point, particularly utilizing information available within the failure log, such as the log syntax.
+By leveraging these additional features, the failure log classifier can potentially enhance its performance and accuracy in identifying flaky failures.
+
+
+
+
+
+
+
+

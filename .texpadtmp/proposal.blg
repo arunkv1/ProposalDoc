@@ -1,0 +1,100 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: /Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.aux
+The style file: plain.bst
+I couldn't open database file bibfile.bib
+---line 223 of file /Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.aux
+ : \bibdata{bibfile.bib
+ :                     }
+I'm skipping whatever remains of this command
+I found no database files---while reading file /Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.aux
+Warning--I didn't find a database entry for "luo2014empirical"
+Warning--I didn't find a database entry for "7"
+Warning--I didn't find a database entry for "11"
+Warning--I didn't find a database entry for "28"
+Warning--I didn't find a database entry for "23"
+Warning--I didn't find a database entry for "16"
+Warning--I didn't find a database entry for "27"
+Warning--I didn't find a database entry for "17"
+Warning--I didn't find a database entry for "25"
+Warning--I didn't find a database entry for "26"
+Warning--I didn't find a database entry for "15"
+Warning--I didn't find a database entry for "9"
+Warning--I didn't find a database entry for "eck2019understanding"
+Warning--I didn't find a database entry for "lam2019root"
+Warning--I didn't find a database entry for "thorve2018empirical"
+Warning--I didn't find a database entry for "bell2018deflaker"
+Warning--I didn't find a database entry for "lam2019idflakies"
+Warning--I didn't find a database entry for "Pinto2020WhatIT"
+Warning--I didn't find a database entry for "alshammari2021flakeflagger"
+Warning--I didn't find a database entry for "gradlePreventingFlaky"
+Warning--I didn't find a database entry for "Podgurski03Automated"
+Warning--I didn't find a database entry for "Jiang17WhatCauses"
+Warning--I didn't find a database entry for "lam2020Understanding"
+Warning--I didn't find a database entry for "ahmad2021empirical"
+Warning--I didn't find a database entry for "van2001refactoring"
+Warning--I didn't find a database entry for "meszaros2007xunit"
+Warning--I didn't find a database entry for "garousi2018smells"
+Warning--I didn't find a database entry for "lei2012feature"
+Warning--I didn't find a database entry for "kohavi1995study"
+Warning--I didn't find a database entry for "SMOTE"
+Warning--I didn't find a database entry for "pintovocabulary"
+Warning--I didn't find a database entry for "pinto2020vocabulary"
+Warning--I didn't find a database entry for "habchi2022qualitative"
+Warning--I didn't find a database entry for "lampel2021life"
+Warning--I didn't find a database entry for "DT"
+Warning--I didn't find a database entry for "crossValidation"
+Warning--I didn't find a database entry for "tfidf"
+Warning--I didn't find a database entry for "tfidf1"
+Warning--I didn't find a database entry for "just2014defects4j"
+Warning--I didn't find a database entry for "saha2018bugs"
+Warning--I didn't find a database entry for "tomassi2019bugswarm"
+Warning--I didn't find a database entry for "bears"
+Warning--I didn't find a database entry for "haben2023importance"
+Warning--I didn't find a database entry for "just2014mutants"
+Warning--I didn't find a database entry for "shi2019mitigating"
+Warning--I didn't find a database entry for "coles2016pit"
+Warning--I didn't find a database entry for "An23JustInTime"
+Warning--I didn't find a database entry for "akli2023flakycat"
+You've used 0 entries,
+            2118 wiz_defined-function locations,
+            554 strings with 4867 characters,
+and the built_in function-call counts, 18 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There were 2 error messages)

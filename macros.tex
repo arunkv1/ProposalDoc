@@ -1,0 +1,381 @@
+\usepackage{booktabs}
+\usepackage{xspace}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}  
+\newcommand{\sysName}{FlakeFlagger\xspace}
+\newcommand{\vocabName}{vocabulary-based approach\xspace}
+\usepackage{flushend}
+
+\newcommand{\testName}[1]{%
+  \begingroup
+  \ttfamily
+  \begingroup\lccode`~=`/\lowercase{\endgroup\def~}{/\discretionary{}{}{}}%
+  \begingroup\lccode`~=`[\lowercase{\endgroup\def~}{[\discretionary{}{}{}}%
+  \begingroup\lccode`~=`.\lowercase{\endgroup\def~}{.\discretionary{}{}{}}%
+  \catcode`/=\active\catcode`[=\active\catcode`.=\active
+  \scantokens{#1\noexpand}%
+  \endgroup
+}
+\definecolor{c1}{HTML}{AD302E}
+\definecolor{c2}{HTML}{E9923E}
+\definecolor{c3}{HTML}{F8CC47}
+\definecolor{c4}{HTML}{428F4D}
+\newcommand{\rowHighlight}{\rowcolor{gray!15}}
+
+
+% Terms used :
+\newcommand{\stack}{stacktrace lines\xspace}
+\newcommand{\exception}{Exception\xspace}
+
+\newcommand{\failure}{failure message and stacktraces\xspace}
+\newcommand{\failures}{failure messages and stacktraces\xspace}
+
+
+% Table 1 
+
+
+% Names
+\newcommand{\syntax}{text-based matching\xspace}
+\newcommand{\classifier}{Failure Log Classifier\xspace}
+\newcommand{\tfidf}{{TF-IDF}\xspace}
+\newcommand{\flaky}{\emph{OnlyFlaky}\xspace}
+\newcommand{\nonflaky}{\emph{Only Non-Flaky}\xspace}
+\newcommand{\both}{\emph{Both}\xspace}
+
+
+% Project names
+\newcommand{\alluxio}{\emph{Alluxio}\xspace}
+\newcommand{\okhttp}{\emph{Okhttp}\xspace}
+\newcommand{\hbase}{\emph{Hbase}\xspace}
+\newcommand{\ambari}{\emph{Ambari}\xspace}
+\newcommand{\hector}{\emph{Hector}\xspace}
+\newcommand{\activiti}{\emph{Activiti}\xspace}
+\newcommand{\httpcore}{\emph{Httpcore}\xspace}
+\newcommand{\websocket}{\emph{Java-websocket}\xspace}
+\newcommand{\logback}{\emph{logback}\xspace}
+\newcommand{\wildfly}{\emph{Wildfly}\xspace}
+\newcommand{\http}{\emph{Http-request}\xspace}
+\newcommand{\spring}{\emph{Spring-boot}\xspace}
+\newcommand{\undertow}{\emph{Undertow}\xspace}
+\newcommand{\elastic}{\emph{Elastic-job-lite}\xspace}
+\newcommand{\orbit}{\emph{Orbit}\xspace}
+\newcommand{\exec}{\emph{Commons-exec}\xspace}
+
+
+
+
+
+\newcommand{\Space}[1]{}
+% list of general macros .. ~ removed just to manage when numbers between parenthesis .. ~ will be followed each command instead. 
+
+\newcommand{\numruns}{10,000} % number of runs ..
+\newcommand{\numtests}{22,244} % number of all tests ..
+\newcommand{\numflakyruns}{811} % number of observed flaky tests .. 
+\newcommand{\numprojects}{24} % number of projects in rerun .. 
+
+% after inspection phase
+\newcommand{\numtestsinspected}{22,244} % number of tests ( more than 10 flaky + no missing values) .. 
+\newcommand{\numflakyinspected}{808}%number of actual flaky tests ..
+\newcommand{\numflakypredict}{599}% number of predicted flaky tests ..
+\newcommand{\bestfscore}{67\%} % best F1 score
+\newcommand{\misstests}{298} % Tests ( flaky + non flaky) with missing values
+\newcommand{\missflaky}{three} % flaky with missing values .. 
+
+% number of projects in/out classification and others .. 
+\newcommand{\projectsin}{14}% projects have more than or(=) 10 flaky tests .. 
+\newcommand{\projectsout}{10}% projects have less than 10 flaky tests ..
+\newcommand{\projectsmaxflaky}{163} % a project has maximum number of flaky tests ..
+\newcommand{\projectsminflaky}{16} % a project has minimum number of flaky tests ..
+\newcommand{\projectsoneflaky}{4} % projects which have only one flaky test ..
+\newcommand{\projectshundredsflaky}{4} %  projects which have more than or(=) 100 flaky test ..
+
+% list of flaky tests by projects
+\newcommand{\springbootFlaky}{163}
+\newcommand{\hbaseFlaky}{145}
+\newcommand{\alluxioFlaky}{116}
+\newcommand{\okhttpFlaky}{100}
+\newcommand{\ambariFlaky}{52}
+\newcommand{\hectorFlaky}{33}
+\newcommand{\activitiFlaky}{32}
+\newcommand{\javawebsocketFlaky}{23}
+\newcommand{\wildflyFlaky}{23}
+\newcommand{\logbackFlaky}{22}
+\newcommand{\httpcoreFlaky}{22}
+\newcommand{\incubatordubboFlaky}{19}
+\newcommand{\httprequestFlaky}{18}
+\newcommand{\wrojFlaky}{16}
+\newcommand{\orbitFlaky}{7}
+\newcommand{\undertowFlaky}{7}
+\newcommand{\achillesFlaky}{4}
+\newcommand{\elasticjobliteFlaky}{3}
+\newcommand{\zxingFlaky}{2}
+\newcommand{\handlebarsFlaky}{1}
+\newcommand{\ninjaFlaky}{1}
+\newcommand{\assertjcoreFlaky}{1}
+\newcommand{\commonexecFlaky}{1}
+
+
+% FP results .. 
+\newcommand{\flaggerfp}{406} % total FP in FlakeFlagger .. 
+\newcommand{\msrfp}{4,683} % total FP in MSR .. 
+\newcommand{\mergefp}{314} % total FP in combined models .. 
+
+
+% related Works stats
+\newcommand{\idflakiesTotalFlaky}{422} % total flaky tests in idflakies .. 
+\newcommand{\idflakiesTotalprojects}{82} % total projects in idflakies ..
+\newcommand{\idflakiesNODFlaky}{191} % total NOD flaky tests in idflakies ..
+\newcommand{\idflakiesCommonProjects}{3} % Common project with rerun (consider SHA)
+\newcommand{\idflakiesRerunFlaky}{70} % flaky tests based on common projects
+\newcommand{\idflakiesCommonFlaky}{28} % common flaky tests based on rerun
+\newcommand{\idflakiesMissedFlaky}{42} % number of flaky tests that not observed by rerun
+
+\newcommand{\deflakerTotalFlaky}{96} % total flaky tests in deflaker ..
+\newcommand{\deflakerTotalProjects}{26} % total projects in deflaker ..
+\newcommand{\deflakerCommonProjects}{12} % Common project with rerun (consider SHA)
+\newcommand{\deflakerRerunFlaky}{20} % flaky tests based on common projects
+\newcommand{\deflakerCommonFlaky}{10} % common flaky tests based on rerun
+\newcommand{\deflakerMissedFlaky}{10} % number of flaky tests that not observed by rerun
+
+
+% FLAST part ..
+\newcommand{\FLASTdefalker}{57}
+\newcommand{\FLASTidflakies}{258}
+\newcommand{\FLASTsmells}{3,424}
+
+% Percentages lists ... 
+\newcommand{\missingtestsrate}{1.3} % ratio of tests with missing values to total tests.. 
+\newcommand{\flakytestsrate}{3.6} % ratio of flaky tests to total tests..
+\newcommand{\highestflakyrate}{20} % ratio of highest project (spring-boot) to total number of flaky tests ..
+\newcommand{\redbarsratio}{8} % how many projects where red bar appears as the majority ..
+\newcommand{\alluxiofailrate}{90}% ratio of flaky test failure in alluxio project .. 
+\newcommand{\NumFailingRunsTen}{33}% 268 flaky tests fail <=10 times .. 
+\newcommand{\NumFailingRunsHundred}{22}% 175 flaky tests fail (10:100] times .. 
+\newcommand{\NumFailingRunsThousand}{19}% 157 flaky tests fail (100:1000] times .. 
+\newcommand{\NumFailingRunsOthers}{26}% 210 flaky tests fail >1000 times .. 
+
+
+% missclassified result .. 
+\newcommand{\missclassifiedrate}{26\%}% percentage of FN to flaky tests
+\newcommand{\FNokhttp}{63}% FN in okhttp
+\newcommand{\FNfourprojects}{74}% FN in activiti, logback, httpcore and wro4j
+\newcommand{\Flakyfourprojects}{92}% flaky tests in activiti, logback, httpcore and wro4j
+
+
+% smells part .. 
+\newcommand{\smellsflaky}{80\%}% percentage of flaky tests which have at least one smell
+\newcommand{\smellsnonflaky}{85\%}% percentage of non flaky tests which have at least one smell
+
+
+\usepackage{textcomp}
+
+{\makeatletter
+ \gdef\jonmark{%
+   \expandafter\ifx\csname @mpargs\endcsname\relax % in minipage?
+     \expandafter\ifx\csname @captype\endcsname\relax % in figure/caption?
+       \marginpar{\textcolor{blue}{jon~}}% not in a caption or minipage, can use marginpar
+     \else
+       \textcolor{blue}{jon~}% notice trailing space
+     \fi
+   \else
+     \textcolor{blue}{jon~}% notice trailing space
+   \fi}
+ \gdef\jon{\@ifnextchar[\jon@lab\jon@nolab}
+ \long\gdef\jon@lab[#1]#2{{\bf [\jonmark \textcolor{blue}{#2} ---{\sc #1}]}}
+ \long\gdef\jon@nolab#1{{\bf [\jonmark \textcolor{blue}{#1}]}}
+  % This turns them off:
+%  \long\gdef\jon@lab[#1]#2{}\long\gdef\jon@nolab#1{}%
+}
+
+{\makeatletter
+ \gdef\checkmark{%
+  \expandafter\ifx\csname @mpargs\endcsname\relax % in minipage?
+     \expandafter\ifx\csname @captype\endcsname\relax % in figure/caption?
+      \marginpar{\textcolor{red}{CHECK~}}% not in a caption or minipage, can use marginpar
+     \else
+      \textcolor{red}{CHECK~}% notice trailing space
+     \fi
+  \else
+     \textcolor{red}{CHECK~}% notice trailing space
+  \fi}
+ \gdef\check{\@ifnextchar[\check@lab\check@nolab}
+ \long\gdef\check@lab[#1]#2{{\bf [\checkmark \textcolor{red}{#2} ---{\sc #1}]}}
+ \long\gdef\check@nolab#1{{\bf [\checkmark \textcolor{red}{#1}]}}
+  % This turns them off:
+%  \long\gdef\check@lab[#1]#2{}\long\gdef\check@nolab#1{}%
+}
+
+{\makeatletter
+ \gdef\michaelmark{%
+   \expandafter\ifx\csname @mpargs\endcsname\relax % in minipage?
+     \expandafter\ifx\csname @captype\endcsname\relax % in figure/caption?
+       \marginpar{\textcolor{blue}{michael~}}% not in a caption or minipage, can use marginpar
+     \else
+       \textcolor{blue}{michael~}% notice trailing space
+     \fi
+     \textcolor{blue}{michael~}% notice trailing space
+   \fi}
+ \gdef\michael{\@ifnextchar[\michael@lab\michael@nolab}
+ \long\gdef\michael@lab[#1]#2{{\bf [\michaelmark \textcolor{blue}{#2} ---{\sc #1}]}}
+ \long\gdef\michael@nolab#1{{\bf [\michaelmark \textcolor{blue}{#1}]}}
+  % This turns them off:
+%  \long\gdef\michael@lab[#1]#2{}\long\gdef\michael@nolab#1{}%
+}
+
+
+\definecolor{paulcolor}{rgb}{0.44, 0.26, 0.08}
+{\makeatletter
+ \gdef\paulmark{%
+   \expandafter\ifx\csname @mpargs\endcsname\relax % in minipage?
+     \expandafter\ifx\csname @captype\endcsname\relax % in figure/caption?
+       \marginpar{\textcolor{paulcolor}{paul~}}% not in a caption or minipage, can use marginpar
+     \else
+       \textcolor{paulcolor}{paul~}% notice trailing space
+     \fi
+   \else
+     \textcolor{paulcolor}{paul~}% notice trailing space
+   \fi}
+ \gdef\paul{\@ifnextchar[\paul@lab\paul@nolab}
+ \long\gdef\paul@lab[#1]#2{{\bf [\paulmark \textcolor{paulcolor}{#2} ---{\sc #1}]}}
+ \long\gdef\paul@nolab#1{{\bf [\paulmark \textcolor{paulcolor}{#1}]}}
+  % This turns them off:
+%  \long\gdef\paul@lab[#1]#2{}\long\gdef\paul@nolab#1{}%
+}
+
+\definecolor{abdulcolor}{rgb}{0.0, 0.37, 0.23}
+{\makeatletter
+ \gdef\abdulmark{%
+   \expandafter\ifx\csname @mpargs\endcsname\relax % in minipage?
+     \expandafter\ifx\csname @captype\endcsname\relax % in figure/caption?
+       \marginpar{\textcolor{abdulcolor}{abdul~}}% not in a caption or minipage, can use marginpar
+     \else
+       \textcolor{abdulcolor}{abdul~}% notice trailing space
+     \fi
+   \else
+     \textcolor{abdulcolor}{abdul~}% notice trailing space
+   \fi}
+ \gdef\abdul{\@ifnextchar[\abdul@lab\abdul@nolab}
+ \long\gdef\abdul@lab[#1]#2{{\bf [\abdulmark \textcolor{abdulcolor}{#2} ---{\sc #1}]}}
+ \long\gdef\abdul@nolab#1{{\bf [\abdulmark \textcolor{abdulcolor}{#1}]}}
+  % This turns them off:
+%  \long\gdef\abdul@lab[#1]#2{}\long\gdef\abdul@nolab#1{}%
+}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{verylightgray}{rgb}{0.94,0.94,0.94}
+
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightblue}{rgb}{0.61,0.78,0.91}
+\definecolor{lightpurple}{rgb}{0.85,0.83,0.91}
+
+\lstdefinelanguage{HTML5}{
+        language=html,
+        sensitive=true, 
+        alsoletter={<>=-},
+        otherkeywords={
+        % HTML tags
+        <html>, <head>, <title>, </title>, <meta, />, </head>, <body>,
+        <canvas, \/canvas>, <script>, </script>, </body>, </html>, <!, html>, <style>, </style>, ><
+        },  
+        ndkeywords={
+        % General
+        =,
+        % HTML attributes
+        charset=, id=, width=, height=,
+        % CSS properties
+        border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:
+        },  
+        morecomment=[s]{<!--}{-->},
+        tag=[s]
+}
+
+
+\lstdefinestyle{inlinecode}{basicstyle=\ttfamily,language=Java, backgroundcolor = \color{lightgray}, breaklines=true}
+\lstdefinestyle{inlinesql}{basicstyle=\ttfamily,language=SQL, backgroundcolor = \color{lightgrey}, showspaces=false,                
+        showstringspaces=false,
+        showtabs=false, breaklines=true}
+\lstdefinestyle{inlinehtml}{basicstyle=\ttfamily,language=Java, backgroundcolor = \color{lightgrey}, 
+        showtabs=false, breaklines=true} %I actually DONT think we should have code colors in this so this is set to "java" to not highlight HTML tags.
+\lstset{
+	language=Java,
+        basicstyle=\small,
+	breaklines=true,
+	showspaces=false,
+	showstringspaces=false,
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	abovecaptionskip=2pt,
+	captionpos=b,
+	numbers=left,
+	frame=single,
+	xleftmargin=10pt,
+	xrightmargin=5pt,
+	numbersep=2pt,
+	framexleftmargin=7pt,
+	framexrightmargin=0pt,
+	numberstyle=\color{gray},
+	keywordstyle=\color{blue},
+	tabsize=2,
+	keepspaces=true,
+	moredelim=[is][\underbar]{ZZ}{ZZ},
+    escapeinside={/*@}{@*/},
+	upquote=true
+}
+
+\lstdefinestyle{smalljava}{
+	language=Java,
+        basicstyle=\footnotesize,
+	breaklines=true,
+	showspaces=false,
+	showstringspaces=false,
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	abovecaptionskip=2pt,
+	captionpos=b,
+	numbers=none,
+	frame=single,
+	xleftmargin=4pt,
+	xrightmargin=4pt,
+	numbersep=0pt,
+	framexleftmargin=0pt,
+	framexrightmargin=0pt,
+	numberstyle=\color{gray},
+	keywordstyle=\color{blue},
+	tabsize=2,
+	keepspaces=true,
+	moredelim=[is][\underbar]{ZZ}{ZZ},
+    escapeinside={/*@}{@*/},
+	upquote=true
+}
+\lstdefinestyle{smalljavanumbered}{
+	language=Java,
+        basicstyle=\footnotesize,
+	breaklines=true,
+	showspaces=false,
+	showstringspaces=false,
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	abovecaptionskip=2pt,
+	captionpos=b,
+	numbers=left,
+	frame=single,
+	xleftmargin=4pt,
+	xrightmargin=4pt,
+	numbersep=0pt,
+	framexleftmargin=3pt,
+	framexrightmargin=0pt,
+	numberstyle=\color{gray},
+	keywordstyle=\color{blue},
+	tabsize=2,
+	keepspaces=true,
+	moredelim=[is][\underbar]{ZZ}{ZZ},
+    escapeinside={/*@}{@*/},
+	upquote=true
+}
+
+
+% \newcommand{\code}{\lstinline[style=inlinecode]}
+\newcommand{\inlinesql}{\lstinline[style=inlinesql]}
+\newcommand{\inlinehtml}{\lstinline[style=inlinehtml]}

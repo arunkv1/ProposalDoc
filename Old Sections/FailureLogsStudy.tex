@@ -1,0 +1,142 @@
+
+\section{Flaky Failure Logs: Study}
+\label{sec:failureLogsStudy}
+
+This is a summary of my study section in the paper currently under preparation.
+% \jon{i would write "under preparation" until it is submitted}. \abdul{Done}
+
+
+The detection of test flakiness can be achieved through various methods, and one such method is to debug failure logs, as highlighted in a study by Habchi et al. \cite{habchi2022qualitative}. Some developers might prefer this technique over others due to the fact that rerunning or using other detection methods could require significant resources and expertise. However, manual debugging can be a challenging approach, particularly when attempting to determine if a particular failure is due to flakiness or not. This is because the process can be time-consuming and demands a high level of skill and attention to detail in order to accurately identify if the failure is flaky or not. Failure logs can be particularly complex, especially in large and distributed systems, and require a deep understanding of the system's architecture, programming language, and all other dependencies to effectively analyze the logs.
+
+
+Experienced developers may sometimes be able to identify whether a failure is flaky or not by examining the failure message and stacktrace, as discussed in a Gradle blog post on preventing flaky tests~\cite{gradlePreventingFlaky}.
+This implies that developers can recognize flaky failures because they have encountered similar failures before, which means that flaky failures could be not unique in their failure exceptions. To gain a deeper understanding of this technique, I am currently analyzing the failure logs of flaky tests documented in Section~\ref{sec:flakeFlaggerStudy}. Specifically, my aim is to collect the failure logs from each reported flaky test in order to determine if each flaky failure, as indicated by its log, has been previously reported. The primary research questions I am addressing are as follows:
+
+
+\begin{description}
+  \item[\textbf{RQ1:}] Do flaky failures match for the same test across different executions of the test suite?
+  \item[\textbf{RQ2:}] Do flaky failures match for different tests within the same execution of a test suite?
+
+ \end{description}
+ % \jon{Before going into the study design, I would suggest a paragraph or two right here describing what the implications of this study could be: if the answer to RQ1 and RQ2 is "yes", then how does that contribute to your overall goal?}\abdul{How about the following paragraph?}\jon{Looks great!}
+
+By providing answers to the two research questions (RQs), developers can enhance their decision making process when it comes to utilizing logs to compare newly discovered failures with known flaky failures, in order to assess the potential flakiness of the new failures. The first RQ investigates whether a failure can be identified as flaky if its log matches previous flaky failures based on the failure exception and stacktrace lines. 
+However, it should be noted that this does not necessarily imply that unique failures (failures that do not match any previously detected flaky failures) identified by their failure exception and stacktrace lines are not also flaky; they may simply not have been detected before. To address this aspect, the study aims to determine the proportion of unique failures in each flaky test that contains more than one flaky failure. The second RQ is formulated and discussed due to the occurrence of certain flakiness root causes that can lead to multiple tests failing simultaneously. For instance, if numerous tests share resources that may intermittently become unavailable, all dependent tests could fail. The study intends to assess the likelihood of flaky tests that fail concurrently sharing the same failure exception and stacktrace lines.
+
+\newpage
+\input{Listings/flakyFailure}
+% \jon{Should line 3 end tag be </E>?}\abdul{Done}
+
+ \subsection{Study Design}
+
+To initiate this study, I collected the failure logs from the rerun experiment that was described in Section~\ref{sec:flakeFlaggerStudy}. For each flaky test, there was a collection of failure logs, with each log representing a specific failure that occurred during a particular run. I extracted the primary pieces of information that developers typically rely on when manually debugging from each failure log, which were the failure message and stacktrace lines. While the failure message in a log provides an overview of what went wrong in a test, examining the stacktrace lines is providing more details for identifying the root cause of a failure, as it provides a list of method calls that led to the failure. Both of them, in each failure, are used to generate an XML file for each flaky test, which contained all of its flaky failures. Each element in each test XML file corresponded to a specific type of failure based on its failure message and stacktrace lines.
+
+% \jon{I suggest introducing 1-2 examples of failures here (before describing E/M/S), including the project name, test name, and complete exception/message/stacktrace. The following paragraphs can then reference back to those examples to explain what a "match" would be} \abdul{Next two paragraphs.}
+% \jon{Looks great!}
+
+Listing~\ref{lst:flakyFailures} shows two \emph{Failure} tags that correspond to two flaky failures reported in one of the tests of the \emph{alluxio} project. Each \emph{Failure} tag includes four primary sub-tags that describe each failure: test name (\textbf{T}), exception type (\textbf{E}), exception message (\textbf{M}), and stacktrace lines (\textbf{S}). The \textbf{T} tag provides the project to which the test belongs. The original failure message in the log follows the format of \textbf{E}:\textbf{M}, where \textbf{E} specifies the exception type (e.g., java.net.UnknownHostException), and \textbf{M} includes any text that comes after the exception. When analyzing the stacktrace lines (\textbf{S}), only the initial lines leading up to the test name are considered. This is because the top lines in a stacktrace represent the most recent method calls that were executed before the exception occurred and are often the ones most directly related to the root cause of the exception. The lower lines may still provide valuable information for debugging, but they are generally less relevant to the root cause of the exception. If the test name is not present in the stacktrace (such as failures occurring in the start or before methods in Listing~\ref{lst:flakyFailures}), the last line of the test class is taken as the final line from the stacktrace.
+
+
+The failure message might contain distinct information associated with the specific time when the test fails. Consequently, when comparing two test failures using the elements (\textbf{E}), (\textbf{M}), and (\textbf{S}) as criteria, they may differ due to the unique information provided by the failure. For instance, the two failures shown in Listing\ref{lst:flakyFailures} could initially be perceived as separate failures, despite appearing identical except for the IP address mentioned in \textbf{M}. To compare two failures, I exclude the failure message \textbf{M} to prevent mismatched failures arising from this factor. While considering only \textbf{S} may not alter anything when comparing two failures, incorporating \textbf{E} provides additional information during the comparison of failures.
+
+
+
+
+
+% \jon{I think that these two paragraphs clearly describes what you did, but does not completely capture why. Consider a reader who has no familiarity with flaky tests and matching failure logs. Why trim lines from the stacktrace? Why consider stacktraces at all? What would happen if you made different choices here?}\abdul{few updates in the previous paragraphs that hopefully capture Jon notes}\jon{Better now}
+
+
+
+Various factors such as network or shared resources can cause test flakiness that impacts more than a single test, leading to multiple tests failing at the same time and producing similar failure logs. During manual debugging, developers may categorize a failure as flaky if it resembles a previous failure, even if it is not necessarily from the same test. To detect common failure logs, it is essential to compare failures from tests within the same test suite run, as well as failures from the same test. 
+% Although it is possible to compare failure logs from two different projects, the domain of the two projects could impact the accuracy of matching. 
+For the purpose of this study, I focus only on the two methods of comparing failures mentioned above. In the second method, when comparing failures, the stacktrace line that includes the failed test name is excluded to prevent mismatches due to differences only in the test name line.
+% \jon{You are the one proposing these two methods here (not prior work) - can you provide some deeper discusion (at least a few sentences) of why it makes sense to consider these two methods, and whether there might be altenratives that you did not implement?} \abdul{Updated, but not sure if I captured the whole idea} \jon{Better now}
+
+
+When dealing with a flaky test that exhibits multiple failures, I \emph{cluster} all failures based on the type of exception and stack trace lines. If there are two failures which have exactly the same exception type and stack trace lines, the expected to be in the same cluster. If a cluster consists only one failure, it is referred to as a unique cluster. Conversely, a non-unique cluster contains multiple failures. The uniqueness of a cluster indicates that the corresponding failure has been encountered only once, which implies challenges for developers when relying on previous knowledge. Equation~\ref{ScoreEq} quantifies the proportion of non-unique failures, providing a measure of the likelihood of similarities between these failures and other flaky failures.
+
+
+
+% clustor instead of set 
+\begin{equation}
+    \label{ScoreEq}
+  \text{NU score} = \frac{\text{Total number of non-unique clusters of failures}}{\text{Total number of failures clusters}}
+\end{equation}
+
+
+
+
+\subsection{Initial Study Result}
+
+Table~\ref{tab:matchTable} presents a comprehensive overview of the study findings, containing three primary sections. The first column, labeled \emph{Total Flaky Tests and Failure}, provides fundamental statistical information derived from the collected failures including the number of studied flaky tests and the minimum, average, and maximum number of failures per test. 
+The second column, titled \emph{Same Test Different Builds}, focuses on the matching of each test failure with other observed failures of the same test, in different test suite runs. 
+I classify tests into six groups based on the number of flaky failures that we observed when running them 10,000 times.
+For instance, tests that had flaky failures only twice belong to the group labeled \textbf{[2,3)}.
+\sout{Then, for each of these groups, I provide the value \textbf{F}, which represents the total number of failure clusters from the tests in that group. Additionally, I calculate \textbf{NU} for each group of failure clusters.}
+Then, I computer the value \textbf{S} exclusively for the first group, and \textbf{F} and \textbf{NU} for the remaining groups. \textbf{S} pertains to the total count of failure clusters arising from tests that experienced only one failure each. On the other hand, the term \textbf{F} represents the overall count of failure clusters resulting from the tests in each group, regardless to the number of failures within each cluster. The value \textbf{NU} corresponds to the percentage of clusters that contain at least two failures relative to the total number of clusters in the group.
+The third column, titled as \emph{Different Tests Same Test Suite Run}, follows a similar computation method, but this time the grouping is based on the total number of failed tests in a single test suite run. For instance, if a test suite run encounters 3 failed tests, all the failures within that run are categorized into the group labeled \textbf{[3,10)}. As for the value of \textbf{F} in this column, it refers the clusters of failures within the grouped test suite runs.
+\jon{I don't think that this explanation of the table clearly explains what the intervals mean in the header}\abdul{How about now? I feel that the description I want to deliver is too long to fit within the table's caption.}
+\jon{This helps with the intervals. However: I think that the part that is still unclear is: are F and NU averages across all tests within that group? Or: are they totals across all of the tests?}\abdul{I rephrase it in order to be more clear. It is a total failure clusters from all tests within a group.}
+
+\input{tables/FailureLogsStudy}
+
+% RQ1 
+\textbf{RQ1: Do flaky failures match for the same test across different executions of the test suite?} In Table~\ref{tab:matchTable}, the result per each project has been computed. For instance, the first row is a summary of the project \spring. Among the 10,000 trials, there are 163 flaky tests that have failed an average of 1753 times. Within these 163 failures, I observe the following distribution of failure clusters: 16 failure clusters consist of tests that failed only once, 19 failure clusters from tests that failed between 3 to 10 times (\textbf{[3-10)}), 32 failure clusters from tests that failed between 10 to 100 times (\textbf{[10-100)}), and 299 failure clusters from tests that failed more than 1,000 times.
+Of the 19 failure clusters in the group \textbf{[3-10)}, 74\% of them contain at least two failures, indicating that the remaining clusters only have a single failure.
+In terms of the \emph{Different Tests Same Test Suite Run} column in the first row, I found 4,441 test suite runs that include only one failed test. Additionally, there are 36 failure clusters from test suite runs with two failed tests, and none of these clusters have more than one failure (0\%).
+% \jon{Given the complexity of the table, I would suggest quickly providing one or two example findings in prose. Example:
+% For example, in the first row, we can see that there were 163 flaky tests, failing an average of 1,753 times (out of the 10,000 trials).
+% Of those failures, there are 16 unique failure clusters, 19 failure clusters that match 3-10...}\abdul{How about now?}
+% \jon{this is better, thanks.}
+
+
+% Generally, there is an increase in non-unique failures across multiple projects, by finding many projects with 100\% scores.
+In numerous projects, a consistent primary observation is that the non-unique proportion (\textbf{NU}) reaches 100\% in the \emph{Same Test Different Builds} results, implying that flaky failures frequently occur. This finding supports the idea that developers often depend on their past experiences with flaky failures to help them identifying these failures flakiness.
+\jon{I don't understand this sentence. Is the meaning: results for NU across projects are quite similar?}
+\abdul{I meant that the concept of NU is not detected only in one project indicating that this could be usefull approach regardless to the project domain.}
+\jon{Here is some proposed new text:
+A key finding is that, for many projects, the non-unique proportion (NU) is 100\% in the ``Same Test Different Builds'' configuration, implying that flaky failures often repeat.
+This is important because...}\abdul{How about now}
+Another notable finding is that tests experiencing frequent flakiness do not always exhibit similarities among their failures consistently. For example, approximately 30\% of the flaky failures that occur more than 100 times in \emph{hbase} are classified as unique failure clusters. On the other hand, within the same project, there are no unique clusters among failures that exhibit flakiness less than 10 times. This prompts me to conduct a comprehensive analysis of the factors contributing to the occurrence of unique failure clusters.
+
+According to the study findings, there are a total of 101 failure clusters that are classified as unique across all projects. These unique failures contribute to a decrease in UN scores. Among these clusters, 82 of them are considered unique because they differ either in the exception type, the line from the stack trace that begins with the test name, or both. These cases indicate entirely distinct failures, as each one is associated with a different line of test code. In comparison to the non-unique failures, I am investigating whether specific factors, such as test complexity or the type of exception, could be connected to the presence of unique failure clusters. Alternatively, it is possible that uniqueness occurs independently and may be related to the underlying causes of flakiness in general.
+
+I have examined three factors, namely test length, the number of lines in the stack traces, and the total number of assertion statements, to assess the complexity of each flaky test. Using these factors, I conducted an analysis of both unique and non-unique failures to investigate potential connections with specific clusters.
+For instance, in the \emph{java-websocket} project, the only unique failure cluster exhibited a significantly larger number of lines in the test body compared to all tests associated with non-unique failure clusters (79 lines versus a maximum of 3 lines). In the \emph{spring-boot} project, it was observed that all unique failure clusters had a median of 73 stack trace lines, while considering both unique and non-unique failure clusters resulted in a median of 4 stack trace lines. Additionally, in the \emph{undertwo} project, there were two distinct tests with unique failure clusters, and these tests shared the highest number of assertion statements when compared to other tests.
+\sout{Overall, there is no single factor among these that consistently correlates with unique failure clusters across all projects. However, the impact of these factors varies from one project to another. This analysis provides valuable insights into the relationship between test complexity factors and the occurrence of unique failure clusters.}
+In general, no single factor consistently correlates with unique failure clusters across all projects, as the impact of these factors varies from one project to another. It is crucial to avoid relying on a single factor to determine the uniqueness of a failure. Instead, it is essential to examine multiple factors when necessary. By doing so, a more comprehensive and accurate assessment of failure uniqueness can be achieved, taking into account the specific characteristics of each individual project.
+\jon{The valuable insights are not clear to me - it seemed more like there was no clear pattern/finding?}\abdul{I may not explain it well, I try to see if there is a specific pattern between having unique failure with some discussed factors.}
+\jon{Can you add a sentence or two explaining why it is a valuable insight to see that there is no pattern between these factors? The implications of this are not otherwise motivated in the preceeding text.}\abdul{How clear is it now?}
+
+
+Regarding exceptions, I discovered that the \emph{java.lang.IllegalArgumentException} is detecting in 5 unique clusters in two different projects (\emph{Alluxio} and \emph{hbase}, while in \emph{hbase}, it is associated with also a non-unique cluster in only one case. Interestingly, all these tests with unique clusters also have non-failure clusters linked to the \emph{UnknownHostException}. This suggests that considering the correlation among failures per test can help establish connections between the project domain and failures. It is possible that some exceptions occur due to infrequent causes of flakiness. For instance, in the \emph{wro4j} project, there are only two unique failure exceptions, originating from separate tests, but sharing the same type of failure exception (\emph{java.net.SocketTimeoutException}). Upon conducting a comprehensive analysis, I noticed that these two unique failures occurred consecutively during test suite runs and exhibited similar stack trace lines, except for the lines specific to the respective tests involved. 
+
+To enhance the analysis of exceptions in relation to their occurrence in unique and non-unique failures, I gathered data on the various exception types present in all unique failures. For each exception type, I then determined the frequency of its appearance in non-unique failures, as indicated in Table~\ref{table:uniqueExceptions}. This investigation aimed to identify exceptions that might be closely associated with causing unique failures.
+From a total of 72 unique clusters, I identified 16 different exceptions. Among these exceptions, only two, namely \emph{java.lang.IllegalArgumentException} and \emph{java.net.SocketTimeoutException}, were more observed in unique clusters than in non-unique ones. However, it is also occurred once in non-unique failures even for these two exceptions. 
+Despite examining these exceptions, it remains challenging to establish a direct link between the uniqueness of a failure and the specific type of exception. Furthermore, I observed that even in exceptions that are specific to a particular project, like \emph{org.apache.hadoop.hbase.client.NoServerForRegionException}, cannot be definitively linked to the cause of uniqueness.  
+\jon{What about including the analysis of exception types in this proposal, or, describing it as future work?}\abdul{I have not discussed it here. I discuss only the exception type when we compare flaky with non flaky? If you think it is good to be discussed here, I can provide 1-2 paragraphs here. }
+\jon{I think that it is interesting and relevant to discuss here, too.} \abdul{I added this paragraph to briefly discuss the relationship between the uniqueness and exception type. Any further comments here?}
+
+\input{tables/uniqueExceptions}
+ 
+In general, it is common for newly detected flaky failures to have matches with previously known detected failures. This practice helps in identifying recurring patterns and establishing a connection between similar failures. However, there are cases where a failure does not have a previous match. Cases where flaky failures have no common cause or previous match require additional investigation to understand their underlying causes. The study findings suggest that these unique cases do not have a shared or identifiable cause among them.
+
+% One of the observed factors is when the failed test is complex e.g. contains multiple assertion statements, which is subject to have many failures with different stack trace lines. 
+% For example, a flaky test in the "okhttp" project demonstrates this behavior by having three different assertion statements. \jon{I'm not sure what this is trying to say - that the reason why it doesn't match is because there are many different assertions that could fail?} \abdul{Yes, this is what I want to say, but the example sounds weak. I am thinking to study the correlation between the test size ( Test Lines of Code numbers from FlakeFlagger dataset)}
+% \sout{We have not identified any particular projects that exhibit a higher occurrence of non-unique failures compared to others.}  \jon{Is apache-hbase different than the others? Or wro4j? The numbers seem the most different for these projects compard to the others, and maybe we should mention this along with a 1-2 sentence explanation for why that might be.} \abdul{I am working on finding why apache-hbase has many unique failure clusters.}
+% \sout{This leads us to the conclusion that non-unique failures are not specifically tied to the nature of the project itself. However, we have observed that there are four projects with over 10 tests that exhibit flakiness, occurring once. In these projects, a significant portion of the flaky tests, even those that exhibit flakiness multiple times, have unique failures.}
+% I noticed that most of the flaky tests in Spring-boot failed more than half of the total number of runs and none of these failures have been reported as a unique failure. With a close look, we have founds that around third-quarter of the failures comes from the \emph{parameterized} tests. 
+
+
+
+
+
+
+% DQ2
+\textbf{RQ2: Do flaky failures match for different tests within the same execution of a test suite?} The main observation from the \emph{Different Tests Same Test Suite Run} result that when a test suite has more failed tests, it is more likely to have similar failures. This could be because the root cause of the failures affect many tests to be failed with the same failures. For example, all flaky failures in Alluxio projects that are under the category [20,200) come always from 116 tests (the total number of flaky tests in the project). That means the same root cause that forces all 116 tests to fail together and \emph{all} failures due to the \emph{UnknownHostException}, similar to the example shown in listing~\ref{lst:flakyFailures}. 
+The reason behind the uniqueness of the remaining failures within this category lies in the fact that each failure is specific to its corresponding test class.
+Similarly to the project spring-boot, we have found around third quarters of failures that are not unique and most of the failures shares similar exceptions. 
+In some instances, there are test suites with a small number of failed tests where multiple failures exhibit similar logs. 
+For instance, approximately one quarter of the test suites in the "java-websocket" project that have two failed tests fall into this scenario. 
+In each of these test suites, the two failures share an identical stack trace. Furthermore, it is interesting to note that neither of the test names is included in these stack traces, suggesting that the failures stem from a common underlying cause.
+

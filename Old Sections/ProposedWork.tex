@@ -1,0 +1,33 @@
+\section{Proposed Work}
+\label{sec:proposedWork}
+
+
+For the remainder of my PhD program, I intend to concentrate on two primary areas. The first area will involve expanding my research on failure logs to address issues that have arisen during my present work. The second area will involve utilizing machine learning techniques to predict the underlying cause of test flakiness.
+
+
+\subsection{Failure logs in Test Flakiness}
+
+Failure logs are the main source that describe how the test fails. Also, failure logs are the source that mostly being accessible from the developers side. As discussed in Section \ref{sec:failureLogsStudy}, developers use failure logs manually to tell if failure due to flakiness or not. However, there is light efforts on how proposing tools to leverage the details of failure logs to analyze flaky failures. 
+
+There are some interesting findings during my work in analyzing failure logs for flakiness detection. There are a numerous amount of failure logs that comes as assertion error e.g. expected X but got Y. I am planning to see if there are hard-to-detect differences from flaky failures with these messages in the failure logs with non flaky failures that contain the same failure structure. I am planning to study the values of X and Y in the failure message and how close, for example, the X value in flaky failure from the X values in non flaky failures. I want to reach if having failure logs with these types of failures messages are enough to stop continuing debugging the failure logs and use alternative techniques. Similar to these failure exception are failures that comes with NullPointer exceptions.
+
+Another finding is to analyze the failures logs of tests that fail together and how these logs differ in terms of the root causes of this type of failures with the root causes of tests which flakes randomly and, in some cases, separately. This includes comparing the failure logs of tests that have been previously reported as order dependent flaky tests. I would like to conclude that the failure logs of order and non order dependent differ and how the root cause make these failure logs are different. I am planning to collect the failure logs of of the same flaky tests detected in Section \ref{sec:flakeFlaggerStudy}, but in previous studied \cite{lam2019idflakies}. 
+
+
+I am planning to investigate more on how mutation variants linked to revealing flaky failures. In Section \ref{sec:failureLogsApproach}, I use killed mutants failure exceptions as a substitute for non flaky failures for the dataset I am studying currently. As mutants could be flaky as well which also claimed in Section \ref{sec:failureLogsApproach} by running the killed mutants many times, I am trying to investigate between the link of mutants being flaky compared to the test flaky failure with the mutant variants. 
+
+Another interesting direction in this area is to study the reproducibility of flaky failures and whether certain flaky failures logs can not be detected in certain running environments. One of the main problem that developers encounter is how to reproduce the same failures to be further analyzed by the testing team, which it is sometime is hard to run the same tests on the same environment due to various reasons such as accessibility and authentication. I am planning to see how flaky failure logs may differ if I rerun the same experiment in Section \ref{sec:flakeFlaggerStudy}, but with different environments setting.
+
+
+\subsection{Machine learning}
+
+Machine learning has been used in test flakiness to leverage the effectiveness to detect flaky tests. Large amount of the Machine learning current work aims to detect flaky tests, I would like to participate in this field, in addition to my first work, by propose a tool that aim to help developers when they analyze the root cause of the test flakiness. This is important to help developers how to fix the cause and and assign the task. I am planning to take the advantages of code coverage, libraries usages and failure logs exceptions to predict flakiness cause. With some cases where developers have no prior knowledge about other flaky test causes, and instead of debugging every failure log to know the cause, the tool should cluster the failure logs based on the similarity of the expected causes. This will reduce the overhead to go though every failure log to analyze a cause that could be common across different tests. 
+
+Another interesting topic I plan to investigate to expect which test in the test suite that could be flake by knowing that one test in the same test has been detected as a flaky. Giving a flaky test, the main questions I am interested in is what is the possability percnetage for each test in the same test suite that could flake in future runs. I am planning to take into consideration the static and dynamic features that have been proposed in Table X. My end goal is to have some dynamic tool that monitor the failed test and order not yet detected flaky tests in a specific order where thwe first test means it is most likely to flake in future runs. 
+
+Another work is to extend the failure log classifer presented in Section \ref{sec:failureLogsApproach}, by representing the failure messages after being preprocessed and extract tokens that can be used in addition to the already studied features. I aim to reevaluate the classifier again with the extended list of features. I am planning to use the Association Rules technique as a main ML approach that will take only the failure excpeiton and message. My goal is to build a dataset of a rules that commonly seen in flaky failures even in different projects. The proposed tool will take any failure excpetion and message and predict if this failure could be flaky because of the co-occurance of certain tokens in the previous known flaky failures. 
+
+
+
+% One of the common failures logs is when it comes as a format of assertion e.g. expect true but was false. This is a common type even in flaky failures. X\% of flaky tests in FlakeFlagger dataset have at least one failure within the assertion format. It is obviously that this type of failures contains information might be hard to linked to a specific type of failure e.g. flaky or not flaky. I am going to study if the these failures types may contain information to tell if a failure is more likely to be flaky or not.
+

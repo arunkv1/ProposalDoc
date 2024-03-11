@@ -1,0 +1,112 @@
+\section{FlakeFlagger: Flaky Test Classifier}
+\label{sec:flakeFlaggerClassifier}
+
+% \input{tables/FlakeFlaggerFeatures}
+
+\begin{figure*}[t]
+%\captionsetup{singlelinecheck = false, justification=justified}
+  \includegraphics[width=0.9\textwidth]{Figures/overview.pdf}
+  \centering
+  \vspace{-5pt}
+  \caption{Overview of \sysName's approach to predict likely flaky tests given a set of known flaky tests.}
+  \vspace{-15pt}
+  \label{over_all_graph}
+\end{figure*}
+\vspace{-5pt}
+
+This section is a summary of the \emph{approach} section in my paper ``FlakeFlagger: Predicting Flakiness Without Rerunning Tests" published in ICSE2021 \cite{alshammari2021flakeflagger}.
+
+\sysName is a Machine Learning (ML) approach to identify which tests in a test suite are flaky, \emph{without} rerunning them many times. \sysName learns from existing flaky tests in order to predict unseen tests if they are flaky or not. \sysName can be used to search for flaky tests in a large test suite, where developers identify that a portion of the test suite is or is not flaky, and use \sysName to help label the rest of the tests as flaky or not. Also, \sysName could help in terms \emph{prioritize} which tests should be run first by reporting which tests are most likely to be flaky. 
+
+
+By proactively identifying flaky tests, we may also help developers understand why these tests are flaky.
+Prior work has suggested different properties of tests that might make them more likely to be flaky, and \sysName can report which of these features are present in each test~\cite{eck2019understanding,ahmad2021empirical}.
+In practice, if a feature has a strong correlation with flakiness, developers might choose to focus on this feature in their future test maintenance and development activities. 
+
+
+
+
+
+\subsection{Features Collections}
+\label{sec:detector}
+Machine learning classifiers such as \sysName require a set of feature in order to learn and predict. I started with the prior work \cite{luo2014empirical,eck2019understanding,bell2018deflaker} to study which features is highly linked to flakiness. I aim to collect verity of features because of the fact that some flaky tests in different projects often have different root causes for their flakiness\cite{luo2014empirical}. Similarly, some features that are predictive for one project may not be as predictive for others, due to the inherent non-determinism in flaky tests. 
+I intentionally collect some dynamic features, in addition to static features (e.g. presence of textual tokens in the body of each test method). This is important because some causes not in the test method itself, but instead, in the production code that is executed by that test \cite{eck2019understanding}.
+Ahmed et al. \cite{ahmad2021empirical} categorized 23 developer-reported factors which affect test flakiness. 
+These features are described by practitioners at a high level, and include test case complexity, hard-coded values and test smells.
+Eck et al. \cite{eck2019understanding} interviewed 21\Space{ professional} developers about flaky tests and tabulated the frequency of different kinds of flaky tests as well as developers' fixes for those flaky tests. 
+
+
+Inspired by previous studies on test flakiness, I developed a list of sixteen features, 
+some of are based on general studies on the causes of flaky tests \cite{luo2014empirical,ahmad2021empirical}, while others are defined as bad practices in writing unit tests.
+Hence, I considered all of the features described in the prior works, and then selected only those for which I could write automated detectors.
+This ends up with implementing detectors for each of the features shown in Table \ref{table:Feature_desc}. This list of features is not intended to be complete: there may yet be other features that can be easily collected and will be useful for predicting test flakiness.
+
+While some of the features can be detected by inspecting the test method statically (specifically, the conditional logic smell and test line of code), the rest of the features require more than static analysis.
+A hybrid static/dynamic framework \emph{detector} was developed to collect the statement coverage of each test, and then statically analyze the covered code in order to collect these behavioral features.
+The \emph{detector} also collect a variety of other features related to the statement coverage of each test, such as how many recently changed lines of code are covered.
+The \emph{detector} is implemented as an extension to the Maven build system.
+
+
+
+\subsection{Classification Process}
+
+FlakeFlagger takes a list of tests, where each of them is represented as a vector $\{x_1, x_2, x_3,\dots, x_n\}$  where each \emph{x} represents a feature value and \emph{n} correspond the total number of features. I applied data inspection and cleaning process to make that dataset more clear for the classification. Missing data can exist to the dataset due to the fact that some features collected by the detector can be incomplete e.g. due to crashes in the middle of the test execution. Some tests are not written in Java, and hence the feature detectors may not be applicable to them, and due to inheritance, some tests may not have source code in the project under test.
+
+As in any classification problem, considering multiple supervised learning algorithms could be better. In \sysName, it is designed to use a set of models including Random Forest (\emph{RF}) and Decision Tree (\emph{DT}. I follow a feature selection process using \emph{information gain}, which computes the amount of information that a feature can provide for a classification \cite{lei2012feature}. Imbalanced datasets (where there is not an equal number of instances in each class --- flaky and non-flaky tests in our case) usually have very low information gain values. 
+
+
+\subsection{Experimental Design}
+\label{sec:Prediction_Design}
+To evaluate \sysName, I used the same dataset described in Section \ref{sec:flakeFlaggerStudy}. I ran the detector described in Section \ref{sec:detector}, to collect the set of features shown in Table \ref{table:Feature_desc}. \sysName, similar to any machine learning classifiers, relies on two data sets: one to build the model (training) and another for testing. Because this is not already designed and I have only one dataset, I applied $k$-fold cross validation  \cite{kohavi1995study,bengio2004no} to evaluate our model. Following this practice, we split the data into $k$ parts, leave one part for testing and $k-1$ to train the classifier.
+We then repeat this process with another $k-1$ parts, each time leaving one part for testing.
+However, $k$-fold cross validation is most applicable to data that is evenly balanced, where the proportions of each class (flaky and not flaky) are similar. In fact, most tests are not flaky, which means imbalance data. To overcome this, I applied a sample technique SMOTE \cite{chawla2002smote} only on training dataset, to ensure a valid and fair result.
+
+
+\input{tables/Full_result}
+
+
+In our prediction evaluation, I label each prediction result as a True Positive (TP), False Negative (FN), False Positive (FP), or True Negative (TN) as follows:
+TP - predicted flaky, known to be flaky; FP - predicted flaky, not known to be flaky; FN - predicted not flaky, known to be flaky; TN - predicted not flaky, not known to be flaky.
+I also evaluate our models using F1-score, which is computed using the standard formula based on Recall and Precision. %, to evaluate how our approach works to detect flaky tests as $TP$s.
+%  \abdul{I added the following sentences ... } JB: Looks good!
+Lastly, I calculate the Area Under the Curve (AUC), a measure of how effective a model is at distinguishing classes (in our case, flaky and not flaky).
+
+In the evaluation, false positives represent the number of tests that might be considered as flaky by developers, resulting in excess effort spent re-running them to determine if they are flaky or not. I focus primarily on total positives, because I have confidence that the collected flaky tests are indeed flaky, but I cannot be confident in our classification of a test as not flaky. 
+In other words, the oracle is a result of detecting flaky tests after \numruns~runs for each test, but this does not guarantee that the ``not flaky'' tests are really not flaky: they may just not have been observed to be flaky. 
+This approach also allows us to confirm $FN$s are truly flaky tests because they fail at least once during rerun tests.
+However, because of the inherent non-determinism in flaky tests, I cannot construct a reliable oracle to evaluate $TN$s and $FP$s, but report them as-is.
+
+
+
+\input{tables/FlakeFlaggerFeatures}
+
+
+\subsection{Evaluation}
+I evaluate the FlakeFlagger classifier by answering the following two main research questions:
+
+
+\begin{description}
+  \item[\textbf{RQ1:}] How effective is \sysName at predicting flaky tests?
+  \item[\textbf{RQ2:}] How helpful is each feature in distinguishing between flaky and non flaky tests?
+
+ \end{description}
+
+\textbf{RQ1.} I used the results from rerunning tests (Section \ref{sec:flakeFlaggerStudy}) as the oracle for \sysName classification process, and ran the feature detector once on each of the same tests in order to gather the data needed to build a model.
+I considered several different approaches to process the data, and measure classifier performance with a confusion matrix, precision, recall, F1-score and AUC. Even I applied different classification algorithms and balance techniques, I found that the best prefroamcne was  random forest model built using the SMOTE technique for balancing the training data (and using unbalanced testing data). I compare the result of \sysName classifier with the one of the state-of-the-art flaky test classifier, a \vocabName proposed by Pinto et al.~\cite{pinto2020vocabulary} which extracts tokens from each test using a simple bag-of-words model. I considered a hybrid model that adds the token features to \sysName's features. I consider only projects that have at least 10 flaky tests to ensure as shown in Table \ref{table:Full_result}. 
+
+Overall, \sysName and the \vocabName  both detected a very similar number of flaky tests (599 and 583 respectively, out of a total of 808 flaky tests), but the two approaches varied in terms of precision --- \sysName had a far lower false positive rate with just \flaggerfp, compared to \msrfp~false positives from the \vocabName. Considering the initial use-case of a researcher or developer using \sysName to determine which tests to run time-intensive flaky test detectors on, using either \sysName or the \vocabName would result the same number of flaky tests eventually detected (that is, both have comparable recall).
+However, if a developer uses both models to detect tests that are most likely to be flaky (which are false positive tests), \sysName reports fewer rate than \vocabName (406 vs 4,683).
+
+\sysName's performance varied across projects: some projects (e.g., alluxio), had perfect precision and recall, while on others (e.g., okhttp and activiti) the approach was less successful. I investigated more about the results per projects and the performance could vary due to many reasons. First, the training and testing dataset sizes vary from one project to another. Because each project has its own environmental assumptions, development patterns, and other unique characteristics, it is really difficult to create a single general-purpose approach for flakiness classifications. Another reason for why performance varies across projects may be that not all flaky tests have been labeled correctly --- no rerun-based technique can guarantee to find all flaky tests (even after 10,000 reruns). The higher number of observed flaky tests in a single project does not guarantee that \sysName performs well.
+Some flaky failures are due to rare dependency conflicts and network failures that are not captured well from our features described in Table \ref{table:Feature_desc}.
+For example, okhttp has a high number of false positives and false negatives. With a further inspection on this particular project, there is a group of tests had all failed in the same way due to the same dependency problem in one single run.
+
+
+
+\input{tables/IG}
+
+\textbf{RQ2}. I reported the the information gain of each feature in \sysName's model, and the top 23 features in the model built using the \vocabName to get more insight about the effectivnes of these features. As shown in Table \ref{table:tokenbyig}, I noticed that features that considered dynamic behavior from each test (e.g., execution time, covered lines, and coverage of recently changed lines) had a far greater information gain than the tokens that were statically extracted from the test method bodies. I found that the top eight \sysName features each had a higher information gain than the highest gain vocabulary feature. In the model built using the \vocabName \cite{pinto2020vocabulary}, the features with the highest information gain were: test lines of code, presence of the `throws' Java keyword, and several tokens like `should', `exception', and `mtfs', each with an information gain significantly lower than the top features in \sysName's model.
+
+The majority of the flaky tests in the prior study with the `job' token came from a single project, ``oozie,'' which is \emph{not} in our evaluation. At the same time, the majority of non-flaky tests with the token `job' in the dataset were in the project ``elastic-job-lite,'' which was not included in the prior evaluation.
+The co-occurrence of individual tokens with flaky tests can vary dramatically between projects. Terms that correlate with flakiness in one project can not be expected to correlate with flakiness in other projects --- this is also evident from the limited number of projects which contain each token. Note that this finding only underscores the need for a large, balanced dataset of flaky tests: the DeFlaker dataset that Pinto et al. used contained \emph{more} flaky tests than \sysName dataset (1,403 vs 810). However, a single project in that dataset (``oozie'') contributed more than half of those flaky tests (856), which can make it extremely difficult to draw conclusions that can generalize beyond a single project, or beyond the dataset.
+

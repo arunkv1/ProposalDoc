@@ -1,0 +1,130 @@
+\newpage
+\section{Thesis}
+\label{sec:thesis}
+
+% \abdul{The remaining: Maping the RQs with the correct subsection (e.g. 5.1.2). Will be finalized}
+
+% \abdul{After last discussion with Jon and Paul on July 26, this section has been added.}
+% \abdul{ I need to make the proposal clear before start }
+
+% \begin{itemize}
+%     % \item I need to check the structure of the CS proposal. 
+%     \item Thesis: ML and data science can address better the problem of test flakiness in terms of detecting, living with, and categorizing test flakiness. 
+% \begin{itemize}
+%     \item{Detecting Flaky Tests}
+%     Words, research questions
+%     \item{Living with test flakiness}
+%     Words (detecting failure tests isn't enough; developers keep flaky tests.  How does a developer deal with flaky tests in practice?  Answer:  Flaky failure detection), research questions
+%     \item{Categorizing flaky failures}
+%     Words, research questions
+% \end{itemize}
+ 
+
+%     % \item each chapter ( make the intro clear that map with the thesis goal then ends with a summary point.
+
+%     % \item I need to make the high level clear before go to the details. (due to next week)
+% \end{itemize}
+
+
+\subsection{Problem Statement}
+
+Test flakiness presents significant challenges in software testing and development. As previously discussed in Section~\ref{sec:background}, various existing works show variable success, starting from detecting flaky tests to fixing them.
+Yet, despite these works, test flakiness continues to be a significant issue. While some solutions rely on rerun-based approaches that introduce overhead or depend on extra metrics like code coverage, others struggle to scale effectively across varied codebases. Most importantly, several of these methods often fall short to align with the practical needs of developers as they need to detect flaky tests without any overhead costs. Given the critical role of tests in software development and the presence of test flakiness problem, there is a need for comprehensive and efficient solutions to detect and deal with test flakiness.
+
+
+
+% \jon{Small fix - might help to describe what the problems are that existing works aim to address. I think that there are probably two issues: 1) prior work doesn't ask all of the questions that we think are important, and 2) prior work may not answer those questions sufficiently adequately}
+
+
+
+
+
+% Some of the works related to detecting flaky tests are basically rerun-based-approaches and 
+
+% As previously outlined, test flakiness presents significant challenges in the field of software testing and development as can impact the progress of software releases and the overall reliability of the testing outcomes.
+% Existing methods toward test flakiness show variable success, ranging from accurately labeling a test as flaky to the more complicated task of identifying and fixing the flakiness root cause.
+% \jon{Small fix - might help to describe what the problems are that existing works aim to address. I think that there are probably two issues: 1) prior work doesn't ask all of the questions that we think are important, and 2) prior work may not answer those questions sufficiently adequately}
+% Despite advancements in this field, the issue of test flakiness still demands further focus to aid developers to deal with test flakiness. The detection of test flakiness continues to be a challenge that requires additional effort to enhance the reliability of software testing activities.
+% While there have been strides towards proposing tools and strategies to manage and mitigate test flakiness, there remains substantial room for innovation and improvement.
+
+
+\subsection{Thesis Statement}
+
+% \abdul{my thesis is that ML and DS .... } 
+% \abdul{Missing at the end: I will evaluate the thesis by ... }
+
+% \sout{The main objective of this thesis is to make meaningful contributions to the field of test flakiness and aid the research community. The thesis emphasizes on how machine learning and data science can address better the problem of test flakiness in terms of detecting, living with, and categorizing test flakiness. Specifically, the thesis aims to illustrate the impact of employing machine learning classifiers to assist developers in identifying test flakiness, and examine how data science can enhance decision-making processes related to test flakiness.}
+
+The thesis statement is that machine learning and data science can address \emph{better} the problem of test flakiness in terms of detecting, living with, and categorizing test flakiness. To investigate this, I evaluate current methodologies addressing test flakiness based on the discussed problem statement. By understanding the needs from these evaluations, I discuss and propose solutions based on machine learning and data science to overcome the needs. I evaluate the thesis by discussing each proposed solution with research questions, which are detailed in following subsections.
+
+
+\subsubsection{Detecting Flaky Tests}
+
+I started my research in detecting flaky tests by conducting a rerun experiment to analyze this approach. During the experiment, I investigate the frequency of detecting flaky tests within a specific number of test suite runs and analyze the possibility of reproducing previously detected flaky tests by other studies.
+Follow this experiment, I investigate using machine learning techniques to predict if a test is flaky or not learning from other flaky tests in the test suite. I propose \sysName, a machine learning classifier to make predictions for new tests by utilizing data of both flaky and non-flaky tests. In addition to the purpose of \sysName, it could be valuable as it allows developers to minimize the cost of re-running tests by focusing on tests that \sysName predicts as being more likely to become flaky. 
+% Detecting flaky tests proactively, before they actually fail, enables developers to pay close attention to these tests and take appropriate actions.
+To address the challenge of detecting flaky tests using my experiment of the re-run and \sysName, I am answering the following questions:
+
+% I investigate the frequency of detecting flaky tests within a specific number of test suite runs and analyze the possibility of reproducing previously detected flaky tests under different rerun environment setups.
+% The traditional method used to detect flaky tests is by running a test multiple times. However, I am well aware of the impracticality and cost associated with this technique. To start with, my research starts with assessing the reproducibility of flaky tests using this re-run approach. I investigate the frequency of detecting flaky tests within a specific number of test suite runs and analyze the possibility of reproducing previously detected flaky tests under different rerun environment setups.
+
+
+\begin{description}
+% \setlength{\itemindent}{3em}
+\item[\textbf{RQ \ref{FlakeFlaggerRQ1}:}]
+How many flaky tests can be found by rerunning tests given different rerun budgets?
+\item[\textbf{RQ \ref{FlakeFlaggerRQ2}:}] 
+How hard is it to reproduce a flaky test failure? 
+
+\item[\textbf{RQ \ref{FlakeFlaggerRQ3}:}] How effective is \sysName at predicting flaky tests?
+\item[\textbf{RQ \ref{FlakeFlaggerRQ4}:}] How helpful \sysName's features in distinguishing between flaky and non flaky tests?
+
+
+\end{description}
+
+The related findings of the detection of flaky tests are detailed in Section~\ref{sec:detectFlakyTests}. Specifically, the first two research questions are discussed in Section~\ref{sec:flakeFlaggerStudy}. The responses to research questions 3 and 4 are found in Section~\ref{sec:flakeFlaggerClassifier}. The answers to all these questions are primarily summarized from the paper ``FlakeFlagger: Predicting Flakiness Without Rerunning Tests"\cite{alshammari2021flakeflagger}.
+
+
+
+% Living ... 
+\subsubsection{Living with Test Flakiness}
+Even with the detection of flaky tests, they continue to exist in test suites. Developers often keep these tests for various reasons, such as understanding these tests impacts or they may be relied upon to detect true (non-flaky) failures. 
+% Generally, tests may produce both types of failures.
+Hence, for a given failure from a known flaky test, how to determine if the failure is flaky or true failure. Recent studies show that developers can recognize a failure is flaky by examining the failure message and stacktraces as they could have encountered flaky failures with similar failure message and stacktraces\cite{gradlePreventingFlaky}. A recent study refer to the process of identifying two failures with matching failure messages and stacktraces as \emph{failure de-duplication}. Based on this approach, I am studying the failure logs as a source to compare a new failure with both flaky and true failures and using approaches based on \emph{failure de-duplication} to determine if the failure is flaky or not~\cite{Podgurski03Automated,Jiang17WhatCauses}. As it is possible not to have previous flaky failure to compare with, I have proposed machine learning classifiers to learn from already existed flaky and true failure from other flaky tests. This lead me to formulate the following research questions:
+
+
+% I am studying the failure logs of flaky failures to uncover unique characteristics that set them apart from non-flaky failures.
+
+% This situation highlights the significance of developers accepting the existence of flaky tests, but distinguishing failures that may be come from these flaky tests by identifying flaky and non-flaky failures, as tests may produce both types of failures.
+
+% In response to the observation that developers often rely on their previous knowledge with flaky failures, my research focuses on determining if a given failure is flaky by comparing it with previous flaky failures. Furthermore, I am studying the failure logs of flaky failures to uncover unique characteristics that set them apart from non-flaky failures. This investigation involves a tool I am proposing, referred to as \syntax, designed to compare the failure logs of flaky failures with the non-flaky failures for each test being studied. If this approach is successful in highlighting differences, these unique elements could serve as distinguishers between the two types of failures. In addition to \syntax, it could be useful to create a classifier trained on both types of failure logs, which could then be utilized for predicting flaky failures. This line of investigation lead me to the formulation of the following research questions:
+
+\begin{description}
+  \item[\textbf{RQ \ref{matchingRQ1}:}] How often are flaky failures repetitive?
+  \item[\textbf{RQ \ref{matchingRQ2}:}] With prior flaky and true failures, is it feasible to use the failure de-duplication to tell if a failure is flaky or true one?
+  \item[\textbf{RQ \ref{matchingRQ3}:}] How far utilizing machine learning being helpful in finding the differences between flaky and true failures?  
+ \end{description}
+
+
+The research and its findings are detailed in Section~\ref{sec:livingTestFlakiness}. Specifically, Section~\ref{sec:approaches} introduces the proposed approaches for failure de-duplication. In Section~\ref{sec:matchingEvaluation}, the methodology for addressing the research questions is discussed, and the findings are presented after answering the questions, as outlined in Section~\ref{matchingResult}. This works is already submitted.
+
+
+
+\subsubsection{Categorizing Flaky Failures}
+
+Identifying the cause behind test flakiness can aid in assessing flaky failures effectively. In the remainder of my thesis, I am working on proposing a tool designed to categorize flaky failures based on failure logs by clustering failures where each cluster should represent one root cause.
+% The evaluation of this tool should be conducted on well-understood causes for a collection of known flaky failures. 
+% The goal is to group flaky failures, where each group represents a specific root cause. 
+I will explore leveraging machine learning to learn from the features of collected failures and predict the root causes.
+This portion of the thesis is currently in the discussion phase, with particular focus on the process of data collection and the definition of the research methodology. This work remains flexible and may be adjusted to reflect the current trends and concerns within the broader research community, but I am initially focus to answer these research questions. 
+
+% My main objective is to evaluate if failure logs from flaky tests can be leveraged to categorize the root causes of test flakiness and to explore how machine learning might assist in this task. 
+\begin{description}
+    \item \textbf{RQ \ref{future1}}: Is it possible for a flaky test to be triggered by multiple flakiness root causes?
+    \item \textbf{RQ  \ref{future2}}: Can failure logs associate flaky failures with their root causes using machine learning?
+\end{description}
+
+The discussion of these research questions, along with detailed insights on the topic of categorizing flaky failures, can be found in Section~\ref{sec:categotize}.
+
+
+
