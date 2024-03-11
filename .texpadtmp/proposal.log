@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.25)  11 MAR 2024 13:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.25)  11 MAR 2024 14:11
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -672,7 +672,7 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count328
 \l__pdf_internal_box=\box87
-) (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.aux)
+) (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.aux)
 \openout1 = `proposal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
@@ -725,7 +725,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 116.
 LaTeX Info: Redefining \pageref on input line 116.
 LaTeX Info: Redefining \nameref on input line 116.
- (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.out) (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.out)
+ (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.out) (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.out)
 \@outlinefile=\write6
 \openout6 = `proposal.out'.
 
@@ -744,7 +744,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has b
 <to be read again> 
                    \relax 
 l.198 \tableofcontents
-                       [1] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.toc
+                       [1] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -756,11 +756,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write7
 \openout7 = `proposal.toc'.
 
- [3] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.lof)
+ [3] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.lof)
 \tf@lof=\write8
 \openout8 = `proposal.lof'.
 
- (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.lot)
+ (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.lot)
 \tf@lot=\write9
 \openout9 = `proposal.lot'.
 
@@ -787,48 +787,53 @@ LaTeX Warning: Citation `16' on page 1 undefined on input line 7.
 LaTeX Warning: Citation `27' on page 1 undefined on input line 7.
 
 
-LaTeX Warning: Citation `17' on page 1 undefined on input line 10.
+LaTeX Warning: Citation `17' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `17' on page 1 undefined on input line 10.
+LaTeX Warning: Citation `17' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `16' on page 1 undefined on input line 10.
+LaTeX Warning: Citation `16' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `25' on page 1 undefined on input line 10.
+LaTeX Warning: Citation `25' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `26' on page 1 undefined on input line 10.
+LaTeX Warning: Citation `26' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `16' on page 1 undefined on input line 10.
+LaTeX Warning: Citation `16' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `15' on page 1 undefined on input line 10.
+LaTeX Warning: Citation `15' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `9' on page 1 undefined on input line 10.
+LaTeX Warning: Citation `9' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `16' on page 1 undefined on input line 10.
+LaTeX Warning: Citation `16' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `15' on page 1 undefined on input line 10.
+LaTeX Warning: Citation `15' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `15' on page 1 undefined on input line 10.
-
-) (./Sections/Background.tex
-
-LaTeX Warning: Citation `luo2014empirical' on page 1 undefined on input line 5.
+LaTeX Warning: Citation `42' on page 1 undefined on input line 11.
 
 
-LaTeX Warning: Citation `luo2014empirical' on page 1 undefined on input line 5.
+LaTeX Warning: Citation `15' on page 1 undefined on input line 11.
+
+
+LaTeX Warning: Citation `15' on page 1 undefined on input line 11.
 
 [1
 
-]
+]) (./Sections/Background.tex
+
+LaTeX Warning: Citation `luo2014empirical' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `luo2014empirical' on page 2 undefined on input line 5.
+
 
 LaTeX Warning: Citation `eck2019understanding' on page 2 undefined on input line 7.
 
@@ -838,10 +843,10 @@ LaTeX Warning: Citation `eck2019understanding' on page 2 undefined on input line
 
 LaTeX Warning: Citation `lam2019root' on page 2 undefined on input line 10.
 
-
-LaTeX Warning: Citation `thorve2018empirical' on page 2 undefined on input line 13.
-
 [2]
+
+LaTeX Warning: Citation `thorve2018empirical' on page 3 undefined on input line 13.
+
 
 LaTeX Warning: Citation `bell2018deflaker' on page 3 undefined on input line 23.
 
@@ -876,94 +881,92 @@ LaTeX Warning: Citation `bell2018deflaker' on page 4 undefined on input line 32.
 
 LaTeX Warning: Citation `Pinto2020WhatIT' on page 4 undefined on input line 32.
 
-) (./Sections/Thesis.tex [4]
+[4]) (./Sections/Thesis.tex [5]
 
-LaTeX Warning: Citation `alshammari2021flakeflagger' on page 5 undefined on input line 85.
+LaTeX Warning: Citation `alshammari2021flakeflagger' on page 6 undefined on input line 85.
 
-[5]
+[6]
 
-LaTeX Warning: Citation `gradlePreventingFlaky' on page 6 undefined on input line 93.
-
-
-LaTeX Warning: Citation `Podgurski03Automated' on page 6 undefined on input line 93.
+LaTeX Warning: Citation `gradlePreventingFlaky' on page 7 undefined on input line 93.
 
 
-LaTeX Warning: Citation `Jiang17WhatCauses' on page 6 undefined on input line 93.
-
-) (./Sections/Detecting.tex [6]
-
-LaTeX Warning: Citation `bell2018deflaker' on page 7 undefined on input line 6.
+LaTeX Warning: Citation `Podgurski03Automated' on page 7 undefined on input line 93.
 
 
-LaTeX Warning: Citation `lam2019idflakies' on page 7 undefined on input line 6.
+LaTeX Warning: Citation `Jiang17WhatCauses' on page 7 undefined on input line 93.
+
+) (./Sections/Detecting.tex [7]
+
+LaTeX Warning: Citation `bell2018deflaker' on page 8 undefined on input line 6.
 
 
-LaTeX Warning: Citation `lam2019root' on page 7 undefined on input line 6.
+LaTeX Warning: Citation `lam2019idflakies' on page 8 undefined on input line 6.
 
 
-LaTeX Warning: Citation `lam2020Understanding' on page 7 undefined on input line 6.
+LaTeX Warning: Citation `lam2019root' on page 8 undefined on input line 6.
 
 
-LaTeX Warning: Citation `eck2019understanding' on page 7 undefined on input line 16.
+LaTeX Warning: Citation `lam2020Understanding' on page 8 undefined on input line 6.
 
 
-LaTeX Warning: Citation `ahmad2021empirical' on page 7 undefined on input line 16.
+LaTeX Warning: Citation `eck2019understanding' on page 8 undefined on input line 16.
 
 
-LaTeX Warning: Citation `bell2018deflaker' on page 7 undefined on input line 38.
+LaTeX Warning: Citation `ahmad2021empirical' on page 8 undefined on input line 16.
 
 
-LaTeX Warning: Citation `lam2019idflakies' on page 7 undefined on input line 38.
+LaTeX Warning: Citation `bell2018deflaker' on page 8 undefined on input line 38.
 
 
-LaTeX Warning: Citation `bell2018deflaker' on page 7 undefined on input line 38.
+LaTeX Warning: Citation `lam2019idflakies' on page 8 undefined on input line 38.
 
 
-LaTeX Warning: Citation `lam2019idflakies' on page 7 undefined on input line 38.
+LaTeX Warning: Citation `bell2018deflaker' on page 8 undefined on input line 38.
 
 
-LaTeX Warning: Citation `bell2018deflaker' on page 7 undefined on input line 38.
+LaTeX Warning: Citation `lam2019idflakies' on page 8 undefined on input line 38.
 
 
-LaTeX Warning: Citation `lam2019idflakies' on page 7 undefined on input line 38.
-
-[7]
-
-LaTeX Warning: Citation `lam2019idflakies' on page 8 undefined on input line 43.
-
-<Figures/overview.pdf, id=298, 474.77374pt x 102.3825pt>
-File: Figures/overview.pdf Graphic file (type pdf)
-<use Figures/overview.pdf>
-Package pdftex.def Info: Figures/overview.pdf  used on input line 54.
-(pdftex.def)             Requested size: 422.77661pt x 91.17325pt.
-
-LaTeX Warning: Citation `luo2014empirical' on page 8 undefined on input line 69.
+LaTeX Warning: Citation `bell2018deflaker' on page 8 undefined on input line 38.
 
 
-LaTeX Warning: Citation `eck2019understanding' on page 8 undefined on input line 69.
+LaTeX Warning: Citation `lam2019idflakies' on page 8 undefined on input line 38.
+
+[8]
+
+LaTeX Warning: Citation `lam2019idflakies' on page 9 undefined on input line 43.
 
 
-LaTeX Warning: Citation `bell2018deflaker' on page 8 undefined on input line 69.
+LaTeX Warning: Reference `over_all_graph' on page 9 undefined on input line 49.
 
 
-LaTeX Warning: Citation `luo2014empirical' on page 8 undefined on input line 69.
+LaTeX Warning: Citation `luo2014empirical' on page 9 undefined on input line 60.
 
 
-LaTeX Warning: Citation `eck2019understanding' on page 8 undefined on input line 70.
+LaTeX Warning: Citation `eck2019understanding' on page 9 undefined on input line 60.
 
 
-LaTeX Warning: Citation `ahmad2021empirical' on page 8 undefined on input line 71.
+LaTeX Warning: Citation `bell2018deflaker' on page 9 undefined on input line 60.
 
 
-LaTeX Warning: Citation `eck2019understanding' on page 8 undefined on input line 73.
+LaTeX Warning: Citation `luo2014empirical' on page 9 undefined on input line 60.
 
 
-LaTeX Warning: Citation `luo2014empirical' on page 8 undefined on input line 77.
+LaTeX Warning: Citation `eck2019understanding' on page 9 undefined on input line 61.
 
 
-LaTeX Warning: Citation `ahmad2021empirical' on page 8 undefined on input line 77.
+LaTeX Warning: Citation `ahmad2021empirical' on page 9 undefined on input line 62.
 
-[8 <./Figures/overview.pdf>] (./tables/FlakeFlaggerFeatures.tex
+
+LaTeX Warning: Citation `eck2019understanding' on page 9 undefined on input line 64.
+
+
+LaTeX Warning: Citation `luo2014empirical' on page 9 undefined on input line 68.
+
+
+LaTeX Warning: Citation `ahmad2021empirical' on page 9 undefined on input line 68.
+
+(./tables/FlakeFlaggerFeatures.tex
 
 LaTeX Warning: Citation `van2001refactoring' on page 9 undefined on input line 29.
 
@@ -988,144 +991,31 @@ LaTeX Warning: Citation `van2001refactoring' on page 9 undefined on input line 2
 
 LaTeX Warning: Citation `van2001refactoring' on page 9 undefined on input line 29.
 
-)
+) [9]
 
-LaTeX Warning: Citation `lei2012feature' on page 9 undefined on input line 93.
-
-
-LaTeX Warning: Citation `kohavi1995study' on page 9 undefined on input line 98.
+LaTeX Warning: Citation `lei2012feature' on page 10 undefined on input line 84.
 
 
-LaTeX Warning: Citation `SMOTE' on page 9 undefined on input line 100.
-
-[9] (./tables/FlakeFlaggerStudy.tex
-
-LaTeX Warning: Citation `bell2018deflaker' on page 10 undefined on input line 13.
+LaTeX Warning: Citation `kohavi1995study' on page 10 undefined on input line 89.
 
 
-LaTeX Warning: Citation `lam2019idflakies' on page 10 undefined on input line 13.
+LaTeX Warning: Citation `SMOTE' on page 10 undefined on input line 91.
 
-<Figures/barPlot/spring-boot.pdf, id=334, 3613.5pt x 722.7pt>
-File: Figures/barPlot/spring-boot.pdf Graphic file (type pdf)
-<use Figures/barPlot/spring-boot.pdf>
-Package pdftex.def Info: Figures/barPlot/spring-boot.pdf  used on input line 19.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/hbase.pdf, id=335, 3613.5pt x 722.7pt>
-File: Figures/barPlot/hbase.pdf Graphic file (type pdf)
-<use Figures/barPlot/hbase.pdf>
-Package pdftex.def Info: Figures/barPlot/hbase.pdf  used on input line 20.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/alluxio.pdf, id=336, 3613.5pt x 722.7pt>
-File: Figures/barPlot/alluxio.pdf Graphic file (type pdf)
-<use Figures/barPlot/alluxio.pdf>
-Package pdftex.def Info: Figures/barPlot/alluxio.pdf  used on input line 21.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/okhttp.pdf, id=337, 3613.5pt x 722.7pt>
-File: Figures/barPlot/okhttp.pdf Graphic file (type pdf)
-<use Figures/barPlot/okhttp.pdf>
-Package pdftex.def Info: Figures/barPlot/okhttp.pdf  used on input line 22.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/ambari.pdf, id=338, 3613.5pt x 722.7pt>
-File: Figures/barPlot/ambari.pdf Graphic file (type pdf)
-<use Figures/barPlot/ambari.pdf>
-Package pdftex.def Info: Figures/barPlot/ambari.pdf  used on input line 23.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/hector.pdf, id=339, 3613.5pt x 722.7pt>
-File: Figures/barPlot/hector.pdf Graphic file (type pdf)
-<use Figures/barPlot/hector.pdf>
-Package pdftex.def Info: Figures/barPlot/hector.pdf  used on input line 24.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/activiti.pdf, id=340, 3613.5pt x 722.7pt>
-File: Figures/barPlot/activiti.pdf Graphic file (type pdf)
-<use Figures/barPlot/activiti.pdf>
-Package pdftex.def Info: Figures/barPlot/activiti.pdf  used on input line 25.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/java-websocket.pdf, id=341, 3613.5pt x 722.7pt>
-File: Figures/barPlot/java-websocket.pdf Graphic file (type pdf)
-<use Figures/barPlot/java-websocket.pdf>
-Package pdftex.def Info: Figures/barPlot/java-websocket.pdf  used on input line 26.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/wildfly.pdf, id=342, 3613.5pt x 722.7pt>
-File: Figures/barPlot/wildfly.pdf Graphic file (type pdf)
-<use Figures/barPlot/wildfly.pdf>
-Package pdftex.def Info: Figures/barPlot/wildfly.pdf  used on input line 27.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/httpcore.pdf, id=343, 3613.5pt x 722.7pt>
-File: Figures/barPlot/httpcore.pdf Graphic file (type pdf)
-<use Figures/barPlot/httpcore.pdf>
-Package pdftex.def Info: Figures/barPlot/httpcore.pdf  used on input line 28.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/qos-ch-logback.pdf, id=344, 3613.5pt x 722.7pt>
-File: Figures/barPlot/qos-ch-logback.pdf Graphic file (type pdf)
-<use Figures/barPlot/qos-ch-logback.pdf>
-Package pdftex.def Info: Figures/barPlot/qos-ch-logback.pdf  used on input line 29.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/dubbo-test-integration.pdf, id=345, 3613.5pt x 722.7pt>
-File: Figures/barPlot/dubbo-test-integration.pdf Graphic file (type pdf)
-<use Figures/barPlot/dubbo-test-integration.pdf>
-Package pdftex.def Info: Figures/barPlot/dubbo-test-integration.pdf  used on input line 30.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/http-request.pdf, id=346, 3613.5pt x 722.7pt>
-File: Figures/barPlot/http-request.pdf Graphic file (type pdf)
-<use Figures/barPlot/http-request.pdf>
-Package pdftex.def Info: Figures/barPlot/http-request.pdf  used on input line 31.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/wro4j.pdf, id=347, 3613.5pt x 722.7pt>
-File: Figures/barPlot/wro4j.pdf Graphic file (type pdf)
-<use Figures/barPlot/wro4j.pdf>
-Package pdftex.def Info: Figures/barPlot/wro4j.pdf  used on input line 32.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/orbit.pdf, id=348, 3613.5pt x 722.7pt>
-File: Figures/barPlot/orbit.pdf Graphic file (type pdf)
-<use Figures/barPlot/orbit.pdf>
-Package pdftex.def Info: Figures/barPlot/orbit.pdf  used on input line 35.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/undertow.pdf, id=349, 3613.5pt x 722.7pt>
-File: Figures/barPlot/undertow.pdf Graphic file (type pdf)
-<use Figures/barPlot/undertow.pdf>
-Package pdftex.def Info: Figures/barPlot/undertow.pdf  used on input line 36.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/achilles.pdf, id=350, 3613.5pt x 722.7pt>
-File: Figures/barPlot/achilles.pdf Graphic file (type pdf)
-<use Figures/barPlot/achilles.pdf>
-Package pdftex.def Info: Figures/barPlot/achilles.pdf  used on input line 37.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/elastic-job-lite.pdf, id=351, 3613.5pt x 722.7pt>
-File: Figures/barPlot/elastic-job-lite.pdf Graphic file (type pdf)
-<use Figures/barPlot/elastic-job-lite.pdf>
-Package pdftex.def Info: Figures/barPlot/elastic-job-lite.pdf  used on input line 38.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/zxing.pdf, id=352, 3613.5pt x 722.7pt>
-File: Figures/barPlot/zxing.pdf Graphic file (type pdf)
-<use Figures/barPlot/zxing.pdf>
-Package pdftex.def Info: Figures/barPlot/zxing.pdf  used on input line 39.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/assertj-core.pdf, id=353, 3613.5pt x 722.7pt>
-File: Figures/barPlot/assertj-core.pdf Graphic file (type pdf)
-<use Figures/barPlot/assertj-core.pdf>
-Package pdftex.def Info: Figures/barPlot/assertj-core.pdf  used on input line 40.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/commons-exec.pdf, id=354, 3613.5pt x 722.7pt>
-File: Figures/barPlot/commons-exec.pdf Graphic file (type pdf)
-<use Figures/barPlot/commons-exec.pdf>
-Package pdftex.def Info: Figures/barPlot/commons-exec.pdf  used on input line 41.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/handlebars_java.pdf, id=355, 3613.5pt x 722.7pt>
-File: Figures/barPlot/handlebars_java.pdf Graphic file (type pdf)
-<use Figures/barPlot/handlebars_java.pdf>
-Package pdftex.def Info: Figures/barPlot/handlebars_java.pdf  used on input line 44.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/ninja.pdf, id=356, 3613.5pt x 722.7pt>
-File: Figures/barPlot/ninja.pdf Graphic file (type pdf)
-<use Figures/barPlot/ninja.pdf>
-Package pdftex.def Info: Figures/barPlot/ninja.pdf  used on input line 45.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-<Figures/barPlot/total.pdf, id=357, 3613.5pt x 722.7pt>
-File: Figures/barPlot/total.pdf Graphic file (type pdf)
-<use Figures/barPlot/total.pdf>
-Package pdftex.def Info: Figures/barPlot/total.pdf  used on input line 56.
-(pdftex.def)             Requested size: 180.63045pt x 7.99493pt.
-) [10] [11 <./Figures/barPlot/spring-boot.pdf> <./Figures/barPlot/hbase.pdf> <./Figures/barPlot/alluxio.pdf> <./Figures/barPlot/okhttp.pdf> <./Figures/barPlot/ambari.pdf> <./Figures/barPlot/hector.pdf> <./Figures/barPlot/activiti.pdf> <./Figures/barPlot/java-websocket.pdf> <./Figures/barPlot/wildfly.pdf> <./Figures/barPlot/httpcore.pdf> <./Figures/barPlot/qos-ch-logback.pdf> <./Figures/barPlot/dubbo-test-integration.pdf> <./Figures/barPlot/http-request.pdf> <./Figures/barPlot/wro4j.pdf> <./Figures/barPlot/orbit.pdf> <./Figures/barPlot/undertow.pdf> <./Figures/barPlot/achilles.pdf> <./Figures/barPlot/elastic-job-lite.pdf> <./Figures/barPlot/zxing.pdf> <./Figures/barPlot/assertj-core.pdf> <./Figures/barPlot/commons-exec.pdf> <./Figures/barPlot/handlebars_java.pdf> <./Figures/barPlot/ninja.pdf> <./Figures/barPlot/total.pdf>] (./tables/Full_result.tex
+[10] (./tables/FlakeFlaggerStudy.tex)
+
+LaTeX Warning: Reference `table:rerun_result' on page 11 undefined on input line 128.
+
+
+LaTeX Warning: Reference `table:rerun_result' on page 11 undefined on input line 135.
+
+
+LaTeX Warning: Reference `table:rerun_result' on page 11 undefined on input line 136.
+
+[11]
+
+LaTeX Warning: Reference `table:rerun_result' on page 12 undefined on input line 145.
+
+(./tables/Full_result.tex
 
 LaTeX Warning: Citation `pintovocabulary' on page 12 undefined on input line 61.
 
@@ -1136,31 +1026,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--63
 
 )
 
-LaTeX Warning: Citation `pinto2020vocabulary' on page 12 undefined on input line 177.
+LaTeX Warning: Citation `pinto2020vocabulary' on page 12 undefined on input line 168.
 
-[12] (./tables/IG.tex)
+[12] [13] (./tables/IG.tex)
 
-LaTeX Warning: Citation `pinto2020vocabulary' on page 13 undefined on input line 193.
+LaTeX Warning: Citation `pinto2020vocabulary' on page 14 undefined on input line 184.
 
-[13] [14]) (./Sections/Living.tex
+[14]) (./Sections/Living.tex
 
 LaTeX Warning: Citation `habchi2022qualitative' on page 15 undefined on input line 15.
 
 
 LaTeX Warning: Citation `gradlePreventingFlaky' on page 15 undefined on input line 16.
 
-
-LaTeX Warning: Citation `Podgurski03Automated' on page 15 undefined on input line 43.
-
-
-LaTeX Warning: Citation `Jiang17WhatCauses' on page 15 undefined on input line 43.
-
-
-LaTeX Warning: Citation `gradlePreventingFlaky' on page 15 undefined on input line 44.
-
 [15]
+
+LaTeX Warning: Citation `Podgurski03Automated' on page 16 undefined on input line 43.
+
+
+LaTeX Warning: Citation `Jiang17WhatCauses' on page 16 undefined on input line 43.
+
+
+LaTeX Warning: Citation `gradlePreventingFlaky' on page 16 undefined on input line 44.
+
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 57.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 57.
@@ -1172,7 +1062,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 4.
-) [16] (./tables/Features.tex)
+ [16]) (./tables/Features.tex)
 
 LaTeX Warning: Citation `lampel2021life' on page 17 undefined on input line 85.
 
@@ -1185,10 +1075,10 @@ LaTeX Warning: Citation `SMOTE' on page 17 undefined on input line 95.
 
 LaTeX Warning: Citation `crossValidation' on page 17 undefined on input line 95.
 
-
-LaTeX Warning: Citation `tfidf' on page 17 undefined on input line 107.
-
 [17]
+
+LaTeX Warning: Citation `tfidf' on page 18 undefined on input line 107.
+
 
 LaTeX Warning: Citation `tfidf1' on page 18 undefined on input line 126.
 
@@ -1216,13 +1106,13 @@ LaTeX Warning: Citation `bears' on page 18 undefined on input line 147.
 
 LaTeX Warning: Citation `haben2023importance' on page 18 undefined on input line 149.
 
-
-LaTeX Warning: Citation `just2014mutants' on page 18 undefined on input line 153.
-
-
-LaTeX Warning: Citation `shi2019mitigating' on page 18 undefined on input line 155.
-
 [18]
+
+LaTeX Warning: Citation `just2014mutants' on page 19 undefined on input line 153.
+
+
+LaTeX Warning: Citation `shi2019mitigating' on page 19 undefined on input line 155.
+
 
 LaTeX Warning: Citation `alshammari2021flakeflagger' on page 19 undefined on input line 157.
 
@@ -1232,11 +1122,10 @@ LaTeX Warning: Citation `shi2019mitigating' on page 19 undefined on input line 1
 
 LaTeX Warning: Citation `coles2016pit' on page 19 undefined on input line 157.
 
-[19] (./tables/repetitiveFailures.tex) [20] (./tables/non-unique-failures.tex) [21] [22] (./tables/uniqueExceptions.tex) [23] [24] (./tables/FailureLogsClassifier.tex)
+[19] (./tables/repetitiveFailures.tex) [20] (./tables/non-unique-failures.tex) [21] [22] (./tables/uniqueExceptions.tex) [23] [24] (./tables/FailureLogsClassifier.tex) [25]
 
-LaTeX Warning: Citation `lampel2021life' on page 25 undefined on input line 464.
+LaTeX Warning: Citation `lampel2021life' on page 26 undefined on input line 464.
 
-[25]
 
 LaTeX Warning: Citation `An23JustInTime' on page 26 undefined on input line 477.
 
@@ -1247,27 +1136,27 @@ LaTeX Warning: Citation `Podgurski03Automated' on page 27 undefined on input lin
 
 LaTeX Warning: Citation `Jiang17WhatCauses' on page 27 undefined on input line 509.
 
-) (./Sections/Categorizing.tex [27]
+) (./Sections/Categorizing.tex [27] [28]
 
-LaTeX Warning: Citation `akli2023flakycat' on page 28 undefined on input line 10.
-
-
-LaTeX Warning: Citation `lam2019root' on page 28 undefined on input line 10.
+LaTeX Warning: Citation `akli2023flakycat' on page 29 undefined on input line 10.
 
 
-LaTeX Warning: Citation `akli2023flakycat' on page 28 undefined on input line 32.
+LaTeX Warning: Citation `lam2019root' on page 29 undefined on input line 10.
 
 
-LaTeX Warning: Citation `lam2019idflakies' on page 28 undefined on input line 32.
+LaTeX Warning: Citation `akli2023flakycat' on page 29 undefined on input line 32.
 
 
-LaTeX Warning: Citation `lam2019idflakies' on page 28 undefined on input line 32.
+LaTeX Warning: Citation `lam2019idflakies' on page 29 undefined on input line 32.
 
-) (./Sections/ResearchPlan.tex) [28] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.bbl
+
+LaTeX Warning: Citation `lam2019idflakies' on page 29 undefined on input line 32.
+
+) (./Sections/ResearchPlan.tex) [29] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [29] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.aux)
+) [30] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1279,18 +1168,18 @@ Package rerunfilecheck Info: File `proposal.out' has not changed.
 ### simple group (level 1) entered at line 483 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 27236 strings out of 478994
- 496021 string characters out of 5858184
- 1147790 words of memory out of 5000000
- 44015 multiletter control sequences out of 15000+600000
+ 27091 strings out of 478994
+ 490964 string characters out of 5858184
+ 1061267 words of memory out of 5000000
+ 43888 multiletter control sequences out of 15000+600000
  437861 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,14n,117p,3004b,1345s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,14n,117p,3004b,2051s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/PhD Proposal/.texpadtmp/proposal.pdf" (34 pages, 374848 bytes).
+Output written on /Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.pdf (35 pages, 230502 bytes).
 PDF statistics:
- 638 PDF objects out of 1000 (max. 8388607)
- 532 compressed objects within 6 object streams
- 115 named destinations out of 1000 (max. 500000)
- 434 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 517 PDF objects out of 1000 (max. 8388607)
+ 466 compressed objects within 5 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 309 words of extra memory for PDF output out of 10000 (max. 10000000)
 
