@@ -1,3 +1,38 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{WHO}
+World report on disability
+  \url{http://www.who.int/disabilities/world_report/2011/en/}, 2011.
+
+\bibitem{ADAWeb}
+Ada web accessibility lawsuit recap report
+  \url{https://blog.usablenet.com/2018- ada- web- accessibility- lawsuit-
+  recap- report}, 2018.
+
+\bibitem{ADALaws}
+Adalaws \url{https://www.ada.gov/cguide.htm}, 2019.
+
+\bibitem{Alshayban20}
+Abdulaziz Alshayban, Iftekhar Ahmed, and Sam Malek.
+\newblock Accessibility issues in android apps: State of affairs, sentiments,
+  and ways forward.
+\newblock In {\em Proceedings of the ACM/IEEE 42nd International Conference on
+  Software Engineering}, ICSE '20, page 1323–1334, New York, NY, USA, 2020.
+  Association for Computing Machinery.
+
+\bibitem{Park14}
+Kyudong Park, Taedong Goh, and Hyo-Jeong So.
+\newblock Toward accessible mobile application design: Developing mobile
+  application accessibility guidelines for people with visual impairment.
+\newblock In {\em Proceedings of HCI Korea}, HCIK '15, page 31–38, Seoul,
+  KOR, 2014. Hanbit Media, Inc.
+
+\bibitem{Szpiro16}
+Sarit Felicia~Anais Szpiro, Shafeka Hashash, Yuhang Zhao, and Shiri Azenkot.
+\newblock How people with low vision access computing devices: Understanding
+  challenges and opportunities.
+\newblock In {\em Proceedings of the 18th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '16, page 171–180, New
+  York, NY, USA, 2016. Association for Computing Machinery.
 
 \end{thebibliography}

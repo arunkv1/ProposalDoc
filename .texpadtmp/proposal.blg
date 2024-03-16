@@ -8,19 +8,17 @@ I was expecting a `,' or a `}'---line 472 of file ../bibliography.bib
  :   Bdsk-Url-2 = {https://doi.org/10.1016/j.jss.2020.110819}}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--entry type for "ADALaws" isn't style-file defined
+--line 474 of file ../bibliography.bib
+Warning--entry type for "ADAWeb" isn't style-file defined
+--line 507 of file ../bibliography.bib
+Warning--entry type for "WHO" isn't style-file defined
+--line 524 of file ../bibliography.bib
+Repeated entry---line 1098 of file ../bibliography.bib
+ : @inproceedings{Park14
+ :                      ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "luo2014empirical"
-Warning--I didn't find a database entry for "7"
-Warning--I didn't find a database entry for "11"
-Warning--I didn't find a database entry for "28"
-Warning--I didn't find a database entry for "23"
-Warning--I didn't find a database entry for "16"
-Warning--I didn't find a database entry for "27"
-Warning--I didn't find a database entry for "17"
-Warning--I didn't find a database entry for "25"
-Warning--I didn't find a database entry for "26"
-Warning--I didn't find a database entry for "15"
-Warning--I didn't find a database entry for "9"
-Warning--I didn't find a database entry for "42"
 Warning--I didn't find a database entry for "eck2019understanding"
 Warning--I didn't find a database entry for "lam2019root"
 Warning--I didn't find a database entry for "thorve2018empirical"
@@ -57,45 +55,48 @@ Warning--I didn't find a database entry for "shi2019mitigating"
 Warning--I didn't find a database entry for "coles2016pit"
 Warning--I didn't find a database entry for "An23JustInTime"
 Warning--I didn't find a database entry for "akli2023flakycat"
-You've used 0 entries,
+Warning--to sort, need author or key in WHO
+Warning--to sort, need author or key in ADALaws
+Warning--to sort, need author or key in ADAWeb
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            555 strings with 4875 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+            583 strings with 6048 characters,
+and the built_in function-call counts, 2067 in all, are:
+= -- 221
+> -- 62
+< -- 3
++ -- 26
+- -- 20
+* -- 96
+:= -- 264
+add.period$ -- 15
+call.type$ -- 6
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 9
+duplicate$ -- 120
+empty$ -- 178
+format.name$ -- 20
+if$ -- 507
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 6
+missing$ -- 3
+newline$ -- 27
+num.names$ -- 6
+pop$ -- 49
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 22
 quote$ -- 0
-skip$ -- 1
+skip$ -- 123
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 84
+swap$ -- 63
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+type$ -- 24
+warning$ -- 3
+while$ -- 9
+width$ -- 7
+write$ -- 62
+(There were 2 error messages)
