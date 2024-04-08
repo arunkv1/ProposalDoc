@@ -78,7 +78,6 @@ Warning--entry type for "49" isn't style-file defined
 --line 3710 of file ../ProposalBib.bib
 Warning--entry type for "50" isn't style-file defined
 --line 3712 of file ../ProposalBib.bib
-Warning--I didn't find a database entry for "luo2014empirical"
 Warning--I didn't find a database entry for "Myers:CHD94"
 Warning--I didn't find a database entry for "DBLP:journals/corr/abs-1802-02312"
 Warning--I didn't find a database entry for "9284063"
@@ -125,7 +124,7 @@ Warning--empty journal in crashscope
 Warning--empty year in crashscope
 You've used 148 entries,
             2118 wiz_defined-function locations,
-            1538 strings with 40098 characters,
+            1537 strings with 40082 characters,
 and the built_in function-call counts, 60963 in all, are:
 = -- 6182
 > -- 3150

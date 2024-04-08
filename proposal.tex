@@ -166,42 +166,15 @@ Vivian Motti, George Mason University \\
 \pagebreak
 
 \begin{abstract}
+Software has become an integral part of daily life, spanning web applications, smartphone apps, and desktop systems. As reliance on technology grows, ensuring accessibility for users of all abilities is important. This is not only an ethical motivation but also a governmental requirement. Consequently, there's been a notable increase in efforts to make software more accessible, driving the need for innovative tools to assist developers in this endeavor.
 
-Continuous integration (\textbf{CI}) is a principle in current software development focusing on enhancing software quality by detecting bugs earlier. A primary task in \textbf{CI} is executing the test suite to ensure software correctness, particularly after code modifications. The expected outcome of these tests should be deterministic. However, certain tests may exhibit non-deterministic behavior even when run on an unchanged codebase. Such non-deterministic tests, known as \emph{Flaky Tests}, can pass or fail for the same version of the software. This inconsistent outcome reduces reliability and can complicate the \textbf{CI} process.
+This thesis explores advancements in software engineering research, particularly in the area of accessibility testing and developer tools. Leveraging state-of-the-art techniques like computer vision and machine learning, novel approaches are being developed to automatically detect accessibility issues within software interfaces. 
 
-The traditional way to detect flaky tests is to rerun them multiple times and if a test produces both passing and failing outcomes without any changes in the codebase, it is confirmed flaky~\cite{luo2014empirical}. 
-Rerunning tests can be costly, leading to unacceptable overhead expenses, and it may not detect flakiness in tests that behave inconsistently in different running environments. Hence, researchers have been exploring alternative methods to detect flaky tests effectively rather than rerunning them.
+The core challenge lies in developing models capable of understanding UI designs while capturing their semantic meanings accurately. Addressing this challenge, the thesis proposes the development of tools to assist developers in enhancing software accessibility and tackling future problems requiring a deeper understanding of UI semantics.
 
+Specifically, the thesis proposes a computer vision-based tool to identify motor-impairment accessibility issues in Android mobile apps and demonstrates its efficacy against state-of-the-art baselines. Additionally, a screen understanding tool leveraging computer vision techniques is proposed to aid in screen recognition and retrieval tasks, notably improving search efficiency.
 
-To address the issue of flaky tests, I began by conducting a rerun experiment, aiming to understand the limitations of this technique beyond its obvious costs. From the data gathered during this experiment, I detect a set of flaky tests. Using this dataset, I developed a machine learning classifier, named FlakeFlagger, designed to predict if a test is flaky or not. The goal was to use FlakeFlagger without the need for reruns by finding the similar symptoms a test shares with other identified flaky tests. I evaluated the performance of FlakeFlagger against state-of-the-art tools to gain a better understanding of its effectiveness.
-
-Flaky tests could exist in their test suites even after being confirmed as flaky for various reasons (e.g. helpful to detect defects). Identifying which failure from these tests are flaky or not is another main challenges. Hence, I proposed machine learning and non machine learning approaches to identify which failure is flaky or not based on the tests failure logs. 
-% Flaky tests might exist in test suites even after being identified for many reasons~\cite{?}. 
-% Finding the differences between flaky and non-flaky failures from these tests shows a significant challenge. Hence, I proposed both machine learning and non-machine learning approaches designed to predict if a failure is flaky or not using its failure log. 
-Using the failure logs for each test, I am currently leveraging them to identify the root causes of test flakiness. This helps understanding the flaky failures and determining how to address them. 
-
-
-
-% \sout{In order to detect flaky tests without the need to run tests multiple times, I proposed a machine learning-based classifier called FlakeFlagger. The classifier is trained to identify flaky tests based on static and dynamic features collected from both flaky and non-flaky tests. The collected features are used as inputs to the classifier, which then learns to predict whether new tests are likely to be flaky or not. By using FlakeFlagger, the rerun task can be prioritized by focusing on tests that FlakeFlagger labels as flaky, but have not yet shown any flakiness. I evaluated the performance of FlakeFlagger against state-of-the-art tools to gain a better understanding of its effectiveness.
-
-% An alternative technique proposed to avoid rerunning tests to detect flakiness is to analyze failure logs. This approach involves examining failure logs to identify flaky tests. I conducted a comprehensive study of existing flaky failures to determine if there were any distinguishing characteristics in their logs compared to non-flaky failures. This led me to design a failure log classifier that takes failure logs as inputs and predicts whether new failure could be flaky. I am currently continuing to evaluate the classifier to gain a better understanding of how useful failure logs can be in detecting flakiness.}
-
-
-
-
-
-% Once the code is modified, regression testing is a best practice to ensure these modifications do not introduce failures in systems. 
-% Developers may link the failed tests to the recent modifications 
-% % Failed tests may let developers think about the recent modifications as a cause of the failures. 
-% However, a test may fail because of the test flakiness. Flaky tests non-deterministically pass and fail on the same version of the code. 
-% Given inconsistent results means less reliability and making the continuous integration complicated and delayed. 
-% Flaky tests, observed from large-scale projects down to smaller software systems, have encouraged both researchers and practitioners to investigate toward the problem of flaky tests.
-% % Given two outcomes of the same test reduce the reliability of the test outcome. The impacts on the reliability of the testing activities due to test flakiness encourage researchers and practitioners to investigate toward the problem of flaky tests.
-
-
- 
-% However, several studies shows that there is no agreed-upon standard for the number of times a test should be run to detect flakiness~\cite{bell2018deflaker,luo2014empirical}. Additionally, rerunning tests can be costly, leading to unacceptable overhead expenses, and it may not detect flakiness in tests that behave inconsistently in different running environments. 
-% Hence, researchers have been exploring alternative methods to detect flaky tests effectively rather than rerunning them.
+The thesis outlines the background, main contributions, and future directions of the proposed research. It highlights the importance of addressing software accessibility, explores new techniques for detecting accessibility issues and failures, and lays out a research plan for further investigation and development in this domain.
 
 
 \end{abstract}
