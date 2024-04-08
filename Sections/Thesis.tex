@@ -11,6 +11,26 @@ Advancements in software accessibility present new and exciting challenges to cr
 The thesis statement is that new machine learning and computer vision-based approaches to semantic screen understanding can address the problem of software accessibility by way of detecting, locating, and augmenting UI screens. To investigate this, I perform a search of existing accessibility focused developer tools and tailor my research direction to cater to limitations in the current research. By understanding the needs in the current state of research, i discuss and propose a series of solutions which use computer vision and UI comprehension techniques. Upon evaluation, I discuss each proposed solution alongside their research questions as shown below. 
 
 
+\subsubsection{Literature Review on Developer Tools}
+
+Given the research efforts above, it is important to understand the impact being made in the field of machine-learning based developer tools to make applications more accessible. I am currently assembling a Systemic Literature Review (SLR) which analyzes the current state of developer tools that facilitate the detection, testing, and augmentation of applications for accessibility issues. This SLR will provide a foundational understanding of the importance this research can provide. It will look at the available tools, the users they target, input/output formats, and experimental methodologies. 
+This work is c
+I aim to present a comprehensive review of the research area at the intersection of machine learning, software engineering, and accessibility to establish the foundation for future work within this research area. This work will attempt to present the answers to these research questions: 
+
+\begin{description}
+  
+    \item \textbf{RQ$_1$}: \textit{Is the research targeted at automating developer activities, enhancing existing software, or creating guidelines for developers?}
+    \item \textbf{RQ$_2$}: \textit{What software domains does research on accessibility typically target?}
+    \item \textbf{RQ$_3$}: \textit{Which populations of users with accessibility needs has software engineering targeted?}
+    \item \textbf{RQ$_4$}: \textit{What type of data do studies use and how can the quality of data and its collection suggest an impact on the research in the field?}
+    \item \textbf{RQ$_5$}: \textit{What are the primary means of evaluation for research that targets users with accessibility needs.?}
+
+ \end{description}
+The discussion of these research questions, along with detailed insights on how I approach them, can be found in Section~\ref{sec:SLR}.
+
+
+
+
 \subsubsection{Detecting Motor-Impairment Accessibility Guideline Violations}
 
 I started my research by conducting a study of the current state of tools that cater to software accessibility.
@@ -32,8 +52,8 @@ The related findings of the detection of motor-impairment guideline violations a
 
 
 
-\subsubsection{Structurally motivated UI Embedding}
-With the increased need for  screen understanding as shown in Sections ~\ref{sec:background, sec:introduction}, I aim to propose a UI embedding for app screens. Prior screen embeddings treat embeddings as images and not as UIs with rich layout and structural information. Some methods of screen embeddings consider the text on the screen and create text embedding for each screen. However, these methods provide a limited semantic understanding of the screen. Some approaches attempt to combine the text and image features of a UI to create a UI embedding, however, were these techniques fail to leverage the layout of the components of the screen. We take an intuitive approach of identifying structure in a UI and create FRAME, an embedding for UI screens which has a structure bias. This approach creates an embedding that can assist in screen retrieval and similarity tasks. I evaluate the embedding with these four different research questions: 
+\subsubsection{Structurally Enhanced UI Embedding}
+With the increased need for  screen understanding as shown in Section ~\ref{sec:background} and Section \ref{sec:introduction}, I aim to propose a UI embedding for app screens. Prior screen embeddings treat embeddings as images and not as UIs with rich layout and structural information. Some methods of screen embeddings consider the text on the screen and create text embedding for each screen. However, these methods provide a limited semantic understanding of the screen. Some approaches attempt to combine the text and image features of a UI to create a UI embedding, however, were these techniques fail to leverage the layout of the components of the screen. We take an intuitive approach of identifying structure in a UI and create FRAME, an embedding for UI screens which has a structure bias. This approach creates an embedding that can assist in screen retrieval and similarity tasks. I evaluate the embedding with these four different research questions: 
 
 \begin{description}
   
@@ -61,21 +81,6 @@ We combine the intuition in the previous two solutions to create a comprehensive
  \end{description}
 The discussion of these research questions, along with detailed insights on how I approach them, can be found in Section~\ref{sec:SearchAcces}.
 
-
-\subsubsection{Literature Review on Developer Tools}
-
-Given the research efforts above, it is important to understand the impact being made in the field of machine-learning based developer tools to make applications more accessible. I am currently assembling a Systemic Literature Review (SLR) which analyzes the current state of developer tools that facilitate the detection, testing, and augmentation of applications for accessibility issues. This SLR will provide a foundational understanding of the importance this research can provide. It will look at the available tools, the users they target, input/output formats, and experimental methodologies. I aim to present a comprehensive review of the research area at the intersection of machine learning, software engineering, and accessibility to establish the foundation for future work within this research area. This work will attempt to present the answers to these research questions: 
-
-\begin{description}
-  
-    \item \textbf{RQ$_1$}: \textit{Is the research targeted at automating developer activities, enhancing existing software, or creating guidelines for developers?}
-    \item \textbf{RQ$_2$}: \textit{What software domains does research on accessibility typically target?}
-    \item \textbf{RQ$_3$}: \textit{Which populations of users with accessibility needs has software engineering targeted?}
-    \item \textbf{RQ$_4$}: \textit{What type of data do studies use and how can the quality of data and its collection suggest an impact on the research in the field?}
-    \item \textbf{RQ$_5$}: \textit{What are the primary means of evaluation for research that targets users with accessibility needs.?}
-
- \end{description}
-The discussion of these research questions, along with detailed insights on how I approach them, can be found in Section~\ref{sec:SLR}.
 
 
 

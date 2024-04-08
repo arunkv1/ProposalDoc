@@ -1,96 +1,97 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}Background}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Software Accessibility}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Developer Tools for Accessibility}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}UI Understanding}{5}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Thesis}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Problem Statement}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Thesis Statement}{7}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Detecting Motor-Impairment Accessibility Guideline Violations}{7}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Structurally motivated UI Embedding}{8}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}UI Search}{8}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Literature Review on Developer Tools}{9}{subsubsection.3.2.4}%
-\contentsline {section}{\numberline {4}Detecting Motor-Impairment Accessibility Guideline Violations}{10}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Background and Motivation}{11}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Accessibility Guideline Literature Review}{12}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Expanding Section Closure}{14}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Visual Touch-Target Size}{15}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.4}Persistent Element Location}{15}{subsubsection.4.1.4}%
-\contentsline {subsubsection}{\numberline {4.1.5}Adjacent Visual Icon Distance}{15}{subsubsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.2}{\sc MotorEase}\xspace Approach}{16}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Detectors}{17}{subsubsection.4.2.1}%
-\contentsline {paragraph}{\textbf {Expanding Section Closure Detector}}{17}{section*.10}%
+\contentsline {subsection}{\numberline {2.2}Developer Tools for Accessibility}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}UI Understanding}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Novelty Statement}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Thesis}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Problem Statement}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Thesis Statement}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Literature Review on Developer Tools}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Detecting Motor-Impairment Accessibility Guideline Violations}{7}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Structurally Enhanced UI Embedding}{7}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}UI Search}{8}{subsubsection.3.2.4}%
+\contentsline {section}{\numberline {4}Literature Review}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Current Progress}{9}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Detecting Motor-Impairment Accessibility Guideline Violations}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Background and Motivation}{12}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Accessibility Guideline Literature Review}{13}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Expanding Section Closure}{15}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Visual Touch-Target Size}{15}{subsubsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.4}Persistent Element Location}{16}{subsubsection.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.5}Adjacent Visual Icon Distance}{16}{subsubsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.2}{\sc MotorEase}\xspace Approach}{17}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Detectors}{18}{subsubsection.5.2.1}%
+\contentsline {paragraph}{\textbf {Expanding Section Closure Detector}}{18}{section*.10}%
 \contentsline {paragraph}{\textbf {Visual Touch-Target Detector}}{20}{section*.14}%
-\contentsline {paragraph}{\textbf {Persisting Elements Detector}}{20}{section*.16}%
-\contentsline {paragraph}{\textbf {Visual Icon Distance Detector}}{21}{section*.18}%
-\contentsline {subsubsection}{\numberline {4.2.2}Accessibility Report Generation}{22}{subsubsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.3}Evaluation Methodology}{22}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}RQ$_1$ - RQ$_4$: Violation Detection Capability}{22}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}RQ$_5$: M{\normalsize OTOR}E{\normalsize ASE}'s Practical Utility}{23}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}Derivation of the M{\normalsize OTOR}C{\normalsize HECK} Benchmark}{24}{subsubsection.4.3.3}%
-\contentsline {paragraph}{Expanding Section Closure Detector Dataset}{24}{section*.22}%
-\contentsline {paragraph}{Visual Touch-Target and UI Element Distance Detector Dataset}{25}{section*.24}%
-\contentsline {paragraph}{Persisting Elements Detector}{25}{section*.25}%
-\contentsline {subsubsection}{\numberline {4.3.4}Comparison to Baseline Techniques}{25}{subsubsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.4}{\sc MotorEase}\xspace Evaluation Results}{26}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}RQ$_1$: Expanding Section Detector Accuracy?}{26}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}RQ$_2$: Visual Touch Target Detector Accuracy?}{27}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}RQ$_3$: Persisting Element Detector Accuracy?}{28}{subsubsection.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.4}RQ$_4$: Visual Icon Distance Detector Accuracy?}{28}{subsubsection.4.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.5}RQ$_5$: False Positives and Negatives}{29}{subsubsection.4.4.5}%
-\contentsline {subsection}{\numberline {4.5}Accessibility Developer Tools Related Works}{30}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}Accessibility Studies on Mobile Apps}{30}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Accessibility Testing}{31}{subsubsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.3}Accessibility-Based UI Comprehension}{32}{subsubsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.6}Summary}{32}{subsection.4.6}%
-\contentsline {section}{\numberline {5}Structurally motivated UI Embedding}{33}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Approach}{34}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Pre Processing the Image}{34}{subsubsection.5.1.1}%
-\contentsline {paragraph}{black-and-white Modification}{35}{section*.31}%
-\contentsline {paragraph}{High-Contrast}{36}{section*.34}%
-\contentsline {subsubsection}{\numberline {5.1.2}Graph Creation}{37}{subsubsection.5.1.2}%
+\contentsline {paragraph}{\textbf {Persisting Elements Detector}}{21}{section*.16}%
+\contentsline {paragraph}{\textbf {Visual Icon Distance Detector}}{22}{section*.18}%
+\contentsline {subsubsection}{\numberline {5.2.2}Accessibility Report Generation}{23}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Evaluation Methodology}{23}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}RQ$_1$ - RQ$_4$: Violation Detection Capability}{23}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}RQ$_5$: M{\normalsize OTOR}E{\normalsize ASE}'s Practical Utility}{24}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Derivation of the M{\normalsize OTOR}C{\normalsize HECK} Benchmark}{24}{subsubsection.5.3.3}%
+\contentsline {paragraph}{Expanding Section Closure Detector Dataset}{25}{section*.22}%
+\contentsline {paragraph}{Visual Touch-Target and UI Element Distance Detector Dataset}{26}{section*.24}%
+\contentsline {paragraph}{Persisting Elements Detector}{26}{section*.25}%
+\contentsline {subsubsection}{\numberline {5.3.4}Comparison to Baseline Techniques}{26}{subsubsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.4}{\sc MotorEase}\xspace Evaluation Results}{27}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}RQ$_1$: Expanding Section Detector Accuracy?}{27}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}RQ$_2$: Visual Touch Target Detector Accuracy?}{28}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}RQ$_3$: Persisting Element Detector Accuracy?}{28}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.4}RQ$_4$: Visual Icon Distance Detector Accuracy?}{28}{subsubsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.5}RQ$_5$: False Positives and Negatives}{29}{subsubsection.5.4.5}%
+\contentsline {subsection}{\numberline {5.5}Accessibility Developer Tools Related Works}{30}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Accessibility Studies on Mobile Apps}{31}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Accessibility Testing}{31}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}Accessibility-Based UI Comprehension}{32}{subsubsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.6}Summary}{33}{subsection.5.6}%
+\contentsline {section}{\numberline {6}Structurally Enhanced UI Embedding}{33}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Approach}{35}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Pre Processing the Image}{36}{subsubsection.6.1.1}%
+\contentsline {paragraph}{black-and-white Modification}{36}{section*.31}%
+\contentsline {paragraph}{High-Contrast}{37}{section*.34}%
+\contentsline {subsubsection}{\numberline {6.1.2}Graph Creation}{37}{subsubsection.6.1.2}%
 \contentsline {paragraph}{Edge Detection}{37}{section*.35}%
-\contentsline {paragraph}{Graph Creation}{37}{section*.36}%
-\contentsline {subsubsection}{\numberline {5.1.3}Graph Embedding Propagation}{38}{subsubsection.5.1.3}%
-\contentsline {subsubsection}{\numberline {5.1.4}Rips-Complex}{39}{subsubsection.5.1.4}%
-\contentsline {subsubsection}{\numberline {5.1.5}Final Embedding}{40}{subsubsection.5.1.5}%
-\contentsline {subsection}{\numberline {5.2}Evaluation Methodology}{41}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}{{\sc Frame}\xspace Evaluation Database}}{41}{subsubsection.5.2.1}%
-\contentsline {paragraph}{Aurora Dataset}{41}{section*.40}%
+\contentsline {paragraph}{Graph Creation}{38}{section*.36}%
+\contentsline {subsubsection}{\numberline {6.1.3}Graph Embedding Propagation}{39}{subsubsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.4}Rips-Complex}{40}{subsubsection.6.1.4}%
+\contentsline {subsubsection}{\numberline {6.1.5}Final Embedding}{41}{subsubsection.6.1.5}%
+\contentsline {subsection}{\numberline {6.2}Evaluation Methodology}{41}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}{{\sc Frame}\xspace Evaluation Database}}{42}{subsubsection.6.2.1}%
+\contentsline {paragraph}{Aurora Dataset}{42}{section*.40}%
 \contentsline {paragraph}{Avgust Dataset}{42}{section*.41}%
-\contentsline {subsubsection}{\numberline {5.2.2}\textbf {RQ$_1$} \textit {How does {\sc Frame}\xspace perform against other baselines in screen retrieval tasks?}}{42}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2}\textbf {RQ$_1$} \textit {How does {\sc Frame}\xspace perform against other baselines in screen retrieval tasks?}}{42}{subsubsection.6.2.2}%
 \contentsline {paragraph}{Hits@k}{42}{section*.42}%
-\contentsline {paragraph}{Mean Reciprocal Rank (MRR)}{42}{section*.43}%
+\contentsline {paragraph}{Mean Reciprocal Rank (MRR)}{43}{section*.43}%
 \contentsline {paragraph}{CLIP}{43}{section*.44}%
-\contentsline {paragraph}{Screen2Vec}{43}{section*.45}%
-\contentsline {paragraph}{BERT}{43}{section*.46}%
-\contentsline {subsubsection}{\numberline {5.2.3}\textbf {RQ$_2$} \textit {How does {\sc Frame}\xspace perform on various types of screens against the best baseline?}}{43}{subsubsection.5.2.3}%
-\contentsline {subsubsection}{\numberline {5.2.4}\textbf {RQ$_3$} \textit {How important is the structural embedding propagation between graphs in order enhance the embedding ?}}{44}{subsubsection.5.2.4}%
-\contentsline {paragraph}{Propagated Embedding: NC-PB-PC}{44}{section*.47}%
-\contentsline {paragraph}{CLIP + No Propagated CLIP: C-PB-NPC}{44}{section*.48}%
+\contentsline {paragraph}{Screen2Vec}{44}{section*.45}%
+\contentsline {paragraph}{BERT}{44}{section*.46}%
+\contentsline {subsubsection}{\numberline {6.2.3}\textbf {RQ$_2$} \textit {How does {\sc Frame}\xspace perform on various types of screens against the best baseline?}}{44}{subsubsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.4}\textbf {RQ$_3$} \textit {How important is the structural embedding propagation between graphs in order enhance the embedding ?}}{44}{subsubsection.6.2.4}%
+\contentsline {paragraph}{Propagated Embedding: NC-PB-PC}{45}{section*.47}%
+\contentsline {paragraph}{CLIP + No Propagated CLIP: C-PB-NPC}{45}{section*.48}%
 \contentsline {paragraph}{CLIP + No Propagated BERT: C-NPB-PC}{45}{section*.49}%
 \contentsline {paragraph}{CLIP + No Propagated Embeddings: C-NPB-NPC}{45}{section*.50}%
-\contentsline {paragraph}{Only Propagated BERT: NC-PB-NPC}{45}{section*.51}%
-\contentsline {paragraph}{Only Propagated CLIP: NC-NPB-PC}{45}{section*.52}%
-\contentsline {subsubsection}{\numberline {5.2.5}\textbf {RQ$_4$} \textit {How well does {\sc Frame}\xspace leverage its ability to abstract the screen and disregard styling?}}{45}{subsubsection.5.2.5}%
+\contentsline {paragraph}{Only Propagated BERT: NC-PB-NPC}{46}{section*.51}%
+\contentsline {paragraph}{Only Propagated CLIP: NC-NPB-PC}{46}{section*.52}%
+\contentsline {subsubsection}{\numberline {6.2.5}\textbf {RQ$_4$} \textit {How well does {\sc Frame}\xspace leverage its ability to abstract the screen and disregard styling?}}{46}{subsubsection.6.2.5}%
 \contentsline {paragraph}{No Contrast: B-NC}{46}{section*.53}%
 \contentsline {paragraph}{No black-and-white: NB-C}{46}{section*.54}%
-\contentsline {paragraph}{No Contrast and No black-and-white: NB-NC}{46}{section*.55}%
-\contentsline {subsection}{\numberline {5.3}Evaluation Results}{47}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}\textbf {RQ$_1$} \textit {How does {\sc Frame}\xspace perform against other baselines in screen retrieval tasks?}}{47}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}\textbf {RQ$_2$} \textit {How does {\sc Frame}\xspace perform on various types of screens against the best baseline?}}{47}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}\textbf {RQ$_3$} \textit {How important is the structural embedding propagation between graphs in order to enhance the embedding?}}{49}{subsubsection.5.3.3}%
-\contentsline {subsubsection}{\numberline {5.3.4}\textbf {RQ$_4$} \textit {How well does {\sc Frame}\xspace leverage its ability to abstract the screen and disregard styling?}}{50}{subsubsection.5.3.4}%
-\contentsline {paragraph}{NB-C}{50}{section*.61}%
-\contentsline {paragraph}{B-NC}{50}{section*.62}%
+\contentsline {paragraph}{No Contrast and No black-and-white: NB-NC}{47}{section*.55}%
+\contentsline {subsection}{\numberline {6.3}Evaluation Results}{47}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}\textbf {RQ$_1$} \textit {How does {\sc Frame}\xspace perform against other baselines in screen retrieval tasks?}}{47}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}\textbf {RQ$_2$} \textit {How does {\sc Frame}\xspace perform on various types of screens against the best baseline?}}{48}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}\textbf {RQ$_3$} \textit {How important is the structural embedding propagation between graphs in order to enhance the embedding?}}{49}{subsubsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.4}\textbf {RQ$_4$} \textit {How well does {\sc Frame}\xspace leverage its ability to abstract the screen and disregard styling?}}{50}{subsubsection.6.3.4}%
+\contentsline {paragraph}{NB-C}{51}{section*.61}%
+\contentsline {paragraph}{B-NC}{51}{section*.62}%
 \contentsline {paragraph}{NB-NC}{51}{section*.63}%
-\contentsline {subsection}{\numberline {5.4}Embedding Related Works}{51}{subsection.5.4}%
+\contentsline {subsection}{\numberline {6.4}Embedding Related Works}{51}{subsection.6.4}%
 \contentsline {paragraph}{UI Search and Similarity}{52}{section*.64}%
-\contentsline {paragraph}{UI Comprehension}{52}{section*.65}%
+\contentsline {paragraph}{UI Comprehension}{53}{section*.65}%
 \contentsline {paragraph}{Graph Based UI Representation}{53}{section*.66}%
-\contentsline {subsection}{\numberline {5.5}Summary}{53}{subsection.5.5}%
-\contentsline {section}{\numberline {6}Accessible UI Search}{54}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Current Progress}{54}{subsection.6.1}%
-\contentsline {section}{\numberline {7}Literature Review}{55}{section.7}%
+\contentsline {subsection}{\numberline {6.5}Summary}{53}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Accessible UI Search}{55}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Current Progress}{55}{subsection.7.1}%
 \contentsline {section}{\numberline {8}Research Plan}{56}{section.8}%

@@ -5,44 +5,7 @@ This thesis introduces two ideas within software engineering which intersect at 
 
 \subsection{Software Accessibility}
 
-Research in software accessibility relies on the knowledge of various demographics of the disabled community. Most research is focused on solving a problem within a single population of disabled people, for example, a study could test to see if Android applications are accessible to Motor-impaired users \cite{Alshayban20}, while another could develop a tool to label UI elements in order to help screen readers read out UI elements to visually impaired people \cite{Salehnamadi21}. This section will go through how people with different disabilities use touch screen devices. Table \ref{tab:guidelines} lists a series of accessibility guidelines mentioned in previous work as well as the affected user demographic.
-
-
-
-\begin{table}[h]
-	\footnotesize
-	\vspace{-0.0em}
-	\caption{Accessibility guidelines extracted from our systematic literature review of accessibility guidelines -- includes recent research and Google's~\cite{GoogleAccess} and Apple's~\cite{AppleAccess} accessibility guidelines. (LV = low vision users, DHH = deaf and hard of hearing users)}
-	\vspace{-1em}
-	\begin{tabular}{>{\centering\arraybackslash}p{2in}|>{\centering\arraybackslash}p{1.8in}|>{\centering\arraybackslash}p{.82in}|>{\centering\arraybackslash}p{.82in}}
-	
-		\textbf{Accessibility Guideline} & \textbf{Primary Affected User Demographic} & \textbf{Guideline Source}  & \textbf{Previous Implementation} \\
-		\hline
-		Visual Touch Target Size & \footnotesize {Motor, LV} & \cite{Kong21, Parhi06} &  \\ 
-		\rowcolor{gray!30!} Touch Target Size & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, Nunes15, Calvo16, Alshayban20, Abascal11, Kane11, Kong21} & X \\ 
-		Persistent Element Location & \footnotesize {Motor} &\cite{AppleAccess, HarvardAccess, WebGuide, GoogleAccess} &   \\
-		\rowcolor{gray!30!} Clickable Span & \footnotesize {Motor, LV} & \cite{Alshayban20} & X \\
-		Duplicate Clickable Bounds & \footnotesize {Motor} & \cite{Alshayban20} & X \\
-		\rowcolor{gray!30!} Editable Item Descriptions & \footnotesize {LV} & \cite{Alshayban20, Eler18} & X \\
-		Expanding Section Closure & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide} &   \\
-		\rowcolor{gray!30!} Non-Native Elements & \footnotesize {Motor, LV} & \cite{GoogleAccess, Calvo16}& X \\
-		Motion Activation & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess} &  \\
-		\rowcolor{gray!30!} Labeled Elements & \footnotesize {Visual, DHH} & \cite{Alshayban20, FlrezAristizbal19, Li21, Eler18} & X \\
-		Screen Captioning & \footnotesize {LV, DHH} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, ADAWeb, AccessGov, Ross18, Li21, Pavel20, Kane11}& X \\
-		\rowcolor{gray!30!}Keyboard Navigation & \footnotesize {Motor, LV} & \cite{ADAWeb, AccessGov, FlrezAristizbal19, Li21, Chiou21} & X \\
-		Traversal Order & \footnotesize {Motor} & \cite{AccessGov, Alshayban20, FlrezAristizbal19} & X \\
-		\rowcolor{gray!30!}Adjacent Visual Icon Distance & \footnotesize {Motor} & \cite{AppleAccess, GoogleAccess, WebGuide, Yan19, Abascal11, Nunes15} &  X \\
-		
-		 Proper Information Organization & \footnotesize {Motor, LV} & \cite{Calvo16} & X \\
-		\rowcolor{gray!30!} Facial Recognition & \footnotesize {Motor} & \cite{Calvo16, Astler11} & X \\
-		 Single Tap Navigation & \footnotesize {Motor} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, FlrezAristizbal19, Milne18} &  \\
-		\rowcolor{gray!30!} Poor form design/instructions & \footnotesize {Motor, LV} & \cite{ADAWeb, AccessGov} &  
-		\end{tabular}
-\vspace{-1em}
-	\label{tab:guidelines}
-\end{table}
-
-
+Research in software accessibility relies on the knowledge of various demographics of the disabled community. Most research is focused on solving a problem within a single population of disabled people, for example, a study could test to see if Android applications are accessible to Motor-impaired users \cite{Alshayban20}, while another could develop a tool to label UI elements in order to help screen readers read out UI elements to visually impaired people \cite{Salehnamadi21}. This section will go through how people with different disabilities use touch screen devices. 
 
 \noindent \textbf{\textit{Visually Impaired Users}}
 
@@ -92,6 +55,9 @@ Like the project by Moran et al \cite{Moran18}, UIBert by Google \cite{bai2021ui
 
 It is really important to understand GUIs when looking to help developers make more accessible software because most techniques from GUI comprehension are used to label and modify GUIs to make applications more accessible, so by looking at the current research in this field, we can see how GUI accessibility is dependent on advancements in GUI comprehension. 
 
+\subsection{Novelty Statement}
+
+I aim to leverage the work that has been done in the past and build upon it with my thesis. Many accessibility testing tools have been unable to address issues due to the previous state of data and technology. Given the progress being made, this thesis will differentiate itself by proposing machine learning and computer vision based approaches to address previously unsolved problems. 
 
 
 

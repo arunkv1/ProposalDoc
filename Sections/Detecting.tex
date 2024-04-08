@@ -6,7 +6,7 @@ Beyond providing equitable access to software for users with a variety of backgr
 
 Current research at the intersection of developer tools and software accessibility has generally been disproportionally focused on users with certain disabilities, such as visual impairments, i.e., low vision (LV), and hearing impairments, i.e., deaf and hard of hearing (DHH)~\cite{Park14,Zhang21,Gajos07,Vendome19, Chen22}. The visual nature of software user interfaces (UIs), and large populations of users with visual impairments have made this a natural and important focus area. This focus, however, must expand to study and create tools that aid developers in considering and implementing accessible features that support users with a wider range of disabilities. One understudied demographic, and the focus of this paper, is that of \textit{motor-impaired users}. The current landscape of research on developer tools that aim to support software accessibility for motor-impaired users is somewhat limited, due in part to the difficulty in supporting a wide spectrum of motor-impairment conditions (i.e., ranging from hand tremors, to more limited motor abilities that necessitate the use of assistive devices such as switch controls) and need to consider external hardware~\cite{Sarsenbayeva22}. Generally, developers currently lack tools for identifying, understanding, and implementing accessible features for motor-impaired users~\cite{Alshayban20}. 
 
-The central challenge of building developer tools that support accessibility for motor impaired users is one of \textit{semantic screen understanding}. That is, in order to determine whether a given UI screen follows motor-impairment accessibility guidelines, the \textit{functional} and \textit{visual} properties of UI screens and individual components must be automatically inferred from a given app. For example, motor-impaired users that make use of hardware devices, such as switches, rely on assistive services (e.g., Android \texttt{\small Switch Access}~\cite{switch-access}) that iteratively scan through and highlight individual UI components, as illustrated in Figure~\ref{fig:switch}. This allows a motor-impaired user to easily select the icon or component with which they wish to interact. However, this process can be slower than traditional gesture-based control~\cite{MacKenzie11}, and switch users often rely on the \textit{consistency} of certain UI element patterns, such as menus, in order to quickly perform actions. As such, a popular motor-impairment accessibility design guideline for mobile apps~\cite{AppleAccess,GoogleAccess} states that persistent icons that appear across multiple screens, such as tab bars or menus, should retain a consistent ordering. This allows a user to anticipate which UI elements will be highlighted by the assistive service. However, in order to detect inconsistent icon orderings, an automated tool must be able to accurately identify functional groups of UI components, such as tab bars, and the ordering of icons within them. 
+The central challenge of building developer tools that support accessibility for motor impaired users is one of \textit{semantic screen understanding}. That is, in order to determine whether a given UI screen follows motor-impairment accessibility guidelines, the \textit{functional} and \textit{visual} properties of UI screens and individual components must be automatically inferred from a given app. For example, motor-impaired users that make use of hardware devices, such as switches, rely on assistive services (e.g., Android \texttt{\small Switch Access}~\cite{switch-access}) that iteratively scan through and highlight individual UI components, as illustrated in Figure ~\ref{fig:SwitchInterface}. This allows a motor-impaired user to easily select the icon or component with which they wish to interact. However, this process can be slower than traditional gesture-based control~\cite{MacKenzie11}, and switch users often rely on the \textit{consistency} of certain UI element patterns, such as menus, in order to quickly perform actions. As such, a popular motor-impairment accessibility design guideline for mobile apps~\cite{AppleAccess,GoogleAccess} states that persistent icons that appear across multiple screens, such as tab bars or menus, should retain a consistent ordering. This allows a user to anticipate which UI elements will be highlighted by the assistive service. However, in order to detect inconsistent icon orderings, an automated tool must be able to accurately identify functional groups of UI components, such as tab bars, and the ordering of icons within them. 
 
 
 To help advance the current state of developer tools to better support motor impaired users, and overcome the challenges related to automated screen understanding, this paper introduces a novel approach, called \MotorEase, which aims to automate the detection of \textbf{Motor} impairm\textbf{E}nt \textbf{A}cce\textbf{S}sibility issu\textbf{E}s in mobile apps. \MotorEase is a novel approach that leverages automated dynamic analysis, computer-vision, and text-processing techniques to detect violations of motor-impairment accessibility guidelines in a given Android application. The approach is comprised of four detectors each targeted toward a popular UI design guideline meant to support motor impaired users. \MotorEase's novelty lies in both its  technical underpinnings and its ability. \MotorEase combines multiple neural models for screen understanding, allowing it to recognize screen semantics prior techniques cannot. This allows \MotorEase to identify violations of motor-impairment accessibility guidelines. 
@@ -20,45 +20,74 @@ To help advance the current state of developer tools to better support motor imp
 
 \label{sec:motivation}
 
-In order to understand how the \MotorEase approach functions, it is important to understand how motor-impaired users use their devices. Motor-impaired users use devices in two main ways: Switch input and touch input \cite{Zhang13}. As described earlier, switch based input uses an external hardware input device. Switches are common in users with limited to no motor control but without impaired cognitive functions~\cite{Zhang13}. Most current smartphone and tablet devices offer accessibility services that support scanning a curser across the screen to highlight UI elements and icons (i.e Fig.~\ref{fig:switch})~\cite{AppleAccess,GoogleAccess}. The users can then click the switch to select the UI element that is highlighted, forming a semi-automated form of user input. 
+In order to understand how the \MotorEase approach functions, it is important to understand how motor-impaired users use their devices. Motor-impaired users use devices in two main ways: Switch input and touch input \cite{Zhang13}. As described earlier, switch based input uses an external hardware input device. Switches are common in users with limited to no motor control but without impaired cognitive functions~\cite{Zhang13}. Most current smartphone and tablet devices offer accessibility services that support scanning a curser across the screen to highlight UI elements and icons (i.e Fig.~\ref{fig:SwitchInterface})~\cite{AppleAccess,GoogleAccess}. The users can then click the switch to select the UI element that is highlighted, forming a semi-automated form of user input. 
 This input technique can be far slower than traditional touch-based interactions, as it requires waiting for appropriate UI elements to be highlighted by the system. Thus, switch users rely on consistent and accessible app designs to be able to anticipate the future UI elements that will be focused by the scanning service. One example that highlights how tedious this input can be is related to typing speed, where switch users average 3 words per minute (wpm), and touch-based users average closer to 40 wpm~\cite{MacKenzie11}. 
 
 
+%\begin{table}[h]
+%	\centering
+%	\footnotesize
+%	\vspace{-0.5em}
+%	\caption{Accessibility guidelines extracted from our systematic literature review of accessibility guidelines -- includes recent research and Google's~\cite{GoogleAccess} and Apple's~\cite{AppleAccess} accessibility guidelines. (LV = low vision users, DHH = deaf and hard of hearing users)}
+%	\vspace{-1em}
+%	\begin{tabular}{>{\centering\arraybackslash}p{2in}|>{\centering\arraybackslash}p{1.8in}|>{\centering\arraybackslash}p{.82in}|>{\centering\arraybackslash}p{.82in}|>{\centering\arraybackslash}p{.82in} }
+%	
+%		\textbf{Accessibility Guideline} & \textbf{Primary Affected User Demographic} & \textbf{Guideline Source}  & \textbf{Previous Implementation} & \textbf{Implemented by \MotorEase} \\
+%		\hline
+%		Visual Touch Target Size & \footnotesize {Motor, LV} & \cite{Kong21, Parhi06} &  & X \\ 
+%		\rowcolor{gray!30!} Touch Target Size & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, Nunes15, Calvo16, Alshayban20, Abascal11, Kane11, Kong21} & X & \\ 
+%		Persistent Element Location & \footnotesize {Motor} &\cite{AppleAccess, HarvardAccess, WebGuide, GoogleAccess} &   & X \\
+%		\rowcolor{gray!30!} Clickable Span & \footnotesize {Motor, LV} & \cite{Alshayban20} & X{} &  \\
+%		Duplicate Clickable Bounds & \footnotesize {Motor} & \cite{Alshayban20} & X &  \\
+%		\rowcolor{gray!30!} Editable Item Descriptions & \footnotesize {LV} & \cite{Alshayban20, Eler18} & X{} &  \\
+%		Expanding Section Closure & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide} &   & X\\
+%		\rowcolor{gray!30!} Non-Native Elements & \footnotesize {Motor, LV} & \cite{GoogleAccess, Calvo16}& X{} &  \\
+%		Motion Activation & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess} &  & \\
+%		\rowcolor{gray!30!} Labeled Elements & \footnotesize {Visual, DHH} & \cite{Alshayban20, FlrezAristizbal19, Li21, Eler18} & X & \\
+%		Screen Captioning & \footnotesize {LV, DHH} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, ADAWeb, AccessGov, Ross18, Li21, Pavel20, Kane11}& X & \\
+%		\rowcolor{gray!30!}Keyboard Navigation & \footnotesize {Motor, LV} & \cite{ADAWeb, AccessGov, FlrezAristizbal19, Li21, Chiou21} & X & \\
+%		Traversal Order & \footnotesize {Motor} & \cite{AccessGov, Alshayban20, FlrezAristizbal19} & X & \\
+%		\rowcolor{gray!30!}Adjacent Visual Icon Distance & \footnotesize {Motor} & \cite{AppleAccess, GoogleAccess, WebGuide, Yan19, Abascal11, Nunes15} &  & X \\
+%		
+%		 Proper Information Organization & \footnotesize {Motor, LV} & \cite{Calvo16} & X & \\
+%		\rowcolor{gray!30!} Facial Recognition & \footnotesize {Motor} & \cite{Calvo16, Astler11} & X & \\
+%		 Single Tap Navigation & \footnotesize {Motor} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, FlrezAristizbal19, Milne18} &  & \\
+%		\rowcolor{gray!30!} Poor form design/instructions & \footnotesize {Motor, LV} & \cite{ADAWeb, AccessGov} &  & \\
+%		
+%		\end{tabular}
+%\vspace{-1em}
+%	\label{tab:guidelines}
+%\end{table}
+
 \begin{table}[h]
-	\centering
-	\footnotesize
-	\vspace{-0.5em}
-	\caption{Accessibility guidelines extracted from our systematic literature review of accessibility guidelines -- includes recent research and Google's~\cite{GoogleAccess} and Apple's~\cite{AppleAccess} accessibility guidelines. (LV = low vision users, DHH = deaf and hard of hearing users)}
-	\vspace{-1em}
-	\begin{tabular}{>{\centering\arraybackslash}p{2in}|>{\centering\arraybackslash}p{1.8in}|>{\centering\arraybackslash}p{.82in}|>{\centering\arraybackslash}p{.82in}|>{\centering\arraybackslash}p{.82in} }
-	
-		\textbf{Accessibility Guideline} & \textbf{Primary Affected User Demographic} & \textbf{Guideline Source}  & \textbf{Previous Implementation} & \textbf{Implemented by \MotorEase} \\
-		\hline
-		Visual Touch Target Size & \footnotesize {Motor, LV} & \cite{Kong21, Parhi06} &  & X \\ 
-		\rowcolor{gray!30!} Touch Target Size & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, Nunes15, Calvo16, Alshayban20, Abascal11, Kane11, Kong21} & X & \\ 
-		Persistent Element Location & \footnotesize {Motor} &\cite{AppleAccess, HarvardAccess, WebGuide, GoogleAccess} &   & X \\
-		\rowcolor{gray!30!} Clickable Span & \footnotesize {Motor, LV} & \cite{Alshayban20} & X{} &  \\
-		Duplicate Clickable Bounds & \footnotesize {Motor} & \cite{Alshayban20} & X &  \\
-		\rowcolor{gray!30!} Editable Item Descriptions & \footnotesize {LV} & \cite{Alshayban20, Eler18} & X{} &  \\
-		Expanding Section Closure & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide} &   & X\\
-		\rowcolor{gray!30!} Non-Native Elements & \footnotesize {Motor, LV} & \cite{GoogleAccess, Calvo16}& X{} &  \\
-		Motion Activation & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess} &  & \\
-		\rowcolor{gray!30!} Labeled Elements & \footnotesize {Visual, DHH} & \cite{Alshayban20, FlrezAristizbal19, Li21, Eler18} & X & \\
-		Screen Captioning & \footnotesize {LV, DHH} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, ADAWeb, AccessGov, Ross18, Li21, Pavel20, Kane11}& X & \\
-		\rowcolor{gray!30!}Keyboard Navigation & \footnotesize {Motor, LV} & \cite{ADAWeb, AccessGov, FlrezAristizbal19, Li21, Chiou21} & X & \\
-		Traversal Order & \footnotesize {Motor} & \cite{AccessGov, Alshayban20, FlrezAristizbal19} & X & \\
-		\rowcolor{gray!30!}Adjacent Visual Icon Distance & \footnotesize {Motor} & \cite{AppleAccess, GoogleAccess, WebGuide, Yan19, Abascal11, Nunes15} &  & X \\
-		
-		 Proper Information Organization & \footnotesize {Motor, LV} & \cite{Calvo16} & X & \\
-		\rowcolor{gray!30!} Facial Recognition & \footnotesize {Motor} & \cite{Calvo16, Astler11} & X & \\
-		 Single Tap Navigation & \footnotesize {Motor} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, FlrezAristizbal19, Milne18} &  & \\
-		\rowcolor{gray!30!} Poor form design/instructions & \footnotesize {Motor, LV} & \cite{ADAWeb, AccessGov} &  & \\
-
-
-		
-			\end{tabular}
-\vspace{-1em}
-	\label{tab:guidelines}
+    \centering
+    \footnotesize
+    \caption{Accessibility guidelines extracted from our systematic literature review of accessibility guidelines -- includes recent research and Google's~\cite{GoogleAccess} and Apple's~\cite{AppleAccess} accessibility guidelines. (LV = low vision users, DHH = deaf and hard of hearing users)}
+    \label{tab:guidelines}
+    \scalebox{0.9}{
+    \begin{tabular}{>{\centering\arraybackslash}p{2in}|>{\centering\arraybackslash}p{1.8in}|>{\centering\arraybackslash}p{.82in}|>{\centering\arraybackslash}p{.82in}|>{\centering\arraybackslash}p{.82in}}
+        \textbf{Accessibility Guideline} & \textbf{Primary Affected User Demographic} & \textbf{Guideline Source}  & \textbf{Prev. Implementation} & \textbf{Implemented by \MotorEase} \\
+        \hline
+        Visual Touch Target Size & Motor, LV & \cite{Kong21, Parhi06} &  & X \\ 
+        \rowcolor{gray!30!} Touch Target Size & Motor, LV & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, Nunes15, Calvo16, Alshayban20, Abascal11, Kane11, Kong21} & X & \\ 
+        Persistent Element Location & Motor &\cite{AppleAccess, HarvardAccess, WebGuide, GoogleAccess} &   & X \\
+        \rowcolor{gray!30!} Clickable Span & Motor, LV & \cite{Alshayban20} & X &  \\
+        Duplicate Clickable Bounds & Motor & \cite{Alshayban20} & X &  \\
+        \rowcolor{gray!30!} Editable Item Descriptions & LV & \cite{Alshayban20, Eler18} & X &  \\
+        Expanding Section Closure & Motor, LV & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide} &   & X\\
+        \rowcolor{gray!30!} Non-Native Elements & Motor, LV & \cite{GoogleAccess, Calvo16}& X &  \\
+        Motion Activation & Motor, LV & \cite{AppleAccess, GoogleAccess, HarvardAccess} &  & \\
+        \rowcolor{gray!30!} Labeled Elements & Visual, DHH & \cite{Alshayban20, FlrezAristizbal19, Li21, Eler18} & X & \\
+        Screen Captioning & LV, DHH & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, ADAWeb, AccessGov, Ross18, Li21, Pavel20, Kane11}& X & \\
+        \rowcolor{gray!30!} Keyboard Navigation & Motor, LV & \cite{ADAWeb, AccessGov, FlrezAristizbal19, Li21, Chiou21} & X & \\
+        Traversal Order & Motor & \cite{AccessGov, Alshayban20, FlrezAristizbal19} & X & \\
+        \rowcolor{gray!30!} Adjacent Visual Icon Distance & Motor & \cite{AppleAccess, GoogleAccess, WebGuide, Yan19, Abascal11, Nunes15} &  & X \\
+        Proper Info. Organization & Motor, LV & \cite{Calvo16} & X & \\
+        \rowcolor{gray!30!} Facial Recognition & Motor & \cite{Calvo16, Astler11} & X & \\
+        Single Tap Navigation & Motor & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, FlrezAristizbal19, Milne18} &  & \\
+        \rowcolor{gray!30!} Poor form design/instructions & Motor, LV & \cite{ADAWeb, AccessGov} &  & \\
+    \end{tabular}
+    }
 \end{table}
 
 
@@ -76,7 +105,7 @@ After the search process concluded, one author extracted all accessibility guide
 Of the many guidelines identified, \MotorEase supports identifying violations for four of them, \emph{Touch-Target Size, Expanding Section Closure, Persisting Elements, and Icon Distance}. These guidelines were selected for three main reasons: (i) current lack of implementation (ii) the need for complex screen screen understanding and less trivial methods of analysis (iii) integration with the output of automated UI testing tools for Android. Our goal in conceptualizing and implementing \MotorEase is to create a tool that can effectively identify and address motor accessibility issues that  that remain undetectable through conventional static analysis techniques. Our primary objective entailed the formulation of a set of guidelines that require a more sophisticated understanding of the screen, enabling a more nuanced search for motor accessibility barriers within mobile applications. We are confident that the combination of these guidelines, previously unexplored, in conjunction with UI comprehension, will result in a highly robust and functional accessibility testing tool, that caters to the unique requirements of individuals with motor impairments.
 
 
-The four accessibility guidelines targeted by \MotorEase are (i) \textit{\textbf{Visual Touch Target Size}}, (ii) \textit{\textbf{Persistent Element Location}}, (iii) \textit{\textbf{Expanding Section Closure}}, and (iv) \textit{\textbf{Visual Icon Distance}}. One of these guidelines (\textit{Visual Touch Target Size}) was identified from a prior accessibility study, whereas the others come directly from Apple and Google's accessibility deign guidelines for mobile apps~\cite{AppleAccess,GoogleAccess}. These four guidelines were chosen as they had not been implemented by past work and could easily integrate with automated input generation (AIG) tools for Android, which is an important practical component of \MotorEase as we explain in Section~\ref{sec:approach}.  
+The four accessibility guidelines targeted by \MotorEase are (i) \textit{\textbf{Visual Touch Target Size}}, (ii) \textit{\textbf{Persistent Element Location}}, (iii) \textit{\textbf{Expanding Section Closure}}, and (iv) \textit{\textbf{Visual Icon Distance}}. One of these guidelines (\textit{Visual Touch Target Size}) was identified from a prior accessibility study, whereas the others come directly from Apple and Google's accessibility deign guidelines for mobile apps~\cite{AppleAccess,GoogleAccess}. These four guidelines were chosen as they had not been implemented by past work and could easily integrate with automated input generation (AIG) tools for Android, which is an important practical component of \MotorEase.  
 In the following subsections, we describe each motor-impairment accessibility guideline in detail, and the screen understanding challenges in detecting guideline violations. More detailed descriptions of all  guidelines can be found in our online appendicies~\cite{appendix,site,zenodo}.  
 
 \begin{figure}[t]

@@ -1,21 +1,21 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Polygons representing clusters of hit points for LV users \cite {4}\relax }}{4}{figure.caption.5}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Switch Interface\relax }}{4}{figure.caption.6}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Illustration of four studied accessibility guidelines\relax }}{14}{figure.caption.8}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Overview of {\sc MotorEase}\xspace 's Workflow\relax }}{16}{figure.caption.9}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Extracted Expanding Sections\relax }}{18}{figure.caption.12}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Base Closure Icons\relax }}{19}{figure.caption.13}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Example of Bounding Box vs. True Bounds\relax }}{20}{figure.caption.15}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Detection of Persisting Elements\relax }}{21}{figure.caption.17}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Visual Icon Distance Detection Process\relax }}{21}{figure.caption.19}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Polygons representing clusters of hit points for LV users \cite {4}\relax }}{3}{figure.caption.4}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Switch Interface\relax }}{3}{figure.caption.5}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Illustration of four studied accessibility guidelines\relax }}{15}{figure.caption.8}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Overview of {\sc MotorEase}\xspace 's Workflow\relax }}{17}{figure.caption.9}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Extracted Expanding Sections\relax }}{19}{figure.caption.12}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Base Closure Icons\relax }}{20}{figure.caption.13}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Example of Bounding Box vs. True Bounds\relax }}{21}{figure.caption.15}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Detection of Persisting Elements\relax }}{22}{figure.caption.17}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Visual Icon Distance Detection Process\relax }}{22}{figure.caption.19}%
 \contentsline {figure}{\numberline {10}{\ignorespaces Expanding Section Closure Detection\relax }}{27}{figure.caption.26}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Persisting Elements Detection\relax }}{28}{figure.caption.27}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Visual Icon Distance Detection\relax }}{28}{figure.caption.28}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Detector Confusion Matrices\relax }}{29}{figure.caption.29}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Persisting Elements Detection\relax }}{29}{figure.caption.27}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Visual Icon Distance Detection\relax }}{29}{figure.caption.28}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Detector Confusion Matrices\relax }}{30}{figure.caption.29}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Overview of The FRAME Approach\relax }}{35}{figure.caption.30}%
 \contentsline {figure}{\numberline {15}{\ignorespaces 3 Similar Images using CLIP Embeddings\relax }}{36}{figure.caption.32}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Preprocessing and augmenting the input image\relax }}{36}{figure.caption.33}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Preprocessing and augmenting the input image\relax }}{37}{figure.caption.33}%
 \contentsline {figure}{\numberline {17}{\ignorespaces Process of creating the graph\relax }}{38}{figure.caption.37}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Visualization of low dimensional simplicies\relax }}{39}{figure.caption.38}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Visualization of low dimensional simplicies\relax }}{40}{figure.caption.38}%
 \contentsline {figure}{\numberline {19}{\ignorespaces Process of creating the Rips Complex using a set of embeddings\relax }}{40}{figure.caption.39}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Visualization of FRAME vs CLIP Hits@10 on different screen types in the Aurora dataset\relax }}{48}{figure.caption.58}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Visualization of FRAME vs CLIP Hits@10 on different screen types in the Aurora dataset\relax }}{49}{figure.caption.58}%
 \contentsline {figure}{\numberline {21}{\ignorespaces Visualization of FRAME vs CLIP Hits@10 on different screen types in the Avgust dataset\relax }}{49}{figure.caption.59}%

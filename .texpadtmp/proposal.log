@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.25)  8 APR 2024 13:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.25)  8 APR 2024 18:14
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -780,292 +780,223 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [5] (./Sections/Introduction.tex [1
 
 ]) (./Sections/Background.tex
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<imgs/hits.jpg, id=538, 1140.26pt x 694.595pt>
+<imgs/hits.jpg, id=470, 1140.26pt x 694.595pt>
 File: imgs/hits.jpg Graphic file (type jpg)
 <use imgs/hits.jpg>
-Package pdftex.def Info: imgs/hits.jpg  used on input line 53.
+Package pdftex.def Info: imgs/hits.jpg  used on input line 16.
 (pdftex.def)             Requested size: 234.87749pt x 143.07121pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-<imgs/switchInterface.jpg, id=562, 2465.21pt x 609.27625pt>
+<imgs/switchInterface.jpg, id=494, 2465.21pt x 609.27625pt>
 File: imgs/switchInterface.jpg Graphic file (type jpg)
 <use imgs/switchInterface.jpg>
-Package pdftex.def Info: imgs/switchInterface.jpg  used on input line 67.
+Package pdftex.def Info: imgs/switchInterface.jpg  used on input line 30.
 (pdftex.def)             Requested size: 281.85585pt x 69.66087pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-[3]
-Overfull \hbox (9.3402pt too wide) in paragraph at lines 76--77
+[3 <./imgs/hits.jpg> <./imgs/switchInterface.jpg>]
+Overfull \hbox (9.3402pt too wide) in paragraph at lines 39--40
 \OT1/ptm/m/n/12 and mem-ory loss. It is es-ti-mated that 7% of the pop-u-la-tion iden-ti-fies as neurodivergent-encompassing
  []
 
 
-Overfull \hbox (5.96886pt too wide) in paragraph at lines 76--77
+Overfull \hbox (5.96886pt too wide) in paragraph at lines 39--40
 \OT1/ptm/m/n/12 severely un-der-rep-re-sented in de-sign of the web. The Web Con-tent Ac-ces-si-bil-ity Guide-lines (WCAG)
  []
 
-[4 <./imgs/hits.jpg> <./imgs/switchInterface.jpg>] [5]) (./Sections/Thesis.tex [6] [7]
-
-LaTeX Warning: Reference `sec:background, sec:introduction' on page 8 undefined on input line 36.
-
-[8]) (./Sections/Detecting.tex [9]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 9.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-
-LaTeX Warning: Reference `fig:switch' on page 10 undefined on input line 9.
-
-[10]
-
-LaTeX Warning: Reference `fig:switch' on page 11 undefined on input line 23.
-
-
-Overfull \hbox (44.25694pt too wide) in paragraph at lines 33--62
- [][] 
- []
-
+[4]) (./Sections/Thesis.tex [5] [6] [7]) (./Sections/SLR.tex [8]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11] [12] [13]
+[9]) (./Sections/Detecting.tex [10]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 9.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [11]
 
-LaTeX Warning: Reference `sec:approach' on page 14 undefined on input line 79.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/guidelines.pdf, id=831, 568.1225pt x 501.875pt>
+[12] [13] [14]
+<imgs/guidelines.pdf, id=847, 568.1225pt x 501.875pt>
 File: imgs/guidelines.pdf Graphic file (type pdf)
 <use imgs/guidelines.pdf>
-Package pdftex.def Info: imgs/guidelines.pdf  used on input line 84.
+Package pdftex.def Info: imgs/guidelines.pdf  used on input line 113.
 (pdftex.def)             Requested size: 281.85585pt x 248.9994pt.
-[14 <./imgs/guidelines.pdf>]
-<imgs/insta-icon.png, id=866, 30.1125pt x 19.07124pt>
+<imgs/insta-icon.png, id=854, 30.1125pt x 19.07124pt>
 File: imgs/insta-icon.png Graphic file (type png)
 <use imgs/insta-icon.png>
-Package pdftex.def Info: imgs/insta-icon.png  used on input line 95.
+Package pdftex.def Info: imgs/insta-icon.png  used on input line 124.
 (pdftex.def)             Requested size: 18.78703pt x 11.89882pt.
- [15 <./imgs/insta-icon.png>]
-<imgs/MotorEaseOverview.pdf, id=880, 797.3569pt x 1191.85277pt>
+ [15 <./imgs/guidelines.pdf>]
+<imgs/MotorEaseOverview.pdf, id=891, 797.3569pt x 1191.85277pt>
 File: imgs/MotorEaseOverview.pdf Graphic file (type pdf)
 <use imgs/MotorEaseOverview.pdf>
-Package pdftex.def Info: imgs/MotorEaseOverview.pdf  used on input line 114.
+Package pdftex.def Info: imgs/MotorEaseOverview.pdf  used on input line 143.
 (pdftex.def)             Requested size: 258.36667pt x 386.18364pt.
- [16 <./imgs/MotorEaseOverview.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+ [16 <./imgs/insta-icon.png>] [17 <./imgs/MotorEaseOverview.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 157--158
+Underfull \hbox (badness 1038) in paragraph at lines 186--187
 []|\OT1/ptm/m/n/10.95 "deny", "al-low", "exit", "end", "ter-mi-nate", "quit", "back", "stop", "ig-nore", "pro-ceed",
  []
 
-[17]
-<imgs/extracted-section.pdf, id=948, 865.2325pt x 311.1625pt>
+[18]
+<imgs/extracted-section.pdf, id=966, 865.2325pt x 311.1625pt>
 File: imgs/extracted-section.pdf Graphic file (type pdf)
 <use imgs/extracted-section.pdf>
-Package pdftex.def Info: imgs/extracted-section.pdf  used on input line 169.
+Package pdftex.def Info: imgs/extracted-section.pdf  used on input line 198.
 (pdftex.def)             Requested size: 328.82706pt x 118.25722pt.
- [18 <./imgs/extracted-section.pdf>]
 <imgs/closure-icons.pdf, id=970, 662.475pt x 121.45375pt>
 File: imgs/closure-icons.pdf Graphic file (type pdf)
 <use imgs/closure-icons.pdf>
-Package pdftex.def Info: imgs/closure-icons.pdf  used on input line 181.
+Package pdftex.def Info: imgs/closure-icons.pdf  used on input line 210.
 (pdftex.def)             Requested size: 328.82706pt x 60.28378pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
+ [19 <./imgs/extracted-section.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
-[19 <./imgs/closure-icons.pdf>]
-<imgs/boundBox.png, id=1006, 1003.75pt x 1003.75pt>
+[20 <./imgs/closure-icons.pdf>]
+<imgs/boundBox.png, id=1024, 1003.75pt x 1003.75pt>
 File: imgs/boundBox.png Graphic file (type png)
 <use imgs/boundBox.png>
-Package pdftex.def Info: imgs/boundBox.png  used on input line 226.
+Package pdftex.def Info: imgs/boundBox.png  used on input line 255.
 (pdftex.def)             Requested size: 164.4171pt x 164.41696pt.
- [20 <./imgs/boundBox.png>]
-<imgs/persisting.pdf, id=1017, 598.235pt x 278.03876pt>
+<imgs/persisting.pdf, id=1027, 598.235pt x 278.03876pt>
 File: imgs/persisting.pdf Graphic file (type pdf)
 <use imgs/persisting.pdf>
-Package pdftex.def Info: imgs/persisting.pdf  used on input line 239.
+Package pdftex.def Info: imgs/persisting.pdf  used on input line 268.
 (pdftex.def)             Requested size: 281.85585pt x 130.99641pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
+ [21 <./imgs/boundBox.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
-<imgs/visual-distance.pdf, id=1020, 484.81125pt x 229.85875pt>
+<imgs/visual-distance.pdf, id=1037, 484.81125pt x 229.85875pt>
 File: imgs/visual-distance.pdf Graphic file (type pdf)
 <use imgs/visual-distance.pdf>
-Package pdftex.def Info: imgs/visual-distance.pdf  used on input line 256.
+Package pdftex.def Info: imgs/visual-distance.pdf  used on input line 285.
 (pdftex.def)             Requested size: 234.87749pt x 111.36209pt.
-[21 <./imgs/persisting.pdf> <./imgs/visual-distance.pdf>]
+[22 <./imgs/persisting.pdf> <./imgs/visual-distance.pdf>]
 \c@questionsi=\count338
 \c@questionsii=\count339
 \enitdp@questions=\count340
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 300.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 329.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 307.
+(hyperref)                removing `math shift' on input line 336.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 307.
+(hyperref)                removing `subscript' on input line 336.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 307.
+(hyperref)                removing `math shift' on input line 336.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 307.
+(hyperref)                removing `math shift' on input line 336.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 307.
+(hyperref)                removing `subscript' on input line 336.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 307.
+(hyperref)                removing `math shift' on input line 336.
 
-[22]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 322.
-
+[23]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 322.
+(hyperref)                removing `math shift' on input line 351.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 322.
+(hyperref)                removing `subscript' on input line 351.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--349
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 351.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
 []|\OT1/ptm/b/n/12 Total
  []
 
 
-Overfull \hbox (10.34866pt too wide) in paragraph at lines 349--349
+Overfull \hbox (10.34866pt too wide) in paragraph at lines 378--378
 \OT1/ptm/b/n/12 Files/Apps| 
  []
 
 
-Overfull \hbox (13.26033pt too wide) in paragraph at lines 349--349
+Overfull \hbox (13.26033pt too wide) in paragraph at lines 378--378
 []|\OT1/ptm/b/n/12 Violations| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--350
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 []|\OT1/ptm/b/n/12 Non-
  []
 
 
-Overfull \hbox (15.42834pt too wide) in paragraph at lines 349--350
+Overfull \hbox (15.42834pt too wide) in paragraph at lines 378--379
 \OT1/ptm/b/n/12 Violations| 
  []
 
-[23] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 393--394
+[24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
 
  []
-
-[25]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 409.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 409.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 409.
-
-<imgs/expandingResultsV2.jpg, id=1099, 1890.06125pt x 836.12375pt>
-File: imgs/expandingResultsV2.jpg Graphic file (type jpg)
-<use imgs/expandingResultsV2.jpg>
-Package pdftex.def Info: imgs/expandingResultsV2.jpg  used on input line 415.
-(pdftex.def)             Requested size: 234.87749pt x 103.90282pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 [26]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 422.
+(hyperref)                removing `math shift' on input line 438.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 422.
+(hyperref)                removing `subscript' on input line 438.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 422.
+(hyperref)                removing `math shift' on input line 438.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 431.
-
+<imgs/expandingResultsV2.jpg, id=1115, 1890.06125pt x 836.12375pt>
+File: imgs/expandingResultsV2.jpg Graphic file (type jpg)
+<use imgs/expandingResultsV2.jpg>
+Package pdftex.def Info: imgs/expandingResultsV2.jpg  used on input line 444.
+(pdftex.def)             Requested size: 234.87749pt x 103.90282pt.
 [27 <./imgs/expandingResultsV2.jpg>]
-<imgs/persisstingResults.jpg, id=1114, 2223.30624pt x 1292.83pt>
-File: imgs/persisstingResults.jpg Graphic file (type jpg)
-<use imgs/persisstingResults.jpg>
-Package pdftex.def Info: imgs/persisstingResults.jpg  used on input line 438.
-(pdftex.def)             Requested size: 234.87749pt x 136.56982pt.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 451.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 446.
+(hyperref)                removing `subscript' on input line 451.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 446.
+(hyperref)                removing `math shift' on input line 451.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 446.
-
-<imgs/IconDistanceResults.png, id=1117, 1890.06125pt x 805.0075pt>
-File: imgs/IconDistanceResults.png Graphic file (type png)
-<use imgs/IconDistanceResults.png>
-Package pdftex.def Info: imgs/IconDistanceResults.png  used on input line 451.
-(pdftex.def)             Requested size: 258.36667pt x 110.03477pt.
-
-Overfull \hbox (8.156pt too wide) in paragraph at lines 456--457
-[]\OT1/ptm/m/n/12 Like the Vi-sual Touch-Target Vi-o-la-tion de-tec-tor, this de-tec-tor re-lies heav-ily on the \OT1/pcr/m/n/10.95 uiautomator
- []
-
-[28 <./imgs/persisstingResults.jpg> <./imgs/IconDistanceResults.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 460.
@@ -1078,36 +1009,75 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 460.
 
-<imgs/confusion-matrices.pdf, id=1125, 2229.32875pt x 1056.94875pt>
+<imgs/persisstingResults.jpg, id=1125, 2223.30624pt x 1292.83pt>
+File: imgs/persisstingResults.jpg Graphic file (type jpg)
+<use imgs/persisstingResults.jpg>
+Package pdftex.def Info: imgs/persisstingResults.jpg  used on input line 467.
+(pdftex.def)             Requested size: 234.87749pt x 136.56982pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 475.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 475.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 475.
+
+[28]
+<imgs/IconDistanceResults.png, id=1134, 1890.06125pt x 805.0075pt>
+File: imgs/IconDistanceResults.png Graphic file (type png)
+<use imgs/IconDistanceResults.png>
+Package pdftex.def Info: imgs/IconDistanceResults.png  used on input line 480.
+(pdftex.def)             Requested size: 258.36667pt x 110.03477pt.
+
+Overfull \hbox (8.156pt too wide) in paragraph at lines 485--486
+[]\OT1/ptm/m/n/12 Like the Vi-sual Touch-Target Vi-o-la-tion de-tec-tor, this de-tec-tor re-lies heav-ily on the \OT1/pcr/m/n/10.95 uiautomator
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 489.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 489.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 489.
+
+<imgs/confusion-matrices.pdf, id=1138, 2229.32875pt x 1056.94875pt>
 File: imgs/confusion-matrices.pdf Graphic file (type pdf)
 <use imgs/confusion-matrices.pdf>
-Package pdftex.def Info: imgs/confusion-matrices.pdf  used on input line 466.
+Package pdftex.def Info: imgs/confusion-matrices.pdf  used on input line 495.
 (pdftex.def)             Requested size: 352.31624pt x 167.03477pt.
-[29 <./imgs/confusion-matrices.pdf>] [30] [31] [32]) (./Sections/Living.tex [33]
-<imgs/FrameOverview.pdf, id=1306, 919.435pt x 1306.8825pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[29 <./imgs/persisstingResults.jpg> <./imgs/IconDistanceResults.png (PNG copy)>] [30 <./imgs/confusion-matrices.pdf>] [31] [32]) (./Sections/Living.tex [33] [34]
+<imgs/FrameOverview.pdf, id=1325, 919.435pt x 1306.8825pt>
 File: imgs/FrameOverview.pdf Graphic file (type pdf)
 <use imgs/FrameOverview.pdf>
 Package pdftex.def Info: imgs/FrameOverview.pdf  used on input line 25.
 (pdftex.def)             Requested size: 281.85585pt x 400.62263pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[34]
+ [35 <./imgs/FrameOverview.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
-<imgs/3Clip.png, id=1315, 3306.3525pt x 1927.2pt>
+<imgs/3Clip.png, id=1362, 3306.3525pt x 1927.2pt>
 File: imgs/3Clip.png Graphic file (type png)
 <use imgs/3Clip.png>
 Package pdftex.def Info: imgs/3Clip.png  used on input line 38.
 (pdftex.def)             Requested size: 258.36667pt x 150.59154pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[35 <./imgs/FrameOverview.pdf>]
-<imgs/PreProcessing.png, id=1356, 3363.56625pt x 1927.2pt>
+[36 <./imgs/3Clip.png>]
+<imgs/PreProcessing.png, id=1372, 3363.56625pt x 1927.2pt>
 File: imgs/PreProcessing.png Graphic file (type png)
 <use imgs/PreProcessing.png>
 Package pdftex.def Info: imgs/PreProcessing.png  used on input line 48.
@@ -1117,40 +1087,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
 
-[36 <./imgs/3Clip.png> <./imgs/PreProcessing.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-
+[37 <./imgs/PreProcessing.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
-<imgs/graphCreation.png, id=1370, 4553.01pt x 2127.95pt>
+<imgs/graphCreation.png, id=1388, 4553.01pt x 2127.95pt>
 File: imgs/graphCreation.png Graphic file (type png)
 <use imgs/graphCreation.png>
 Package pdftex.def Info: imgs/graphCreation.png  used on input line 75.
 (pdftex.def)             Requested size: 328.82706pt x 153.67984pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[37] [38 <./imgs/graphCreation.png>]
-<imgs/simplexMod.jpg, id=1392, 2035.605pt x 478.78876pt>
+[38 <./imgs/graphCreation.png>] [39]
+<imgs/simplexMod.jpg, id=1414, 2035.605pt x 478.78876pt>
 File: imgs/simplexMod.jpg Graphic file (type jpg)
 <use imgs/simplexMod.jpg>
 Package pdftex.def Info: imgs/simplexMod.jpg  used on input line 107.
 (pdftex.def)             Requested size: 281.85585pt x 66.29208pt.
-<imgs/RipsMod.jpg, id=1394, 1137.24875pt x 447.17062pt>
+<imgs/RipsMod.jpg, id=1416, 1137.24875pt x 447.17062pt>
 File: imgs/RipsMod.jpg Graphic file (type jpg)
 <use imgs/RipsMod.jpg>
 Package pdftex.def Info: imgs/RipsMod.jpg  used on input line 122.
 (pdftex.def)             Requested size: 281.85585pt x 110.82347pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[39 <./imgs/simplexMod.jpg>] [40 <./imgs/RipsMod.jpg>] [41]
+ [40 <./imgs/simplexMod.jpg> <./imgs/RipsMod.jpg>] [41]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 168.
@@ -1168,12 +1131,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
-
+[42]
 Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
-[42]
+
 Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
@@ -1183,7 +1146,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
-
+[43]
 Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
@@ -1200,7 +1163,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 209.
 
-[43]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 215.
@@ -1218,7 +1180,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 219--220
 
  []
 
-
+[44]
 Underfull \hbox (badness 10000) in paragraph at lines 223--224
 
  []
@@ -1228,7 +1190,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
-[44]
+
 Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
@@ -1238,7 +1200,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
-
+[45]
 Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
  []
@@ -1255,17 +1217,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 243.
 
-[45]
+
 Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
-
+[46]
 Underfull \hbox (badness 10000) in paragraph at lines 255--256
 
  []
 
-[46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 265.
@@ -1278,11 +1239,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 265.
 
-(./tabs/main_results.tex) (./tabs/ablation.tex
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-)
+(./tabs/main_results.tex) [47] (./tabs/ablation.tex)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 275.
@@ -1295,22 +1252,23 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 275.
 
-<imgs/AuroraCase.pdf, id=1482, 1803.73875pt x 868.24374pt>
+<imgs/AuroraCase.pdf, id=1498, 1803.73875pt x 868.24374pt>
 File: imgs/AuroraCase.pdf Graphic file (type pdf)
 <use imgs/AuroraCase.pdf>
 Package pdftex.def Info: imgs/AuroraCase.pdf  used on input line 281.
 (pdftex.def)             Requested size: 352.31624pt x 169.57843pt.
-[47]
-<imgs/AvgustCase.pdf, id=1488, 1706.375pt x 744.7825pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<imgs/AvgustCase.pdf, id=1500, 1706.375pt x 744.7825pt>
 File: imgs/AvgustCase.pdf Graphic file (type pdf)
 <use imgs/AvgustCase.pdf>
 Package pdftex.def Info: imgs/AvgustCase.pdf  used on input line 290.
 (pdftex.def)             Requested size: 352.31624pt x 153.77238pt.
 
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[48 <./imgs/AuroraCase.pdf>]
+[48]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 298.
@@ -1323,10 +1281,10 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 298.
 
+[49 <./imgs/AuroraCase.pdf> <./imgs/AvgustCase.pdf
 
-LaTeX Warning: Reference `sec:eval' on page 49 undefined on input line 301.
-
-[49 <./imgs/AvgustCase.pdf>]
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./imgs/AvgustCase.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 316.
@@ -1339,7 +1297,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 316.
 
-(./tabs/augmentation.tex) [50] [51] [52]) (./Sections/Categorizing.tex [53]) (./Sections/SLR.tex [54]) (./Sections/ResearchPlan.tex) [55] [56] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.bbl
+(./tabs/augmentation.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [50] [51] [52] [53]) (./Sections/Categorizing.tex [54]) (./Sections/ResearchPlan.tex) [55] [56] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.bbl
 Underfull \hbox (badness 1163) in paragraph at lines 4--7
 []\OT1/ptm/m/n/10 Accessibility: Ap-ple Hu-man In-ter-face Guide-lines.  []$\OT1/pcr/m/n/10 https : / / developer . apple . com / design /
  []
@@ -1376,27 +1338,24 @@ Underfull \hbox (badness 1917) in paragraph at lines 82--84
 
 [57] [58] [59] [60] [61] [62] [63] [64]) [65] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.aux)
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `proposal.out' has not changed.
-(rerunfilecheck)             Checksum: 8B918A71D6BC6CA9C5F6E35AD7AB2E92;15190.
+(rerunfilecheck)             Checksum: 5902E0A376D30860BC2741F95F90C312;15326.
  ) 
 Here is how much of TeX's memory you used:
- 27466 strings out of 478994
- 498960 string characters out of 5858184
- 984414 words of memory out of 5000000
- 44008 multiletter control sequences out of 15000+600000
+ 27464 strings out of 478994
+ 498920 string characters out of 5858184
+ 983414 words of memory out of 5000000
+ 44005 multiletter control sequences out of 15000+600000
  446224 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,12n,117p,2348b,702s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,13n,117p,2509b,702s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.pdf (71 pages, 9859250 bytes).
+Output written on /Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.pdf (71 pages, 9861155 bytes).
 PDF statistics:
- 1806 PDF objects out of 2073 (max. 8388607)
- 1584 compressed objects within 16 object streams
- 356 named destinations out of 1000 (max. 500000)
- 627 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1814 PDF objects out of 2073 (max. 8388607)
+ 1592 compressed objects within 16 object streams
+ 357 named destinations out of 1000 (max. 500000)
+ 635 words of extra memory for PDF output out of 10000 (max. 10000000)
 
