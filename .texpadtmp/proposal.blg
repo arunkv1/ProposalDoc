@@ -61,36 +61,431 @@ Repeated entry---line 2096 of file ../ProposalBib.bib
  : @article{Chen20
  :                ,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3484 of file ../ProposalBib.bib
+Repeated entry---line 3252 of file ../ProposalBib.bib
+ : @inproceedings{Salehnamadi21
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3304 of file ../ProposalBib.bib
+ : @inproceedings{Peng19
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3393 of file ../ProposalBib.bib
+ : @inproceedings{Chen20
+ :                      ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 3468 of file ../ProposalBib.bib
  :   
  :   Bdsk-Url-2 = {https://doi.org/10.1016/j.jss.2020.110819}}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--entry type for "25" isn't style-file defined
---line 3494 of file ../ProposalBib.bib
-Warning--entry type for "26" isn't style-file defined
---line 3498 of file ../ProposalBib.bib
-Warning--entry type for "31" isn't style-file defined
---line 3518 of file ../ProposalBib.bib
-Warning--entry type for "34" isn't style-file defined
---line 3542 of file ../ProposalBib.bib
-Warning--entry type for "49" isn't style-file defined
---line 3710 of file ../ProposalBib.bib
-Warning--entry type for "50" isn't style-file defined
---line 3712 of file ../ProposalBib.bib
-Warning--I didn't find a database entry for "Myers:CHD94"
-Warning--I didn't find a database entry for "DBLP:journals/corr/abs-1802-02312"
-Warning--I didn't find a database entry for "9284063"
-Warning--I didn't find a database entry for "clip"
-Warning--I didn't find a database entry for "pillow"
-Warning--I didn't find a database entry for "BERT"
-Warning--I didn't find a database entry for "gudhi:RipsComplex"
-Warning--I didn't find a database entry for "PCA"
-Warning--I didn't find a database entry for "sklearn"
-Warning--I didn't find a database entry for "Rico"
-Warning--I didn't find a database entry for "Bernal-Cardenas19"
-Warning--I didn't find a database entry for "Mao18"
-Warning--I didn't find a database entry for "Li20-suglite"
+Warning--entry type for "Stream22" isn't style-file defined
+--line 3526 of file ../ProposalBib.bib
+Repeated entry---line 3566 of file ../ProposalBib.bib
+ : @inproceedings{MacKenzie11
+ :                           ,
+I'm skipping whatever remains of this entry
+Warning--entry type for "Rudy21" isn't style-file defined
+--line 3696 of file ../ProposalBib.bib
+Repeated entry---line 3748 of file ../ProposalBib.bib
+ : @inproceedings{Swearngin:CHI'19
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3818 of file ../ProposalBib.bib
+ : @inproceedings{Zhao:FSE22
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3835 of file ../ProposalBib.bib
+ : @inproceedings{Havranek:ICSE'21
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3846 of file ../ProposalBib.bib
+ : @inproceedings{Moran:ASE'18
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3863 of file ../ProposalBib.bib
+ : @inproceedings{Moran:ICSE'18
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3879 of file ../ProposalBib.bib
+ : @inproceedings{Linares:ICSME'17-2
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3890 of file ../ProposalBib.bib
+ : @inproceedings{Linares:ICSME'17
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3901 of file ../ProposalBib.bib
+ : @inproceedings{Linares:MSR15
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3915 of file ../ProposalBib.bib
+ : @article{Cardenas:TSE23
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3931 of file ../ProposalBib.bib
+ : @inproceedings{Chiou:CHI23
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3948 of file ../ProposalBib.bib
+ : @inproceedings{wang_vet_2021
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3965 of file ../ProposalBib.bib
+ : @inproceedings{mansur2023aidui
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3973 of file ../ProposalBib.bib
+ : @article{ren2015faster
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3980 of file ../ProposalBib.bib
+ : @article{Chen22
+ :                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3999 of file ../ProposalBib.bib
+ : @techreport{kitchenham2007guidelines
+ :                                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4021 of file ../ProposalBib.bib
+ : @url{switch-access
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4026 of file ../ProposalBib.bib
+ : @url{univ-design
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4031 of file ../ProposalBib.bib
+ : @url{Fdroid
+ :            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4035 of file ../ProposalBib.bib
+ : @url{GooglePlayStore
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4039 of file ../ProposalBib.bib
+ : @url{LabelStudio
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4043 of file ../ProposalBib.bib
+ : @inproceedings{Cardenas:ICSE'20
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4060 of file ../ProposalBib.bib
+ : @inproceedings{Li21
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4125 of file ../ProposalBib.bib
+ : @inproceedings{zhou2017east
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4132 of file ../ProposalBib.bib
+ : @inproceedings{Mehralian:FSE'21
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4149 of file ../ProposalBib.bib
+ : @inproceedings{chen2020unblind
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4165 of file ../ProposalBib.bib
+ : @inproceedings{Salehnamadi:ASE'22
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4175 of file ../ProposalBib.bib
+ : @inproceedings{Eler18
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4185 of file ../ProposalBib.bib
+ : @inproceedings{Lin:ASE'20
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4202 of file ../ProposalBib.bib
+ : @inproceedings{Su:FSE'17
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4219 of file ../ProposalBib.bib
+ : @inproceedings{Gu:ICSE'19
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4234 of file ../ProposalBib.bib
+ : @misc{appendix
+ :               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4238 of file ../ProposalBib.bib
+ : @misc{zenodo
+ :             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4242 of file ../ProposalBib.bib
+ : @misc{site
+ :           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4251 of file ../ProposalBib.bib
+ : @misc{AppleAccess
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4255 of file ../ProposalBib.bib
+ : @misc{GoogleScanner
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4281 of file ../ProposalBib.bib
+ : @inproceedings{Montague14
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4298 of file ../ProposalBib.bib
+ : @inproceedings{Zhang13
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4315 of file ../ProposalBib.bib
+ : @inproceedings{Oh13
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4332 of file ../ProposalBib.bib
+ : @inproceedings{Montague12
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4349 of file ../ProposalBib.bib
+ : @inproceedings{Szpiro16
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4366 of file ../ProposalBib.bib
+ : @inproceedings{Norman13
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4383 of file ../ProposalBib.bib
+ : @inproceedings{Salehnamadi21
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4404 of file ../ProposalBib.bib
+ : @inproceedings{Zhang21
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4421 of file ../ProposalBib.bib
+ : @inproceedings{Park14
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4436 of file ../ProposalBib.bib
+ : @inproceedings{Peng19
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4470 of file ../ProposalBib.bib
+ : @inproceedings{Alshayban20
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4486 of file ../ProposalBib.bib
+ : @url{ADALaws
+ :             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4494 of file ../ProposalBib.bib
+ : @url{HarvardAccess
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4498 of file ../ProposalBib.bib
+ : @url{GoogleAccess
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4506 of file ../ProposalBib.bib
+ : @inproceedings{Ross18
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4516 of file ../ProposalBib.bib
+ : @url{ADAWeb
+ :            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4524 of file ../ProposalBib.bib
+ : @url{AccessGov
+ :               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4528 of file ../ProposalBib.bib
+ : @url{WHO
+ :         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4532 of file ../ProposalBib.bib
+ : @url{IOSDesign
+ :               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4536 of file ../ProposalBib.bib
+ : @url{ANDRDesign
+ :                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4539 of file ../ProposalBib.bib
+ : @inproceedings{MacKenzie11
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4557 of file ../ProposalBib.bib
+ : @inproceedings{Moran18
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4573 of file ../ProposalBib.bib
+ : @article{Nunes15
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4586 of file ../ProposalBib.bib
+ : @inproceedings{Eler18
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4596 of file ../ProposalBib.bib
+ : @inproceedings{glove
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4610 of file ../ProposalBib.bib
+ : @inproceedings{Kane11
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4620 of file ../ProposalBib.bib
+ : @inproceedings{Abascal11
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4637 of file ../ProposalBib.bib
+ : @inproceedings{Gajos07
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4654 of file ../ProposalBib.bib
+ : @url{WebGuide
+ :              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4659 of file ../ProposalBib.bib
+ : @inproceedings{Moran:ICST'16
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4669 of file ../ProposalBib.bib
+ : @article{crashscope
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4678 of file ../ProposalBib.bib
+ : @inproceedings{Parhi06
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4695 of file ../ProposalBib.bib
+ : @inproceedings{Kong21
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4712 of file ../ProposalBib.bib
+ : @misc{UIED
+ :           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4718 of file ../ProposalBib.bib
+ : @misc{ocr
+ :          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4724 of file ../ProposalBib.bib
+ : @inproceedings{FlrezAristizbal19
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4734 of file ../ProposalBib.bib
+ : @inproceedings{Milne18
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4744 of file ../ProposalBib.bib
+ : @inproceedings{Pavel20
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4754 of file ../ProposalBib.bib
+ : @inproceedings{Chiou21
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4771 of file ../ProposalBib.bib
+ : @inproceedings{Astler11
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4788 of file ../ProposalBib.bib
+ : @url{torchvision
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4794 of file ../ProposalBib.bib
+ : @inproceedings{Calvo16
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4811 of file ../ProposalBib.bib
+ : @article{Sarsenbayeva22
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4939 of file ../ProposalBib.bib
+ : @inproceedings{axeray
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4966 of file ../ProposalBib.bib
+ : @inproceedings{Park14
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5016 of file ../ProposalBib.bib
+ : @inproceedings{Mchugh20
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5033 of file ../ProposalBib.bib
+ : @inproceedings{Almeida10
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5047 of file ../ProposalBib.bib
+ : @article{Yan19
+ :               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5066 of file ../ProposalBib.bib
+ : @inproceedings{Silva20
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5083 of file ../ProposalBib.bib
+ : @inproceedings{Kim16
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5100 of file ../ProposalBib.bib
+ : @inproceedings{Santiago22
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5134 of file ../ProposalBib.bib
+ : @inproceedings{Mateus20
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5151 of file ../ProposalBib.bib
+ : @inproceedings{Shiver15
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5168 of file ../ProposalBib.bib
+ : @inproceedings{Aizpurua14
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5193 of file ../ProposalBib.bib
+ : @inproceedings{Silva19
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5210 of file ../ProposalBib.bib
+ : @inproceedings{Brajnik15
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5223 of file ../ProposalBib.bib
+ : @inproceedings{Bajammal21
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5239 of file ../ProposalBib.bib
+ : @inproceedings{Ramachandra18
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5257 of file ../ProposalBib.bib
+ : @inproceedings{Liu21
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5273 of file ../ProposalBib.bib
+ : @inproceedings{Liu2021
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5302 of file ../ProposalBib.bib
+ : @inproceedings{Nguyen:ASE'15
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5312 of file ../ProposalBib.bib
+ : @article{Moran:TSE'18
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5322 of file ../ProposalBib.bib
+ : @inproceedings{Chen18
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5339 of file ../ProposalBib.bib
+ : @inproceedings{Vendome19
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5363 of file ../ProposalBib.bib
+ : @inproceedings{Kong21
+ :                      ,
+I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in GoogleAccess
 Warning--to sort, need author or key in AppleAccess
 Warning--to sort, need author or key in WHO
@@ -99,14 +494,10 @@ Warning--to sort, need author or key in ADAWeb
 Warning--to sort, need author or key in HarvardAccess
 Warning--to sort, need author or key in WebGuide
 Warning--to sort, need author or key in AccessGov
-Warning--to sort, need author or key in 31
-Warning--to sort, need author or key in 25
-Warning--to sort, need author or key in 26
-Warning--to sort, need author or key in 34
-Warning--to sort, need author or key in 49
+Warning--to sort, need author or key in IOSDesign
+Warning--to sort, need author or key in Stream22
 Warning--to sort, need author or key in univ-design
 Warning--to sort, need author or key in switch-access
-Warning--to sort, need author or key in IOSDesign
 Warning--to sort, need author or key in ANDRDesign
 Warning--to sort, need author or key in appendix
 Warning--to sort, need author or key in site
@@ -117,50 +508,49 @@ Warning--to sort, need author or key in Fdroid
 Warning--to sort, need author or key in GooglePlayStore
 Warning--to sort, need author or key in LabelStudio
 Warning--to sort, need author or key in GoogleScanner
-Warning--empty journal in 43
 Warning--empty journal in vajjala2024vietoris
 Warning--empty journal in Krishnavajjala24
 Warning--empty journal in crashscope
 Warning--empty year in crashscope
 You've used 148 entries,
             2118 wiz_defined-function locations,
-            1537 strings with 40082 characters,
-and the built_in function-call counts, 60963 in all, are:
-= -- 6182
-> -- 3150
+            1571 strings with 41463 characters,
+and the built_in function-call counts, 62006 in all, are:
+= -- 6246
+> -- 3313
 < -- 69
-+ -- 1250
-- -- 1102
-* -- 3692
-:= -- 9021
-add.period$ -- 481
++ -- 1312
+- -- 1164
+* -- 3846
+:= -- 9275
+add.period$ -- 483
 call.type$ -- 148
-change.case$ -- 992
+change.case$ -- 1023
 chr.to.int$ -- 0
-cite$ -- 179
-duplicate$ -- 2897
-empty$ -- 4443
-format.name$ -- 1102
-if$ -- 13861
+cite$ -- 174
+duplicate$ -- 2869
+empty$ -- 4453
+format.name$ -- 1164
+if$ -- 13981
 int.to.chr$ -- 0
 int.to.str$ -- 148
-missing$ -- 113
-newline$ -- 693
-num.names$ -- 248
-pop$ -- 1330
+missing$ -- 114
+newline$ -- 698
+num.names$ -- 258
+pop$ -- 1350
 preamble$ -- 1
-purify$ -- 844
+purify$ -- 874
 quote$ -- 0
-skip$ -- 2584
+skip$ -- 2541
 stack$ -- 0
-substring$ -- 2276
-swap$ -- 1292
+substring$ -- 2352
+swap$ -- 1265
 text.length$ -- 69
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 592
-warning$ -- 31
-while$ -- 352
+warning$ -- 26
+while$ -- 373
 width$ -- 151
-write$ -- 1670
-(There were 8 error messages)
+write$ -- 1674
+(There were 112 error messages)

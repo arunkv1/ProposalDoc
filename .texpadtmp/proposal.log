@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.25)  7 APR 2024 22:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.25)  8 APR 2024 13:16
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -798,7 +798,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
-<imgs/switchInterface.jpg, id=565, 2465.21pt x 609.27625pt>
+<imgs/switchInterface.jpg, id=562, 2465.21pt x 609.27625pt>
 File: imgs/switchInterface.jpg Graphic file (type jpg)
 <use imgs/switchInterface.jpg>
 Package pdftex.def Info: imgs/switchInterface.jpg  used on input line 67.
@@ -849,19 +849,19 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: Reference `sec:approach' on page 14 undefined on input line 79.
 
-<imgs/guidelines.pdf, id=841, 568.1225pt x 501.875pt>
+<imgs/guidelines.pdf, id=831, 568.1225pt x 501.875pt>
 File: imgs/guidelines.pdf Graphic file (type pdf)
 <use imgs/guidelines.pdf>
 Package pdftex.def Info: imgs/guidelines.pdf  used on input line 84.
 (pdftex.def)             Requested size: 281.85585pt x 248.9994pt.
 [14 <./imgs/guidelines.pdf>]
-<imgs/insta-icon.png, id=876, 30.1125pt x 19.07124pt>
+<imgs/insta-icon.png, id=866, 30.1125pt x 19.07124pt>
 File: imgs/insta-icon.png Graphic file (type png)
 <use imgs/insta-icon.png>
 Package pdftex.def Info: imgs/insta-icon.png  used on input line 95.
 (pdftex.def)             Requested size: 18.78703pt x 11.89882pt.
  [15 <./imgs/insta-icon.png>]
-<imgs/MotorEaseOverview.pdf, id=890, 797.3569pt x 1191.85277pt>
+<imgs/MotorEaseOverview.pdf, id=880, 797.3569pt x 1191.85277pt>
 File: imgs/MotorEaseOverview.pdf Graphic file (type pdf)
 <use imgs/MotorEaseOverview.pdf>
 Package pdftex.def Info: imgs/MotorEaseOverview.pdf  used on input line 114.
@@ -877,13 +877,13 @@ Underfull \hbox (badness 1038) in paragraph at lines 157--158
  []
 
 [17]
-<imgs/extracted-section.pdf, id=958, 865.2325pt x 311.1625pt>
+<imgs/extracted-section.pdf, id=948, 865.2325pt x 311.1625pt>
 File: imgs/extracted-section.pdf Graphic file (type pdf)
 <use imgs/extracted-section.pdf>
 Package pdftex.def Info: imgs/extracted-section.pdf  used on input line 169.
 (pdftex.def)             Requested size: 328.82706pt x 118.25722pt.
  [18 <./imgs/extracted-section.pdf>]
-<imgs/closure-icons.pdf, id=980, 662.475pt x 121.45375pt>
+<imgs/closure-icons.pdf, id=970, 662.475pt x 121.45375pt>
 File: imgs/closure-icons.pdf Graphic file (type pdf)
 <use imgs/closure-icons.pdf>
 Package pdftex.def Info: imgs/closure-icons.pdf  used on input line 181.
@@ -894,13 +894,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 205--206
  []
 
 [19 <./imgs/closure-icons.pdf>]
-<imgs/boundBox.png, id=1016, 1003.75pt x 1003.75pt>
+<imgs/boundBox.png, id=1006, 1003.75pt x 1003.75pt>
 File: imgs/boundBox.png Graphic file (type png)
 <use imgs/boundBox.png>
 Package pdftex.def Info: imgs/boundBox.png  used on input line 226.
 (pdftex.def)             Requested size: 164.4171pt x 164.41696pt.
  [20 <./imgs/boundBox.png>]
-<imgs/persisting.pdf, id=1027, 598.235pt x 278.03876pt>
+<imgs/persisting.pdf, id=1017, 598.235pt x 278.03876pt>
 File: imgs/persisting.pdf Graphic file (type pdf)
 <use imgs/persisting.pdf>
 Package pdftex.def Info: imgs/persisting.pdf  used on input line 239.
@@ -910,7 +910,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
-<imgs/visual-distance.pdf, id=1030, 484.81125pt x 229.85875pt>
+<imgs/visual-distance.pdf, id=1020, 484.81125pt x 229.85875pt>
 File: imgs/visual-distance.pdf Graphic file (type pdf)
 <use imgs/visual-distance.pdf>
 Package pdftex.def Info: imgs/visual-distance.pdf  used on input line 256.
@@ -1003,7 +1003,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 409.
 
-<imgs/expandingResultsV2.jpg, id=1109, 1890.06125pt x 836.12375pt>
+<imgs/expandingResultsV2.jpg, id=1099, 1890.06125pt x 836.12375pt>
 File: imgs/expandingResultsV2.jpg Graphic file (type jpg)
 <use imgs/expandingResultsV2.jpg>
 Package pdftex.def Info: imgs/expandingResultsV2.jpg  used on input line 415.
@@ -1037,7 +1037,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 431.
 
 [27 <./imgs/expandingResultsV2.jpg>]
-<imgs/persisstingResults.jpg, id=1124, 2223.30624pt x 1292.83pt>
+<imgs/persisstingResults.jpg, id=1114, 2223.30624pt x 1292.83pt>
 File: imgs/persisstingResults.jpg Graphic file (type jpg)
 <use imgs/persisstingResults.jpg>
 Package pdftex.def Info: imgs/persisstingResults.jpg  used on input line 438.
@@ -1055,7 +1055,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 446.
 
-<imgs/IconDistanceResults.png, id=1127, 1890.06125pt x 805.0075pt>
+<imgs/IconDistanceResults.png, id=1117, 1890.06125pt x 805.0075pt>
 File: imgs/IconDistanceResults.png Graphic file (type png)
 <use imgs/IconDistanceResults.png>
 Package pdftex.def Info: imgs/IconDistanceResults.png  used on input line 451.
@@ -1078,26 +1078,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 460.
 
-<imgs/confusion-matrices.pdf, id=1135, 2229.32875pt x 1056.94875pt>
+<imgs/confusion-matrices.pdf, id=1125, 2229.32875pt x 1056.94875pt>
 File: imgs/confusion-matrices.pdf Graphic file (type pdf)
 <use imgs/confusion-matrices.pdf>
 Package pdftex.def Info: imgs/confusion-matrices.pdf  used on input line 466.
 (pdftex.def)             Requested size: 352.31624pt x 167.03477pt.
-[29 <./imgs/confusion-matrices.pdf>] [30] [31] [32]) (./Sections/Living.tex
-
-LaTeX Warning: Citation `Myers:CHD94' on page 33 undefined on input line 4.
-
-
-LaTeX Warning: Citation `DBLP:journals/corr/abs-1802-02312' on page 33 undefined on input line 4.
-
-
-LaTeX Warning: Citation `9284063' on page 33 undefined on input line 4.
-
-
-LaTeX Warning: Citation `clip' on page 33 undefined on input line 14.
-
-[33]
-<imgs/FrameOverview.pdf, id=1311, 919.435pt x 1306.8825pt>
+[29 <./imgs/confusion-matrices.pdf>] [30] [31] [32]) (./Sections/Living.tex [33]
+<imgs/FrameOverview.pdf, id=1306, 919.435pt x 1306.8825pt>
 File: imgs/FrameOverview.pdf Graphic file (type pdf)
 <use imgs/FrameOverview.pdf>
 Package pdftex.def Info: imgs/FrameOverview.pdf  used on input line 25.
@@ -1111,7 +1098,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
-<imgs/3Clip.png, id=1320, 3306.3525pt x 1927.2pt>
+<imgs/3Clip.png, id=1315, 3306.3525pt x 1927.2pt>
 File: imgs/3Clip.png Graphic file (type png)
 <use imgs/3Clip.png>
 Package pdftex.def Info: imgs/3Clip.png  used on input line 38.
@@ -1119,14 +1106,8 @@ Package pdftex.def Info: imgs/3Clip.png  used on input line 38.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Citation `clip' on page 35 undefined on input line 43.
-
-
-LaTeX Warning: Citation `pillow' on page 35 undefined on input line 43.
-
 [35 <./imgs/FrameOverview.pdf>]
-<imgs/PreProcessing.png, id=1359, 3363.56625pt x 1927.2pt>
+<imgs/PreProcessing.png, id=1356, 3363.56625pt x 1927.2pt>
 File: imgs/PreProcessing.png Graphic file (type png)
 <use imgs/PreProcessing.png>
 Package pdftex.def Info: imgs/PreProcessing.png  used on input line 48.
@@ -1135,9 +1116,6 @@ Package pdftex.def Info: imgs/PreProcessing.png  used on input line 48.
 Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
-
-
-LaTeX Warning: Citation `pillow' on page 36 undefined on input line 56.
 
 [36 <./imgs/3Clip.png> <./imgs/PreProcessing.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 64--65
@@ -1149,9 +1127,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
-
-LaTeX Warning: Citation `BERT' on page 37 undefined on input line 71.
-
 <imgs/graphCreation.png, id=1370, 4553.01pt x 2127.95pt>
 File: imgs/graphCreation.png Graphic file (type png)
 <use imgs/graphCreation.png>
@@ -1161,35 +1136,21 @@ Package pdftex.def Info: imgs/graphCreation.png  used on input line 75.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [37] [38 <./imgs/graphCreation.png>]
-<imgs/simplexMod.jpg, id=1391, 2035.605pt x 478.78876pt>
+<imgs/simplexMod.jpg, id=1392, 2035.605pt x 478.78876pt>
 File: imgs/simplexMod.jpg Graphic file (type jpg)
 <use imgs/simplexMod.jpg>
 Package pdftex.def Info: imgs/simplexMod.jpg  used on input line 107.
 (pdftex.def)             Requested size: 281.85585pt x 66.29208pt.
-
-
-LaTeX Warning: Citation `gudhi:RipsComplex' on page 39 undefined on input line 112.
-
-<imgs/RipsMod.jpg, id=1392, 1137.24875pt x 447.17062pt>
+<imgs/RipsMod.jpg, id=1394, 1137.24875pt x 447.17062pt>
 File: imgs/RipsMod.jpg Graphic file (type jpg)
 <use imgs/RipsMod.jpg>
 Package pdftex.def Info: imgs/RipsMod.jpg  used on input line 122.
 (pdftex.def)             Requested size: 281.85585pt x 110.82347pt.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[39 <./imgs/simplexMod.jpg>]
-
-LaTeX Warning: Citation `PCA' on page 40 undefined on input line 139.
-
-
-LaTeX Warning: Citation `sklearn' on page 40 undefined on input line 139.
-
-[40 <./imgs/RipsMod.jpg>]
-
-LaTeX Warning: Citation `Rico' on page 41 undefined on input line 162.
-
-[41]
+[39 <./imgs/simplexMod.jpg>] [40 <./imgs/RipsMod.jpg>] [41]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 168.
@@ -1218,9 +1179,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--195
  []
 
 
-LaTeX Warning: Citation `clip' on page 43 undefined on input line 196.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
@@ -1229,9 +1187,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 198--199
 Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
-
-
-LaTeX Warning: Citation `BERT' on page 43 undefined on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1340,13 +1295,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 275.
 
-<imgs/AuroraCase.pdf, id=1471, 1803.73875pt x 868.24374pt>
+<imgs/AuroraCase.pdf, id=1482, 1803.73875pt x 868.24374pt>
 File: imgs/AuroraCase.pdf Graphic file (type pdf)
 <use imgs/AuroraCase.pdf>
 Package pdftex.def Info: imgs/AuroraCase.pdf  used on input line 281.
 (pdftex.def)             Requested size: 352.31624pt x 169.57843pt.
 [47]
-<imgs/AvgustCase.pdf, id=1477, 1706.375pt x 744.7825pt>
+<imgs/AvgustCase.pdf, id=1488, 1706.375pt x 744.7825pt>
 File: imgs/AvgustCase.pdf Graphic file (type pdf)
 <use imgs/AvgustCase.pdf>
 Package pdftex.def Info: imgs/AvgustCase.pdf  used on input line 290.
@@ -1384,28 +1339,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 316.
 
-(./tabs/augmentation.tex) [50]
-
-LaTeX Warning: Citation `Rico' on page 51 undefined on input line 338.
-
-
-LaTeX Warning: Citation `Rico' on page 51 undefined on input line 338.
-
-[51]
-
-LaTeX Warning: Citation `Bernal-Cardenas19' on page 52 undefined on input line 347.
-
-
-LaTeX Warning: Citation `Bernal-Cardenas19' on page 52 undefined on input line 347.
-
-
-LaTeX Warning: Citation `Mao18' on page 52 undefined on input line 349.
-
-[52]
-
-LaTeX Warning: Citation `Li20-suglite' on page 53 undefined on input line 359.
-
-) (./Sections/Categorizing.tex [53]) (./Sections/SLR.tex [54]) (./Sections/ResearchPlan.tex) [55] [56] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.bbl
+(./tabs/augmentation.tex) [50] [51] [52]) (./Sections/Categorizing.tex [53]) (./Sections/SLR.tex [54]) (./Sections/ResearchPlan.tex) [55] [56] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.bbl
 Underfull \hbox (badness 1163) in paragraph at lines 4--7
 []\OT1/ptm/m/n/10 Accessibility: Ap-ple Hu-man In-ter-face Guide-lines.  []$\OT1/pcr/m/n/10 https : / / developer . apple . com / design /
  []
@@ -1416,37 +1350,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--37
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
+Underfull \hbox (badness 10000) in paragraph at lines 47--50
 []\OT1/ptm/m/n/10 ADA Web Ac-ces-si-bil-ity Law-suit Re-cap Re-port []$\OT1/pcr/m/n/10 https : / / blog . usablenet . com /
  []
 
 
-Underfull \hbox (badness 6944) in paragraph at lines 58--62
-[]\OT1/ptm/m/n/10 Adaptivity and lay-out - vi-sual de-sign - ios - hu-man in-ter-face guide-lines - ap-ple de-vel-oper
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--62
-[]$\OT1/pcr/m/n/10 https : / / developer . apple . com / design / human-[]interface-[]guidelines / ios /
- []
-
-
-Underfull \hbox (badness 5924) in paragraph at lines 64--68
+Underfull \hbox (badness 5924) in paragraph at lines 55--59
 []\OT1/ptm/m/n/10 Adaptivity and lay-out - vi-sual de-sign - IOS - hu-man in-ter-face guide-lines - ap-ple de-vel-oper
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--68
+Underfull \hbox (badness 10000) in paragraph at lines 55--59
 []$\OT1/pcr/m/n/10 https : / / developer . apple . com / design / human-[]interface-[]guidelines / ios /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
+Underfull \hbox (badness 10000) in paragraph at lines 69--72
 []\OT1/ptm/m/n/10 Motor Im-pair-ment []$\OT1/pcr/m/n/10 https : / / accessibility . huit . harvard . edu / disabilities /
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 97--99
+Underfull \hbox (badness 1917) in paragraph at lines 82--84
 []\OT1/ptm/m/n/10 \live stream your vir-tual event on-line: Vimeo en-ter-prise," []$\OT1/pcr/m/n/10 https : / / vimeo . com / enterprise /
  []
 
@@ -1462,17 +1386,17 @@ Package rerunfilecheck Info: File `proposal.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  27466 strings out of 478994
- 498668 string characters out of 5858184
+ 498960 string characters out of 5858184
  984414 words of memory out of 5000000
  44008 multiletter control sequences out of 15000+600000
  446224 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,12n,117p,2348b,702s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.pdf (71 pages, 9857446 bytes).
+Output written on /Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.pdf (71 pages, 9859250 bytes).
 PDF statistics:
- 1790 PDF objects out of 2073 (max. 8388607)
- 1568 compressed objects within 16 object streams
+ 1806 PDF objects out of 2073 (max. 8388607)
+ 1584 compressed objects within 16 object streams
  356 named destinations out of 1000 (max. 500000)
  627 words of extra memory for PDF output out of 10000 (max. 10000000)
 
