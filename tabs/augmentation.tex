@@ -1,0 +1,27 @@
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1} % Adjust the row height
+\scalebox{1}{
+\begin{tabular}{|c|c|c|c|c|c|}
+\toprule
+\textbf{Dataset} & \textbf{Metrics} & \textbf{NB-C} & \textbf{NB-NC} & \textbf{B-NC} & \textbf{FRAME} \\
+\hline
+\midrule
+\multirow{4}{*}{Aurora} 
+& HR@1 & 0.4930 & 0.5347 & 0.5208 & \textbf{0.5625} \\
+& HR@5 & 0.4069 & 0.4250 & 0.4527 & \textbf{0.4652} \\
+& HR@10 & 0.3638 & 0.3805 & 0.4138 & \textbf{0.4166} \\
+& MRR & 0.6171 & 0.6484 & 0.6492 & \textbf{0.6729} \\
+\hline
+\hline
+\multirow{4}{*}{Avgust} 
+& HR@1 & 0.8505 & 0.8784 & 0.8784 & \textbf{0.8823} \\
+& HR@5 & 0.8119 & 0.8298 & 0.8266 & \textbf{0.8329} \\
+& HR@10 & 0.7658 & 0.7827 & 0.7799 & \textbf{0.7827} \\
+& MRR & 0.9094 & 0.9118 &  0.9138 &  \textbf{0.9184} \\
+\bottomrule
+\end{tabular}
+}
+\caption{Results over 2 datasets, where the best results are in \textbf{bold}, between FRAME and its variants including both contrast and black and white. }
+\label{AugmentationTable}
+\end{table}

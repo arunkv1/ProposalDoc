@@ -1,34 +1,120 @@
 \section{Background}
 \label{sec:background}
 
+This thesis introduces two ideas within software engineering which intersect at the need for developer focused tools for software accessibility and the comprehension of the UI screen to facilitate advanced accessibility improvement techniques. To gain a deeper understanding of this intersected research area, it is important to understand the motivation behind each research area and how they benefit each other. 
 
-Test flakiness is a timely and relevant research problem in software testing. The first empirical study focusing on defining flaky tests was conducted by Luo et al. \cite{luo2014empirical}. They investigate that of 201 historical commits, 51 open-source projects contain logs of fixed flaky tests. They classify these flaky tests into different categories such as Async Wait and Test Order dependent \cite{luo2014empirical}.   
+\subsection{Software Accessibility}
 
-Flaky tests have various impacts on the process of software development at the developer, team, and organizational levels. The degree to which both awareness of flaky test results and the measurement of flaky test side-effects can greatly aid developers in making the right decision when fixing an issue. Eck et al. \cite{eck2019understanding} show that the majority of developers who participate in their study face flaky tests yearly (109 out of 120) and 58\% out of 109 deal with flaky tests on a monthly basis. Eck et al. \cite{eck2019understanding} also show that 79\% of 109 participants consider flaky tests as a moderate-to-serious problem and that 77\% believe flaky tests are a time-consuming problem as they are hard to reproduce. Developers who encounter flaky tests have different opinions regarding the reliability of the test suite. Based on the study, 77\% of developers consider the test suite to be not fully reliable if it contains at least one flaky test.
-
-
-Flaky tests are hard to reproduce which make them difficult for developers to debug. Some characteristics of software environments such as operating systems (where a test suite has been executed) may play a critical role to either hide or reveal a flaky test. Out of 311 flaky tests from the dataset of flaky tests Lam et al. \cite{lam2019root} provide, 97 flaky tests could not be reproduced locally with 100 runs. This emphasizes the \emph{difficulty} of establishing a particular number of runs in order to observe flaky tests. If a flaky test has been detected after $n$-number of runs on-server, then how is a developer to determine the number of runs to observe the same flaky test in different environments? Also, this implies that most studies that limit their runs may not have observed all of the possible flaky test scenarios in their test suites. This demonstrates how observing flaky tests can be extremely challenging.
-
-
-With the effort to fix flaky tests, do all flaky tests be fixed before releasing the software? There are many implications of why some of the already-detected flaky tests still exist in further software releases. First, developers may not be able to resolve the flaky test because the current resources are not sufficient enough to fix all detected flaky tests or that developers need to involve many decisions at the team or organization levels such as providing external resources. The second implication is related to how developers evalxuate their proposed fixes. For example, developers usually use the rerun technique to see if their changes eliminate flakiness in a test suite. However, the rerun technique is not guaranteed to confirm if a test is not flaky. It is also true that a test may flake due to various reasons in the future and some of them may not be observed yet. Another explanation is that developers could be aware of the side-effects of a specific flaky test and decide to keep it after developers measure the cost of fixing the flaky test. The worst implication that a developer can make is to just ignore the flaky test without any potential work toward fixing or analyzing it. Throve et al. \cite{thorve2018empirical} report that 13\% of the total number of commits that deal with flaky tests do so by just skipping them or removing the tests that cause flakiness.
-
-
-\subsection{Detecting Test Flakiness}
-
-
-There are significant studies proposing tools to help developers detect flaky tests without manual inspections. Each of these tools has its own mechanism to detect flaky tests. This section presents some of these effective tools. 
-% \abdul{I put these works, Any others syggestions that should be included in detailss? Should I use two section like 2.1) Detecting Flaky Tests and 2.2) Detecting Flaky Failures ?}
-
-
-\textbf{DeFlaker}. Bell et al. \cite{bell2018deflaker} propose \emph{DeFlaker}, a new approach to detect flaky tests from the first failure without the need to rerun. Their approach uses execution coverage to detect flaky tests. Specifically, if a test fails but does not cover any changed code, the tool labels the test as flaky.
-To accomplish this, their tool consists of three main phases. First, \emph{DeFlaker} uses a syntactic diff from a version control system to determine which changes the tool needs to track. Then, \emph{DeFlaker} starts to collect coverage of each change identified from the previous phase. In the final stage, test outcomes and coverage information are analyzed to determine if a test is flaky or not. Detecting flaky tests by \emph{DeFlaker} requires collecting complete statement coverage for each line of code. Bell et al. \cite{bell2018deflaker} believe that collecting coverage for all lines of code can be expensive. In order to make their tool light-weighted, they designed the tool to collect differential coverage, which means collecting only the coverage of the changed lines instead of all lines of code. Bell et al. \cite{bell2018deflaker} also consider that syntactic change information may be insufficient and there is a need to monitor even some syntactically unchanged lines. For instance, if there are changes made to the inheritance structure of a class or method, this may have different dynamic results. Bell et al. \cite{bell2018deflaker} have evaluated their tool on 5,966 builds of 26 open-source projects. They have found 87 previously unknown flaky tests in 10 of these projects. They also show that \emph{DeFlaker} was able to detect 1,874 flaky tests from 4,846 previously known failures, with a low false alarm rate (1.5\%). Their evaluation includes a strong comparison of the rerun experiment which was a main contribution in their work. The evaluation also considers the performance (overhead of running) of their tool by showing that \emph{DeFlaker} was very fast, with an average slowdown of only 4.6\% across all of selected projects. 
+Research in software accessibility relies on the knowledge of various demographics of the disabled community. Most research is focused on solving a problem within a single population of disabled people, for example, a study could test to see if Android applications are accessible to Motor-impaired users \cite{9}, while another could develop a tool to label UI elements in order to help screen readers read out UI elements to visually impaired people \cite{17}. This section will go through how people with different disabilities use touch screen devices. Table \ref{tab:guidelines} lists a series of accessibility guidelines mentioned in previous work as well as the affected user demographic.
 
 
 
-% \subsection{iDFlakies}
-\textbf{iDFlakies}. Lam et al. \cite{lam2019idflakies} provide a framework called \emph{iDFlakies} to detect and partially classify flaky tests. Their framework relies on rerun by reordering tests during their executions. With a time limit for rerunning certain test suites, \emph{iDFlakies} runs a test suite based on the original order and with reordering approaches. If a test passes and fails within the same order of tests, \emph{iDFlakies} labels this test as a non-order dependency (NOD) flaky test. The second case is when a test fails during reordering the tests while it passes with the original order. In this case, \emph{iDFlakies} labels this test as an order-dependency (OD) flaky test. In the process of changing the order of tests, \emph{iDFlakies} shows that NOD flaky tests can be detected in the way as they may keep their original orders e.g. reorder test \#6 with \#7 while all tests from \#1 to \#5 have the same orders and test \#3 for example passes and fails. \emph{iDFlakies} can only partially classify the flaky tests to OD and NOD and it does not have any further classification for NOD flaky tests. Lam et al. \cite{lam2019idflakies} mention that \emph{iDFlakies} does not randomly reorder tests during their executions. There are four different configurations of rerun tests in addition to rerunning based on the original order of tests. The first configuration is called random-class, where \emph{iDFlakies} runs test classes in random order but it keeps the order of methods in each class in their original order. Random-class-method is another configuration by hierarchically randomizing the order of the test classes first and then the methods within test classes without interleaving methods from different classes. The third one is called reverse-class where all classes are run in reverse orders and keep the methods in each class with their original order. The last one is called the reverse-class-method which reverses the order of all test classes and methods from the original order. The tool is configured to run up to a limit number of rounds (the amount of reruns needed), run time (how long developers can rerun each project), or based on the minimum of both. The depth-first technique is used when, for example, a number of rounds $x$ is given, \emph{iDFlakies} runs on the first module up to $x$-times before rerunning another module. Their evaluation has been based on Java projects which build with Maven and use JUnit. As a result of applying \emph{iDFlakies} on 82 different projects (111 modules in total), 422 flaky tests have been detected. In detail, 213 (50.5\%) are classified as OD flaky tests and 209 (49.5\%) as NOD flaky tests. Lam et al. \cite{lam2019idflakies} find that the random-class-method is the most effective configuration to detect OD flaky tests. In their studies, they used a time limit for rerun different ordering of configurations by 57 hours per project. 
+\begin{table}[h]
+	\footnotesize
+	\vspace{-0.0em}
+	\caption{Accessibility guidelines extracted from our systematic literature review of accessibility guidelines -- includes recent research and Google's~\cite{GoogleAccess} and Apple's~\cite{AppleAccess} accessibility guidelines. (LV = low vision users, DHH = deaf and hard of hearing users)}
+	\vspace{-1em}
+	\begin{tabular}{>{\centering\arraybackslash}p{2in}|>{\centering\arraybackslash}p{1.8in}|>{\centering\arraybackslash}p{.82in}|>{\centering\arraybackslash}p{.82in}}
+	
+		\textbf{Accessibility Guideline} & \textbf{Primary Affected User Demographic} & \textbf{Guideline Source}  & \textbf{Previous Implementation} \\
+		\hline
+		Visual Touch Target Size & \footnotesize {Motor, LV} & \cite{Kong21, Parhi06} &  \\ 
+		\rowcolor{gray!30!} Touch Target Size & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, Nunes15, Calvo16, Alshayban20, Abascal11, Kane11, Kong21} & X \\ 
+		Persistent Element Location & \footnotesize {Motor} &\cite{AppleAccess, HarvardAccess, WebGuide, GoogleAccess} &   \\
+		\rowcolor{gray!30!} Clickable Span & \footnotesize {Motor, LV} & \cite{Alshayban20} & X \\
+		Duplicate Clickable Bounds & \footnotesize {Motor} & \cite{Alshayban20} & X \\
+		\rowcolor{gray!30!} Editable Item Descriptions & \footnotesize {LV} & \cite{Alshayban20, Eler18} & X \\
+		Expanding Section Closure & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide} &   \\
+		\rowcolor{gray!30!} Non-Native Elements & \footnotesize {Motor, LV} & \cite{GoogleAccess, Calvo16}& X \\
+		Motion Activation & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess} &  \\
+		\rowcolor{gray!30!} Labeled Elements & \footnotesize {Visual, DHH} & \cite{Alshayban20, FlrezAristizbal19, Li21, Eler18} & X \\
+		Screen Captioning & \footnotesize {LV, DHH} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, ADAWeb, AccessGov, Ross18, Li21, Pavel20, Kane11}& X \\
+		\rowcolor{gray!30!}Keyboard Navigation & \footnotesize {Motor, LV} & \cite{ADAWeb, AccessGov, FlrezAristizbal19, Li21, Chiou21} & X \\
+		Traversal Order & \footnotesize {Motor} & \cite{AccessGov, Alshayban20, FlrezAristizbal19} & X \\
+		\rowcolor{gray!30!}Adjacent Visual Icon Distance & \footnotesize {Motor} & \cite{AppleAccess, GoogleAccess, WebGuide, Yan19, Abascal11, Nunes15} &  X \\
+		
+		 Proper Information Organization & \footnotesize {Motor, LV} & \cite{Calvo16} & X \\
+		\rowcolor{gray!30!} Facial Recognition & \footnotesize {Motor} & \cite{Calvo16, Astler11} & X \\
+		 Single Tap Navigation & \footnotesize {Motor} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, FlrezAristizbal19, Milne18} &  \\
+		\rowcolor{gray!30!} Poor form design/instructions & \footnotesize {Motor, LV} & \cite{ADAWeb, AccessGov} &  
+		\end{tabular}
+\vspace{-1em}
+	\label{tab:guidelines}
+\end{table}
 
 
-\textbf{The Vocabulary of Flaky Tests}. Pinto et al. \cite{Pinto2020WhatIT} apply machine learning algorithms in order to find flaky test ``vocabularies" that aid in predicting new flaky tests. The approach is defined as a classification problem. This means that supervised learning algorithms are needed to have prior knowledge of some existing flaky and non flaky tests (known as a training dataset) to be able to predict the status of flakiness for unseen tests (known as a testing dataset). Collecting the vocabulary list is done by applying text analysis on the syntax of given flaky and non-flaky tests. In other words, test contents are processed through natural language processing (NLP) techniques, including identifier splitting, stemming, and stop word removal, to turn the content of each test to a list of vocabulary (called tokens). In addition to collecting tokens, this approach collects Java keywords from each test and considers the length of tests (line of codes) as extra details to help the classifier distinguish between flaky and non-flaky tests. This approach simply turns each test to a list of tokens, Java keywords, and a variable called test length. Pinto et al. \cite{Pinto2020WhatIT} aim to measure how well a flaky test classifier can learn from test contents. This approach has been evaluated based on the F1-score (measuring the accuracy of prediction performance based on the recall and precision scores) and information gain (known as the usefulness of a single token/Java keyword in terms of helping the classifier to identify a flaky test). By applying multiple supervised learning algorithms, these metrics can show the strength of flaky test predictors. This approach uses the dataset provided by Bell et al. \cite{bell2018deflaker} as a source to evaluate their approach. Pinto et al. \cite{Pinto2020WhatIT} find that their approach was effective to distinguish between flaky and non-flaky tests by achieving an F1-score of 0.95 for the identification of flaky tests. They find that the Random Forest (RF) is the most effective algorithm used toward this classification problem. They used different outcomes of processing NLP techniques as an input of the classifier. For example, they measure the effectiveness of using only Java keywords in the learning phase or using the whole set of tokens without stop words removals.
+
+\noindent \textbf{\textit{Visually Impaired Users}}
+
+Visually impaired users use screen readers about 90.5\% of the time \cite{17}. Low vision (LV) users, or users who can see, but not to the extent that legally blind people can, do not always depend on screen readers. They depend on being able to see contrast in UI design and fonts, making it so that elements and text on the screen are clearly visible and large enough for them to read \cite{31}. LV users do not only depend on being able to see and navigate the screen, various keystrokes and actions are required in order to interact with touch screen devices. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/hits.jpg}
+    \caption{Polygons representing clusters of hit points for LV users \cite{4}}
+    \label{fig:HitPoint}
+\end{figure}
+
+An example of this is shown in Figure \ref{fig:HitPoint}. LV users have difficulty seeing the screen and resort to guessing where their taps land. The image shows clustered taps in an attempt to type out sentences on a touch device. It is clear that LV users are not properly able to tap where they intend to. Speech to text \cite{25,26} or braille inputs are a way for LV users to effectively input information into the device \cite{33}. Keystrokes are identified by gesture recognizers built within touch screen devices \cite{12}. These recognizers are built with the able-bodied user in mind, so companies like Apple and Google allow users to modify the sensitivity and duration of the touch inputs \cite{12,25,26}. These accessibility measures help LV users use their devices more efficiently.\\ 
+
+\noindent \textbf{\textit{Deaf and Hard of Hearing Users}}
+ 
+Deaf and Hard of Hearing (DHH) users, unlike LV users, are comfortably able to physically use their touchscreen devices. DHH users need live captioning or American-Sign-Language (ASL) interpretations of any audio outputted by the device \cite{5}. There are currently tools that provide live captioning \cite{34} and research that is being done in converting audio to ASL depictions for users \cite{35}. DHH users also rely on text-to-speech or limited verbal communication to provide audio inputs into their devices \cite{36}.\\
+
+\noindent \textbf{\textit{Motor-impaired Users}}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/switchInterface.jpg}
+    \caption{Switch Interface}
+    \label{fig:SwitchInterface}
+\end{figure}
+
+Motor-impaired users use devices in two main ways: Switch input and touch input \cite{2}. Switch based input uses an external hardware input device. Switches are common in users with limited to no motor control who still retain their cognitive functions \cite{2}. Current touch devices offer scanning methods that scan a curser across the screen and highlights them as they pass \cite{25,26}. The users then can click the switch and select the application that is highlighted and continue using the device. An example of this switch interface is shows in Figure \ref{fig:SwitchInterface}. The most commonly used switch is a single input switch, which is then connected to an adapter to create signals for the device, and then to the device, in this case, an iPad. The iPad then can scan and highlight rows and columns for the user to tap on the switch and select. This gets very tedious as average words per minute typed using tradition scanning based techniques is 3, which is significantly lower than the average normal users, which is, 39 \cite{37}. The other form of input, touch input, is the same as a normal user, but motor-impaired users generally have a tremor or lack of speed in gestures made on the screen. Slightly motor-impaired users also find themselves using voice commands to navigate applications and send messages since keyboards can be frustrating to use with smaller keys \cite{2}. Work has been done to improve gesture recognition. Google and Apple offer sensitivity and touch settings that allow users to better physically interact with their devices \cite{12,25,26}.\\ 
+
+\noindent \textbf{\textit{Neurodivergent and Cognitively Impaired Users}}
+
+This demographic of users is primarily classified as individuals with cerebral differences such as Attention-deficit/hyperactivity disorder (ADHD), Autism Spectrum Disorder (ASD), dyslexia, and memory loss. It is estimated that 7\% of the population identifies as neurodivergent-encompassing cognitive and learning disabilities \cite{48}. These users, unlike the users presented previously, are severely underrepresented in design of the web. The Web Content Accessibility Guidelines (WCAG) \cite{49} requires accessibility measures for LV, DHH, and motor-impaired users, but does not require the implementation of neurodivergent supporting guidelines. Software and tools that neurodivergent users rely on tend to be low-sensory to avoid sensory overload. Users who are distracted easily or have highly receptive cognitive functionality tend to need software where there is a clear focal point to each functionality in the application without the need of unnecessary animations and sounds \cite{50}. The current set of applications provides many complex avenues of accessing information, but can be challenging to neurodivergent users. An application like Twitter, for example, has an abundance of scrolling animation and task bars that can be used to navigate the app. The animations, videos playing, and options of navigation can overload users since there is no focal point to the screen and what the user should be looking at. 
+
+\subsection{Developer Tools for Accessibility}
+
+The current landscape of developer tools is limited. Studies have shown that current developers do not utilize tools or ignore them because they introduce warnings, some of which are completely wrong \cite{9}. In this survey we found very few developer-specific tools, but found many studies that looked at software guidelines for developers. Guidelines are set for developers on all platforms to make their websites and applications more accessible \cite{25,26,38,18}. GUI guidelines require developers to abide by certain standards and practices in order to help disabled users navigate and use the application as intended. Guidelines specify certain requirements for elements such as size, placement, and color contrast to help users see tap and see them easier \cite{25,26}.
+
+
+\subsection{UI Understanding}
+
+Much of the research in accessible GUI analysis has been done in UI enhancement and UI comprehension for use in accessibility studies, hence it is important to understand the current state of UI comprehension techniques. Accessibility based UI augmentation and comprehension is only as good as the current techniques in the field. 
+
+Wu et al. \cite{41} worked on a screen parser that is able to predict relationships within elements on the screen. They did this by training a Faster-RCNN using thousands of both IOS and Android screenshots. Then they  determined node correspondence and extracted hierarchical correspondence for each of the elements. Then they grouped the elements together into groups that were under a certain category. So interactive elements were one group while background and images would have been another group \cite{41}. This work was done to better understand the relation between elements on the screen, but can also be used to label and identify screen elements and traverse them in a better order for users with disabilities. This approach was expensive and the UIElement detector they used was observed to slow other processes down.
+
+Most accessibility software tools have been related to testing where researchers tend to find accessibility guideline violations. Moran et al. \cite{42} worked to create an automated GUI checker that checks to see if GUIs were made to their intended design \cite{42}. They then used a GUI comprehension technique and a set of design violations to work on a detector that would detect design violations. It gave promising results that correctly detected design violations in Android apps. This visual GUI testing (VGT) is a great way to start testing for more accessible GUIs. This testing method, however, does not allow GUI boxes to overlap and requires a straightforward GUI. This can hinder GUI mockups and novice developers from being able to test for violations. 
+
+Like the project by Moran et al \cite{42}, UIBert by Google \cite{43} works to identify and comprehend screen elements. It works by taking in UIs and parsing it to identify all of the elements. It then uses that information to predict which type of app it is. It classifies the icons and then uses those generalized icon predictions to make an app prediction. This is a way for UI comprehension to be useful for screen readers or voice assistants to be able to access a certain type of app, e.g. games or music \cite{43}.  
+
+It is really important to understand GUIs when looking to help developers make more accessible software because most techniques from GUI comprehension are used to label and modify GUIs to make applications more accessible, so by looking at the current research in this field, we can see how GUI accessibility is dependent on advancements in GUI comprehension. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -2,101 +2,166 @@ This is BibTeX, Version 0.99d (TeX Live 2021)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: /Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.aux
 The style file: plain.bst
-Database file #1: ../bibliography.bib
-I was expecting a `,' or a `}'---line 472 of file ../bibliography.bib
+Database file #1: ../ProposalBib.bib
+Warning--entry type for "switch-access" isn't style-file defined
+--line 221 of file ../ProposalBib.bib
+Warning--entry type for "univ-design" isn't style-file defined
+--line 226 of file ../ProposalBib.bib
+Warning--entry type for "Fdroid" isn't style-file defined
+--line 231 of file ../ProposalBib.bib
+Warning--entry type for "GooglePlayStore" isn't style-file defined
+--line 235 of file ../ProposalBib.bib
+Warning--entry type for "LabelStudio" isn't style-file defined
+--line 239 of file ../ProposalBib.bib
+Warning--entry type for "ADALaws" isn't style-file defined
+--line 664 of file ../ProposalBib.bib
+Warning--entry type for "HarvardAccess" isn't style-file defined
+--line 672 of file ../ProposalBib.bib
+Warning--entry type for "GoogleAccess" isn't style-file defined
+--line 676 of file ../ProposalBib.bib
+Warning--entry type for "ADAWeb" isn't style-file defined
+--line 694 of file ../ProposalBib.bib
+Warning--entry type for "AccessGov" isn't style-file defined
+--line 702 of file ../ProposalBib.bib
+Warning--entry type for "WHO" isn't style-file defined
+--line 706 of file ../ProposalBib.bib
+Warning--entry type for "IOSDesign" isn't style-file defined
+--line 710 of file ../ProposalBib.bib
+Warning--entry type for "ANDRDesign" isn't style-file defined
+--line 714 of file ../ProposalBib.bib
+Repeated entry---line 764 of file ../ProposalBib.bib
+ : @inproceedings{Eler18
+ :                      ,
+I'm skipping whatever remains of this entry
+Warning--entry type for "WebGuide" isn't style-file defined
+--line 832 of file ../ProposalBib.bib
+Warning--entry type for "torchvision" isn't style-file defined
+--line 976 of file ../ProposalBib.bib
+Repeated entry---line 1154 of file ../ProposalBib.bib
+ : @inproceedings{Park14
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1531 of file ../ProposalBib.bib
+ : @inproceedings{Kong21
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1646 of file ../ProposalBib.bib
+ : @inproceedings{machiry2013dynodroid
+ :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1919 of file ../ProposalBib.bib
+ : @inproceedings{Wu21
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1976 of file ../ProposalBib.bib
+ : @inproceedings{Li22
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2096 of file ../ProposalBib.bib
+ : @article{Chen20
+ :                ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 3484 of file ../ProposalBib.bib
  :   
  :   Bdsk-Url-2 = {https://doi.org/10.1016/j.jss.2020.110819}}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--entry type for "ADALaws" isn't style-file defined
---line 474 of file ../bibliography.bib
-Warning--entry type for "ADAWeb" isn't style-file defined
---line 507 of file ../bibliography.bib
-Warning--entry type for "WHO" isn't style-file defined
---line 524 of file ../bibliography.bib
-Repeated entry---line 1098 of file ../bibliography.bib
- : @inproceedings{Park14
- :                      ,
-I'm skipping whatever remains of this entry
+Warning--entry type for "25" isn't style-file defined
+--line 3494 of file ../ProposalBib.bib
+Warning--entry type for "26" isn't style-file defined
+--line 3498 of file ../ProposalBib.bib
+Warning--entry type for "31" isn't style-file defined
+--line 3518 of file ../ProposalBib.bib
+Warning--entry type for "34" isn't style-file defined
+--line 3542 of file ../ProposalBib.bib
+Warning--entry type for "49" isn't style-file defined
+--line 3710 of file ../ProposalBib.bib
+Warning--entry type for "50" isn't style-file defined
+--line 3712 of file ../ProposalBib.bib
 Warning--I didn't find a database entry for "luo2014empirical"
-Warning--I didn't find a database entry for "eck2019understanding"
-Warning--I didn't find a database entry for "lam2019root"
-Warning--I didn't find a database entry for "thorve2018empirical"
-Warning--I didn't find a database entry for "bell2018deflaker"
-Warning--I didn't find a database entry for "lam2019idflakies"
-Warning--I didn't find a database entry for "Pinto2020WhatIT"
-Warning--I didn't find a database entry for "alshammari2021flakeflagger"
-Warning--I didn't find a database entry for "gradlePreventingFlaky"
-Warning--I didn't find a database entry for "Podgurski03Automated"
-Warning--I didn't find a database entry for "Jiang17WhatCauses"
-Warning--I didn't find a database entry for "lam2020Understanding"
-Warning--I didn't find a database entry for "ahmad2021empirical"
-Warning--I didn't find a database entry for "van2001refactoring"
-Warning--I didn't find a database entry for "meszaros2007xunit"
-Warning--I didn't find a database entry for "garousi2018smells"
-Warning--I didn't find a database entry for "lei2012feature"
-Warning--I didn't find a database entry for "kohavi1995study"
-Warning--I didn't find a database entry for "SMOTE"
-Warning--I didn't find a database entry for "pintovocabulary"
-Warning--I didn't find a database entry for "pinto2020vocabulary"
-Warning--I didn't find a database entry for "habchi2022qualitative"
-Warning--I didn't find a database entry for "lampel2021life"
-Warning--I didn't find a database entry for "DT"
-Warning--I didn't find a database entry for "crossValidation"
-Warning--I didn't find a database entry for "tfidf"
-Warning--I didn't find a database entry for "tfidf1"
-Warning--I didn't find a database entry for "just2014defects4j"
-Warning--I didn't find a database entry for "saha2018bugs"
-Warning--I didn't find a database entry for "tomassi2019bugswarm"
-Warning--I didn't find a database entry for "bears"
-Warning--I didn't find a database entry for "haben2023importance"
-Warning--I didn't find a database entry for "just2014mutants"
-Warning--I didn't find a database entry for "shi2019mitigating"
-Warning--I didn't find a database entry for "coles2016pit"
-Warning--I didn't find a database entry for "An23JustInTime"
-Warning--I didn't find a database entry for "akli2023flakycat"
+Warning--I didn't find a database entry for "Myers:CHD94"
+Warning--I didn't find a database entry for "DBLP:journals/corr/abs-1802-02312"
+Warning--I didn't find a database entry for "9284063"
+Warning--I didn't find a database entry for "clip"
+Warning--I didn't find a database entry for "pillow"
+Warning--I didn't find a database entry for "BERT"
+Warning--I didn't find a database entry for "gudhi:RipsComplex"
+Warning--I didn't find a database entry for "PCA"
+Warning--I didn't find a database entry for "sklearn"
+Warning--I didn't find a database entry for "Rico"
+Warning--I didn't find a database entry for "Bernal-Cardenas19"
+Warning--I didn't find a database entry for "Mao18"
+Warning--I didn't find a database entry for "Li20-suglite"
+Warning--to sort, need author or key in GoogleAccess
+Warning--to sort, need author or key in AppleAccess
 Warning--to sort, need author or key in WHO
 Warning--to sort, need author or key in ADALaws
 Warning--to sort, need author or key in ADAWeb
-You've used 6 entries,
+Warning--to sort, need author or key in HarvardAccess
+Warning--to sort, need author or key in WebGuide
+Warning--to sort, need author or key in AccessGov
+Warning--to sort, need author or key in 31
+Warning--to sort, need author or key in 25
+Warning--to sort, need author or key in 26
+Warning--to sort, need author or key in 34
+Warning--to sort, need author or key in 49
+Warning--to sort, need author or key in univ-design
+Warning--to sort, need author or key in switch-access
+Warning--to sort, need author or key in IOSDesign
+Warning--to sort, need author or key in ANDRDesign
+Warning--to sort, need author or key in appendix
+Warning--to sort, need author or key in site
+Warning--to sort, need author or key in zenodo
+Warning--to sort, need author or key in ocr
+Warning--to sort, need author or key in torchvision
+Warning--to sort, need author or key in Fdroid
+Warning--to sort, need author or key in GooglePlayStore
+Warning--to sort, need author or key in LabelStudio
+Warning--to sort, need author or key in GoogleScanner
+Warning--empty journal in 43
+Warning--empty journal in vajjala2024vietoris
+Warning--empty journal in Krishnavajjala24
+Warning--empty journal in crashscope
+Warning--empty year in crashscope
+You've used 148 entries,
             2118 wiz_defined-function locations,
-            583 strings with 6048 characters,
-and the built_in function-call counts, 2067 in all, are:
-= -- 221
-> -- 62
-< -- 3
-+ -- 26
-- -- 20
-* -- 96
-:= -- 264
-add.period$ -- 15
-call.type$ -- 6
-change.case$ -- 28
+            1538 strings with 40098 characters,
+and the built_in function-call counts, 60963 in all, are:
+= -- 6182
+> -- 3150
+< -- 69
++ -- 1250
+- -- 1102
+* -- 3692
+:= -- 9021
+add.period$ -- 481
+call.type$ -- 148
+change.case$ -- 992
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 120
-empty$ -- 178
-format.name$ -- 20
-if$ -- 507
+cite$ -- 179
+duplicate$ -- 2897
+empty$ -- 4443
+format.name$ -- 1102
+if$ -- 13861
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 3
-newline$ -- 27
-num.names$ -- 6
-pop$ -- 49
+int.to.str$ -- 148
+missing$ -- 113
+newline$ -- 693
+num.names$ -- 248
+pop$ -- 1330
 preamble$ -- 1
-purify$ -- 22
+purify$ -- 844
 quote$ -- 0
-skip$ -- 123
+skip$ -- 2584
 stack$ -- 0
-substring$ -- 84
-swap$ -- 63
-text.length$ -- 3
+substring$ -- 2276
+swap$ -- 1292
+text.length$ -- 69
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 3
-while$ -- 9
-width$ -- 7
-write$ -- 62
-(There were 2 error messages)
+type$ -- 592
+warning$ -- 31
+while$ -- 352
+width$ -- 151
+write$ -- 1670
+(There were 8 error messages)

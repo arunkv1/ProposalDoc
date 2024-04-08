@@ -9,7 +9,7 @@
 \usepackage{hyperref}
 
 \usepackage{tabularx}
-
+\usepackage{amsthm}
 \usepackage{eqparbox}
 \usepackage{relsize}
 \usepackage{color}
@@ -25,16 +25,16 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[normalem]{ulem}
-
+\usepackage{xcolor}
 \usepackage{xcolor}
 \usepackage{colortbl}
 \usepackage{listings}
-
+\definecolor{mycolor}{RGB}{211, 211, 211} % Define the color 'mycolor' as blue
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-
+\newtheorem{definition}{Definition}
 \write18{}
 
 \lstdefinestyle{XMLStyle}{
@@ -53,7 +53,13 @@
   numbers=none,
   xleftmargin=10.5em
 }
-
+\newcommand{\FRAME}{{\sc Frame}\xspace}
+\newcommand{\MotorEaseB}{{\bfseries\scshape MotorEase}\xspace}
+\newcommand{\MotorEase}{{\sc MotorEase}\xspace}
+\newcommand{\MotorCheck}{{\sc MotorCheck}\xspace}
+\newcommand{\Miracle}{{\sc Miracle}\xspace}
+\newcommand{\AidUI}{{\sc AidUI}\xspace}
+\newcommand{\AidUIs}{{\sc AidUI's~}\xspace}
  
 % \usepackage{comment}
 % \excludecomment{figure}
@@ -82,6 +88,12 @@
 \newcommand{\PAT}{{PAT}}
 \newcommand{\NLC}{\textsf{NLC}}
 \newcommand{\FC}{\textsf{FC}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\small{\textbf{
+			\node[shape=circle,fill=mycolor,draw=black, inner sep=0.75pt] (char) {\textcolor{black}{#1}};}}}}
+
+
+\newcommand{\subsubsubsec}[1]{\paragraph{#1}\mbox{}\\}
 
 \definecolor{cOrange}{rgb}{0.93, 0.35, 0.0}
 \definecolor{cPurple}{rgb}{0.55, 0.0, 0.55}
@@ -215,6 +227,7 @@ Using the failure logs for each test, I am currently leveraging them to identify
 % \input{Sections/FailureLogsStudy}
 % \input{Sections/FailureLogsApproach}
 \input{Sections/Categorizing}
+\input{Sections/SLR}
 % \input{Sections/ProposedWork}
 \input{Sections/ResearchPlan}
 
@@ -259,7 +272,7 @@ Using the failure logs for each test, I am currently leveraging them to identify
 \begin{footnotesize}
 \bibliographystyle{plain}
 % \bibliography{string,itu,rfc,i-d}
-\bibliography{bibliography.bib}
+\bibliography{ProposalBib.bib}
 \end{footnotesize}
 
 \newpage

@@ -1,195 +1,537 @@
-\section{Detecting Flaky Tests}
-\label{sec:detectFlakyTests}
+\section{Detecting Motor-Impairment Accessibility Guideline Violations}
+\label{sec:MotorEase}
 
-The detection of flaky tests is a crucial aspect of software testing and development. This process not only protect resources by preventing wasted efforts on resolving misleading failures but also influences software release timelines by providing clearer insights into test outcomes. When test failures are accurately identified as flaky, developers can make more efficient release decisions and avoiding unnecessary delays. My motivation to work in this field falls in the significance of flaky test detection in enhancing software development processes and quality. My goal is to analyze existing detection techniques, assess their strengths and limitations, and use these insights to propose more detection techniques. 
+The everyday lives of end-users depend on the use of software applications that support critical tasks such as banking, reading news, and communicating with others. Due to the central role of software in modern society, developers have an obligation to ensure that people of \textit{all} abilities and backgrounds are able to use applications to carry out daily tasks. However, this ideal is still very much a goal that engineers must collectively work toward, as past work has illustrated the prevalence of accessibility issues in mobile app software ecosystems~\cite{Alshayban20,Vendome19,Chen22}. Furthermore, the need for accessible software now transcends a moral pursuit, as government agencies worldwide have begun to advocate for more accessible software by introducing legislation which, ``prohibits discrimination on the basis of disability in the activities of public accommodations," ~\cite{ADALaws}. 
+Beyond providing equitable access to software for users with a variety of backgrounds, accessibility features often improve user experience more broadly, as many accessibility guidelines are designed following the general principals of universal design~\cite{univ-design}, in that the adherence to such guidelines is more likely to lead to an improved user experience for \textit{all} users~\cite{Sarsenbayeva22}. 
 
-Running tests many times is the traditional way to find flaky tests. Unfortunately, there is little industrial and academic guidelines regarding how many times to rerun each test in order to check if there are flaky or not. Prior studies consider many different numbers to run each test such as 10 \cite{bell2018deflaker}, 16 \cite{lam2019idflakies}, 100 \cite{lam2019root} or, 4,000 times \cite{lam2020Understanding}.
-As there are various non-deterministic reasons behind flaky tests, it is hard to claim that developers will observe test flakiness within a fixed number of runs. 
-Running tests could not be a major problem if developers can ensure that within e.g. 5 runs flaky tests can be detected.
-Another problem related to rerun is that it could be hard to reproduce the flaky failure detected in the original environment using another environment (e.g. developers who locally debug flaky tests which failed on a server). This problem of reproducing flaky tests is due the lack of knowledge about the non-deterministic source that cause flaky failures whether it is due to Java version, network speed, etc. 
+Current research at the intersection of developer tools and software accessibility has generally been disproportionally focused on users with certain disabilities, such as visual impairments, i.e., low vision (LV), and hearing impairments, i.e., deaf and hard of hearing (DHH)~\cite{Park14,Zhang21,Gajos07,Vendome19, Chen22}. The visual nature of software user interfaces (UIs), and large populations of users with visual impairments have made this a natural and important focus area. This focus, however, must expand to study and create tools that aid developers in considering and implementing accessible features that support users with a wider range of disabilities. One understudied demographic, and the focus of this paper, is that of \textit{motor-impaired users}. The current landscape of research on developer tools that aim to support software accessibility for motor-impaired users is somewhat limited, due in part to the difficulty in supporting a wide spectrum of motor-impairment conditions (i.e., ranging from hand tremors, to more limited motor abilities that necessitate the use of assistive devices such as switch controls) and need to consider external hardware~\cite{Sarsenbayeva22}. Generally, developers currently lack tools for identifying, understanding, and implementing accessible features for motor-impaired users~\cite{Alshayban20}. 
 
+The central challenge of building developer tools that support accessibility for motor impaired users is one of \textit{semantic screen understanding}. That is, in order to determine whether a given UI screen follows motor-impairment accessibility guidelines, the \textit{functional} and \textit{visual} properties of UI screens and individual components must be automatically inferred from a given app. For example, motor-impaired users that make use of hardware devices, such as switches, rely on assistive services (e.g., Android \texttt{\small Switch Access}~\cite{switch-access}) that iteratively scan through and highlight individual UI components, as illustrated in Figure~\ref{fig:switch}. This allows a motor-impaired user to easily select the icon or component with which they wish to interact. However, this process can be slower than traditional gesture-based control~\cite{MacKenzie11}, and switch users often rely on the \textit{consistency} of certain UI element patterns, such as menus, in order to quickly perform actions. As such, a popular motor-impairment accessibility design guideline for mobile apps~\cite{AppleAccess,GoogleAccess} states that persistent icons that appear across multiple screens, such as tab bars or menus, should retain a consistent ordering. This allows a user to anticipate which UI elements will be highlighted by the assistive service. However, in order to detect inconsistent icon orderings, an automated tool must be able to accurately identify functional groups of UI components, such as tab bars, and the ordering of icons within them. 
 
-Alternatively, I am proposing \sysName, a Machine Learning (ML) approach to identify which tests in a test suite are flaky, \emph{without} rerunning them many times. \sysName learns from existing flaky tests in order to predict unseen tests if they are flaky or not. \sysName can be used to search for flaky tests in a large test suite, where developers identify that a portion of the test suite is or is not flaky, and use \sysName to help label the rest of the tests as flaky or not. Also, \sysName could help in terms \emph{prioritize} which tests should be run first by reporting which tests are most likely to be flaky. 
 
+To help advance the current state of developer tools to better support motor impaired users, and overcome the challenges related to automated screen understanding, this paper introduces a novel approach, called \MotorEase, which aims to automate the detection of \textbf{Motor} impairm\textbf{E}nt \textbf{A}cce\textbf{S}sibility issu\textbf{E}s in mobile apps. \MotorEase is a novel approach that leverages automated dynamic analysis, computer-vision, and text-processing techniques to detect violations of motor-impairment accessibility guidelines in a given Android application. The approach is comprised of four detectors each targeted toward a popular UI design guideline meant to support motor impaired users. \MotorEase's novelty lies in both its  technical underpinnings and its ability. \MotorEase combines multiple neural models for screen understanding, allowing it to recognize screen semantics prior techniques cannot. This allows \MotorEase to identify violations of motor-impairment accessibility guidelines. 
 
-By proactively identifying flaky tests, I may also help developers understand why these tests are flaky.
-Prior work has suggested different properties of tests that might make them more likely to be flaky, and \sysName can report which of these features are present in each test~\cite{eck2019understanding,ahmad2021empirical}.
-In practice, if a feature has a strong correlation with flakiness, developers might choose to focus on this feature in their future test maintenance and development activities. 
+\MotorEase is designed to seamlessly integrate into existing software testing workflows, and operates in a fully automatic manner by analyzing common artifacts produced by existing Android testing tools. More specifically, \MotorEase takes as input UI metadata extracted via the Android \texttt{\small uiautomator} utility, along with corresponding screenshots, from an application being run in conjunction with one of any number of existing automated input generation tools~\cite{mao2016sapienz,choudhary2015automated,li2017droidbot,ORBITYang,machiry2013dynodroid,Gu:ICSE'19,Moran:ICST'16,crashscope,Su:FSE'17}.
+\MotorEase then passes this data to a series of four detectors, each of which identifies guideline violations. We aim to detect four main violations for design guidelines related to best practices for \textit{Touch-Target Size, Expanding Section Closure, Persisting UI Elements,} and \textit{Icon Distance}.
 
+\subsection{Background and Motivation}
 
 
-\subsection{RERUN: Empirical Study}
-\label{sec:flakeFlaggerStudy}
-%
-% This section is a summary of the study conducted in my paper ``FlakeFlagger: Predicting Flakiness Without Rerunning Tests" published in ICSE2021 \cite{alshammari2021flakeflagger}.
 
-% I am motivated to conduct this study in order to answer these main research questions:
+\label{sec:motivation}
 
-% \begin{itemize}
-% \setlength{\itemindent}{3em}
-% \item[\textbf{RQ1:}]
-% How many flaky tests can be found by rerunning tests given different rerun budgets?
-% \item[\textbf{RQ2:}] 
-% How hard is it to reproduce a flaky test failure? 
+In order to understand how the \MotorEase approach functions, it is important to understand how motor-impaired users use their devices. Motor-impaired users use devices in two main ways: Switch input and touch input \cite{Zhang13}. As described earlier, switch based input uses an external hardware input device. Switches are common in users with limited to no motor control but without impaired cognitive functions~\cite{Zhang13}. Most current smartphone and tablet devices offer accessibility services that support scanning a curser across the screen to highlight UI elements and icons (i.e Fig.~\ref{fig:switch})~\cite{AppleAccess,GoogleAccess}. The users can then click the switch to select the UI element that is highlighted, forming a semi-automated form of user input. 
+This input technique can be far slower than traditional touch-based interactions, as it requires waiting for appropriate UI elements to be highlighted by the system. Thus, switch users rely on consistent and accessible app designs to be able to anticipate the future UI elements that will be focused by the scanning service. One example that highlights how tedious this input can be is related to typing speed, where switch users average 3 words per minute (wpm), and touch-based users average closer to 40 wpm~\cite{MacKenzie11}. 
 
-% \end{itemize}
 
-% \subsubsection{Study Design}
-To gather data on flaky tests, 24 Java projects were selected and run, some of which had been previously studied for test flakiness using different revisions \cite{bell2018deflaker} \cite{lam2019idflakies}. The entire test suites of these projects were run 10,000 times, which differed from the previous work \cite{bell2018deflaker} \cite{lam2019idflakies}. Only a single revision of each project was considered, which was either the most recent revision at the time of writing or the same revision studied in \cite{bell2018deflaker} or \cite{lam2019idflakies}.
+\begin{table}[h]
+	\centering
+	\footnotesize
+	\vspace{-0.5em}
+	\caption{Accessibility guidelines extracted from our systematic literature review of accessibility guidelines -- includes recent research and Google's~\cite{GoogleAccess} and Apple's~\cite{AppleAccess} accessibility guidelines. (LV = low vision users, DHH = deaf and hard of hearing users)}
+	\vspace{-1em}
+	\begin{tabular}{>{\centering\arraybackslash}p{2in}|>{\centering\arraybackslash}p{1.8in}|>{\centering\arraybackslash}p{.82in}|>{\centering\arraybackslash}p{.82in}|>{\centering\arraybackslash}p{.82in} }
+	
+		\textbf{Accessibility Guideline} & \textbf{Primary Affected User Demographic} & \textbf{Guideline Source}  & \textbf{Previous Implementation} & \textbf{Implemented by \MotorEase} \\
+		\hline
+		Visual Touch Target Size & \footnotesize {Motor, LV} & \cite{Kong21, Parhi06} &  & X \\ 
+		\rowcolor{gray!30!} Touch Target Size & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, Nunes15, Calvo16, Alshayban20, Abascal11, Kane11, Kong21} & X & \\ 
+		Persistent Element Location & \footnotesize {Motor} &\cite{AppleAccess, HarvardAccess, WebGuide, GoogleAccess} &   & X \\
+		\rowcolor{gray!30!} Clickable Span & \footnotesize {Motor, LV} & \cite{Alshayban20} & X{} &  \\
+		Duplicate Clickable Bounds & \footnotesize {Motor} & \cite{Alshayban20} & X &  \\
+		\rowcolor{gray!30!} Editable Item Descriptions & \footnotesize {LV} & \cite{Alshayban20, Eler18} & X{} &  \\
+		Expanding Section Closure & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide} &   & X\\
+		\rowcolor{gray!30!} Non-Native Elements & \footnotesize {Motor, LV} & \cite{GoogleAccess, Calvo16}& X{} &  \\
+		Motion Activation & \footnotesize {Motor, LV} & \cite{AppleAccess, GoogleAccess, HarvardAccess} &  & \\
+		\rowcolor{gray!30!} Labeled Elements & \footnotesize {Visual, DHH} & \cite{Alshayban20, FlrezAristizbal19, Li21, Eler18} & X & \\
+		Screen Captioning & \footnotesize {LV, DHH} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, ADAWeb, AccessGov, Ross18, Li21, Pavel20, Kane11}& X & \\
+		\rowcolor{gray!30!}Keyboard Navigation & \footnotesize {Motor, LV} & \cite{ADAWeb, AccessGov, FlrezAristizbal19, Li21, Chiou21} & X & \\
+		Traversal Order & \footnotesize {Motor} & \cite{AccessGov, Alshayban20, FlrezAristizbal19} & X & \\
+		\rowcolor{gray!30!}Adjacent Visual Icon Distance & \footnotesize {Motor} & \cite{AppleAccess, GoogleAccess, WebGuide, Yan19, Abascal11, Nunes15} &  & X \\
+		
+		 Proper Information Organization & \footnotesize {Motor, LV} & \cite{Calvo16} & X & \\
+		\rowcolor{gray!30!} Facial Recognition & \footnotesize {Motor} & \cite{Calvo16, Astler11} & X & \\
+		 Single Tap Navigation & \footnotesize {Motor} & \cite{AppleAccess, GoogleAccess, HarvardAccess, WebGuide, FlrezAristizbal19, Milne18} &  & \\
+		\rowcolor{gray!30!} Poor form design/instructions & \footnotesize {Motor, LV} & \cite{ADAWeb, AccessGov} &  & \\
 
-The rerun scripts were used to break down large experiments into smaller units called "jobs," which were executed on virtual machines. A single job was the execution of a Java test suite on a specific revision of a project using the Maven build system. For each job, the Maven build log and XML reports for each test run were saved. This approach aimed to create a level of isolation between test runs and simulate how an actual integration server would compile, test, and run a project's test suite.
 
+		
+			\end{tabular}
+\vspace{-1em}
+	\label{tab:guidelines}
+\end{table}
 
-The method I used to detect flaky tests through rerun is not the only approach available. There are other ways to increase the likelihood of detecting flaky tests. For instance, some flaky tests can be affected by the order in which they are run, and running them in different orders may uncover additional flaky tests \cite{lam2019idflakies}. However, this may also introduce a bias towards certain categories of flaky tests. Another way to detect more flaky tests is to run the experiment on different platforms and devices. However, my goal was to align the rerun experiment with standard development practices.
 
+For users with some, but limited motor-control, touch input is typically used with constraints related to physical limitations such as tremors or gesture speed limitations~\cite{Montague14}. Some users with lesser motor-impairments may also turn to using voice commands to navigate applications due to difficulties/slowness related to switch operation~\cite{Zhang13}. Prior work in the HCI research community has aimed to improve gesture recognition for users with limited motor control~\cite{Peng19}. Google and Apple also offer sensitivity and touch settings that aim to allow users with limited motor control to customize touch controls for easier interaction~\cite{Peng19,AppleAccess,GoogleAccess}. Google and Apple \cite{AppleAccess,GoogleAccess} have also developed UI and human interaction guidelines which aim to support motor-impaired users, but as past work has illustrated, developers may often be unaware of such guidelines or ignore them due to other development constraints~\cite{Salehnamadi21}.
 
-\subsection{FlakeFlagger: Flaky Test Classifier}
-\label{sec:flakeFlaggerClassifier}
+In accordance with the work done at an operating system level to create more native accessibility features, industry leaders such as Google and Apple \cite{AppleAccess,GoogleAccess}, who run the two largest App stores, have developed guidelines for developers to make more accessible apps on their own \cite{IOSDesign, ANDRDesign}. These guidelines are UI and metadata guidelines that help developers deign and implement UIs that allow disabled users navigate the UI more efficiently and help native accessibility tools provide more information to the user. Though these guidelines are available to developers, they are not mandatory to follow and many developers are unaware of such guidelines, often ignoring them and creating inaccessible apps \cite{Salehnamadi21}. We explore the guidelines we detect through out approach and why we decided on the specific ones we chose. 
 
-This section focuses on the construction process of the \sysName, beginning with the feature collection, followed by the classification process, and finally detailing how all of these elements have been designed as illustrated in Figure~\ref{over_all_graph}.
+\subsubsection{Accessibility Guideline Literature Review}
 
+In order to fully capture the current landscape of accessibility guidelines that may impact various populations of users, and to aid in selecting the most impactful guidelines that aim to assist motor impaired users we conducted a systematic literature reviews on research at the intersection of software engineering, human-computer interaction, and accessibility. To conduct this review, we followed the methodology set forth by Kitchenham~ et al. ~\cite{kitchenham2007guidelines}. We defined a single research question that asked \textit{``What accessibility guidelines have been identified and discussed in prior research?''}. We used the relatively simple search string of "accessibility" to search DBLP, the ACM Digital Library, and IEEE Xplore, for work at the intersection of accessibility and software engineering for the date range of January 2010 - December 2022. The purpose of using such a simple search string was to "cast a wide net" and ensure that we did not miss important work. We defined inclusion criteria as follows: (i) must have been published in our studied date range, (ii) must have been published at one of 16 conference venues (ICSE, FSE, ASE, ICSME, MSR, ICPC, ISSTA, ICST, SANER, UIST, CHI, SPLASH, OOPSLA, PLDI, CSCW, ASSETS) or 5 journal venues (TSE, TOSEM, EMSE, JSS, ASE) that cross cut software engineering, HCI, and accessibility, (iii) the paper must describe a study or developer tool directly related to an accessibility issue that impacts end-users. The scope of our search was limited to these venues and digital libraries as they provide the highest quality of research in all matters including accessibility. Our search results returned 2948 papers from our selected conferences within our given date range. Then, two authors manually checked  each paper for adherence to the final inclusion criteria, resulting in 20 papers that intersect our desired research areas \textit{and} discuss developer guidelines for addressing accessibility issues. In addition to these 20 identified primary studies, we also examined Apple's and Google's design guidelines related to accessibility~\cite{AppleAccess,GoogleAccess}, as several of our primary studies referenced these sources.
 
+After the search process concluded, one author extracted all accessibility guidelines discussed in the papers and platform documentation, and after the process, three authors met to discuss and verify that all guidelines were properly extracted in a joint meeting.  This process resulted in the derivation of 18 \textit{accessibility design guidelines}, which are illustrated in Table~\ref{tab:guidelines}. In this table, we provide (i) a short description of the guideline (with full definitions and examples available in our online appendix), (ii) the primary affected user groups, (iii) the sources that described the guideline, (iv) whether or not automated support for guideline has been implemented in past commercial or research developer tools, and (v) the guidelines targeted by \MotorEase. \textbf{It should be noted that none of the guidelines that M{\small OTOR}E{\small ASE} targets have been explicitly targeted by prior tools.} While touch-target size has been explored in prior work~\cite{Alshayban20, Abascal11, Kane11, GoogleAccess}, \textit{visual} touch-target size, which is of critical importance for motor-impaired users~\cite{Kong21}, has not been explored. While there is some recent work on Keyboard Accessibility failures in web applications that could affect Motor-impaired users~\cite{Chiou:CHI23}, this work does not explicitly target any of the guidelines targeted by \MotorEase. The Groundhog~\cite{Salehnamadi:ASE'22} tool is also inadvertently able to detect \textit{some} expanding section closures. The lack of exploration of these guidelines is largely due to the fact that implementing tools that detect when such guidelines are \textit{not} followed requires new types of automated UI screen understanding.
 
 
-% This section is a summary of the \emph{approach} section in my paper ``FlakeFlagger: Predicting Flakiness Without Rerunning Tests" published in ICSE2021 \cite{alshammari2021flakeflagger}.
+Of the many guidelines identified, \MotorEase supports identifying violations for four of them, \emph{Touch-Target Size, Expanding Section Closure, Persisting Elements, and Icon Distance}. These guidelines were selected for three main reasons: (i) current lack of implementation (ii) the need for complex screen screen understanding and less trivial methods of analysis (iii) integration with the output of automated UI testing tools for Android. Our goal in conceptualizing and implementing \MotorEase is to create a tool that can effectively identify and address motor accessibility issues that  that remain undetectable through conventional static analysis techniques. Our primary objective entailed the formulation of a set of guidelines that require a more sophisticated understanding of the screen, enabling a more nuanced search for motor accessibility barriers within mobile applications. We are confident that the combination of these guidelines, previously unexplored, in conjunction with UI comprehension, will result in a highly robust and functional accessibility testing tool, that caters to the unique requirements of individuals with motor impairments.
 
 
+The four accessibility guidelines targeted by \MotorEase are (i) \textit{\textbf{Visual Touch Target Size}}, (ii) \textit{\textbf{Persistent Element Location}}, (iii) \textit{\textbf{Expanding Section Closure}}, and (iv) \textit{\textbf{Visual Icon Distance}}. One of these guidelines (\textit{Visual Touch Target Size}) was identified from a prior accessibility study, whereas the others come directly from Apple and Google's accessibility deign guidelines for mobile apps~\cite{AppleAccess,GoogleAccess}. These four guidelines were chosen as they had not been implemented by past work and could easily integrate with automated input generation (AIG) tools for Android, which is an important practical component of \MotorEase as we explain in Section~\ref{sec:approach}.  
+In the following subsections, we describe each motor-impairment accessibility guideline in detail, and the screen understanding challenges in detecting guideline violations. More detailed descriptions of all  guidelines can be found in our online appendicies~\cite{appendix,site,zenodo}.  
 
-\subsubsection{Features Collections}
-\label{sec:detector}
-Machine learning classifiers such as \sysName require a set of feature in order to learn and predict. I started with the prior work \cite{luo2014empirical,eck2019understanding,bell2018deflaker} to study which features is highly linked to flakiness. I aim to collect verity of features because of the fact that some flaky tests in different projects often have different root causes for their flakiness\cite{luo2014empirical}. Similarly, some features that are predictive for one project may not be as predictive for others, due to the inherent non-determinism in flaky tests. 
-I intentionally collect some dynamic features, in addition to static features (e.g. presence of textual tokens in the body of each test method). This is important because some causes not in the test method itself, but instead, in the production code that is executed by that test \cite{eck2019understanding}.
-Ahmed et al. \cite{ahmad2021empirical} categorized 23 developer-reported factors which affect test flakiness. 
-These features are described by practitioners at a high level, and include test case complexity, hard-coded values and test smells.
-Eck et al. \cite{eck2019understanding} interviewed 21\Space{ professional} developers about flaky tests and tabulated the frequency of different kinds of flaky tests as well as developers' fixes for those flaky tests. 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/guidelines.pdf}
+    \caption{Illustration of four studied accessibility guidelines}
+    \label{AllDetectors}
+\end{figure}
 
 
-Inspired by previous studies on test flakiness, I developed a list of sixteen features, 
-some of are based on general studies on the causes of flaky tests \cite{luo2014empirical,ahmad2021empirical}, while others are defined as bad practices in writing unit tests.
-Hence, I considered all of the features described in the prior works, and then selected only those for which I could write automated detectors.
-This ends up with implementing detectors for each of the features shown in Table \ref{table:Feature_desc}. This list of features is not intended to be complete: there may yet be other features that can be easily collected and will be useful for predicting test flakiness.
+\subsubsection{Expanding Section Closure}
+Pop up menus and modal dialogs can provide meaningful information to the user, but closing them can be non-trivial for motor-impaired users who utilize a switch, as they may not contain explicit UI elements for closing the menu or dialog. As such, UI design guideline advocated for by both Apple and Google~\cite{AppleAccess,GoogleAccess} state that such closure UI elements should be present and easily interactive. Many expanding sections can be closed through a swiping gesture to dismiss the section or an external tap on the screen not within the bounds of the expanding section. Both of these options pose an accessibility issue for motor-impaired users due to the need for gestures and assumptive tapping on non-intuitive screen locations. A violation and adherence to this guideline is illustrated in Figure~\ref{AllDetectors}-1. Detecting UIs that violate this design guideline can be difficult as it requires automatically identifying (i) whether a pop-up menu or modal dialog is present within a given screen, and (ii) whether or not a UI element supports closing the pop-up. 
 
-While some of the features can be detected by inspecting the test method statically (specifically, the conditional logic smell and test line of code), the rest of the features require more than static analysis.
-A hybrid static/dynamic framework \emph{detector} was developed to collect the statement coverage of each test, and then statically analyze the covered code in order to collect these behavioral features.
-The \emph{detector} also collect a variety of other features related to the statement coverage of each test, such as how many recently changed lines of code are covered.
-The \emph{detector} is implemented as an extension to the Maven build system.
+\subsubsection{Visual Touch-Target Size}
+Motor-impaired users who experience tremors in their hands can experience difficulty tapping precisely on icons. This makes it difficult for them to interact with elements as intended. Apple and Google suggest minimum UI element sizes of 44x44 pixels and 48x48 pixels respectively, such that users with minor motor impairments can more easily tap icons~\cite{AppleAccess,GoogleAccess}. 
+Typically, the ``size'' of a UI element is defined by the \textit{touchable area} of that element, and not the \textit{visual area} occupied by the pixels of a given element. However, as stated above, it is important to provide sizable \textit{visual} touch targets to users with more limited motor control, such that they can better hone their more limited movements to tap desired UI elements. Most past work that aims to identify icons or UI elements that do not meet a given minimum threshold read UI metadata to examine the ``touchable area'' only, even if the visual size of the icon does not fill the entire area. Thus, this can create a disconnect between the \textit{visual} touch target size, and the \textit{touchable area}. An example of this is shown in Figure \ref{AllDetectors}-2. The \includegraphics[width=0.04\linewidth]{imgs/insta-icon.png} icon next to the Instagram logo has a touch target size of larger than 44x44, however, the visual size of this icon is quite small, a making it difficult to tap. Detecting such issues can be difficult as it requires automatically inferring the visual area on a screen occupied by a given UI element. \MotorEase aims to overcome this issue by leveraging optical character recognition and neural object detection techniques.
 
+ of just motor-impaired users. 
+\vspace{-0.5em}
+\subsubsection{Persistent Element Location}
 
-\input{tables/FlakeFlaggerFeatures}
+Applications link various screens together to aid users in completing complex tasks, however, certain UI elements need to exhibit \textit{consistent} placement to assist switch users with anticipating UI element scanning. This guideline specifies that icons that appear across multiple screens should appear in the same general area of the screen~\cite{AppleAccess,GoogleAccess}. This means the locations of elements such as back buttons or search icons that appear across multiple different screens should remain consistent. An example of a back button with a consistent location is illustrated in Figure~\ref{AllDetectors}-3. Violations of this guideline can be difficult to detect as it requires automatic identification of corresponding UI elements across screens which may exhibit visual variability (e.g., displayed on different backgrounds).
 
-\subsubsection{Classification Process}
 
-FlakeFlagger takes a list of tests, where each of them is represented as a vector $\{x_1, x_2, x_3,\dots, x_n\}$  where each \emph{x} represents a feature value and \emph{n} correspond the total number of features. I applied data inspection and cleaning process to make that dataset more clear for the classification. Missing data can exist to the dataset due to the fact that some features collected by the detector can be incomplete e.g. due to crashes in the middle of the test execution. Some tests are not written in Java, and hence the feature detectors may not be applicable to them, and due to inheritance, some tests may not have source code in the project under test.
+\subsubsection{Adjacent Visual Icon Distance}
 
-As in any classification problem, considering multiple supervised learning algorithms could be better. In \sysName, it is designed to use a set of models including Random Forest (\emph{RF}) and Decision Tree (\emph{DT}. I follow a feature selection process using \emph{information gain}, which computes the amount of information that a feature can provide for a classification \cite{lei2012feature}. Imbalanced datasets (where there is not an equal number of instances in each class --- flaky and non-flaky tests in my case) usually have very low information gain values. 
+The design and placement of interactive icons that signal functional affordances is critical to ensuring a positive user experience, particularly for individuals with motor impairments. For users who may struggle with fine motor movement, it can be difficult to tap a single location on the screen without accidental triggers of other areas~\cite{Kong21}. As such, the \textit{Adjacent Visual Icon Distance} guideline states that adjacent ``clickable'' UI elements should be positioned at least eight pixels apart from one another.  This can be challenging as it again requires the automated inference of the visual area occupied by different UI elements. In this context, the issue of miss-clicks may trigger unwanted functions within the app. It is imperative that interactive icons can be accessed individually without any risk of accidental activation of adjacent icons. Google's Android Accessibility Guidelines \cite{GoogleAccess} stipulate that icons must be placed a minimum of 8 pixels apart to prevent miss-clicks by users with tremors or other motor impairments. Ensuring proper icon placement is crucial in enabling users with fine motor difficulties to interact with these icons effectively and without any possibility of error. Thus, the significance of this detector lies in the need to test for proper distance between icons.
+An example of this is shown in Figure~\ref{AllDetectors}-4, wherein the ``Start'' and ``Privacy'' elements are located too close to one another and may result in accidental, unintentional triggering of the components by a motor-impaired user.
 
+\subsection{\MotorEase Approach}
 
-\subsubsection{Experimental Design}
-\label{sec:Prediction_Design}
-To evaluate \sysName, I used the same dataset described in Section \ref{sec:flakeFlaggerStudy}. I ran the detector described in Section \ref{sec:detector}, to collect the set of features shown in Table \ref{table:Feature_desc}. \sysName, similar to any machine learning classifiers, relies on two data sets: one to build the model (training) and another for testing. Because this is not already designed and I have only one dataset, I applied $k$-fold cross validation \cite{kohavi1995study} to evaluate the model. Following this practice, I split the data into $k$ parts, leave one part for testing and $k-1$ to train the classifier.
-I then repeat this process with another $k-1$ parts, each time leaving one part for testing.
-However, $k$-fold cross validation is most applicable to data that is evenly balanced, where the proportions of each class (flaky and not flaky) are similar. In fact, most tests are not flaky, which means imbalance data. To overcome this, I applied a sample technique SMOTE \cite{SMOTE} only on training dataset, to ensure a valid and fair result.
 
+\begin{figure}[t]
+	\centering
+    \includegraphics[width=0.55\textwidth]{imgs/MotorEaseOverview.pdf}
+    \caption{Overview of \MotorEase's Workflow}
+    \label{fig:overview}
+\end{figure}
 
+\MotorEase is an automated approach that aims to detect motor-impairment accessibility guideline violations by analyzing UI metadata and screenshots collected via automated input generation (AIG) tools (i.e., automated app crawlers, UI testing tools). MotorEase operates in three stages, and implements four guideline violation detectors, as depicted in Figure ~\ref{fig:overview}. First, an AIG tool is run on a target application to produce a set of screenshot and uiautomator XML files (i.e. UI metadata) before and after each AIG tool action. We tailor our approach to utilize UI metadata generated using the uiautomator framework, which captures UI layout information in a structured XML format, as this is most prevalent utility used by recent Android AIG tools~\cite{mao2016sapienz,li2017droidbot,Gu:ICSE'19,Moran:ICST'16,crashscope,Su:FSE'17,Linares:MSR15,Linares:ICSME'17,Linares:ICSME'17-2,Zhao:FSE22}. It should be noted that \MotorEase does not require any pre-existing test cases, but instead can be used in conjunction with any of the AIG tools listed above. Second, \MotorEase utilizes a series of four \textit{violation detectors} to analyze the screenshots and UI metadata to determine if the target application failed to follow motor-impairment guidelines. Finally, \MotorEase collects the information from the detectors and compiles an \textit{accessibility report} that informs developers of accessibility guideline violations.
 
-In my prediction evaluation, I label each prediction result as a True Positive (TP), False Negative (FN), False Positive (FP), or True Negative (TN) as follows:
-TP - predicted flaky, known to be flaky; FP - predicted flaky, not known to be flaky; FN - predicted not flaky, known to be flaky; TN - predicted not flaky, not known to be flaky.
-I also evaluate the models using F1-score, which is computed using the standard formula based on Recall and Precision. %, to evaluate how our approach works to detect flaky tests as $TP$s.
-%  \abdul{I added the following sentences ... } JB: Looks good!
-Lastly, I calculate the Area Under the Curve (AUC), a measure of how effective a model is at distinguishing classes.
-% (in my case, flaky and not flaky).
 
-In the evaluation, false positives represent the number of tests that might be considered as flaky by developers, resulting in excess effort spent re-running them to determine if they are flaky or not. I focus primarily on total positives, because I have confidence that the collected flaky tests are indeed flaky, but I cannot be confident in my classification of a test as not flaky. 
-In other words, the oracle is a result of detecting flaky tests after \numruns~runs for each test, but this does not guarantee that the ``not flaky'' tests are really not flaky: they may just not have been observed to be flaky. 
-This approach also allows us to confirm $FN$s are truly flaky tests because they fail at least once during rerun tests.
-However, because of the inherent non-determinism in flaky tests, I cannot construct a reliable oracle to evaluate $TN$s and $FP$s, but report them as-is.
 
+\subsubsection{Detectors}
 
+The core components of \MotorEase are its four accessibility guideline violation detectors. Detectors \circled{1}, \circled{2} and \circled{4} operate upon \textit{single} uiautomator XML files, screenshots, in the form of PNGs, or both. Detector \circled{3} takes as input a series of \textit{multiple} \texttt{\small XML} and screenshot pairs. In the remainder of this section, we describe the technical underpinnings of each of \MotorEase's detectors.
 
-\input{tables/FlakeFlaggerStudy}
+\subsubsubsec{\textbf{Expanding Section Closure Detector}}
 
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=0.45\textwidth]{imgs/expanding1.jpg}
+%    \caption{Classification of Closing Expanding Sections}
+%    \label{expandingClass}
+%\end{figure}
 
 
-\subsection{Evaluation}
-I evaluate my findings in detecting flaky tests by answering the following  main research questions:
+The expanding sections detector aims to identify pop up messages or slide-in views that lack a visible means to close the section. Objects or text that imply closing the section is what \MotorEase aims to detect, if it cannot detect these, then a given screen with a dialog box or section is considered to be in violation of the guideline. 
+This detector begins by determining whether the screen has an expanding section and then extracting it from the screenshot. This is done by identifying the largest element on the screen. \MotorEase extracts the largest \emph{android.widget.FrameLayout} and the largest \emph{android.widget.ListView} on the screen whose size is not the entire screen as the pop up screen or the slide-in list menu. %As a result, we built a tool that extracted all of the pop outs in a screen. 
+An example of this is shown in Figure \ref{extractedSec}.
 
+\begin{table}[h]
+%\vspace{-1em}
+\centering
+\small
+\renewcommand{\arraystretch}{2}
+\caption{Mapping of Sample Lexical Patterns to detect Closure}
 
-\begin{description}
-  \item[\textbf{RQ 4.3.1:}] How many flaky tests can be found by rerunning tests given different rerun budgets?
-  \item[\textbf{RQ 4.3.2:}] How hard is it to reproduce a flaky test failure?
+\label{tab:text-patterns}
+\begin{tabular}{p{15cm}}
+\hline
+\textbf{Initial Closure Words}\\
 
-  \item[\textbf{RQ 4.3.3:}] How effective is \sysName at predicting flaky tests?
-  \item[\textbf{RQ 4.3.4:}] How helpful is each feature in distinguishing between flaky and non flaky tests?
-  
- \end{description}
+"close", "cancel", "dismiss", "done", "ok", "finish", "return"\\
+\hline
+\textbf{GLoVE Embedding Words}\\
 
+ "deny", "allow", "exit", "end", "terminate", "quit", "back", "stop", "ignore",  "proceed", "save","apply", "submit", "confirm", "abort", "decline", "reject", "ignore"\\
+\hline
+\end{tabular}
+\end{table}
 
+Once \MotorEase has extracted each of the expanding sections, it then aims to determine whether the pop-up or section provides a clear means of closing it. In order to offer a robust solution, \MotorEase accomplishes this via two main procedures: (i) Semantic Text Matching and (ii) Icon Detection. This is due to the fact that closure controls can have either textual (i.e. the word ``exit'') or visual (i.e. an $\times$ icon) signifiers that indicate functionality.
 
-By running each test 10,000 times, 811 flaky tests were detected: about \flakytestsrate\% of the total number of tests were flaky. The number of flaky tests in 24 projects are not equally distributed. For example, \projectsout~projects with less than 10 flaky tests, \projectsoneflaky~of which have only one, and one with none. On the other hand, there are \projectshundredsflaky~projects which have more than 100 flaky tests. \emph{Spring-boot} has \springbootFlaky~flaky tests, \highestflakyrate\% of the total observed flaky tests. Table \ref{table:rerun_result} summarizes these results. 
+\noindent\emph{\underline{Semantic Text Matching:}} \MotorEase's semantic matching technique defines a certain set of keywords that are likely to signify an element that can close an expanding section or pop-up.  
+These keywords comprise common lexical patterns derived through two authors of the paper examining expanding sections that appear in 1500 randomly sampled screenshots from the RICO dataset~\cite{Deka:UIST'17}. The RICO dataset, comprising 9,000+ Android apps and 66,000+ screenshots, serves as a popular resource for mobile app research given its diverse set of screens and apps. We randomly sampled 1500 screens as it represents a statistically significant sample size of the ~66k screenshots present in the RICO dataset (95\% confidence level and 2.5\% margin of error). These words were terms that implied a closure or completion action, i.e. ``close'', ``dismiss'', ``cancel'', ``ok''. To ensure that the selected words for semantic matching were relevant, we employed a manual process in which two authors reviewed the randomly sampled dataset for expanding elements and words that implied closure. The resulting set of words was agreed upon by the authors as suitable for the task. To further expand this set of words, we further utilized GloVe embeddings~\cite{glove} to compare the original selected words to the entire dataset. Glove embeddings capture semantic relationships between words by considering global word co-occurrence patterns, resulting in dense vector representations that preserve meaningful similarities between words~\cite{glove}. We extracted additional words that exhibited a cosine similarity of at least 0.95 to the GloVe embeddings of the original selected words. This approach enabled us to carefully curate a comprehensive set of words for semantic matching that accurately represented closure. We provide the complete list of 25 closure words in Table~\ref{tab:text-patterns} -- as our experiments illustrate, we found these words to generalize well to our experimental benchmark. %We then moved onto extracting the text from each of the sections. 
 
-\subsubsection{How many flaky tests can be found by rerunning tests given different rerun budgets?} 
-\label{FlakeFlaggerRQ1}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/extracted-section.pdf}
+    \caption{Extracted Expanding Sections}
+    \label{extractedSec}
+\end{figure}
 
-I calculated the probability that each flaky test would have been detected with fewer reruns. It is important to consider that it is not possible to state the probability due to the fact that there could be uncontrolled unaware conditions that cause the failure. As a result, only roughly a quarter of all of the flaky tests that I found in 10,000 runs would have been found with 10 reruns, roughly half with 100 reruns and roughly two thirds with 1,000 reruns.
+To extract the text from each image, \MotorEase leverages a combination of Google's Optical Character Recognition (OCR) text extraction~\cite{ocr}, which is based on the EAST OCR technique~\cite{zhou2017east} and the text present in the \texttt{\small uiautomator} \texttt{\small XML} file. We use both methods of text extraction as text displayed on the screen via images is often not captured in the \texttt{\small uiautomator} \texttt{\small XML} files. This method provides a binary classification for the presence of text that indicates a means to close the pop-up. If there are no matching extracted terms, \MotorEase then proceeds with icon detection.
 
-Table \ref{table:rerun_result} categorizing each flaky test as failing either between 0 and 10 times, between 10 and 100 times, between 100 and 1,000 times, and finally over 1,000 times (out of the 10,000 runs).
-These sets are represented by colors as shown in Table \ref{table:rerun_result}. The \emph{red} bar, which refers to tests that flake less than or equal 10 times, takes the majority in \redbarsratio~projects. 
-In general, I found more than \NumFailingRunsTen\% of total flaky tests fail in less than or equal 10 times, \NumFailingRunsHundred\% of flaky tests fail more than 10 and less than or equal 100 out of 10,000.
-This suggests that flaky tests datasets with limited runs still not ensure to detect \emph{most} flaky tests.
-Furthermore, I acknowledge that even after 10,000 re-runs, it is still possible that all flaky tests in this dataset have been detected. 
 
-\subsubsection{How hard is it to reproduce a flaky test failure?}
-\label{FlakeFlaggerRQ2}
+\noindent\emph{\underline{Icon Detection:}} Icon detection is used to identify specific closing icons, i.e. $\times$, hamburger icon, checkmark, etc. Two authors examined the same set of 1500 screens from the RICO dataset discussed above and compiled a set of base icon types to train an image detection model in order to detect these icons. The chosen base icons are shown in Figure~\ref{fig:icons}. To accurately perform this detection, we trained a neural object detection model on a diverse set of examples of these identified icons, through a process we describe in detail below. 
 
-In the previous \textbf{RQ}, the rerun experiment aims to study the difficulty of identifying flaky tests by re-running them on the same platform. However, this does not capture the difficulty when a developer rerun the tests on different environment e.g. local machine. to meet this, I compared the set of flaky tests identified from the 10,000 reruns with those detected by prior researchers on the same versions of the same projects, but in different environments.
-The columns \emph{DeFlaker} and \emph{iDFlakies} in Table \ref{table:rerun_result} show the total number of flaky tests that that paper reported on that version of that project, along with the number of those tests that were also found to be flaky based on the reruns.
-A blank entry indicates that the revision of that project that I executed did not have any flaky tests reported by the prior work.
-The DeFlaker dataset contains flaky tests from many revisions of each project, but I only studied a single revision of each project, and hence, it is possible that DeFlaker had not identified any flaky tests in that revision.
-The iDFlakies dataset consists of both order dependent tests (which are detected by shuffling execution orders), and non-order dependent tests (which are flaky regardless of execution order).
-Since I purposefully did not shuffle the execution order of the tests (as described above), I include only the non-order dependent tests from iDFlakies for comparison. 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/closure-icons.pdf}
+    \caption{Base Closure Icons}
+    \label{fig:icons}
+\end{figure}
 
-Comparing to DeFlaker, I found \deflakerCommonFlaky~flaky tests out of the \deflakerRerunFlaky~tests identified as flaky by DeFlaker.
-Unfortunately, the DeFlaker authors did not retain the build logs from their test runs, so I are unable to diagnose why those tests appeared as flaky to DeFlaker but not to my reruns.
-Comparing to iDFlakies, I found \idflakiesCommonFlaky~flaky tests out of the \idflakiesRerunFlaky~non-order dependent tests that I reran.
-In the case of iDFlakies, the authors \emph{did} retain the build logs that show how these tests failed, and I confirmed by hand that the tests that I missed in my rerun experiment truly were flaky, and could have been detected as flaky if I had rerun them more.
-These results are indicative of the true non-determinism of flaky tests and the difficulties that developers face reproducing them: even with 10,000 reruns, I could not detect all flaky tests.
+Training a neural object detection model typically requires a large-scale dataset with annotated examples of the target icons. To derive such a dataset, we \textit{automatically} constructed a realistic, synthetic dataset of icons that represent menu/pop-up closing. To do this, we extracted icon images with transparent backgrounds from the Fontawesome~\footnote{\url{https://fontawesome.com}} and Flaticon~\footnote{\url{https://www.flaticon.com}} image repositories until five icons for each icon type were identified that varied in color and style. Note that these icons do not directly appear in our evaluation dataset. We then superimposed these icons into random locations on screenshots derived from the RICO dataset~\cite{Deka:UIST'17}. During the analysis of the 1500 RICO screenshots two authors determined that a majority of icons on the screen were mathematically smaller than 10\% of the total screen size and larger than 2\% of the screen size. The screen size in question are the 1920x1080 pixel dimensions of the screen, limiting the maximum icon size to 192px and minimum icon size to 38px. Therefore, when an icon was superimposed on a screen, we varied their size between 2\% and 10\% of the screen area so that they remained relatively similar to the screens in the dataset. In this manner, we generated a dataset of 7,291 images (separate from the 1500 images sampled earlier) all with labeled and fully-localized icons on them (one per screen, spread evenly across the variations of our six icon types) and divided this into training and testing sets following an 80/20 split, 5,832 images for training, 1,458 for testing. We then used this dataset to train a Faster-RCNN object detection technique~\cite{ren2015faster} using the the torch-vision API~\cite{torchvision}. We generated $\approx$ 7k images as past work that uses a similar approach for icon detection was able to train an accurate model with this scale of data~\cite{Cardenas:ICSE'20,Cardenas:TSE23,Havranek:ICSE'21}. Our trained model was able to achieve over 95\% accuracy on the test portion of our dataset. 
 
+%In our survey of the dataset, we noticed that these icons can be less than a tenth of the area of the entire screen, which means we needed a model that would precisely be able to only detect these icons on a large screen. In order to do that, we decided to overfit a multi-classification PyTorch image detection model \cite{torchvision}. 
 
+%Overfitting a model to detect six specific icons requires an abundance of niche data that contains those exact icons. 
 
-\input{tables/Full_result}
+\MotorEase passes the cropped out expanding sections to the model in order to detect the icons. 
+This detector works by first checking for semantic text matches and if there is no match, it then checks for icons. \MotorEase performs text pattern matching first because of the potential for X icons on the expanding section \textit{not} related to closing the icon. Had we done the icon detection first, the X icons to delete text in the text-fields would have been detected by the object detector. This means that this screen would have been classified as closable even though the X icons do not imply closing of the section. Therefore we use both the text and images on the expanding sections to try and classify if it can be closed. 
+If neither technique can pick up on a pattern or icon, \MotorEase reports the section as a violation to the expanding section guidelines, capturing the the screenshot name, FrameLayout/ListView name, and violation and make it known to the developer. %We do this by providing the screenshot name, FrameLayout/ListView name, and violation or non-violation.}
+%Figure \ref{expandingGood} illustrates an example of why the detector is constructed in this way. This screen is an example of a closable expanding section because of the explicit cancel button at the bottom left. The pattern matching is able to detect this and classify this screen as collapsible. 
+%The reason \MotorEase performs the pattern matching first is due to that  of the other X icons on the screen. Had we done the icon detection first, the X icons to delete text in the text-fields would have been detected by the object detector. This means that this screen would have been classified as closable even though the X icons do not imply closing of the section. Therefore we use both the text and images on the expanding sections to try and classify if it can be closed. 
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=0.36\textwidth]{imgs/goodExpanding.jpg}
+%    \caption{Expanding Section Closure Detection}
+%    \label{expandingGood}
+%\end{figure}
 
 
+\subsubsubsec{\textbf{Visual Touch-Target Detector}}
 
+%The touch-target detector takes a deeper look into interactive icons on the UI. 
+This detector uses both the screenshot and its corresponding XML file. It starts by processing the XML file and extracting the bounds for all elements which are clickable. XML has various properties in its metadata to describe an element, and if an element has a \emph{"True"} in the \emph{"clickable"} field, we determined that it is meant to be clicked on  or interacted with. 
+This detector aims to identify elements that have a visible area that is smaller than their tappable/clickable bounding box. Hence with this detector, \MotorEase aims identify elements whose \textit{visual} size are under 48x48 pixels~\cite{ANDRDesign}, even when the reported touchable area (as indicated by \texttt{\small uiautomator}) may be larger than 48x48. The bounding boxes in \texttt{\small uiautomator XML} files can show a bounding box whose size is larger than the actual size of the icon. 
+An example of this is shown in Figure~\ref{boundBox}. The true bounds of an icon corresponds to the visible area occupied by the icon. This can make these bounding boxes appear to be guideline abiding since they are generally larger than the true, visible bounds of the icon they hold. 
+In order to identify these cases, \MotorEase adds 15 pixels to the width and height of the bounding boxes of each clickable item to extract the entire icon, before cropping the enlarged icon from the image. %This is done to extract the entire bounding box and icon in the image. %, as, bounding boxes can be accurate to their true size, so we want to ensure that we are able to extract the entire element from the screen. 
 
-\subsubsection{How effective is \sysName at predicting flaky tests?} 
-\label{FlakeFlaggerRQ3}
+%\KEVIN{This is image is too large, images should be appropriately sized.}
 
-I used the results from rerunning tests (Section \ref{sec:flakeFlaggerStudy}) as the oracle for \sysName classification process, and ran the feature detector once on each of the same tests in order to gather the data needed to build a model.
-I considered several different approaches to process the data, and measure classifier performance with a confusion matrix, precision, recall, F1-score and AUC. Even I applied different classification algorithms and balance techniques, I found that the best prefroamcne was  random forest model built using the SMOTE technique for balancing the training data (and using unbalanced testing data). I compare the result of \sysName classifier with the one of the state-of-the-art flaky test classifier, a \vocabName proposed by Pinto et al.~\cite{pinto2020vocabulary} which extracts tokens from each test using a simple bag-of-words model. I considered a hybrid model that adds the token features to \sysName's features. I consider only projects that have at least 10 flaky tests to ensure I have enough flaky tests for training as shown in Table \ref{table:Full_result}. 
+%\begin{figure}[t]
+%    \centering
+%\vspace{-2em}
+%    \includegraphics[width=0.45\textwidth]{imgs/extracted-icons.pdf}
+%    \caption{Touch-Target Violation Detection Process}
+%    \label{touchViolation}
+%\end{figure}
 
-Overall, \sysName and the \vocabName  both detected a very similar number of flaky tests (599 and 583 respectively, out of a total of 808 flaky tests), but the two approaches varied in terms of precision --- \sysName had a far lower false positive rate with just \flaggerfp, compared to \msrfp~false positives from the \vocabName. Considering the initial use-case of a researcher or developer using \sysName to determine which tests to run time-intensive flaky test detectors on, using either \sysName or the \vocabName would result the same number of flaky tests eventually detected (that is, both have comparable recall).
-However, if a developer uses both models to detect tests that are most likely to be flaky (which are false positive tests), \sysName reports fewer rate than \vocabName (406 vs 4,683).
+\begin{figure}[t]
+    \centering
 
-\sysName's performance varied across projects: some projects (e.g., alluxio), had perfect precision and recall, while on others (e.g., okhttp and activiti) the approach was less successful. I investigated more about the results per projects and the performance could vary due to many reasons. First, the training and testing dataset sizes vary from one project to another. Because each project has its own environmental assumptions, development patterns, and other unique characteristics, it is really difficult to create a single general-purpose approach for flakiness classifications. Another reason for why performance varies across projects may be that not all flaky tests have been labeled correctly --- no rerun-based technique can guarantee to find all flaky tests (even after 10,000 reruns). The higher number of observed flaky tests in a single project does not guarantee that \sysName performs well.
-Some flaky failures are due to rare dependency conflicts and network failures that are not captured well from the features described in Table \ref{table:Feature_desc}.
-For example, okhttp has a high number of false positives and false negatives. With a further inspection on this particular project, there is a group of tests had all failed in the same way due to the same dependency problem in one single run.
+    \includegraphics[width=0.35\textwidth]{imgs/boundBox.png}
 
+    \caption{Example of Bounding Box vs. True Bounds}
+    \label{boundBox}
+\end{figure}
 
+After \MotorEase extracts the element, it is used as input to an edge detection algorithm, implemented in the UIED tool~\cite{UIED}, which is an approach that combines both neural object detection and unsupervised edge detection to effectively segment mobile app UI screens. This edge detection procedure is able to derive the \textit{visual} bounds of a given UI element, and would identify the 35x35px edges for the "X" as shown in Figure~\ref{boundBox}. This procedure is applied to clickable icons extracted on each screen. Once the true edges are identified, \MotorEase is then able to then able to compare these bounds to the reported element size in the \texttt{\small uiautomator XML} file. If it is determined that the true element width or height is less than 48 pixels, \MotorEase labels that individual icon as a violation.  
+\subsubsubsec{\textbf{Persisting Elements Detector}}
+The persisting elements detector aims to identify an icon on a screen whose functionality remains the same, but location changes across multiple screens. An example of this is the navigation bar at the bottom of most applications. We expect that if the navigation bar is at the bottom of the screen on one screen, if a second screen has a navigation bar it should also be at the bottom of the new screen. 
+This detector requires the use of both screenshots and \texttt{\small uiautoamtor XML} files from multiple screens, as \MotorEase directly analyzes properties of UI elements in the \texttt{\small uiautoamtor XML} files and compares the visual UI element similarity across multiple files.
 
-\input{tables/IG}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/persisting.pdf}
+    \caption{Detection of Persisting Elements}
+    \label{persistingDetect}
+\end{figure}
 
-\subsubsection{How helpful is each feature in distinguishing between flaky and non flaky tests?}
-\label{FlakeFlaggerRQ4}
+%We looked at the dataset and found that dynamically produced XML files provide element identifications(IDs) for each element on the screen. We were able to leverage the IDs for each element across each screen to see if their location changed. 
+This detector parses all of the \texttt{\small XML} files for a given application and records all of the UI element IDs. Then, it collects the location(s) across all \texttt{\small XML} files for each individual element ID. If there was more than 1 instance of a given ID across multiple screens, \MotorEase checks to determine whether the location bounds were the same as well as checking if the elements within those bounds are visually similar (95\% similar according to pixel-based mean squared error). If they are not, it deems it a violation of the persisting element guideline. This ensures that \MotorEase is checking every element in the application while checking to see if the icons with similar IDs have similar visual properties.  
+If there is an element that appears across the \texttt{\small XML} files more than once, \MotorEase examines them to see if the location is the same for the element. 
+It relays this information back to the developer by providing the ID of the violating element in the generated Accessibility report. 
+\subsubsubsec{\textbf{Visual Icon Distance Detector}}
 
-I reported the the information gain of each feature in \sysName's model, and the top 23 features in the model built using the \vocabName to get more insight about the effectiveness of these features. As shown in Table \ref{table:tokenbyig}, I noticed that features that considered dynamic behavior from each test (e.g., execution time, covered lines, and coverage of recently changed lines) had a far greater information gain than the tokens that were statically extracted from the test method bodies. I found that the top eight \sysName features each had a higher information gain than the highest gain vocabulary feature. In the model built using the \vocabName \cite{pinto2020vocabulary}, the features with the highest information gain were: test lines of code, presence of the `throws' Java keyword, and several tokens like `should', `exception', and `mtfs', each with an information gain significantly lower than the top features in \sysName's model.
 
-The majority of the flaky tests in the prior study with the `job' token came from a single project, ``oozie,'' which is \emph{not} in my evaluation. At the same time, the majority of non-flaky tests with the token `job' in the dataset were in the project ``elastic-job-lite,'' which was not included in the prior evaluation.
-The co-occurrence of individual tokens with flaky tests can vary dramatically between projects. Terms that correlate with flakiness in one project can not be expected to correlate with flakiness in other projects --- this is also evident from the limited number of projects which contain each token. Note that this finding only underscores the need for a large, balanced dataset of flaky tests: the DeFlaker dataset that Pinto et al. used contained \emph{more} flaky tests than \sysName dataset (1,403 vs 810). However, a single project in that dataset (``oozie'') contributed more than half of those flaky tests (856), which can make it extremely difficult to draw conclusions that can generalize beyond a single project, or beyond the dataset.
+The icon distance detector is designed to analyze icons on a screen and determine whether the visual distance between any two icons is less than 8 pixels, which combines findings from Kong et al. ~\cite{Kong21} regarding visual icon size/spacing and recommendations from Google's accessibility Guidelines~\cite{GoogleAccess}. T
+
+\begin{figure}[h]
+    \centering
+	
+    \includegraphics[width=0.5\textwidth]{imgs/visual-distance.pdf}
+    \caption{Visual Icon Distance Detection Process}
+    \label{iconViolation}
+\end{figure}
+
+his detector analyzes a XML and screenshot pair, and extracts all of the \emph{clickable} elements on the screen using the \texttt{\small uiautomator} metadata. Once the clickable elements are identified, \MotorEase crops out the icons and sends them as input to UIED~\cite{UIED} to find the true visual bounds of the icon via edge detection. The true bounds are then used to subtract the padding from the initial touch target to the visual touch target. These modified bounding box values are then stored, and the detector iterates through all of the other icons on the screen to calculate the distance between the target UI elements and all other elements. The distance between the bounding boxes is calculated by determining the horizontal, vertical, or diagonal distance in pixels between two bounding boxes on a screen.Once the distance between the icons is computed, \MotorEase checks whether there is a distance is less than 8 pixels. If a violation is detected, \MotorEase includes a description of the UI elements in the generated accessibility report allowing the developer to address the issue and improve the accessibility of their application.
+
+\subsubsection{Accessibility Report Generation}
+
+The accessibility report is generated using the target app screenshots that contain violations and a generated markdown file, with filenames to specific images of violations for each detector. We developed textual templates for each type of violation that are used by the report generation engine to automatically describe the accessibility violations by filling in the templates with information the \MotorEase analysis. This accessibility report aims to provide a comprehensive account of accessibility issues within a given app so that developers are able to take this information to make any changes they may need in order to make their apps more accessible.
+
+
+\subsection{Evaluation Methodology}
+
+
+\newlist{questions}{enumerate}{2}
+\setlist[questions,1]{label=RQ\arabic*.,ref=RQ\arabic*}
+\setlist[questions,2]{label=(\alph*),ref=\thequestionsi(\alph*)}
+
+%RESULTS
+
+%- how well did \MotorEase perform on the datasets
+
+%- how well does each single detector perform
+
+
+
+%EVALUATION
+
+% combine all the tables for the dataset 
+% add the research questions in the design of the eval design 
+% explain how we measure the efficacy of each research question  
+
+%- how we plan to do the experiments
+
+%- how the data was labeled 
+
+%- how did we create different datasets for each detector 
+
+%- what the detectors output and how we plan to ma\\MotorEasetch that to the data
+
+In this section, we describe the procedure we used to evaluate \MotorEase. The goal of our empirical study is to assess the accuracy, and practical utility of the approach. The main \textit{quality focus} of our study is to determine the extent to which \MotorEase is able to detect accessibility violations in applications.
+To achieve our study goals, we formulated the following five research questions: 
+\begin{itemize}
+		\item{\textbf{RQ$_1$} \textit{How accurate is the Expanding Section detector?}}
+		\item{\textbf{RQ$_2$} \textit{How accurate is the Visual Touch Target detector?}}
+        \item{\textbf{RQ$_3$} \textit{How accurate is the Persisting Element detector?}}
+        \item{\textbf{RQ$_4$} \textit{How accurate is the UI Element Distance detector?}}
+		\item{\textbf{RQ$_5$} \textit{Does \MotorEase identify a limited number of false positive and negative violations?}}
+\end{itemize}
+        
+\subsubsection{RQ$_1$ - RQ$_4$: Violation Detection Capability}
+ 
+\MotorEase is one of the first tools to support the detection of violations of accessibility design guidelines targeting motor-impaired users, and accomplishes this via understanding the visual and textual modalities Android UI screens. 
+Given that prior techniques are not able to explicitly detect the design violations that \MotorEase targets, by using the visual comprehension of the screen, we both derived an entirely novel benchmark and designed an evaluation methodology that tests each of its four detectors individually to determine their accuracy, precision, and recall. In addition, we also examine the false positive and false negative rates to better understand the practical utility of \MotorEase. The evaluation metrics used in this study provide insights into the ability of each detector to identify true positives and true negatives. Accuracy gives us an overall ability to deduce each detectors ability to detect true positive (TP) and true negative (TN) values accurately. Note that we balance the positive and negative samples in the \MotorCheck benchmark to allow for an informative accuracy measurement.
+	
+	\begin{center}$Accuracy = \frac{TP+TN}{TP+TN+FP+FN}$\end{center}
+	
+\noindent In the context of our study, a True Positive ($TP$) is defined as the detection of an existing design guideline violation as defined in our ground-truth dataset. A false positive ($FP$) is defined as the detection of a violation when one does not exist. A False Negative ($FN$) occurs when our approach does not report a violation, but one exists in the ground truth. Finally, a True Negative ($TN$) occurs when the approach does not report a violation and one does not exist. In addition to accuracy, we also measure the precision and recall (as defined below) to provide a more complete picture of \MotorEase's performance. The results of \MotorEase were manually validated (i.e. two authors compared MotorEase's output to the ground truth.)
+	
+	\begin{center}$Precision = \frac{TP}{TP+FP}$ \hspace{1em}$Recall = \frac{TP}{TP+FN}$\end{center}
+
+		
+\noindent Given these two evaluation metrics, we can determine how accurately each detector works. \MotorEase's overall effectiveness can be derived by averaging the the accuracy/precision/recall across all four detectors, providing a comprehensive understanding of \MotorEase's ability to detect accessibility guideline violations. 
+
+
+\subsubsection{RQ$_5$: M{\normalsize OTOR}E{\normalsize ASE}'s Practical Utility}
+
+In order to investigate \MotorEase's practical utility, we also report both the false positive and false negative rate, as these reflect the need for a developer to sift through incorrect violation reports, or lost quality in terms of miss unreported violations. This helps to provide a more holistic picture of \MotorEase's performance.
+
+	\begin{center}$False Positive Rate = \frac{FP}{FP+TN}$ \hspace{1em}$False Negative Rate = \frac{TN}{FP+TN}$\end{center}
+
+\begin{table}[t]
+	
+	\begin{center}
+	\caption{Expending Sections Detector Test Dataset}
+	\begin{tabular}{ c|c|c|c } 
+		\hline
+		\textbf{Total Files} & \textbf{Close: Icon} & \textbf{Close: Text} & \textbf{Cannot Close} \\
+		\hline
+		483 & 27 & 214 & 242\\ 
+		\hline
+	\end{tabular}
+	\label{t2}
+	\end{center}
+\end{table}
+
+\begin{table}[t]
+	\begin{center}
+
+	\caption{Visual Touch-target, Persisting Elements, and Visual Icon Distance Test Datasets}
+	\begin{tabular}{ c|p{.6in}|p{.53in}|p{.5in} } 
+		\hline
+		\textbf{Detector} & \textbf{Total Files/Apps} & \textbf{Violations} & \textbf{Non-Violations} \\
+		\hline
+		Touch-Target & 400 files & 176 & 224 \\
+		\hline
+		Persisting Elements & 49 apps & 24 & 25 \\
+		\hline
+		Icon Distance & 400 files & 42 & 358 \\
+		\hline
+		
+	\end{tabular}
+	\label{t1}
+	\end{center}
+\end{table}
+
+
+\subsubsection{Derivation of the M{\normalsize OTOR}C{\normalsize HECK} Benchmark}
+\label{subsec:dataset}
+
+Given that no prior approach has targeted the motor-impairment design violations targeted by \MotorEase, we develop a novel benchmark called \MotorCheck which we discuss below. It should be noted that all of the accessibility violations of this benchmark are real, no synthetic violations were injected in it's construction -- instead real violations were rigorously manually annotated.
+
+To derive the initial set of screenshots and xml files for \MotorCheck we applied the {\sc CrashScope}~\cite{crashscope} automated testing tool to 70 popular Android apps that are cross-listed on both FDroid and Google Play. To do this, we gathered a list of apps from F-Droid~\cite{Fdroid} and considered only those apps that were cross-listed on Google Play~\cite{GooglePlayStore} and had at least 1000 downloads -- providing some confidence in the popularity of the chosen applications. We provide a full list of these applications with download statistics and links in our online appendicies~\cite{appendix,site,zenodo}. During this process, we used one of {\sc CrashScope}'s exploration strategies to extract 2,864 screenshot/\texttt{\small XML} pairs. Note that the goal of our study in assessing \MotorEase's capabilities is independent of the coverage provided by the underlying testing tool, although {\sc CrashScope} has been illustrated to be competitive with other tools~\cite{Moran:ICST'16}. It should be noted that the screen coverage of \MotorEase is dependent upon the Android AIG tool that the approach is paired with. Given recent advances in AIG tools~\cite{wang_vet_2021}, \MotorEase can integrate with these new tools and take advantage of the improved coverage. Next, we describe the dataset derivation process for each detector. Note, given that the data labeling process is quite objective for violations of our identified guidelines, for each dataset, we had one author manually label each instance, and another author verified the results. During this process, no instances of conflicts were noted, again due to the largely objective nature of the labeling procedure. We provide an overview of the \MotorCheck benchmark data in Tables~\ref{t2}~\&~\ref{t1}.
+
+\subsubsubsec{Expanding Section Closure Detector Dataset} In order to detect expanding sections, this detector requires an input screenshot and its corresponding \texttt{\small XML} file. In order to evaluate the detector and remove any bias, one author labeled expanding sections without closure elements until all CrashScope files were exhausted, resulting in 241 screens. Of the 241 screens that had an expanding section, there were 121 screens were FrameLayouts and the remaining 120 were ListViews. Then, in order to balance the dataset, an additional 242 screenshots without violations were randomly selected to complete the dataset, for a total of 483 screens. The additional screens without violations consisted of expanding sections that could be closed. Table~\ref{t2} provides more information on how the dataset was split between violations and non-violation samples. Labeling was done manually using LabelStudio~\cite{LabelStudio}. For the screenshots without violations, icon types and closure word types were labeled. If neither the icon nor text clearly showed a means of closing the section, it was labeled as a violation. 
+
+\begin{table*}[t]
+    \caption{Overall Results for \MotorEase Detectors \& Baselines}
+
+    \centering
+    \begin{tabular}{ c|c|c|c|c } 
+         \textbf{Approach} & \textbf{Precision} & \textbf{Recall} & \textbf{Accuracy} & \textbf{F1-Score}\\\hline
+        \textbf{{\sc\textbf{MotorEase}} (Viz T.-Target)} & 1.0000 & 0.6648 & 0.8525 & 0.7986\\ 
+		\textbf{G-Accessibility Scanner (T.-Target)} & 0.5556 & 0.5085 & 0.6025 & 0.5310 \\\hline 
+        \textbf{{\sc\textbf{MotorEase}} (Exp. Sec)} & 0.9042 & 0.9205 & 0.9123 & 0.9129\\ 
+		\textbf{Groundhog (Exp. Sec)} & 0.6849 & 0.8659 & 0.7207 & 0.7648 \\ \hline
+        \textbf{{\sc\textbf{MotorEase}} (Pers. Elem)} & 0.8214 & 0.9583 & 0.8776 & 0.8846\\
+        \textbf{{\sc\textbf{MotorEase}} (Icon Dist)} & 0.7119 & 1.0000 & 0.9575 & 0.8317\\\hline
+        \textbf{{\sc\textbf{MotorEase}} (All Detectors)} & \textbf{0.8594} & \textbf{0.8859} & \textbf{0.8999} & \textbf{0.8570}\\
+       
+    \end{tabular}
+    \label{results}
+\end{table*}
+
+\subsubsubsec{Visual Touch-Target and UI Element Distance Detector Dataset} The touch-target detector requires screenshot and XML pairs to determine if the screens had a touch-target violation (i.e. XML) and visual bounds differed. In order to evaluate the detector and remove any biases, we randomly chose 400 screenshots and XML pairs generated by CrashScope stratified across our 70 applications. This sample size was used as it represents a statistically significant sample of the total number of extracted CrashScope screens (99\% confidence interval). Table~\ref{t1} provides the dataset splits between violations and non-violation samples. Labeling for these screenshots was performed manually. One author analyzed each of the screenshots and set a bounding box on each of the interactive elements on the screen using Label Studio~\cite{LabelStudio}. If the size of the bounding box was less than 48 in width or height, it was labeled it as a violation, else it was labeled as a screen without violations. Additionally, the author checked the distance between all components on these screens and labeled any instances where UI elements were less than 8 pixels apart. This was done for all 400 images. 
+
+\subsubsubsec{Persisting Elements Detector}
+
+The persisting elements detector requires multiple app XMLs in order to detect violations. The CrashScope dataset \cite{crashscope} contains 70 applications and their screenshots. We filtered out apps that only contained screenshots of similar screens, resulting in 49 applications, 24 of which had persisting elements that violated our guideline, and 25 of which adhered to our guideline. One author labeled each app as having a violation or not having a violation. During the labeling, this author also specified which specific screenshot exhibited the violation.
+
+\subsubsection{Comparison to Baseline Techniques}
+
+While the Accessibility issues that \MotorEase targets have not been explicitly targeted by past tools, there are two tools which are capable of detecting a subset of the accessibility violations identified by MotorEase. These two baselines are  Groundhog~\cite{Salehnamadi:ASE'22} and Google Accessibility Scanner~\cite{GoogleScanner}. We ran these two tools on the same \MotorCheck benchmark used to evaluate \MotorEase to keep the comparison fair and consistent, and we report the same metrics for both \MotorEase and the baseline techniques. Upon careful analysis of these baselines, Google Accessibility Scanner and Groundhog are only capable of detecting Touch-target size violations and Expanding Sections violations, respectively.
+
+The first baseline tool we compared \MotorEase to in our updated evaluation is Google's Accessibility Scanner~\cite{GoogleScanner}. This tool operates directly upon the dynamic representation of the GUI as reported by uiautomator, and checks to whether the bounds of screen elements fall below the 48x48 dp threshold. To apply this tool, we launched the each app included in the MotorEase dataset on an emulator of the same screen dimension (1920x1080) and Android version as the screens in the MotorCheck benchmark  and manually navigated to the screen in question, and triggered the Accessibility Scanner tool. One author then manually compared the output results from Accessibility Scanner to the ground-truth visual touch-target size violations defined in \MotorCheck. We then reported the Precision/Recall/Accuracy and F1 Score Metrics.
+
+The second baseline tool that we compared \MotorEase to is the Groundhog Accessibility tool~\cite{Salehnamadi:ASE'22}. We worked directly with the authors of the Groundhog tool, who were quite helpful after some initial issues initializing the tool, in order to apply Groundhog to the \MotorCheck benchmark. Groundhog functions by first sending touch-based actions to a given Android app screen running on an emulator or real device, and then attempts to exercise the same actions using one of Google's accessibility services, such as Talkback. Given the manner in which Groundhog works, the only Accessibility issue in \MotorCheck that it was applicable to is the Expanding Section guideline violations. To apply Groundhog to detect Expanding Section violations in \MotorCheck we launched a target on an Android emulator configured to the 1920x1080 screen size and Android version of the MotorCheck screens, and then ran Groundhog on the screen with an expanding section. Groundhog then navigated the screen both with and without assistive services to determine whether it could close the expanding section, if there was a discrepancy, this was reported by Groundhog. Then one author manually checked the output of Groundhog to determine if it was able to detect an expanding section violated the \MotorCheck guideline and could not be closed by a tappable element. We then reported the metrics seen in Table~\ref{results}
+
+
+
+\subsection{\MotorEase Evaluation Results}
+
+\subsubsection{RQ$_1$: Expanding Section Detector Accuracy?}
+
+The expanding section detector performed well across nearly all of our studied metrics, as indicated in Table~\ref{results}. With a precision of .9042, F1-Score of 0.9129, and an accuracy of 0.9123, this detector shows promising results that it is capable of identifying a section's ``collapsibility'' accurately. This indicates that, by using \MotorEase, developers will have an increased chance of identifying sections that were designed without a method of closure which may impede motor-impaired users. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/expandingResultsV2.jpg}
+    \caption{Expanding Section Closure Detection}
+    \label{expandingResults}
+\end{figure}
+
+Importantly, as per Table~\ref{results} our approach surpassed the performance of Groundhog's ability to detect closable sections, with a precision of 0.6849, demonstrating its effectiveness in comparison. The difference between the two is attributable to the fact that \MotorEase and Groundhog do not have the same objective. MotorEase aims to detect the presence or absence of closing icons, while Groundhog aims to determine whether a closing icon can be accessed using an assistive service. If a closing icon is missing, Groundhog cannot detect it. Since there is no closing icon, Groundhog does not even attempt to close it using an assistive service. Groundhog relies on an accessibility service to detect icons on the screen, However, if the icon does not have any metadata indicating that it is an interactive, it is unable to interact with the icon and close it. \MotorEase's novelty lies in its ability to consider the visual presence of the icon independent of its metadata description. However, \MotorEase's detector does struggle to detect certain instances in the \MotorEase benchmark. An example of a successful and unsuccessful prediction is shown in Figure \ref{expandingResults}. The example on the left side is an expanding section that the detector correctly identified as collapsible. It is correctly identified by \MotorEase as a closing section because of the semantic matching's ability to generalize the word "cancel" as a means of closing the section. The image on the right is not collapsible but the detector deduced that it was collapsible. This was due to the use of X icons in the training data for the object detection model. The "X" icons used in this image imply the deletion of text, but this detectors object detection model is also trained to identify "X" icons that may be used to close the expanding section. It should be noted that this was an outlier in our dataset, and that the pattern for detecting "X" icons generally worked as expected.
+
+\subsubsection{RQ$_2$: Visual Touch Target Detector Accuracy?}
+ 
+
+The touch-target detector performed well as illustrated in Table \ref{results}. The detector exhibited perfect precision, an F1-Score of 0.7986, and an accuracy of 0.8525, showing encouraging results of its ability to detect and classify screens with touch target violations well.  Given the results, this detector is successfully able to give developers an insight into smaller icons that may inconvenience users with tremors and inaccurate touches. Importantly, our approach surpassed Google Accessibility Scanners's ability to detect visually small elements on the screen, which only had a precision of 0.5085, demonstrating its effectiveness in comparison. The primary reason for the gap in performance is that Google Accessibility Scanner is not able to check the \textit{visual} touch-target size, and can only parse the reported size from the \texttt{\small uiautomator} framework, which may not necessarily correspond to the visual touch target size. However, while nearly all violations returned by this detector are correct, it does tend miss certain types of violations. For instance, it cannot detect icons on the screen which are not labeled as clickable in the XML. By default, all elements on an android device have a clickable property with a boolean True/False label. If that property is labeled as False, \MotorEase does not consider the object to be clickable. Dynamically generated screenshots may not always have the metadata information for each element on the screen, and this absence of information was the main reason for incorrect or missed violations. This detector could be augmented in the future with work from the HCI community aimed at assessing icon tap-ability~\cite{Swearngin:CHI'19}. %This absence of information impacts the detector's ability to extract interactive elements on a screen since it cannot identify clickable elements, and this was the major reason for incorrect or missed violations.%Figure \ref{touchResults} shows an example of the touch target violations successfully detected by MotorEase's touch-target detector and ones it failed to detect. The three dot menus that were not detected were not labeled as clickable in the XML, therefore going undetected and never being sent to the edge detector to detect the true bounds.
+
+
+
+
+
+\subsubsection{RQ$_3$: Persisting Element Detector Accuracy?}
+
+
+This results of this detector are presented in Table \ref{results}. With a precision of 0.8214, F1-Score of 0.8846, and accuracy of 0.8786, this detector shows encouraging signs of viability. This detector's recall rate of 0.9583 suggests that the detector identifies true positives at a high rate. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/persisstingResults.jpg}
+    \caption{Persisting Elements Detection}
+    \label{persistingResults}
+\end{figure}
+
+This detector, however, relies heavily on the XML to locate elements on the screen, which can lead to mis-classifications. One such example is shown in Figure \ref{persistingResults}. The example shows the undo icon on the screenshot on the left and a menu on the right side where the undo icon would be. The XML for this second screen has the undo icon in the data, but its bounds and information are missing since they are not visible on the screen. This was classified as a violation though it is not a violation. 
+
+
+\subsubsection{RQ$_4$: Visual Icon Distance Detector Accuracy?}
+This results of this detector are presented in Table \ref{results}. With a precision of 0.7119, F1-Score of 0.8317, and accuracy of 0.9575. This detector achieved a perfect recall rate, suggesting that this detector provides developers with a reliable tool that is capable of accurately detecting closely placed icons, prompting potential UI design and icon placement adjustments. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.55\textwidth]{imgs/IconDistanceResults.png}
+    \caption{Visual Icon Distance Detection}
+    \label{icondistanceResults}
+\end{figure}
+
+Like the Visual Touch-Target Violation detector, this detector relies heavily on the \texttt{\small uiautomator} metadata specifying clickable components, and the accuracy of the UIED element bound detector. The latter led to certain cases of inaccurate reporting of violations, due to incorrect overlapping bounds. Both of these examples are shown in Figure~\ref{icondistanceResults}. The first example shows a correct prediction where \MotorEase correctly identifies two icons on the screen and determines that they are not a minimum of 8 pixels in distance. However, Figure \ref{icondistanceResults} also has an example of a false positive prediction which shows an overlap of two elements on the screen. Due to the visual bounds of each overlapping, the distance between the two is 0, therefore predicting a false positive. 
+
+
+
+\subsubsection{RQ$_5$: False Positives and Negatives}
+The confusion matrices for the detectors are shown in Figure~\ref{matrices}, where green boxes illustrate predictions that matched the ground truth, and red boxes illustrate predictions that did not match the ground-truth. These figures provide 
+	a visual representation of false positive and negative rates. 
+	
+	\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{imgs/confusion-matrices.pdf}
+    \caption{Detector Confusion Matrices}
+    \label{matrices}
+\end{figure}
+
+Figure~\ref{matrices}-\circled{2} illustrates that the visual touch target detector never produced a false-positive outcome. This is due to the fact that the detector specifically extracts elements labeled as clickable in the \texttt{\small XML}, therefore once they are extracted and have their edges analyzed, the detector is able to detect violations with certainty. The confusion matrix for the expanding section detector is shown in Figure~\ref{matrices}-\circled{1}, there were 23 false positive predictions, mainly due to limitations related to lexical pattern matching. Finally, \MotorEase's persisting element detector identified only 8 false positives, mainly due to inconsistencies in matching elements across screens due to unexpected changes in \texttt{\small uiautomator XML} files. In evaluating the effectiveness of \MotorEase, we also considered the impact of false negative predictions, as they signal violations that are not flagged by MotorEase, and hence could reach end-users. However, our evaluation revealed that the recall rate of \MotorEase was relatively high, indicating that it is a dependable tool with a high true positive rate, thus demonstrating its practical applicability.
+In regards to \MotorEase's low false negative prediction rate, The confusion matrix analysis for the icon distance detector shown in Figure~\ref{matrices}-\circled{4} shows that \MotorEase predicted 0 false negatives. Moreover, the confusion matrix analysis for the persisting elements detector shown in Figure~\ref{matrices}-\circled{3} showed only one false negative prediction. Similarly, the confusion matrix for the expanding section detector presented in Figure~\ref{matrices}-\circled{1} demonstrated a false negative rate similar to its false positive rate, further supporting the viability of MotorEase. Overall, our evaluation demonstrates that \MotorEase is likely a generally practical tool, exhibiting a relatively low rate of false positives and negatives. % assisting developers in identifying as many motor-impairment accessibility issues as possible, while limiting the overhead imposed by false positive violations.
+\MotorEase leverages it's ability to visually comprehend the visual and textual contents of a screen to determine accessibility violations. This approach offers distinct advantages. For instance, \MotorEase showcases its adaptability by effectively detecting accessibility guideline violations regardless of variations in UI design or format. In contrast, traditional metadata-based approaches might be limited in their ability to analyze physical elements on the screen. %making \MotorEase a more comprehensive solution.
+
+
+
+
+
+
+\subsection{Accessibility Developer Tools Related Works}
+
+This section will look at previous accessibility related research. Our approach introduces a novel way to determine motor accessibility guideline violations within apps. In our exploration for previous work, we found that motor impaired users were seldom the targeted demographic in accessibility testing research. We also discovered that testing for accessibility based on guidelines is a relatively young area of research with many open problems. However, previous work has been done in accessibility testing and is presented below.  
+
+\subsubsection{Accessibility Studies on Mobile Apps}
+
+There exists a large body of work that aims to understand how users with disabilities use their devices, and the potential accessibility issues that exist in current software applications~\cite{Mchugh20,Almeida10,Yan19,Silva20,Santiago22,Mateus20,Aizpurua14,Silva19,Oh13,Montague14}. Such studies tend to take two forms, user studies~\cite{Aizpurua14,Mateus20} and empirical analyses of software~\cite{Silva20,Yan19}.
+Blind and low-vision users, like a majority of the population, have found themselves depending on their smartphones or touch screen devices recently \cite{Li22}.Touch devices have improved the life of people with disabilities, but some applications are still inaccessible to LV users \cite{Park14}. 
+A study by Park et al. \cite{Park14} examined mobile application accessibility through a user study with four participants with an average of 1.9 years of experience with smartphones running IOS. The study aimed to produced a list of design guidelines for app developers to better support LV users some of which include text associations to UI elements, press action support (which is a way to make every interaction with a tap and no gestures), and under 30 items in a page \cite{Park14}. This study successfully produced a list of ten guidelines that the participants had the most issues with. 
+The previous study looked at accessibility from an IOS standpoint and looked to create a set of guidelines for LV users \cite{Mateus20, Alshayban20, Kim16}. Alshayban et al. \cite{Alshayban20} examined the current state of accessibility issues in Android applications~\cite{Alshayban20} using a Google-provided accessibility testing framework~\cite{GoogleAccess},they found that Text Contrast, Touch Target, Image Contrast, and Speakable Text are the most frequent accessibility issues~\cite{Alshayban20}. 
+
+Vendome et al. \cite{Vendome19} also examined the prevalence of accessibility issues in Android apps. In this study, the authors mined thousands of android applications and analyzed the usage of accessibility APIs and whether or not applications adhered to accepted guidelines. In addition, they mined thousands of messages on Stack Overflow and other interaction platforms to understand the sentiment of developers and the types of questions they were asking. They found that most accessibility based conversations were centered around LV features while a lesser number focused on DHH features. Surprisingly though, they found that accessibility APIs imported into the programs were used as a way to resolve non-accessibility issues such as, retrieving notifications from other apps or automating touch interactions in the device \cite{Vendome19}. 
+
+Our approach is motivated by and complements what researchers have discovered in the above studies. These studies have shown the importance of the problem that \MotorEase tackles through illustrating the widespread prevalence of accessibility issues in mobile apps and illustrating a comparative lack of awareness of motor-impairment design guidelines and the needs of such users. Hence, these studies both motivate and validate our work on \MotorEase.
+
+\vspace{-1em}
+\subsubsection{Accessibility Testing}
+
+Software testing for accessibility aids developers in identifying violations of guidelines set forth by companies and governments~\cite{Norman13, GoogleAccess, AppleAccess, Park14}. A wide range of research has been carried out to automate this process~\cite{Ramachandra18,Brajnik15,Salehnamadi21,axeray,Norman13,Eler18,Salehnamadi:ASE'22}. We discuss the most closely related approaches below.
+
+Eler et.al. introduced the MATE tool~\cite{Eler18} that uses automated dynamic analysis to check for accessibility issues that affect users with visual impairments in mobile apps, and generate detailed reports that facilitate developers fixing identified issues. Similar to MATE, \MotorEase also leverages automated dynamic analysis and is able to generate reports that aid developers in fixing accessibility issues. However, our tool is differentiated by the ML-based analyses employed, and by it's focus on motor-impaired users.
+
+Latte~\cite{Salehnamadi21} is an accessibility testing framework introduced by Salehnamadi et.al. for android applications that aims to provide a deeper analysis compared to testing frameworks provided by Google~\cite{ANDRDesign, GoogleAccess} by testing how accessibility services, such as VoiceOver, function in conjunction with feature-based use cases. The authors carried out an evaluation of their tool using the \texttt{\small switchAccess} and \texttt{\small TalkBack} services~\cite{AppleAccess, GoogleAccess} and found that several applications did not accommodate for both forms of accessible interactions. Latte is one of the only tools or studies that explicitly considers accessibility issues for users with motor impairments, given that it is capable of integrating with the \texttt{\small switchAccess} service in Android. However, given Latte's use case driven nature it both (1) requires pre-existing test cases, which many mobile apps have been shown to lack~\cite{Lin:ASE'20}, and (ii) cannot detect violations of the specific accessibility guidelines targeted by \MotorEase, as it attempts to carry out actions of a use case using an assistive service, and does not analyze the UI for specific patterns.  In short, \MotorEase and Latte serve largely \textit{complementary} purposes, that is \MotorEase provides UI design guidance to developers to avoid common pitfalls related to motor-impaired accessibility issues, and Latte can point out issues specific to given use cases and accessibility services. 
+
+AXERAY~\cite{axeray} provides an accessibility testing tool that tests for accessibility design violations in web applications identified by prior work~\cite{Li22, Silva19, Almeida10}. This tool infers a semantic connection between different elements on the screen and attempts to group them together, then identifies whether the \texttt{\small HTML}/\texttt{\small CSS} markup on the page matches the semantic grouping. While \MotorEase shares some elements of the visual and textual analyses employed by AXERAY, it does so to target the detection of specific guideline violations, as opposed to forming semantic groups of UI elements. Furthermore, \MotorEase is focused on analyzing mobile apps as opposed to web apps, and is further focused specifically on accessibility issues that affect motor impaired users. We believe future work could translate techniques in this paper to the web domain.  
+
+Chen et al. \cite{Chen22} introduced Xbot, an accessibility testing tool that is capable of identifying accessibility issues within an app using a combination of dynamic and static program analysis. Xbot is not able to uncover any of the accessibility issues targeted by \MotorEase. \MotorEase exhibits novelty as compared to Xbot as it  utilizes semantic understanding of the visual and textual elements of UI screens to detect new issues that affect motor-impaired users. 
+
+Finally, recently Salehnamadi et.al introduced the Groundhog approach~\cite{Salehnamadi:ASE'22}, which is an accessibility crawler for mobile apps. Groundhog implements an automated UI crawler that explores an app both with and without assistive services, such as \texttt{\small TalkBack}, and notes any cases where an action can be performed through traditional touches, but cannot be performed via an assistive service. Again, \MotorEase is largely \textit{complementary} to this work, in that Groundhog targets general issues related to actionability and locatability of UI elements more broadly, but does not target the specific motor-impairment accessibility issues addressed by \MotorEase. In fact, \MotorEase aims to address two specific classes of issues identified in the Groundhog paper as being important for future work, (i) counterintuitive navigation (e.g., persisting elements) and (ii) inoperative actions (e.g., expanding sections).
+
+\subsubsection{Accessibility-Based UI Comprehension}
+
+%Developers and designers work to create UIs with able bodied users in mind, but they can violate accessibility guidelines or create cumbersome interfaces for users with disabilities \cite{Salehnamadi21, Li22, Bajammal21, Peng19}. 
+Given that users interact with software through a UI, and past work has illustrated accessibility issues present in UIs~\cite{Salehnamadi21,Li22,Bajammal21,Peng19}, there is a body of work dedicated to automatically comprehending and augmenting UIs to identify and circumvent accessibility and UI issues~\cite{Liu21,Liu2021,Chen18,Gajos07,Shiver15,Montague12,Zhang21,Moran:ICSE'18,Moran:ASE'18}. %Below, we survey the most closely related work on UI comprehension and augmentation, differentiating \MotorEase in context. %There are two main areas of research being presented in this section GUI comprehension and GUI augmentation  . GUI comprehension, looks to dissect and understand the hierarchy of a GUI while GUI augmentation comprehends the UI and automatically changes elements to make a more accessible UI. Examples of previous research are presented below. 
+
+UI elements and icons typically need to be labeled in order for screen readers to be able to properly describe their appearance and functionality, however, such metadata is often missing from apps~\cite{chen2020unblind}. Zhang et.al.\cite{Zhang21} and Chen et.al.~\cite{chen2020unblind} designed machine learning models trained from both existing UI labels and annotated labels from developers. %These approaches were found to be fairly accurate, with exact matches of labels on test sets eclipsing 60-70\% precision. 
+Follow-up work by Mehralian et. al. introduced COALA~\cite{Mehralian:FSE'21}, which aimed to improve upon the automated icon labeling by considering context related to screen text and region to build a multi-modal model for predicting icon labels.
+
+Mansur et.al. introduced the \AidUI~\cite{mansur2023aidui} tool, which uses semantic screen understanding to automatically identify and localize Dark Patterns in mobile app and web user interfaces. This technique uses similar techniques for semantic screen understanding as \MotorEase, but in different ways. For instance, while AidUI uses element size and distance between elements as a factor in determining certain dark patterns, \MotorEase aims to compare to the programmatic element size and visual element size to detect accessibility violations. Further, \MotorEase analyzes \textit{both} visual UI screenshots and \texttt{\small uiautomator} metadata, whereas AidUI operates only upon visual UI screenshots -- with the use of multimodal data serving as a source of novelty for \MotorEase.
+
+Wu et al.~\cite{Wu21} developed a screen parser that is able to automatically reverse-engineer the hierarchical layout of elements a given UI screenshot using purely computer vision techniques. Chen et.al. developed a technique that uses multi-modal neural networks to generate a UI skeleton for mobile apps~\cite{Chen18}. Nguyen et.al.~\cite{Nguyen:ASE'15} and Moran et.al.~\cite{Moran:TSE'18} created approaches for automatically prototyping the UIs of applications using both supervised and unsupervised computer vision techniques to comprehend screen structure from pixels. While Wu et.al. illustrated that UI understanding and generation techniques could be used to bolster accessibility of mobile apps~\cite{Wu21}, these techniques target different accessibility issues as compared to \MotorEase. \
 
 
 \subsection{Summary}
+In this paper, we presented \MotorEase, an approach for detecting, classifying, reporting motor-impairment accessibility violations. We measured the performance, generalizability, and  applicability of \MotorEase to various open source applications. Our results indicate that \MotorEase is effective in practice and offers a novel approach for developers to identify accessibility issues affecting motor-impaired users. Future work will examine the potential to detect accessibility issues in web apps and conduct user~studies.
 
-The result from rerunning tests emphasizes the importance of finding creative and automated tools to detect flaky tests that do not rely on rerunning them, since rerunning tests can be impractical in the necessary amount of time needed, and still may not observe all flaky tests. The experiment shows how it is hard to identify a fixed number of runs to observe flaky tests. I know that even running tests 10,000 times will \emph{still} not guarantee that all flaky tests have been found, since I did not succeed in reproducing many flaky test failures observed in prior work.
 
 
-The proposed machine learning classifier, \sysName, shows promising results in the field of flaky test detection. The aim of \sysName is not only to predict flaky tests but also to prioritize tests by considering tests that are most likely to be flaky first for further investigation. Additionally, the advantage of \sysName is its ability to be expanded to include additional features as demonstrated in the \emph{Combined Approach} column in Table \ref{table:classifier_table}. Utilizing machine learning methods like \sysName could help identify flaky tests with fewer resources. Thus, \sysName presents a valuable adding in the area of flaky test detection.
+
+
+
+
+
+
+
+
+
+

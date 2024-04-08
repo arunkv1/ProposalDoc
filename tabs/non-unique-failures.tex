@@ -1,0 +1,65 @@
+
+
+
+
+\begin{table*}[t]
+\caption[The Text-Based Matching between flaky and true failures]{The Text-Based Matching between flaky and true failures\\
+\textnormal{The \textit{Total Tests and Failures} column provides the total flaky tests, the number of true failures across these tests, and the count of flaky failures.  
+% The \textit{Flaky Failures} column shows the count of flaky failures that are \emph{not} repetitive (labeled as [1]) and the number of repetitive flaky failures (1:n).
+The \textit{Set of Failures} column displays the different failures within both flaky and true failures.
+% The \textit{Flaky VS True Using the Failure De-duplication Approach} column presents the matching results between flaky and true failures by showing the confusion matrix per failures and tests as well as the evaluation metrics. The cumulative number of tests in \emph{By Tests} column might exceed the total given in \textbf{Test} because a test might have multiple flaky failures in different categories.
+The \textit{Confusion Matrix and Evaluation By Failures} column presents the matching results between flaky and true failures by showing the confusion matrix per failures and the evaluation metrics. The \# of Tests in TP and FN shows how many different tests in each one. The cumulative number of tests in \emph{TP} and \emph{FN} might exceed the total given in \emph{Test} because a test might have multiple flaky failures in different categories.
+}
+}
+
+
+
+\vspace{-5pt}
+\setlength{\tabcolsep}{4.0pt}
+\newcommand{\failureRateWidth}{2.5in}
+\newcommand{\failureRateHeight}{4em}
+\scriptsize
+\centering
+
+
+    \begin{tabular}{l|rrr|rr|rrrrrrr|rr}
+    \toprule
+      % & \multicolumn{3}{c}{\textbf{}} & \multicolumn{2}{c}{\textbf{}} & \multicolumn{9}{c}{\textbf{Flaky VS True Using the Failure De-duplication Approach}} \\ 
+      
+      & \multicolumn{3}{c|}{\textbf{Total Tests and Failures}} & \multicolumn{2}{c|}{\textbf{Set of Failures}} & \multicolumn{7}{c}{\textbf{Confusion Matrix and Evaluation By Failures}} &  \multicolumn{2}{c}{\textbf{\# of Tests in}} \\
+    \midrule
+     \textbf{Project}&\textbf{Test}&\textbf{True}&\textbf{Flaky} &\textbf{True}&\textbf{Flaky} &\textbf{TP}&\textbf{FN}&\textbf{FP}&\textbf{TN}&\textbf{P} &\textbf{R} &\textbf{SP} & \textbf{TP}&\textbf{FN}\\
+\midrule
+Alluxio&114&32,608&16,858&6,491&310&9,615&7,243&1,694&30,914&85\%&57\%&94\%&114&102\\
+\cellcolor{gray!6}{Okhttp}&\cellcolor{gray!6}{100}&\cellcolor{gray!6}{34,266}&\cellcolor{gray!6}{28,264}&\cellcolor{gray!6}{18,609}&\cellcolor{gray!6}{121}&\cellcolor{gray!6}{16,517}&\cellcolor{gray!6}{11,747}&\cellcolor{gray!6}{114}&\cellcolor{gray!6}{34,152}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{58\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{58}&\cellcolor{gray!6}{53}\\
+Hbase&62&11,324&19,822&811&100&18,496&1,326&1,198&10,126&93\%&93\%&89\%&58&14\\
+\cellcolor{gray!6}{Ambari}&\cellcolor{gray!6}{51}&\cellcolor{gray!6}{11,049}&\cellcolor{gray!6}{4,063}&\cellcolor{gray!6}{4,563}&\cellcolor{gray!6}{54}&\cellcolor{gray!6}{4,003}&\cellcolor{gray!6}{60}&\cellcolor{gray!6}{5}&\cellcolor{gray!6}{11,044}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{98\%}&\cellcolor{gray!6}{99\%}&\cellcolor{gray!6}{50}&\cellcolor{gray!6}{2}\\
+Hector&33&3,604&6,529&1,769&33&1,382&5,147&12&3,592&99\%&21\%&99\%&32&1\\
+\cellcolor{gray!6}{Activiti}&\cellcolor{gray!6}{31}&\cellcolor{gray!6}{46,100}&\cellcolor{gray!6}{1,378}&\cellcolor{gray!6}{16,018}&\cellcolor{gray!6}{32}&\cellcolor{gray!6}{932}&\cellcolor{gray!6}{446}&\cellcolor{gray!6}{2,609}&\cellcolor{gray!6}{43,491}&\cellcolor{gray!6}{26\%}&\cellcolor{gray!6}{67\%}&\cellcolor{gray!6}{94\%}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{30}\\
+Java-websocket&22&1,299&2,095&330&43&591&1,504&816&483&42\%&28\%&37\%&19&22\\
+\cellcolor{gray!6}{Httpcore}&\cellcolor{gray!6}{22}&\cellcolor{gray!6}{8,333}&\cellcolor{gray!6}{354}&\cellcolor{gray!6}{663}&\cellcolor{gray!6}{22}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{354}&\cellcolor{gray!6}{2,117}&\cellcolor{gray!6}{6,216}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{74\%}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{22}\\
+Logback&20&2,614&438&903&21&56&382&368&2,246&13\%&12\%&85\%&3&17\\
+\cellcolor{gray!6}{Wildfly}&\cellcolor{gray!6}{18}&\cellcolor{gray!6}{4,364}&\cellcolor{gray!6}{50}&\cellcolor{gray!6}{1,497}&\cellcolor{gray!6}{18}&\cellcolor{gray!6}{38}&\cellcolor{gray!6}{12}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{4,364}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{76\%}&\cellcolor{gray!6}{100\%}&\cellcolor{gray!6}{6}&\cellcolor{gray!6}{12}\\
+Http-request&18&387&3,501&229&18&981&2,520&40&347&96\%&28\%&89\%&4&14\\
+\cellcolor{gray!6}{Wro4j}&\cellcolor{gray!6}{14}&\cellcolor{gray!6}{540}&\cellcolor{gray!6}{10,833}&\cellcolor{gray!6}{90}&\cellcolor{gray!6}{21}&\cellcolor{gray!6}{800}&\cellcolor{gray!6}{10,033}&\cellcolor{gray!6}{29}&\cellcolor{gray!6}{511}&\cellcolor{gray!6}{96\%}&\cellcolor{gray!6}{7\%}&\cellcolor{gray!6}{94\%}&\cellcolor{gray!6}{9}&\cellcolor{gray!6}{11}\\
+Spring-boot&12&2,150&14&244&13&2&12&0&2,150&100\%&14\%&100\%&1&12\\
+\cellcolor{gray!6}{Undertow}&\cellcolor{gray!6}{7}&\cellcolor{gray!6}{2,304}&\cellcolor{gray!6}{92}&\cellcolor{gray!6}{236}&\cellcolor{gray!6}{12}&\cellcolor{gray!6}{8}&\cellcolor{gray!6}{84}&\cellcolor{gray!6}{940}&\cellcolor{gray!6}{1,364}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{8\%}&\cellcolor{gray!6}{59\%}&\cellcolor{gray!6}{2}&\cellcolor{gray!6}{6}\\
+Orbit&7&822&2,943&302&7&87&2,856&57&765&60\%&2\%&93\%&2&5\\
+\cellcolor{gray!6}{Achilles}&\cellcolor{gray!6}{4}&\cellcolor{gray!6}{442}&\cellcolor{gray!6}{165}&\cellcolor{gray!6}{245}&\cellcolor{gray!6}{5}&\cellcolor{gray!6}{120}&\cellcolor{gray!6}{45}&\cellcolor{gray!6}{46}&\cellcolor{gray!6}{396}&\cellcolor{gray!6}{72\%}&\cellcolor{gray!6}{72\%}&\cellcolor{gray!6}{89\%}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{3}\\
+Elastic-job-lite&3&111&7&68&4&4&3&0&111&100\%&57\%&100\%&1&3\\
+\cellcolor{gray!6}{Cmmons-exec}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{59}&\cellcolor{gray!6}{33}&\cellcolor{gray!6}{13}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{33}&\cellcolor{gray!6}{2}&\cellcolor{gray!6}{57}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{96\%}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{1}\\
+assertj-core&1&17&974&9&1&974&0&0&17&100\%&100\%&100\%&1&0\\
+\cellcolor{gray!6}{Handlebars.java}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{147}&\cellcolor{gray!6}{411}&\cellcolor{gray!6}{61}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{411}&\cellcolor{gray!6}{16}&\cellcolor{gray!6}{131}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{89\%}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{1}\\
+Zxing&1&76&322&37&1&322&0&0&76&100\%&100\%&100\%&1&0\\
+\cellcolor{gray!6}{Ninja}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{209}&\cellcolor{gray!6}{476}&\cellcolor{gray!6}{6}&\cellcolor{gray!6}{1}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{476}&\cellcolor{gray!6}{90}&\cellcolor{gray!6}{119}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{0\%}&\cellcolor{gray!6}{56\%}&\cellcolor{gray!6}{0}&\cellcolor{gray!6}{1}\\
+\midrule
+22 Projects Total &543&162,825&99,622&53,194&839&54,928&44,694&10,153&152,672&&&&363&332\\
+
+
+
+\bottomrule
+\end{tabular}
+
+\label{nonunique}
+\vspace{-10pt}
+\end{table*}

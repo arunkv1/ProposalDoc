@@ -1,38 +1,1000 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{100}
+
+\bibitem{AppleAccess}
+{Accessibility: Apple Human Interface Guidelines}.
+\newblock
+  \url{https://developer.apple.com/design/human-interface-guidelines/foundations/accessibility/}.
+
+\bibitem{GoogleScanner}
+{Accessibility Scanner}.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor}.
+
+\bibitem{switch-access}
+{Android Switch Access Service}.
+\newblock
+  \url{https://support.google.com/accessibility/android/answer/6122836?hl=en}.
+
+\bibitem{ocr}
+{Google Cloud Vision API}.
+\newblock \url{https://cloud.google.com/vision/docs/ocr}.
+
+\bibitem{appendix}
+{MotorEase GitHub Repository}.
+\newblock \url{https://github.com/SageSELab/MotorEase}.
+
+\bibitem{site}
+{MotorEase Website}.
+\newblock \url{https://sagelab.io/MotorEase}.
+
+\bibitem{zenodo}
+{MotorEase Zenodo Archive}.
+\newblock \url{https://zenodo.org/doi/10.5281/zenodo.10460700}.
+
+\bibitem{univ-design}
+{Universal Design Definition and Guidelines}.
+\newblock \url{https://www.section508.gov/blog/Universal-Design-What-is-it/}.
+
+\bibitem{49}
+Web content accessibility guidelines (wcag) 2.1.
+
+\bibitem{ANDRDesign}
+{“Design for Android: android developers,”
+  \url{https://developer.android.com/design}}.
 
 \bibitem{WHO}
-World report on disability
-  \url{http://www.who.int/disabilities/world_report/2011/en/}, 2011.
+{World Report on Disability
+  \url{http://www.who.int/disabilities/world_report/2011/en/}}, 2011.
 
 \bibitem{ADAWeb}
-Ada web accessibility lawsuit recap report
+{ADA Web Accessibility Lawsuit Recap Report
   \url{https://blog.usablenet.com/2018- ada- web- accessibility- lawsuit-
-  recap- report}, 2018.
+  recap- report}}, 2018.
 
 \bibitem{ADALaws}
-Adalaws \url{https://www.ada.gov/cguide.htm}, 2019.
+{ADAlaws \url{https://www.ada.gov/cguide.htm}}, 2019.
+
+\bibitem{31}
+Adaptivity and layout - visual design - ios - human interface guidelines -
+  apple developer
+  \url{https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/},
+  2019.
+
+\bibitem{IOSDesign}
+{Adaptivity and layout - visual design - IOS - human interface guidelines -
+  apple developer
+  \url{https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/}},
+  2019.
+
+\bibitem{AccessGov}
+{Accessibility Guide
+  \url{https://accessibility.18f.gov/checklist/accessibility}}, 2022.
+
+\bibitem{GoogleAccess}
+{Accessibility
+  \url{https://developer.android.com/guide/topics/ui/accessibility}}, 2022.
+
+\bibitem{26}
+Accessibility \url{https://support.google.com/accessibility}, 2022.
+
+\bibitem{25}
+Accessibility \url{https://www.apple.com/accessibility/}, 2022.
+
+\bibitem{HarvardAccess}
+{Motor Impairment
+  \url{https://accessibility.huit.harvard.edu/disabilities/motor-impairment?page=1}},
+  2022.
+
+\bibitem{torchvision}
+{Torchvision- torchvision main documentation}.
+\newblock \url{https://pytorch.org/vision/stable/index.html}, 2022.
+
+\bibitem{WebGuide}
+{Web content accessibility guidelines (WCAG)}.
+\newblock \url{https://www.w3.org/TR/WCAG21/}, journal={W3C}, 2022.
+
+\bibitem{34}
+“live stream your virtual event online: Vimeo enterprise,”
+  \url{https://vimeo.com/enterprise/stream-virtual-events}, 2022.
+
+\bibitem{Fdroid}
+{\url{https://f-droid.org/}}, F-droid.
+
+\bibitem{GooglePlayStore}
+{\url{https://play.google.com/store}}, Google Play Store.
+
+\bibitem{LabelStudio}
+{\url{https://labelstud.io}}, LabelStudio.
+
+\bibitem{Abascal11}
+Julio Abascal, Amaia Aizpurua, Idoia Cearreta, Borja Gamecho, Nestor
+  Garay-Vitoria, and Ra\'{u}l Mi\~{n}\'{o}n.
+\newblock {Automatically Generating Tailored Accessible User Interfaces for
+  Ubiquitous Services}.
+\newblock In {\em The Proceedings of the 13th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '11, page 187–194, New
+  York, NY, USA, 2011. ACM.
+
+\bibitem{Aizpurua14}
+Amaia Aizpurua, Myriam Arrue, Simon Harper, and Markel Vigo.
+\newblock {Are Users the Gold Standard for Accessibility Evaluation?}
+\newblock In {\em Proceedings of the 11th Web for All Conference}, W4A '14, New
+  York, NY, USA, 2014. ACM.
+
+\bibitem{Almeida10}
+Leonelo Dell~Anhol Almeida and Maria Cec\'{\i}lia~Calani Baranauskas.
+\newblock {Universal Design Principles Combined with Web Accessibility
+  Guidelines: A Case Study}.
+\newblock In {\em Proceedings of the IX Symposium on Human Factors in Computing
+  Systems}, IHC '10, page 169–178, Porto Alegre, BRA, 2010. Brazilian
+  Computer Society.
+
+\bibitem{Alpay23}
+Tayfun Alpay, Sven Magg, Philipp Broze, and Daniel Speck.
+\newblock {Multimodal video retrieval with CLIP: a user study}.
+\newblock {\em Information Retrieval Journal}, 26(1–2), September 2023.
 
 \bibitem{Alshayban20}
 Abdulaziz Alshayban, Iftekhar Ahmed, and Sam Malek.
-\newblock Accessibility issues in android apps: State of affairs, sentiments,
-  and ways forward.
+\newblock {Accessibility Issues in Android Apps: State of Affairs, Sentiments,
+  and Ways Forward}.
 \newblock In {\em Proceedings of the ACM/IEEE 42nd International Conference on
   Software Engineering}, ICSE '20, page 1323–1334, New York, NY, USA, 2020.
+  ACM.
+
+\bibitem{Astler11}
+Douglas Astler, Harrison Chau, Kailin Hsu, Alvin Hua, Andrew Kannan, Lydia Lei,
+  Melissa Nathanson, Esmaeel Paryavi, Michelle Rosen, Hayato Unno, Carol Wang,
+  Khadija Zaidi, Xuemin Zhang, and Cha-Min Tang.
+\newblock {Increased Accessibility to Nonverbal Communication through Facial
+  and Expression Recognition Technologies for Blind/Visually Impaired
+  Subjects}.
+\newblock In {\em The Proceedings of the 13th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '11, page 259–260, New
+  York, NY, USA, 2011. ACM.
+
+\bibitem{33}
+Shiri Azenkot, Jacob~O. Wobbrock, Sanjana Prasain, and Richard~E. Ladner.
+\newblock Input finger detection for nonvisual touch screen text entry in
+  <i>perkinput</i>.
+\newblock In {\em Proceedings of Graphics Interface 2012}, GI '12, page
+  121–129, CAN, 2012. Canadian Information Processing Society.
+
+\bibitem{43}
+Chongyang Bai, Xiaoxue Zang, Ying Xu, Srinivas Sunkara, Abhinav Rastogi,
+  Jindong Chen, and Blaise Aguera~y Arcas.
+\newblock Uibert: Learning generic multimodal representations for ui
+  understanding.
+\newblock 2021.
+
+\bibitem{bai2021uibert}
+Chongyang Bai, Xiaoxue Zang, Ying Xu, Srinivas Sunkara, Abhinav Rastogi,
+  Jindong Chen, and Blaise~Aguera y~Arcas.
+\newblock {UIBert: Learning Generic Multimodal Representations for UI
+  Understanding}, 2021.
+
+\bibitem{38}
+Mohammad Bajammal and Ali Mesbah.
+\newblock Semantic web accessibility testing via hierarchical visual analysis.
+\newblock In {\em 2021 IEEE/ACM 43rd International Conference on Software
+  Engineering (ICSE)}, pages 1610--1621, 2021.
+
+\bibitem{axeray}
+Mohammad Bajammal and Ali Mesbah.
+\newblock {Semantic Web Accessibility Testing via Hierarchical Visual
+  Analysis}.
+\newblock In {\em 2021 IEEE/ACM 43rd International Conference on Software
+  Engineering (ICSE)}, pages 1610--1621, 2021.
+
+\bibitem{Bajammal21}
+Mohammad Bajammal and Ali Mesbah.
+\newblock {Semantic Web Accessibility Testing via Hierarchical Visual
+  Analysis}.
+\newblock In {\em Proceedings of the 43rd International Conference on Software
+  Engineering}, ICSE '21, page 1610–1621. IEEE Press, 2021.
+
+\bibitem{bao22}
+Hangbo Bao, Li~Dong, Songhao Piao, and Furu Wei.
+\newblock {BEiT: BERT Pre-Training of Image Transformers}, 2022.
+
+\bibitem{5}
+Larwan Berke, Christopher Caulfield, and Matt Huenerfauth.
+\newblock Deaf and hard-of-hearing perspectives on imperfect automatic speech
+  recognition for captioning one-on-one meetings.
+\newblock In {\em Proceedings of the 19th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '17, page 155–164, New
+  York, NY, USA, 2017. Association for Computing Machinery.
+
+\bibitem{Cardenas:TSE23}
+C.~Bernal-Cardenas, N.~Cooper, M.~Havranek, K.~Moran, O.~Chaparro,
+  D.~Poshyvanyk, and A.~Marcus.
+\newblock {Translating Video Recordings of Complex Mobile App UI Gestures into
+  Replayable Scenarios}.
+\newblock {\em IEEE Transactions on Software Engineering}, 49(04):1782--1803,
+  apr 2023.
+
+\bibitem{Cardenas:ICSE'20}
+Carlos Bernal-C\'{a}rdenas, Nathan Cooper, Kevin Moran, Oscar Chaparro, Andrian
+  Marcus, and Denys Poshyvanyk.
+\newblock {Translating Video Recordings of Mobile App Usages into Replayable
+  Scenarios}.
+\newblock In {\em Proceedings of the ACM/IEEE 42nd International Conference on
+  Software Engineering}, ICSE '20, page 309–321, New York, NY, USA, 2020.
+  ACM.
+
+\bibitem{35}
+Danielle Bragg, Naomi Caselli, John~W. Gallagher, Miriam Goldberg, Courtney~J.
+  Oka, and William Thies.
+\newblock Asl sea battle: Gamifying sign language data collection.
+\newblock In {\em Proceedings of the 2021 CHI Conference on Human Factors in
+  Computing Systems}, CHI '21, New York, NY, USA, 2021. Association for
+  Computing Machinery.
+
+\bibitem{Brajnik15}
+Giorgio Brajnik, Chiara Pighin, and Sara Fabbro.
+\newblock {Model-Based Automated Accessibility Testing}.
+\newblock In {\em Proceedings of the 17th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '15. ACM, 2015.
+
+\bibitem{Calvo16}
+Rocio Calvo, Faezeh Seyedarabi, and Andreas Savva.
+\newblock {Beyond Web Content Accessibility Guidelines: Expert Accessibility
+  Reviews}.
+\newblock In {\em Proceedings of the 7th International Conference on Software
+  Development and Technologies for Enhancing Accessibility and Fighting
+  Info-Exclusion}, DSAI 2016, page 77–84, New York, NY, USA, 2016. ACM.
+
+\bibitem{Che23}
+Chang Che, Qunwei Lin, Xinyu Zhao, Jiaxin Huang, and Liqiang Yu.
+\newblock {Enhancing Multimodal Understanding with CLIP-Based Image-to-Text
+  Transformation}.
+\newblock In {\em Proceedings of the 2023 6th International Conference on Big
+  Data Technologies}, ICBDT '23, page 414–418, New York, NY, USA, 2023.
   Association for Computing Machinery.
+
+\bibitem{Chen18}
+Chunyang Chen, Ting Su, Guozhu Meng, Zhenchang Xing, and Yang Liu.
+\newblock {From UI Design Image to GUI Skeleton: A Neural Machine Translator to
+  Bootstrap Mobile GUI Implementation}.
+\newblock In {\em Proceedings of the 40th International Conference on Software
+  Engineering}, ICSE '18, page 665–676, New York, NY, USA, 2018. ACM.
+
+\bibitem{17}
+Jieshan Chen, Chunyang Chen, Zhenchang Xing, Xiwei Xu, Liming Zhu, Guoqiang Li,
+  and Jinshui Wang.
+\newblock Unblind your apps: Predicting natural-language labels for mobile gui
+  components by deep learning.
+\newblock In {\em Proceedings of the ACM/IEEE 42nd International Conference on
+  Software Engineering}, ICSE '20, page 322–334, New York, NY, USA, 2020.
+  Association for Computing Machinery.
+
+\bibitem{chen2020unblind}
+Jieshan Chen, Chunyang Chen, Zhenchang Xing, Xiwei Xu, Liming Zhu, Guoqiang Li,
+  and Jinshui Wang.
+\newblock {Unblind Your Apps: Predicting Natural-Language Labels for Mobile GUI
+  Components by Deep Learning}.
+\newblock In {\em Proceedings of the ACM/IEEE 42nd International Conference on
+  Software Engineering}, ICSE '20, page 322–334, New York, NY, USA, 2020.
+  ACM.
+
+\bibitem{Chen20}
+Jieshan Chen, Chunyang Chen, Zhenchang Xing, Xiwei Xu, Liming Zhu, Guoqiang Li,
+  and Jinshui Wang.
+\newblock {Unblind Your Apps: Predicting Natural-Language Labels for Mobile GUI
+  Components by Deep Learning}.
+\newblock In {\em Proceedings of the ACM/IEEE 42nd International Conference on
+  Software Engineering}, ICSE '20, page 322–334, New York, NY, USA, 2020.
+  ACM.
+
+\bibitem{Chen22}
+Sen Chen, Chunyang Chen, Lingling Fan, Mingming Fan, Xian Zhan, and Yang Liu.
+\newblock {Accessible or Not? An Empirical Investigation of Android App
+  Accessibility}.
+\newblock {\em IEEE Transactions on Software Engineering}, 48(10):3954--3968,
+  2022.
+
+\bibitem{Chiou21}
+Paul~T. Chiou, Ali~S. Alotaibi, and William G.~J. Halfond.
+\newblock {Detecting and Localizing Keyboard Accessibility Failures in Web
+  Applications}.
+\newblock In {\em Proceedings of the 29th ACM Joint Meeting on European
+  Software Engineering Conference and Symposium on the Foundations of Software
+  Engineering}, ESEC/FSE 2021, page 855–867, New York, NY, USA, 2021. ACM.
+
+\bibitem{Chiou:CHI23}
+Paul~T. Chiou, Ali~S. Alotaibi, and William~G.J. Halfond.
+\newblock {BAGEL: An Approach to Automatically Detect Navigation-Based Web
+  Accessibility Barriers for Keyboard Users}.
+\newblock In {\em Proceedings of the 2023 CHI Conference on Human Factors in
+  Computing Systems}, CHI '23, New York, NY, USA, 2023. ACM.
+
+\bibitem{choudhary2015automated}
+Shauvik~Roy Choudhary, Alessandra Gorla, and Alessandro Orso.
+\newblock {Automated test input generation for android: Are we there yet?}
+\newblock In {\em ASE}. IEEE, 2015.
+
+\bibitem{Silva20}
+Henrique~Neves da~Silva, Andre~Takeshi Endo, Marcelo~Medeiros Eler,
+  Silvia~Regina Vergilio, and Vinicius H.~S. Durelli.
+\newblock {On the Relation between Code Elements and Accessibility Issues in
+  Android Apps}.
+\newblock In {\em Proceedings of the 5th Brazilian Symposium on Systematic and
+  Automated Software Testing}, SAST 20, page 40–49, New York, NY, USA, 2020.
+  ACM.
+
+\bibitem{defferrard2016convolutional}
+Micha\"{e}l Defferrard, Xavier Bresson, and Pierre Vandergheynst.
+\newblock {Convolutional neural networks on graphs with fast localized spectral
+  filtering}.
+\newblock In {\em Proceedings of the 30th International Conference on Neural
+  Information Processing Systems}, NIPS'16, page 3844–3852, Red Hook, NY,
+  USA, 2016. Curran Associates Inc.
+
+\bibitem{Deka:UIST'17}
+Biplab Deka, Zifeng Huang, Chad Franzen, Joshua Hibschman, Daniel Afergan, Yang
+  Li, Jeffrey Nichols, and Ranjitha Kumar.
+\newblock {Rico: A Mobile App Dataset for Building Data-Driven Design
+  Applications}.
+\newblock In {\em Proceedings of the 30th Annual ACM Symposium on User
+  Interface Software and Technology}, UIST '17, page 845–854, New York, NY,
+  USA, 2017. ACM.
+
+\bibitem{Deka16}
+Biplab Deka, Zifeng Huang, and Ranjitha Kumar.
+\newblock {ERICA: Interaction Mining Mobile Apps}.
+\newblock In {\em Proceedings of the 29th Annual Symposium on User Interface
+  Software and Technology}, UIST '16, page 767–776, New York, NY, USA, 2016.
+  Association for Computing Machinery.
+
+\bibitem{Eler18}
+Marcelo~Medeiros Eler, Jose~Miguel Rojas, Yan Ge, and Gordon Fraser.
+\newblock {Automated Accessibility Testing of Mobile Apps}.
+\newblock In {\em 2018 IEEE 11th International Conference on Software Testing,
+  Verification and Validation (ICST)}, pages 116--126, 2018.
+
+\bibitem{FlrezAristizbal19}
+Leandro Fl{\'{o}}rez-Aristiz{\'{a}}bal, Sandra Cano, C{\'{e}}sar~A. Collazos,
+  Andr{\'{e}}s~F. Solano, and Stephen Brewster.
+\newblock {DesignABILITY}.
+\newblock In {\em Proceedings of the 2019 {CHI} Conference on Human Factors in
+  Computing Systems}. {ACM}, May 2019.
+
+\bibitem{36}
+Raymond Fok, Harmanpreet Kaur, Skanda Palani, Martez~E. Mott, and Walter~S.
+  Lasecki.
+\newblock Towards more robust speech interactions for deaf and hard of hearing
+  users.
+\newblock In {\em Proceedings of the 20th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '18, page 57–67, New
+  York, NY, USA, 2018. Association for Computing Machinery.
+
+\bibitem{Gajos07}
+Krzysztof~Z. Gajos, Jacob~O. Wobbrock, and Daniel~S. Weld.
+\newblock {Automatically Generating User Interfaces Adapted to Users' Motor and
+  Vision Capabilities}.
+\newblock In {\em Proceedings of the 20th Annual ACM Symposium on User
+  Interface Software and Technology}, UIST '07, page 231–240, New York, NY,
+  USA, 2007. ACM.
+
+\bibitem{Gu:ICSE'19}
+Tianxiao Gu, Chengnian Sun, Xiaoxing Ma, Chun Cao, Chang Xu, Yuan Yao, Qirun
+  Zhang, Jian Lu, and Zhendong Su.
+\newblock {Practical GUI Testing of Android Applications via Model Abstraction
+  and Refinement}.
+\newblock In {\em Proceedings of the 41st International Conference on Software
+  Engineering}, ICSE '19, page 269–280. IEEE Press, 2019.
+
+\bibitem{Havranek:ICSE'21}
+Madeleine Havranek, Carlos Bernal-Cárdenas, Nathan Cooper, Oscar Chaparro,
+  Denys Poshyvanyk, and Kevin Moran.
+\newblock {V2S: A Tool for Translating Video Recordings of Mobile App Usages
+  into Replayable Scenarios}.
+\newblock In {\em 2021 IEEE/ACM 43rd International Conference on Software
+  Engineering: Companion Proceedings (ICSE-Companion)}, pages 65--68, 2021.
+
+\bibitem{Huang19}
+Forrest Huang, John~F. Canny, and Jeffrey Nichols.
+\newblock {Swire: Sketch-based User Interface Retrieval}.
+\newblock In {\em Proceedings of the 2019 CHI Conference on Human Factors in
+  Computing Systems}, CHI '19, page 1–10, New York, NY, USA, 2019.
+  Association for Computing Machinery.
+
+\bibitem{Kane11}
+Shaun~K. Kane, Meredith~Ringel Morris, Annuska~Z. Perkins, Daniel Wigdor,
+  Richard~E. Ladner, and Jacob~O. Wobbrock.
+\newblock {Access overlays}.
+\newblock In {\em Proceedings of the 24th annual {ACM} symposium on User
+  interface software and technology}. {ACM}, October 2011.
+
+\bibitem{khan24}
+Safwat~Ali Khan, Wenyu Wang, Yiran Ren, Bin Zhu, Jiangfan Shi, Alyssa McGowan,
+  Wing Lam, and Kevin Moran.
+\newblock {AURORA: Navigating UI Tarpits via Automated Neural Screen
+  Understanding}, 2024.
+
+\bibitem{Kim16}
+Hyun~K. Kim, Changwon Kim, Eunyoung Lim, and Hyunjin Kim.
+\newblock {How to Develop Accessibility UX Design Guideline in Samsung}.
+\newblock In {\em Proceedings of the 18th International Conference on
+  Human-Computer Interaction with Mobile Devices and Services Adjunct},
+  MobileHCI '16, page 551–556, New York, NY, USA, 2016. ACM.
+
+\bibitem{kipf2016semi}
+Thomas~N. Kipf and Max Welling.
+\newblock {Semi-Supervised Classification with Graph Convolutional Networks}.
+\newblock In {\em 5th International Conference on Learning Representations,
+  {ICLR} 2017, Toulon, France, April 24-26, 2017, Conference Track
+  Proceedings}. OpenReview.net, 2017.
+
+\bibitem{kitchenham2007guidelines}
+Barbara~Ann Kitchenham and Stuart Charters.
+\newblock {Guidelines for performing Systematic Literature Reviews in Software
+  Engineering}.
+\newblock Technical Report EBSE 2007-001, Keele University and Durham
+  University Joint Report, 07 2007.
+
+\bibitem{Kong21}
+Junhan Kong, Mingyuan Zhong, James Fogarty, and Jacob~O. Wobbrock.
+\newblock {New Metrics for Understanding Touch by People with and without
+  Limited Fine Motor Function}.
+\newblock In {\em Proceedings of the 23rd International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '21, New York, NY, USA,
+  2021. ACM.
+
+\bibitem{vajjala2024vietoris}
+Ajay Krishna~Vajjala, D~Meher, Shrunal Pothagoni, Ziwei Zhu, and D~Rosenblum.
+\newblock {Vietoris-rips complex: A new direction for cross-domain cold-start
+  recommendation}.
+\newblock 2024.
+
+\bibitem{Krishnavajjala24}
+Arun Krishnavajjala, SM~Hasan Mansur, Justin Jose, and Kevin Moran.
+\newblock Motorease: Automated detection of motor impairment accessibility
+  issues in mobile app uis.
+\newblock 2024.
+
+\bibitem{li20spotlight}
+Gang Li and Yang Li.
+\newblock {Spotlight: Mobile UI Understanding using Vision-Language Models with
+  a Focus}, 2023.
+
+\bibitem{Li22}
+Jiasheng Li, Zeyu Yan, Ebrima~Haddy Jarjue, Ashrith Shetty, and Huaishu Peng.
+\newblock {TangibleGrid: Tangible Web Layout Design for Blind Users}.
+\newblock In {\em Proceedings of the 35th Annual ACM Symposium on User
+  Interface Software and Technology}, UIST '22, New York, NY, USA, 2022. ACM.
+
+\bibitem{Li21}
+Junchen Li, Garreth~W. Tigwell, and Kristen Shinohara.
+\newblock {Accessibility of High-Fidelity Prototyping Tools}.
+\newblock In {\em Proceedings of the 2021 {CHI} Conference on Human Factors in
+  Computing Systems}. {ACM}, May 2021.
+
+\bibitem{li2021vut}
+Yang Li, Gang Li, Xin Zhou, Mostafa Dehghani, and Alexey Gritsenko.
+\newblock {VUT: Versatile UI Transformer for Multi-Modal Multi-Task User
+  Interface Modeling}, 2021.
+
+\bibitem{li2017droidbot}
+Yuanchun Li, Ziyue Yang, Yao Guo, and Xiangqun Chen.
+\newblock {DroidBot: a lightweight UI-guided test input generator for Android}.
+\newblock In {\em ICSE-C}. IEEE, 2017.
+
+\bibitem{Lin:ASE'20}
+Jun-Wei Lin, Navid Salehnamadi, and Sam Malek.
+\newblock {Test Automation in Open-Source Android Apps: A Large-Scale Empirical
+  Study}.
+\newblock In {\em Proceedings of the 35th IEEE/ACM International Conference on
+  Automated Software Engineering}, ASE '20, page 1078–1089, New York, NY,
+  USA, 2021. ACM.
+
+\bibitem{Linares:MSR15}
+Mario Linares-V\'{a}squez, Martin White, Carlos Bernal-C\'{a}rdenas, Kevin
+  Moran, and Denys Poshyvanyk.
+\newblock {Mining Android app usages for generating actionable GUI-based
+  execution scenarios}.
+\newblock In {\em Proceedings of the 12th Working Conference on Mining Software
+  Repositories}, MSR '15, page 111–122. IEEE Press, 2015.
+
+\bibitem{Linares:ICSME'17-2}
+Mario Linares-Vásquez, Cárlos Bernal-Cardenas, Kevin Moran, and Denys
+  Poshyvanyk.
+\newblock {How do Developers Test Android Applications?}
+\newblock In {\em 2017 IEEE International Conference on Software Maintenance
+  and Evolution (ICSME)}, pages 613--622, 2017.
+
+\bibitem{Linares:ICSME'17}
+Mario Linares-Vásquez, Kevin Moran, and Denys Poshyvanyk.
+\newblock {Continuous, Evolutionary and Large-Scale: A New Perspective for
+  Automated Mobile App Testing}.
+\newblock In {\em 2017 IEEE International Conference on Software Maintenance
+  and Evolution (ICSME)}, pages 399--410, 2017.
+
+\bibitem{Liu18}
+Thomas~F. Liu, Mark Craft, Jason Situ, Ersin Yumer, Radomir Mech, and Ranjitha
+  Kumar.
+\newblock {Learning Design Semantics for Mobile Apps}.
+\newblock In {\em Proceedings of the 31st Annual ACM Symposium on User
+  Interface Software and Technology}, UIST '18, page 569–579, New York, NY,
+  USA, 2018. Association for Computing Machinery.
+
+\bibitem{Liu21}
+Zhe Liu.
+\newblock {Discovering UI Display Issues with Visual Understanding}.
+\newblock In {\em Proceedings of the 35th IEEE/ACM International Conference on
+  Automated Software Engineering}, ASE '20, page 1373–1375, New York, NY,
+  USA, 2021. ACM.
+
+\bibitem{Liu2021}
+Zhe Liu, Chunyang Chen, Junjie Wang, Yuekai Huang, Jun Hu, and Qing Wang.
+\newblock {Owl Eyes: Spotting UI Display Issues via Visual Understanding}.
+\newblock In {\em Proceedings of the 35th IEEE/ACM International Conference on
+  Automated Software Engineering}, ASE '20, page 398–409, New York, NY, USA,
+  2021. ACM.
+
+\bibitem{machiry2013dynodroid}
+Aravind Machiry, Rohan Tahiliani, and Mayur Naik.
+\newblock {Dynodroid: an input generation system for Android apps}.
+\newblock In Bertrand Meyer, Luciano Baresi, and Mira Mezini, editors, {\em
+  ESEC/FSE'13}, pages 224--234. {ACM}, 2013.
+
+\bibitem{37}
+I.~Scott MacKenzie, R.~William Soukoreff, and Joanna Helga.
+\newblock 1 thumb, 4 buttons, 20 words per minute: Design and evaluation of
+  h4-writer.
+\newblock In {\em Proceedings of the 24th Annual ACM Symposium on User
+  Interface Software and Technology}, UIST '11, page 471–480, New York, NY,
+  USA, 2011. Association for Computing Machinery.
+
+\bibitem{MacKenzie11}
+I.~Scott MacKenzie, R.~William Soukoreff, and Joanna Helga.
+\newblock {1 Thumb, 4 Buttons, 20 Words per Minute: Design and Evaluation of
+  H4-Writer}.
+\newblock In {\em Proceedings of the 24th Annual ACM Symposium on User
+  Interface Software and Technology}, UIST '11, page 471–480, New York, NY,
+  USA, 2011. ACM.
+
+\bibitem{mansur2023aidui}
+SM~Hasan Mansur, Sabiha Salma, Damilola Awofisayo, and Kevin Moran.
+\newblock {Aidui: Toward automated recognition of dark patterns in user
+  interfaces}.
+\newblock In {\em 2023 IEEE/ACM 45th International Conference on Software
+  Engineering (ICSE)}, pages 1958--1970. IEEE, 2023.
+
+\bibitem{mao2016sapienz}
+Ke~Mao, Mark Harman, and Yue Jia.
+\newblock {Sapienz: Multi-objective automated testing for Android
+  applications}.
+\newblock In {\em ISSTA}. ACM, 2016.
+
+\bibitem{Mateus20}
+Delvani~Ant\^{o}nio Mateus, Carlos~Alberto Silva, Marcelo~Medeiros Eler, and
+  Andr\'{e}~Pimenta Freire.
+\newblock {Accessibility of Mobile Applications: Evaluation by Users with
+  Visual Impairment and by Automated Tools}.
+\newblock In {\em Proceedings of the 19th Brazilian Symposium on Human Factors
+  in Computing Systems}, IHC '20, New York, NY, USA, 2020. ACM.
+
+\bibitem{Mchugh20}
+Thomas~B. McHugh and Cooper Barth.
+\newblock {Assistive Technology Design as a Computer Science Learning
+  Experience}.
+\newblock In {\em Proceedings of the 22nd International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '20, New York, NY, USA,
+  2020. ACM.
+
+\bibitem{Mehralian:FSE'21}
+Forough Mehralian, Navid Salehnamadi, and Sam Malek.
+\newblock {Data-Driven Accessibility Repair Revisited: On the Effectiveness of
+  Generating Labels for Icons in Android Apps}.
+\newblock In {\em Proceedings of the 29th ACM Joint Meeting on European
+  Software Engineering Conference and Symposium on the Foundations of Software
+  Engineering}, ESEC/FSE 2021, page 107–118, New York, NY, USA, 2021. ACM.
+
+\bibitem{Milne18}
+Lauren~R. Milne and Richard~E. Ladner.
+\newblock {Blocks4All}.
+\newblock In {\em CHI'18}. {ACM}, April 2018.
+
+\bibitem{Montague12}
+Kyle Montague, Vicki~L. Hanson, and Andy Cobley.
+\newblock {Designing for Individuals: Usable Touch-Screen Interaction through
+  Shared User Models}.
+\newblock In {\em Proceedings of the 14th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '12, page 151–158, New
+  York, NY, USA, 2012. ACM.
+
+\bibitem{Montague14}
+Kyle Montague, Hugo Nicolau, and Vicki~L. Hanson.
+\newblock {Motor-Impaired Touchscreen Interactions in the Wild}.
+\newblock In {\em Proceedings of the 16th International ACM SIGACCESS
+  Conference on Computers ; Accessibility}, ASSETS '14, page 123–130, New
+  York, NY, USA, 2014. ACM.
+
+\bibitem{Moran:TSE'18}
+Kevin Moran, Carlos Bernal-Cárdenas, Michael Curcio, Richard Bonett, and Denys
+  Poshyvanyk.
+\newblock {Machine Learning-Based Prototyping of Graphical User Interfaces for
+  Mobile Apps}.
+\newblock {\em IEEE Transactions on Software Engineering}, 46(2):196--221,
+  2020.
+
+\bibitem{42}
+Kevin Moran, Boyang Li, Carlos Bernal-C\'{a}rdenas, Dan Jelf, and Denys
+  Poshyvanyk.
+\newblock Automated reporting of gui design violations for mobile apps.
+\newblock In {\em Proceedings of the 40th International Conference on Software
+  Engineering}, ICSE '18, page 165–175, New York, NY, USA, 2018. Association
+  for Computing Machinery.
+
+\bibitem{Moran:ICSE'18}
+Kevin Moran, Boyang Li, Carlos Bernal-C\'{a}rdenas, Dan Jelf, and Denys
+  Poshyvanyk.
+\newblock {Automated reporting of GUI design violations for mobile apps}.
+\newblock In {\em Proceedings of the 40th International Conference on Software
+  Engineering}, ICSE '18, page 165–175, New York, NY, USA, 2018. ACM.
+
+\bibitem{crashscope}
+Kevin Moran, Mario Linares-Vasquez, Carlos Bernal-Cardenas, Christopher
+  Vendome, and Denys Poshyvanyk.
+\newblock {CrashScope: A Practical Tool for Automated Testing of Android
+  Applications}.
+
+\bibitem{Moran:ICST'16}
+Kevin Moran, Mario Linares-Vásquez, Carlos Bernal-Cárdenas, Christopher
+  Vendome, and Denys Poshyvanyk.
+\newblock {Automatically Discovering, Reporting and Reproducing Android
+  Application Crashes}.
+\newblock In {\em 2016 IEEE International Conference on Software Testing,
+  Verification and Validation (ICST)}, pages 33--44, 2016.
+
+\bibitem{Moran:ASE'18}
+Kevin Moran, Cody Watson, John Hoskins, George Purnell, and Denys Poshyvanyk.
+\newblock {Detecting and summarizing GUI changes in evolving mobile apps}.
+\newblock In {\em Proceedings of the 33rd ACM/IEEE International Conference on
+  Automated Software Engineering}, ASE '18, page 543–553, New York, NY, USA,
+  2018. ACM.
+
+\bibitem{UIED}
+MulongXie.
+\newblock {UIED - UI element detection, detecting UI elements from UI
+  screenshots or drawnings}, 2021.
+
+\bibitem{Nguyen:ASE'15}
+Tuan~Anh Nguyen and Christoph Csallner.
+\newblock {Reverse Engineering Mobile Application User Interfaces with REMAUI
+  (T)}.
+\newblock In {\em 2015 30th IEEE/ACM International Conference on Automated
+  Software Engineering (ASE)}, pages 248--259, 2015.
+
+\bibitem{4}
+Hugo Nicolau, Kyle Montague, Tiago Guerreiro, Andr\'{e} Rodrigues, and Vicki~L.
+  Hanson.
+\newblock Typing performance of blind users: An analysis of touch behaviors,
+  learning effect, and in-situ usage.
+\newblock In {\em Proceedings of the 17th International ACM SIGACCESS
+  Conference on Computers \&amp; Accessibility}, ASSETS '15, page 273–280,
+  New York, NY, USA, 2015. Association for Computing Machinery.
+
+\bibitem{Norman13}
+Kirk Norman, Yevgeniy Arber, and Ravi Kuber.
+\newblock {How Accessible is the Process of Web Interface Design?}
+\newblock In {\em Proceedings of the 15th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '13, New York, NY, USA,
+  2013. ACM.
+
+\bibitem{Nunes15}
+Francisco Nunes, Paula~Alexandra Silva, Jo{\~{a}}o Cevada, Ana~Correia Barros,
+  and Lu{\'{\i}}s Teixeira.
+\newblock {User interface design guidelines for smartphone applications for
+  people with Parkinson's disease}.
+\newblock {\em Universal Access in the Information Society}, 15(4):659--679,
+  October 2015.
+
+\bibitem{Oh13}
+Uran Oh, Shaun~K. Kane, and Leah Findlater.
+\newblock {Follow That Sound: Using Sonification and Corrective Verbal Feedback
+  to Teach Touchscreen Gestures}.
+\newblock In {\em Proceedings of the 15th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '13, New York, NY, USA,
+  2013. ACM.
+
+\bibitem{Parhi06}
+Pekka Parhi, Amy~K. Karlson, and Benjamin~B. Bederson.
+\newblock {Target Size Study for One-Handed Thumb Use on Small Touchscreen
+  Devices}.
+\newblock In {\em Proceedings of the 8th Conference on Human-Computer
+  Interaction with Mobile Devices and Services}, MobileHCI '06, page 203–210,
+  New York, NY, USA, 2006. ACM.
 
 \bibitem{Park14}
 Kyudong Park, Taedong Goh, and Hyo-Jeong So.
-\newblock Toward accessible mobile application design: Developing mobile
-  application accessibility guidelines for people with visual impairment.
+\newblock {Toward Accessible Mobile Application Design: Developing Mobile
+  Application Accessibility Guidelines for People with Visual Impairment}.
 \newblock In {\em Proceedings of HCI Korea}, HCIK '15, page 31–38, Seoul,
   KOR, 2014. Hanbit Media, Inc.
 
+\bibitem{Pavel20}
+Amy Pavel, Gabriel Reyes, and Jeffrey~P. Bigham.
+\newblock {Rescribe}.
+\newblock In {\em Proceedings of the 33rd Annual {ACM} Symposium on User
+  Interface Software and Technology}. {ACM}, October 2020.
+
+\bibitem{12}
+Yi-Hao Peng, Muh-Tarng Lin, Yi~Chen, TzuChuan Chen, Pin~Sung Ku, Paul Taele,
+  Chin~Guan Lim, and Mike~Y. Chen.
+\newblock Personaltouch: Improving touchscreen usability by personalizing
+  accessibility settings based on individual user's touchscreen interaction.
+\newblock In {\em Proceedings of the 2019 CHI Conference on Human Factors in
+  Computing Systems}, CHI '19, page 1–11, New York, NY, USA, 2019.
+  Association for Computing Machinery.
+
+\bibitem{Peng19}
+Yi-Hao Peng, Muh-Tarng Lin, Yi~Chen, TzuChuan Chen, Pin~Sung Ku, Paul Taele,
+  Chin~Guan Lim, and Mike~Y. Chen.
+\newblock {PersonalTouch: Improving Touchscreen Usability by Personalizing
+  Accessibility Settings Based on Individual User's Touchscreen Interaction}.
+\newblock In {\em Proceedings of the 2019 CHI Conference on Human Factors in
+  Computing Systems}, CHI '19, page 1–11, New York, NY, USA, 2019. ACM.
+
+\bibitem{glove}
+Jeffrey Pennington, Richard Socher, and Christopher~D. Manning.
+\newblock {Glove: Global Vectors for Word Representation}.
+\newblock In Alessandro Moschitti, Bo~Pang, and Walter Daelemans, editors, {\em
+  Proceedings of the 2014 Conference on Empirical Methods in Natural Language
+  Processing, {EMNLP} 2014, October 25-29, 2014, Doha, Qatar, {A} meeting of
+  SIGDAT, a Special Interest Group of the {ACL}}, pages 1532--1543. {ACL},
+  2014.
+
+\bibitem{48}
+Lauren Race, Amber James, Andrew Hayward, Kia El-Amin, Maya~Gold Patterson, and
+  Theresa Mershon.
+\newblock Designing sensory and social tools for neurodivergent individuals in
+  social media environments.
+\newblock In {\em The 23rd International ACM SIGACCESS Conference on Computers
+  and Accessibility}, ASSETS '21, New York, NY, USA, 2021. Association for
+  Computing Machinery.
+
+\bibitem{Radford21}
+Alec Radford, Jong~Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh,
+  Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark,
+  Gretchen Krueger, and Ilya Sutskever.
+\newblock {Learning Transferable Visual Models From Natural Language
+  Supervision}, 2021.
+
+\bibitem{Ramachandra18}
+Nagendra Prasad~Kasaghatta Ramachandra and Christoph Csallner.
+\newblock {Testing Web-Based Applications with the <u>v</u>oice
+  <u>c</u>ontrolled <u>a</u>ccessibility and <u>t</u>esting Tool (VCAT)}.
+\newblock In {\em Proceedings of the 40th International Conference on Software
+  Engineering: Companion Proceeedings}, ICSE '18, page 208–209, New York, NY,
+  USA, 2018. ACM.
+
+\bibitem{ren2015faster}
+Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun.
+\newblock {Faster r-cnn: Towards real-time object detection with region
+  proposal networks}.
+\newblock {\em Advances in neural information processing systems}, 28, 2015.
+
+\bibitem{Ross18}
+Anne~Spencer Ross, Xiaoyi Zhang, James Fogarty, and Jacob~O. Wobbrock.
+\newblock {Examining Image-Based Button Labeling for Accessibility in Android
+  Apps through Large-Scale Analysis}.
+\newblock In {\em Proceedings of the 20th International {ACM} {SIGACCESS}
+  Conference on Computers and Accessibility}. {ACM}, October 2018.
+
+\bibitem{50}
+Lisa~Jo Rudy.
+\newblock Overview of assistive technology for autism, Feb 2021.
+
+\bibitem{9}
+Navid Salehnamadi, Abdulaziz Alshayban, Jun-Wei Lin, Iftekhar Ahmed, Stacy
+  Branham, and Sam Malek.
+\newblock Latte: Use-case and assistive-service driven automated accessibility
+  testing framework for android.
+\newblock In {\em Proceedings of the 2021 CHI Conference on Human Factors in
+  Computing Systems}, CHI '21, New York, NY, USA, 2021. Association for
+  Computing Machinery.
+
+\bibitem{Salehnamadi21}
+Navid Salehnamadi, Abdulaziz Alshayban, Jun-Wei Lin, Iftekhar Ahmed, Stacy
+  Branham, and Sam Malek.
+\newblock {Latte: Use-Case and Assistive-Service Driven Automated Accessibility
+  Testing Framework for Android}.
+\newblock In {\em Proceedings of the 2021 CHI Conference on Human Factors in
+  Computing Systems}, CHI '21, New York, NY, USA, 2021. ACM.
+
+\bibitem{Salehnamadi:ASE'22}
+Navid Salehnamadi, Forough Mehralian, and Sam Malek.
+\newblock {Groundhog: An Automated Accessibility Crawler for Mobile Apps}.
+\newblock In {\em 37th IEEE/ACM International Conference on Automated Software
+  Engineering (ASE 2022)}, 2022.
+
+\bibitem{Santiago22}
+Mara~Taynar Santiago and Anna~Beatriz Marques.
+\newblock {Are User Reviews Useful for Identifying Accessibility Issues That
+  Autistic Users Face? An Exploratory Study}.
+\newblock In {\em Proceedings of the 21st Brazilian Symposium on Human Factors
+  in Computing Systems}, IHC '22, New York, NY, USA, 2022. ACM.
+
+\bibitem{Sarsenbayeva22}
+Zhanna Sarsenbayeva, Niels van Berkel, Eduardo Velloso, Jorge Goncalves, and
+  Vassilis Kostakos.
+\newblock {Methodological Standards in Accessibility Research on Motor
+  Impairments: A Survey}.
+\newblock {\em ACM Comput. Surv.}, may 2022.
+\newblock Just Accepted.
+
+\bibitem{Schoop22}
+Eldon Schoop, Xin Zhou, Gang Li, Zhourong Chen, Bjoern Hartmann, and Yang Li.
+\newblock {Predicting and Explaining Mobile UI Tappability with Vision Modeling
+  and Saliency Analysis}.
+\newblock In {\em Proceedings of the 2022 CHI Conference on Human Factors in
+  Computing Systems}, CHI '22, New York, NY, USA, 2022. Association for
+  Computing Machinery.
+
+\bibitem{Shiver15}
+Brent~N. Shiver and Rosalee~J. Wolfe.
+\newblock {Evaluating Alternatives for Better Deaf Accessibility to Selected
+  Web-Based Multimedia}.
+\newblock In {\em Proceedings of the 17th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '15, page 231–238, New
+  York, NY, USA, 2015. ACM.
+
+\bibitem{Silva19}
+Giovanna Magda~S. Silva, Rossana~M. de~C.~Andrade, and Ticianne de~Gois
+  R.~Darin.
+\newblock {Design and Evaluation of Mobile Applications for People with Visual
+  Impairments: A Compilation of Usable Accessibility Guidelines}.
+\newblock In {\em Proceedings of the 18th Brazilian Symposium on Human Factors
+  in Computing Systems}, IHC '19, New York, NY, USA, 2019. ACM.
+
+\bibitem{Su:FSE'17}
+Ting Su, Guozhu Meng, Yuting Chen, Ke~Wu, Weiming Yang, Yao Yao, Geguang Pu,
+  Yang Liu, and Zhendong Su.
+\newblock {Guided, Stochastic Model-Based GUI Testing of Android Apps}.
+\newblock In {\em Proceedings of the 2017 11th Joint Meeting on Foundations of
+  Software Engineering}, ESEC/FSE 2017, page 245–256, New York, NY, USA,
+  2017. ACM.
+
+\bibitem{Swearngin:CHI'19}
+Amanda Swearngin and Yang Li.
+\newblock {Modeling Mobile Interface Tappability Using Crowdsourcing and Deep
+  Learning}.
+\newblock In {\em Proceedings of the 2019 CHI Conference on Human Factors in
+  Computing Systems}, CHI '19, page 1–11, New York, NY, USA, 2019. ACM.
+
 \bibitem{Szpiro16}
 Sarit Felicia~Anais Szpiro, Shafeka Hashash, Yuhang Zhao, and Shiri Azenkot.
-\newblock How people with low vision access computing devices: Understanding
-  challenges and opportunities.
+\newblock {How People with Low Vision Access Computing Devices: Understanding
+  Challenges and Opportunities}.
 \newblock In {\em Proceedings of the 18th International ACM SIGACCESS
   Conference on Computers and Accessibility}, ASSETS '16, page 171–180, New
-  York, NY, USA, 2016. Association for Computing Machinery.
+  York, NY, USA, 2016. ACM.
+
+\bibitem{18}
+Christopher Vendome, Diana Solano, Santiago Liñán, and Mario
+  Linares-Vásquez.
+\newblock Can everyone use my app? an empirical study on accessibility in
+  android apps.
+\newblock In {\em 2019 IEEE International Conference on Software Maintenance
+  and Evolution (ICSME)}, pages 41--52, 2019.
+
+\bibitem{Vendome19}
+Christopher Vendome, Diana Solano, Santiago Liñán, and Mario
+  Linares-Vásquez.
+\newblock {Can Everyone use my app? An Empirical Study on Accessibility in
+  Android Apps}.
+\newblock In {\em 2019 IEEE International Conference on Software Maintenance
+  and Evolution (ICSME)}, pages 41--52, 2019.
+
+\bibitem{wang_vet_2021}
+Wenyu Wang, Wei Yang, Tianyin Xu, and Tao Xie.
+\newblock {Vet: identifying and avoiding UI exploration tarpits}.
+\newblock In {\em Proceedings of the 29th {ACM} {Joint} {Meeting} on {European}
+  {Software} {Engineering} {Conference} and {Symposium} on the {Foundations} of
+  {Software} {Engineering}}, pages 83--94, Athens Greece, August 2021. ACM.
+
+\bibitem{wei23}
+Yixuan Wei, Han Hu, Zhenda Xie, Ze~Liu, Zheng Zhang, Yue Cao, Jianmin Bao, Dong
+  Chen, and Baining Guo.
+\newblock {Improving CLIP Fine-tuning Performance}.
+\newblock In {\em 2023 IEEE/CVF International Conference on Computer Vision
+  (ICCV)}. IEEE, October 2023.
+
+\bibitem{weisstein2003heron}
+E.~Weisstein.
+\newblock {Heron's formula}.
+\newblock {\em MathWorld}, 2003.
+
+\bibitem{41}
+Jason Wu, Xiaoyi Zhang, Jeff Nichols, and Jeffrey~P Bigham.
+\newblock Screen parsing: Towards reverse engineering of ui models from
+  screenshots.
+\newblock In {\em The 34th Annual ACM Symposium on User Interface Software and
+  Technology}, UIST '21, page 470–483, New York, NY, USA, 2021. Association
+  for Computing Machinery.
+
+\bibitem{Wu21}
+Jason Wu, Xiaoyi Zhang, Jeff Nichols, and Jeffrey~P Bigham.
+\newblock {Screen Parsing: Towards Reverse Engineering of UI Models from
+  Screenshots}.
+\newblock In {\em The 34th Annual ACM Symposium on User Interface Software and
+  Technology}, UIST '21, page 470–483, New York, NY, USA, 2021. ACM.
+
+\bibitem{Yan19}
+Shunguo Yan and P.~G. Ramachandran.
+\newblock {The Current Status of Accessibility in Mobile Apps}.
+\newblock {\em ACM Trans. Access. Comput.}, 12(1), feb 2019.
+
+\bibitem{yanfu2024athena}
+Yanfu Yan, Nathan Cooper, Kevin Moran, Gabriele Bavota, Denys Poshyvanyk, and
+  Steve Rich.
+\newblock {Enhancing Code Understanding for Impact Analysis by Combining
+  Transformers and Program Dependence Graphs}.
+\newblock In {\em The ACM International Conference on the Foundations of
+  Software Engineering (FSE)}, July 2024.
+
+\bibitem{ORBITYang}
+Wei Yang, Mukul~R Prasad, and Tao Xie.
+\newblock {A grey-box approach for automated GUI-model generation of mobile
+  applications}.
+\newblock In {\em ICSE}, pages 250--265. Springer, 2013.
+
+\bibitem{Yu23}
+Jiarui Yu, Haoran Li, Yanbin Hao, Bin Zhu, Tong Xu, and Xiangnan He.
+\newblock {CgT-GAN: CLIP-guided Text GAN for Image Captioning}.
+\newblock In {\em Proceedings of the 31st ACM International Conference on
+  Multimedia}, MM '23, page 2252–2263, New York, NY, USA, 2023. Association
+  for Computing Machinery.
+
+\bibitem{2}
+Xiao~(Cosmo) Zhang, Kan Fang, and Gregory Francis.
+\newblock Optimization of switch keyboards.
+\newblock In {\em Proceedings of the 15th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '13, New York, NY, USA,
+  2013. Association for Computing Machinery.
+
+\bibitem{Zhang13}
+Xiao~(Cosmo) Zhang, Kan Fang, and Gregory Francis.
+\newblock {Optimization of Switch Keyboards}.
+\newblock In {\em Proceedings of the 15th International ACM SIGACCESS
+  Conference on Computers and Accessibility}, ASSETS '13, New York, NY, USA,
+  2013. ACM.
+
+\bibitem{Zhang21}
+Xiaoyi Zhang, Lilian de~Greef, Amanda Swearngin, Samuel White, Kyle Murray,
+  Lisa Yu, Qi~Shan, Jeffrey Nichols, Jason Wu, Chris Fleizach, Aaron Everitt,
+  and Jeffrey~P Bigham.
+\newblock {Screen Recognition: Creating Accessibility Metadata for Mobile
+  Applications from Pixels}.
+\newblock In {\em Proceedings of the 2021 CHI Conference on Human Factors in
+  Computing Systems}, CHI '21, New York, NY, USA, 2021. ACM.
+
+\bibitem{Zhao:FSE22}
+Yixue Zhao, Saghar Talebipour, Kesina Baral, Hyojae Park, Leon Yee, Safwat~Ali
+  Khan, Yuriy Brun, Nenad Medvidovi\'{c}, and Kevin Moran.
+\newblock {Avgust: automating usage-based test generation from videos of app
+  executions}.
+\newblock In {\em Proceedings of the 30th ACM Joint European Software
+  Engineering Conference and Symposium on the Foundations of Software
+  Engineering}, ESEC/FSE 2022, page 421–433, New York, NY, USA, 2022. ACM.
+
+\bibitem{Avgust}
+Yixue Zhao, Saghar Talebipour, Kesina Baral, Hyojae Park, Leon Yee, Safwat~Ali
+  Khan, Yuriy Brun, Nenad Medvidovi\'{c}, and Kevin Moran.
+\newblock {Avgust: automating usage-based test generation from videos of app
+  executions}.
+\newblock In {\em Proceedings of the 30th ACM Joint European Software
+  Engineering Conference and Symposium on the Foundations of Software
+  Engineering}, ESEC/FSE 2022, page 421–433, New York, NY, USA, 2022.
+  Association for Computing Machinery.
+
+\bibitem{zhou2017east}
+Xinyu Zhou, Cong Yao, He~Wen, Yuzhi Wang, Shuchang Zhou, Weiran He, and Jiajun
+  Liang.
+\newblock {East: an efficient and accurate scene text detector}.
+\newblock In {\em Proceedings of the IEEE conference on Computer Vision and
+  Pattern Recognition}, pages 5551--5560, 2017.
 
 \end{thebibliography}

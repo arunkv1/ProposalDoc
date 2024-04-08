@@ -1,0 +1,27 @@
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1} % Adjust the row height
+\scalebox{0.75}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\toprule
+\textbf{Dataset} & \textbf{Metrics} & \textbf{NC-NPB-PC} & \textbf{NC-PB-NPC} & \textbf{C-NPB-NPC} & \textbf{NC-PB-PC} & \textbf{C-PB-NPC} & \textbf{C-NPB-PC} & \textbf{FRAME}\\
+\hline
+\midrule
+\multirow{4}{*}{Aurora} 
+& HR@1 & 0.2777 & 0.3750 & 0.4722 & 0.4166 & 0.5138 & 0.4513 & \textbf{0.5625}\\
+& HR@5 & 0.1944 & 0.2972 & 0.4013 & 0.2750 & 0.4486 & 0.4180 & \textbf{0.4652}\\
+& HR@10 & 0.1631 & 0.2791 & 0.3590 & 0.2458 & \textbf{0.4180} & 0.3618 & 0.4166\\
+& MRR & 0.3880 & 0.5026 & 0.5963 & 0.5136 & 0.6448 & 0.6077 &\textbf{0.6729} \\
+\hline
+\hline
+\multirow{4}{*}{Avgust} 
+& HR@1 & 0.7960 &  0.8352 & 0.8549 & 0.8666 & 0.8588 & 0.8705 & \textbf{0.8823}\\
+& HR@5 & 0.6901 &  0.7850 & 0.7788 & 0.8023 & 0.8282 &  0.8219 & \textbf{0.8329}\\
+& HR@10 & 0.5929 & 0.7360 &  0.7364 & 0.7498 & 0.7721 & 0.7674 & \textbf{0.7827} \\
+& MRR & 0.8380 &  0.8724 & 0.8913 & 0.9012 & 0.9014 & 0.9114 & \textbf{0.9184}\\
+\bottomrule
+\end{tabular}
+}
+\caption{Ablation analysis over 2 datasets between \FRAME and its variants, where the best results are in \textbf{bold}.}
+\label{AblatioTable}
+\end{table}

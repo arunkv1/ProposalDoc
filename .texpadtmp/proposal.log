@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.25)  16 MAR 2024 17:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.25)  7 APR 2024 22:34
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -427,19 +427,30 @@ Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 \TX@delta=\dimen257
 \TX@cols=\count292
 \TX@ftn=\toks35
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks36
+\thm@bodyfont=\toks37
+\thm@headfont=\toks38
+\thm@notefont=\toks39
+\thm@headpunct=\toks40
+\thm@preskip=\skip56
+\thm@postskip=\skip57
+\thm@headsep=\skip58
+\dth@everypar=\toks41
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/eqparbox/eqparbox.sty
 Package: eqparbox 2017/09/03 v4.1 Create equal-widthed boxes
-\eqp@tempdima=\skip56
-\eqp@tempdimb=\skip57
+\eqp@tempdima=\skip59
+\eqp@tempdimb=\skip60
 \eqp@tabular@box=\box66
 \eqp@list@box=\box67
-\eqp@list@indent=\skip58
+\eqp@list@indent=\skip61
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count293
 \lst@gtempboxa=\box68
-\lst@token=\toks36
+\lst@token=\toks42
 \lst@length=\count294
 \lst@currlwidth=\dimen258
 \lst@column=\count295
@@ -462,10 +473,10 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
- (/usr/local/texlive/2021/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/local/texlive/2021/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks37
-\XKV@tempa@toks=\toks38
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2021/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks43
+\XKV@tempa@toks=\toks44
 )
 \XKV@depth=\count301
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
@@ -504,9 +515,9 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@roff=\dimen275
 )) (/usr/local/texlive/2021/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip59
+\multirow@colwidth=\skip62
 \multirow@cntb=\count304
-\multirow@dima=\skip60
+\multirow@dima=\skip63
 \bigstrutjot=\dimen276
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/pifont.sty
 Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
@@ -519,12 +530,12 @@ LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 )) (/usr/local/texlive/2021/texmf-dist/tex/generic/soul/soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
-\SOUL@word=\toks39
-\SOUL@lasttoken=\toks40
-\SOUL@cmds=\toks41
-\SOUL@buffer=\toks42
-\SOUL@token=\toks43
-\SOUL@spaceskip=\skip61
+\SOUL@word=\toks45
+\SOUL@lasttoken=\toks46
+\SOUL@cmds=\toks47
+\SOUL@buffer=\toks48
+\SOUL@token=\toks49
+\SOUL@spaceskip=\skip64
 \SOUL@ttwidth=\dimen277
 \SOUL@uldp=\dimen278
 \SOUL@ulht=\dimen279
@@ -553,10 +564,10 @@ Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@r@tfl@t=\count309
-\rotFPtop=\skip62
-\rotFPbot=\skip63
+\rotFPtop=\skip65
+\rotFPbot=\skip66
 \rot@float@box=\box72
-\rot@mess@toks=\toks44
+\rot@mess@toks=\toks50
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
@@ -582,27 +593,29 @@ Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box73
 \UL@hyphenbox=\box74
-\UL@skip=\skip64
-\UL@hook=\toks45
+\UL@skip=\skip67
+\UL@hook=\toks51
 \UL@height=\dimen300
 \UL@pe=\count314
 \UL@pixel=\dimen301
 \ULC@box=\box75
 Package: ulem 2019/11/18
 \ULdepth=\dimen302
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+)
+\c@definition=\count315
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
  (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen303
 \pgffor@skip=\dimen304
-\pgffor@stack=\toks46
-\pgffor@toks=\toks47
+\pgffor@stack=\toks52
+\pgffor@toks=\toks53
 )) (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@plot@mark@count=\count315
+\pgf@plot@mark@count=\count316
 \pgfplotmarksize=\dimen305
 )
 \tikz@lastx=\dimen306
@@ -617,36 +630,36 @@ File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \tikz@figbox@bg=\box77
 \tikz@tempbox=\box78
 \tikz@tempbox@bg=\box79
-\tikztreelevel=\count316
-\tikznumberofchildren=\count317
-\tikznumberofcurrentchild=\count318
-\tikz@fig@count=\count319
+\tikztreelevel=\count317
+\tikznumberofchildren=\count318
+\tikznumberofcurrentchild=\count319
+\tikz@fig@count=\count320
  (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfmatrixcurrentrow=\count320
-\pgfmatrixcurrentcolumn=\count321
-\pgf@matrix@numberofcolumns=\count322
+\pgfmatrixcurrentrow=\count321
+\pgfmatrixcurrentcolumn=\count322
+\pgf@matrix@numberofcolumns=\count323
 )
-\tikz@expandcount=\count323
+\tikz@expandcount=\count324
  (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ))) (./macros.tex (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip65
+\labelindent=\skip68
 \enit@outerparindent=\dimen314
-\enit@toks=\toks48
+\enit@toks=\toks54
 \enit@inbox=\box80
-\enit@count@id=\count324
-\enitdp@description=\count325
+\enit@count@id=\count325
+\enitdp@description=\count326
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/sttools/flushend.sty
 Package: flushend 2020/10/16 v3.5 Balancing columns in twocolumn mode
-\flushend@@lastskip@a=\skip66
-\flushend@@lastskip@b=\skip67
-\flushend@@lastskip@c=\skip68
-\flushend@@penalty@a=\count326
-\var@@loop@iter=\count327
+\flushend@@lastskip@a=\skip69
+\flushend@@lastskip@b=\skip70
+\flushend@@lastskip@c=\skip71
+\flushend@@penalty@a=\count327
+\var@@loop@iter=\count328
 \flushend@@lastkern@a=\dimen315
 \var@@temp@spread=\dimen316
 \var@@temp@a=\dimen317
@@ -658,61 +671,65 @@ Package: flushend 2020/10/16 v3.5 Balancing columns in twocolumn mode
 \flushend@@tempbox@c=\box84
 \@viper=\box85
 \hold@viper=\box86
-\atColsBreak=\toks49
-\atColsEnd=\toks50
+\atColsBreak=\toks55
+\atColsEnd=\toks56
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ))
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 116.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 128.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count328
+\l__color_backend_stack_int=\count329
 \l__pdf_internal_box=\box87
-) (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.aux)
+) (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.aux
+
+LaTeX Warning: Label `tab:guidelines' multiply defined.
+
+)
 \openout1 = `proposal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
  (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
+\scratchcounter=\count330
 \scratchdimen=\dimen320
 \scratchbox=\box88
-\nofMPsegments=\count330
-\nofMParguments=\count331
-\everyMPshowfont=\toks51
-\MPscratchCnt=\count332
+\nofMPsegments=\count331
+\nofMParguments=\count332
+\everyMPshowfont=\toks57
+\MPscratchCnt=\count333
 \MPscratchDim=\dimen321
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
-\everyMPtoPDFconversion=\toks52
+\MPnumerator=\count334
+\makeMPintoPDFobject=\count335
+\everyMPtoPDFconversion=\toks58
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 116.
+Package hyperref Info: Link coloring OFF on input line 128.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -720,16 +737,16 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count335
+\c@section@level=\count336
 )
-LaTeX Info: Redefining \ref on input line 116.
-LaTeX Info: Redefining \pageref on input line 116.
-LaTeX Info: Redefining \nameref on input line 116.
+LaTeX Info: Redefining \ref on input line 128.
+LaTeX Info: Redefining \pageref on input line 128.
+LaTeX Info: Redefining \nameref on input line 128.
  (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.out) (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.out)
 \@outlinefile=\write6
 \openout6 = `proposal.out'.
 
-\c@lstlisting=\count336
+\c@lstlisting=\count337
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  [1
@@ -738,12 +755,12 @@ runsystem()...executed.
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Citation `luo2014empirical' on page i undefined on input line 160.
+LaTeX Warning: Citation `luo2014empirical' on page i undefined on input line 172.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.198 \tableofcontents
+l.210 \tableofcontents
                        [1] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -760,366 +777,714 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@lof=\write8
 \openout8 = `proposal.lof'.
 
- (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.lot)
+ (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.lot [4])
 \tf@lot=\write9
 \openout9 = `proposal.lot'.
 
- [4] (./Sections/Introduction.tex) (./Sections/Background.tex [1
+ [5] (./Sections/Introduction.tex [1
 
 ]
 
-LaTeX Warning: Citation `luo2014empirical' on page 2 undefined on input line 5.
+LaTeX Warning: Reference `sec:detectFlakyTests' on page 2 undefined on input line 19.
 
 
-LaTeX Warning: Citation `luo2014empirical' on page 2 undefined on input line 5.
+LaTeX Warning: Reference `sec:livingTestFlakiness' on page 2 undefined on input line 19.
 
 
-LaTeX Warning: Citation `eck2019understanding' on page 2 undefined on input line 7.
+LaTeX Warning: Reference `sec:categotize' on page 2 undefined on input line 19.
 
+) (./Sections/Background.tex
 
-LaTeX Warning: Citation `eck2019understanding' on page 2 undefined on input line 7.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Citation `lam2019root' on page 2 undefined on input line 10.
-
-
-LaTeX Warning: Citation `thorve2018empirical' on page 2 undefined on input line 13.
-
+<imgs/hits.jpg, id=541, 1140.26pt x 694.595pt>
+File: imgs/hits.jpg Graphic file (type jpg)
+<use imgs/hits.jpg>
+Package pdftex.def Info: imgs/hits.jpg  used on input line 53.
+(pdftex.def)             Requested size: 234.87749pt x 143.07121pt.
 [2]
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
-LaTeX Warning: Citation `bell2018deflaker' on page 3 undefined on input line 23.
-
-
-LaTeX Warning: Citation `bell2018deflaker' on page 3 undefined on input line 24.
+ []
 
 
-LaTeX Warning: Citation `bell2018deflaker' on page 3 undefined on input line 24.
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
-
-LaTeX Warning: Citation `bell2018deflaker' on page 3 undefined on input line 24.
-
-
-LaTeX Warning: Citation `lam2019idflakies' on page 3 undefined on input line 29.
-
-
-LaTeX Warning: Citation `lam2019idflakies' on page 3 undefined on input line 29.
-
-
-LaTeX Warning: Citation `lam2019idflakies' on page 3 undefined on input line 29.
+ []
 
 [3]
+<imgs/switchInterface.jpg, id=595, 2465.21pt x 609.27625pt>
+File: imgs/switchInterface.jpg Graphic file (type jpg)
+<use imgs/switchInterface.jpg>
+Package pdftex.def Info: imgs/switchInterface.jpg  used on input line 67.
+(pdftex.def)             Requested size: 281.85585pt x 69.66087pt.
 
-LaTeX Warning: Citation `Pinto2020WhatIT' on page 4 undefined on input line 32.
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
+ []
 
-LaTeX Warning: Citation `Pinto2020WhatIT' on page 4 undefined on input line 32.
 
+Overfull \hbox (9.3402pt too wide) in paragraph at lines 76--77
+\OT1/ptm/m/n/12 and mem-ory loss. It is es-ti-mated that 7% of the pop-u-la-tion iden-ti-fies as neurodivergent-encompassing
+ []
 
-LaTeX Warning: Citation `bell2018deflaker' on page 4 undefined on input line 32.
 
+Overfull \hbox (5.96886pt too wide) in paragraph at lines 76--77
+\OT1/ptm/m/n/12 severely un-der-rep-re-sented in de-sign of the web. The Web Con-tent Ac-ces-si-bil-ity Guide-lines (WCAG)
+ []
 
-LaTeX Warning: Citation `Pinto2020WhatIT' on page 4 undefined on input line 32.
+[4 <./imgs/hits.jpg> <./imgs/switchInterface.jpg>] [5]) (./Sections/Thesis.tex [6] [7]
 
-) (./Sections/Thesis.tex [4]
+LaTeX Warning: Reference `sec:background, sec:introduction' on page 8 undefined on input line 36.
 
-LaTeX Warning: Citation `alshammari2021flakeflagger' on page 5 undefined on input line 85.
+[8]) (./Sections/Detecting.tex [9]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 9.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
 
-[5]
-
-LaTeX Warning: Citation `gradlePreventingFlaky' on page 6 undefined on input line 93.
-
-
-LaTeX Warning: Citation `Podgurski03Automated' on page 6 undefined on input line 93.
-
-
-LaTeX Warning: Citation `Jiang17WhatCauses' on page 6 undefined on input line 93.
-
-) (./Sections/Detecting.tex [6]
-
-LaTeX Warning: Citation `bell2018deflaker' on page 7 undefined on input line 6.
-
-
-LaTeX Warning: Citation `lam2019idflakies' on page 7 undefined on input line 6.
-
-
-LaTeX Warning: Citation `lam2019root' on page 7 undefined on input line 6.
-
-
-LaTeX Warning: Citation `lam2020Understanding' on page 7 undefined on input line 6.
-
-
-LaTeX Warning: Citation `eck2019understanding' on page 7 undefined on input line 16.
-
-
-LaTeX Warning: Citation `ahmad2021empirical' on page 7 undefined on input line 16.
-
-
-LaTeX Warning: Citation `bell2018deflaker' on page 7 undefined on input line 38.
-
-
-LaTeX Warning: Citation `lam2019idflakies' on page 7 undefined on input line 38.
-
-
-LaTeX Warning: Citation `bell2018deflaker' on page 7 undefined on input line 38.
-
-
-LaTeX Warning: Citation `lam2019idflakies' on page 7 undefined on input line 38.
-
-
-LaTeX Warning: Citation `bell2018deflaker' on page 7 undefined on input line 38.
-
-
-LaTeX Warning: Citation `lam2019idflakies' on page 7 undefined on input line 38.
-
-[7]
-
-LaTeX Warning: Citation `lam2019idflakies' on page 8 undefined on input line 43.
-
-
-LaTeX Warning: Reference `over_all_graph' on page 8 undefined on input line 49.
-
-
-LaTeX Warning: Citation `luo2014empirical' on page 8 undefined on input line 60.
-
-
-LaTeX Warning: Citation `eck2019understanding' on page 8 undefined on input line 60.
-
-
-LaTeX Warning: Citation `bell2018deflaker' on page 8 undefined on input line 60.
-
-
-LaTeX Warning: Citation `luo2014empirical' on page 8 undefined on input line 60.
-
-
-LaTeX Warning: Citation `eck2019understanding' on page 8 undefined on input line 61.
-
-
-LaTeX Warning: Citation `ahmad2021empirical' on page 8 undefined on input line 62.
-
-
-LaTeX Warning: Citation `eck2019understanding' on page 8 undefined on input line 64.
-
-
-LaTeX Warning: Citation `luo2014empirical' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `ahmad2021empirical' on page 8 undefined on input line 68.
-
-(./tables/FlakeFlaggerFeatures.tex
-
-LaTeX Warning: Citation `van2001refactoring' on page 8 undefined on input line 29.
-
-
-LaTeX Warning: Citation `van2001refactoring' on page 8 undefined on input line 29.
-
-
-LaTeX Warning: Citation `van2001refactoring' on page 8 undefined on input line 29.
-
-
-LaTeX Warning: Citation `meszaros2007xunit' on page 8 undefined on input line 29.
-
-
-LaTeX Warning: Citation `garousi2018smells' on page 8 undefined on input line 29.
-
-
-LaTeX Warning: Citation `van2001refactoring' on page 8 undefined on input line 29.
-
-
-LaTeX Warning: Citation `van2001refactoring' on page 8 undefined on input line 29.
-
-
-LaTeX Warning: Citation `van2001refactoring' on page 8 undefined on input line 29.
-
-) [8]
-
-LaTeX Warning: Citation `lei2012feature' on page 9 undefined on input line 84.
-
-
-LaTeX Warning: Citation `kohavi1995study' on page 9 undefined on input line 89.
-
-
-LaTeX Warning: Citation `SMOTE' on page 9 undefined on input line 91.
-
-[9] (./tables/FlakeFlaggerStudy.tex)
-
-LaTeX Warning: Reference `table:rerun_result' on page 10 undefined on input line 128.
-
-
-LaTeX Warning: Reference `table:rerun_result' on page 10 undefined on input line 135.
-
-
-LaTeX Warning: Reference `table:rerun_result' on page 10 undefined on input line 136.
+LaTeX Warning: Reference `fig:switch' on page 10 undefined on input line 9.
 
 [10]
 
-LaTeX Warning: Reference `table:rerun_result' on page 11 undefined on input line 145.
-
-(./tables/Full_result.tex
-
-LaTeX Warning: Citation `pintovocabulary' on page 11 undefined on input line 61.
+LaTeX Warning: Reference `fig:switch' on page 11 undefined on input line 23.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--63
-[][]
+Overfull \hbox (44.25694pt too wide) in paragraph at lines 33--62
+ [][] 
  []
 
-)
 
-LaTeX Warning: Citation `pinto2020vocabulary' on page 11 undefined on input line 168.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11] [12] (./tables/IG.tex)
+[11] [12] [13]
 
-LaTeX Warning: Citation `pinto2020vocabulary' on page 13 undefined on input line 184.
+LaTeX Warning: Reference `sec:approach' on page 14 undefined on input line 79.
 
-[13]) (./Sections/Living.tex
+<imgs/guidelines.pdf, id=844, 568.1225pt x 501.875pt>
+File: imgs/guidelines.pdf Graphic file (type pdf)
+<use imgs/guidelines.pdf>
+Package pdftex.def Info: imgs/guidelines.pdf  used on input line 84.
+(pdftex.def)             Requested size: 281.85585pt x 248.9994pt.
+[14 <./imgs/guidelines.pdf>]
+<imgs/insta-icon.png, id=880, 30.1125pt x 19.07124pt>
+File: imgs/insta-icon.png Graphic file (type png)
+<use imgs/insta-icon.png>
+Package pdftex.def Info: imgs/insta-icon.png  used on input line 95.
+(pdftex.def)             Requested size: 18.78703pt x 11.89882pt.
+ [15 <./imgs/insta-icon.png>]
+<imgs/MotorEaseOverview.pdf, id=893, 797.3569pt x 1191.85277pt>
+File: imgs/MotorEaseOverview.pdf Graphic file (type pdf)
+<use imgs/MotorEaseOverview.pdf>
+Package pdftex.def Info: imgs/MotorEaseOverview.pdf  used on input line 114.
+(pdftex.def)             Requested size: 258.36667pt x 386.18364pt.
+ [16 <./imgs/MotorEaseOverview.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
-LaTeX Warning: Citation `habchi2022qualitative' on page 14 undefined on input line 15.
-
-
-LaTeX Warning: Citation `gradlePreventingFlaky' on page 14 undefined on input line 16.
-
-[14]
-
-LaTeX Warning: Citation `Podgurski03Automated' on page 15 undefined on input line 43.
-
-
-LaTeX Warning: Citation `Jiang17WhatCauses' on page 15 undefined on input line 43.
-
-
-LaTeX Warning: Citation `gradlePreventingFlaky' on page 15 undefined on input line 44.
-
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 57.
-(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 57.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1pcr.fd
-File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) (./Listings/FlakyFailure1.tex (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 4.
- [15]) (./tables/Features.tex)
-
-LaTeX Warning: Citation `lampel2021life' on page 16 undefined on input line 85.
+ []
 
 
-LaTeX Warning: Citation `DT' on page 16 undefined on input line 94.
-
-
-LaTeX Warning: Citation `SMOTE' on page 16 undefined on input line 95.
-
-
-LaTeX Warning: Citation `crossValidation' on page 16 undefined on input line 95.
-
-[16]
-
-LaTeX Warning: Citation `tfidf' on page 17 undefined on input line 107.
-
-
-LaTeX Warning: Citation `tfidf1' on page 17 undefined on input line 126.
-
-
-LaTeX Warning: Citation `alshammari2021flakeflagger' on page 17 undefined on input line 144.
-
-
-LaTeX Warning: Citation `bell2018deflaker' on page 17 undefined on input line 145.
-
-
-LaTeX Warning: Citation `lam2019idflakies' on page 17 undefined on input line 145.
-
-
-LaTeX Warning: Citation `just2014defects4j' on page 17 undefined on input line 147.
-
-
-LaTeX Warning: Citation `saha2018bugs' on page 17 undefined on input line 147.
-
-
-LaTeX Warning: Citation `tomassi2019bugswarm' on page 17 undefined on input line 147.
-
-
-LaTeX Warning: Citation `bears' on page 17 undefined on input line 147.
-
-
-LaTeX Warning: Citation `haben2023importance' on page 17 undefined on input line 149.
+Underfull \hbox (badness 1038) in paragraph at lines 157--158
+[]|\OT1/ptm/m/n/10.95 "deny", "al-low", "exit", "end", "ter-mi-nate", "quit", "back", "stop", "ig-nore", "pro-ceed",
+ []
 
 [17]
+<imgs/extracted-section.pdf, id=961, 865.2325pt x 311.1625pt>
+File: imgs/extracted-section.pdf Graphic file (type pdf)
+<use imgs/extracted-section.pdf>
+Package pdftex.def Info: imgs/extracted-section.pdf  used on input line 169.
+(pdftex.def)             Requested size: 328.82706pt x 118.25722pt.
+ [18 <./imgs/extracted-section.pdf>]
+<imgs/closure-icons.pdf, id=983, 662.475pt x 121.45375pt>
+File: imgs/closure-icons.pdf Graphic file (type pdf)
+<use imgs/closure-icons.pdf>
+Package pdftex.def Info: imgs/closure-icons.pdf  used on input line 181.
+(pdftex.def)             Requested size: 328.82706pt x 60.28378pt.
 
-LaTeX Warning: Citation `just2014mutants' on page 18 undefined on input line 153.
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+[19 <./imgs/closure-icons.pdf>]
+<imgs/boundBox.png, id=1019, 1003.75pt x 1003.75pt>
+File: imgs/boundBox.png Graphic file (type png)
+<use imgs/boundBox.png>
+Package pdftex.def Info: imgs/boundBox.png  used on input line 226.
+(pdftex.def)             Requested size: 164.4171pt x 164.41696pt.
+ [20 <./imgs/boundBox.png>]
+<imgs/persisting.pdf, id=1031, 598.235pt x 278.03876pt>
+File: imgs/persisting.pdf Graphic file (type pdf)
+<use imgs/persisting.pdf>
+Package pdftex.def Info: imgs/persisting.pdf  used on input line 239.
+(pdftex.def)             Requested size: 281.85585pt x 130.99641pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+
+ []
+
+<imgs/visual-distance.pdf, id=1034, 484.81125pt x 229.85875pt>
+File: imgs/visual-distance.pdf Graphic file (type pdf)
+<use imgs/visual-distance.pdf>
+Package pdftex.def Info: imgs/visual-distance.pdf  used on input line 256.
+(pdftex.def)             Requested size: 234.87749pt x 111.36209pt.
+[21 <./imgs/persisting.pdf> <./imgs/visual-distance.pdf>]
+\c@questionsi=\count338
+\c@questionsii=\count339
+\enitdp@questions=\count340
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 300.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 307.
 
 
-LaTeX Warning: Citation `shi2019mitigating' on page 18 undefined on input line 155.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 307.
 
 
-LaTeX Warning: Citation `alshammari2021flakeflagger' on page 18 undefined on input line 157.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 307.
 
 
-LaTeX Warning: Citation `shi2019mitigating' on page 18 undefined on input line 157.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 307.
 
 
-LaTeX Warning: Citation `coles2016pit' on page 18 undefined on input line 157.
-
-[18] (./tables/repetitiveFailures.tex) [19] (./tables/non-unique-failures.tex) [20] [21] (./tables/uniqueExceptions.tex) [22] [23] (./tables/FailureLogsClassifier.tex) [24]
-
-LaTeX Warning: Citation `lampel2021life' on page 25 undefined on input line 464.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 307.
 
 
-LaTeX Warning: Citation `An23JustInTime' on page 25 undefined on input line 477.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 307.
+
+[22]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 322.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 322.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 322.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--349
+[]|\OT1/ptm/b/n/12 Total
+ []
+
+
+Overfull \hbox (10.34866pt too wide) in paragraph at lines 349--349
+\OT1/ptm/b/n/12 Files/Apps| 
+ []
+
+
+Overfull \hbox (13.26033pt too wide) in paragraph at lines 349--349
+[]|\OT1/ptm/b/n/12 Violations| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--350
+[]|\OT1/ptm/b/n/12 Non-
+ []
+
+
+Overfull \hbox (15.42834pt too wide) in paragraph at lines 349--350
+\OT1/ptm/b/n/12 Violations| 
+ []
+
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
+
+ []
 
 [25]
 
-LaTeX Warning: Citation `Podgurski03Automated' on page 26 undefined on input line 509.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 409.
 
 
-LaTeX Warning: Citation `Jiang17WhatCauses' on page 26 undefined on input line 509.
-
-) (./Sections/Categorizing.tex [26] [27]
-
-LaTeX Warning: Citation `akli2023flakycat' on page 28 undefined on input line 10.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 409.
 
 
-LaTeX Warning: Citation `lam2019root' on page 28 undefined on input line 10.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 409.
+
+<imgs/expandingResultsV2.jpg, id=1112, 1890.06125pt x 836.12375pt>
+File: imgs/expandingResultsV2.jpg Graphic file (type jpg)
+<use imgs/expandingResultsV2.jpg>
+Package pdftex.def Info: imgs/expandingResultsV2.jpg  used on input line 415.
+(pdftex.def)             Requested size: 234.87749pt x 103.90282pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 422.
 
 
-LaTeX Warning: Citation `akli2023flakycat' on page 28 undefined on input line 32.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 422.
 
 
-LaTeX Warning: Citation `lam2019idflakies' on page 28 undefined on input line 32.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 422.
 
 
-LaTeX Warning: Citation `lam2019idflakies' on page 28 undefined on input line 32.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 431.
 
-) (./Sections/ResearchPlan.tex) [28] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 8--11
-[]\OT1/ptm/m/n/10 Ada web ac-ces-si-bil-ity law-suit re-cap re-port []$\OT1/pcr/m/n/10 https : / / blog . usablenet . com /
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 431.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 431.
+
+[27 <./imgs/expandingResultsV2.jpg>]
+<imgs/persisstingResults.jpg, id=1127, 2223.30624pt x 1292.83pt>
+File: imgs/persisstingResults.jpg Graphic file (type jpg)
+<use imgs/persisstingResults.jpg>
+Package pdftex.def Info: imgs/persisstingResults.jpg  used on input line 438.
+(pdftex.def)             Requested size: 234.87749pt x 136.56982pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 446.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 446.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 446.
+
+<imgs/IconDistanceResults.png, id=1130, 1890.06125pt x 805.0075pt>
+File: imgs/IconDistanceResults.png Graphic file (type png)
+<use imgs/IconDistanceResults.png>
+Package pdftex.def Info: imgs/IconDistanceResults.png  used on input line 451.
+(pdftex.def)             Requested size: 258.36667pt x 110.03477pt.
+
+Overfull \hbox (8.156pt too wide) in paragraph at lines 456--457
+[]\OT1/ptm/m/n/12 Like the Vi-sual Touch-Target Vi-o-la-tion de-tec-tor, this de-tec-tor re-lies heav-ily on the \OT1/pcr/m/n/10.95 uiautomator
  []
 
-) [29] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.aux)
+[28 <./imgs/persisstingResults.jpg> <./imgs/IconDistanceResults.png (PNG copy)>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 460.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 460.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 460.
+
+<imgs/confusion-matrices.pdf, id=1138, 2229.32875pt x 1056.94875pt>
+File: imgs/confusion-matrices.pdf Graphic file (type pdf)
+<use imgs/confusion-matrices.pdf>
+Package pdftex.def Info: imgs/confusion-matrices.pdf  used on input line 466.
+(pdftex.def)             Requested size: 352.31624pt x 167.03477pt.
+[29 <./imgs/confusion-matrices.pdf>] [30] [31] [32]) (./Sections/Living.tex
+
+LaTeX Warning: Citation `Myers:CHD94' on page 33 undefined on input line 4.
+
+
+LaTeX Warning: Citation `DBLP:journals/corr/abs-1802-02312' on page 33 undefined on input line 4.
+
+
+LaTeX Warning: Citation `9284063' on page 33 undefined on input line 4.
+
+
+LaTeX Warning: Citation `clip' on page 33 undefined on input line 14.
+
+[33]
+<imgs/FrameOverview.pdf, id=1314, 919.435pt x 1306.8825pt>
+File: imgs/FrameOverview.pdf Graphic file (type pdf)
+<use imgs/FrameOverview.pdf>
+Package pdftex.def Info: imgs/FrameOverview.pdf  used on input line 25.
+(pdftex.def)             Requested size: 281.85585pt x 400.62263pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+
+ []
+
+<imgs/3Clip.png, id=1323, 3306.3525pt x 1927.2pt>
+File: imgs/3Clip.png Graphic file (type png)
+<use imgs/3Clip.png>
+Package pdftex.def Info: imgs/3Clip.png  used on input line 38.
+(pdftex.def)             Requested size: 258.36667pt x 150.59154pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Citation `clip' on page 35 undefined on input line 43.
+
+
+LaTeX Warning: Citation `pillow' on page 35 undefined on input line 43.
+
+[35 <./imgs/FrameOverview.pdf>]
+<imgs/PreProcessing.png, id=1362, 3363.56625pt x 1927.2pt>
+File: imgs/PreProcessing.png Graphic file (type png)
+<use imgs/PreProcessing.png>
+Package pdftex.def Info: imgs/PreProcessing.png  used on input line 48.
+(pdftex.def)             Requested size: 258.36667pt x 148.03316pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+
+ []
+
+
+LaTeX Warning: Citation `pillow' on page 36 undefined on input line 56.
+
+[36 <./imgs/3Clip.png> <./imgs/PreProcessing.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+
+ []
+
+
+LaTeX Warning: Citation `BERT' on page 37 undefined on input line 71.
+
+<imgs/graphCreation.png, id=1373, 4553.01pt x 2127.95pt>
+File: imgs/graphCreation.png Graphic file (type png)
+<use imgs/graphCreation.png>
+Package pdftex.def Info: imgs/graphCreation.png  used on input line 75.
+(pdftex.def)             Requested size: 328.82706pt x 153.67984pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[37] [38 <./imgs/graphCreation.png>]
+<imgs/simplexMod.jpg, id=1394, 2035.605pt x 478.78876pt>
+File: imgs/simplexMod.jpg Graphic file (type jpg)
+<use imgs/simplexMod.jpg>
+Package pdftex.def Info: imgs/simplexMod.jpg  used on input line 107.
+(pdftex.def)             Requested size: 281.85585pt x 66.29208pt.
+
+
+LaTeX Warning: Citation `gudhi:RipsComplex' on page 39 undefined on input line 112.
+
+<imgs/RipsMod.jpg, id=1395, 1137.24875pt x 447.17062pt>
+File: imgs/RipsMod.jpg Graphic file (type jpg)
+<use imgs/RipsMod.jpg>
+Package pdftex.def Info: imgs/RipsMod.jpg  used on input line 122.
+(pdftex.def)             Requested size: 281.85585pt x 110.82347pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[39 <./imgs/simplexMod.jpg>]
+
+LaTeX Warning: Citation `PCA' on page 40 undefined on input line 139.
+
+
+LaTeX Warning: Citation `sklearn' on page 40 undefined on input line 139.
+
+[40 <./imgs/RipsMod.jpg>]
+
+LaTeX Warning: Citation `Rico' on page 41 undefined on input line 162.
+
+[41]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 168.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 168.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 168.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+
+ []
+
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+
+ []
+
+
+LaTeX Warning: Citation `clip' on page 43 undefined on input line 196.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
+
+ []
+
+
+LaTeX Warning: Citation `BERT' on page 43 undefined on input line 205.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 209.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 209.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 209.
+
+[43]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 215.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 215.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 215.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
+ []
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 243.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 243.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 243.
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+ []
+
+[46]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 265.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 265.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 265.
+
+(./tabs/main_results.tex) (./tabs/ablation.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 275.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 275.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 275.
+
+<imgs/AuroraCase.pdf, id=1474, 1803.73875pt x 868.24374pt>
+File: imgs/AuroraCase.pdf Graphic file (type pdf)
+<use imgs/AuroraCase.pdf>
+Package pdftex.def Info: imgs/AuroraCase.pdf  used on input line 281.
+(pdftex.def)             Requested size: 352.31624pt x 169.57843pt.
+[47]
+<imgs/AvgustCase.pdf, id=1480, 1706.375pt x 744.7825pt>
+File: imgs/AvgustCase.pdf Graphic file (type pdf)
+<use imgs/AvgustCase.pdf>
+Package pdftex.def Info: imgs/AvgustCase.pdf  used on input line 290.
+(pdftex.def)             Requested size: 352.31624pt x 153.77238pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[48 <./imgs/AuroraCase.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 298.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 298.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 298.
+
+
+LaTeX Warning: Reference `sec:eval' on page 49 undefined on input line 301.
+
+[49 <./imgs/AvgustCase.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 316.
+
+(./tabs/augmentation.tex) [50]
+
+LaTeX Warning: Citation `Rico' on page 51 undefined on input line 338.
+
+
+LaTeX Warning: Citation `Rico' on page 51 undefined on input line 338.
+
+[51]
+
+LaTeX Warning: Citation `Bernal-Cardenas19' on page 52 undefined on input line 347.
+
+
+LaTeX Warning: Citation `Bernal-Cardenas19' on page 52 undefined on input line 347.
+
+
+LaTeX Warning: Citation `Mao18' on page 52 undefined on input line 349.
+
+[52]
+
+LaTeX Warning: Citation `Li20-suglite' on page 53 undefined on input line 359.
+
+) (./Sections/Categorizing.tex [53]) (./Sections/SLR.tex [54]) (./Sections/ResearchPlan.tex) [55] [56] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.bbl
+Underfull \hbox (badness 1163) in paragraph at lines 4--7
+[]\OT1/ptm/m/n/10 Accessibility: Ap-ple Hu-man In-ter-face Guide-lines.  []$\OT1/pcr/m/n/10 https : / / developer . apple . com / design /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
+[]\OT1/ptm/m/n/10 Universal De-sign Def-i-ni-tion and Guide-lines.  []$\OT1/pcr/m/n/10 https : / / www . section508 . gov / blog /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--53
+[]\OT1/ptm/m/n/10 ADA Web Ac-ces-si-bil-ity Law-suit Re-cap Re-port []$\OT1/pcr/m/n/10 https : / / blog . usablenet . com /
+ []
+
+
+Underfull \hbox (badness 6944) in paragraph at lines 58--62
+[]\OT1/ptm/m/n/10 Adaptivity and lay-out - vi-sual de-sign - ios - hu-man in-ter-face guide-lines - ap-ple de-vel-oper
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--62
+[]$\OT1/pcr/m/n/10 https : / / developer . apple . com / design / human-[]interface-[]guidelines / ios /
+ []
+
+
+Underfull \hbox (badness 5924) in paragraph at lines 64--68
+[]\OT1/ptm/m/n/10 Adaptivity and lay-out - vi-sual de-sign - IOS - hu-man in-ter-face guide-lines - ap-ple de-vel-oper
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--68
+[]$\OT1/pcr/m/n/10 https : / / developer . apple . com / design / human-[]interface-[]guidelines / ios /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
+[]\OT1/ptm/m/n/10 Motor Im-pair-ment []$\OT1/pcr/m/n/10 https : / / accessibility . huit . harvard . edu / disabilities /
+ []
+
+
+Underfull \hbox (badness 1917) in paragraph at lines 97--99
+[]\OT1/ptm/m/n/10 \live stream your vir-tual event on-line: Vimeo en-ter-prise," []$\OT1/pcr/m/n/10 https : / / vimeo . com / enterprise /
+ []
+
+[57] [58] [59] [60] [61] [62] [63] [64]) [65] (/Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.aux)
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `proposal.out' has not changed.
-(rerunfilecheck)             Checksum: EB3F8B2FD89DE94D5F666A417D54CB4F;8010.
- )
-(\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 483 ({)
-### bottom level 
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `proposal.out' has not changed.
+(rerunfilecheck)             Checksum: 8B918A71D6BC6CA9C5F6E35AD7AB2E92;15190.
+ ) 
 Here is how much of TeX's memory you used:
- 27106 strings out of 478994
- 491123 string characters out of 5858184
- 1061438 words of memory out of 5000000
- 43896 multiletter control sequences out of 15000+600000
- 440060 words of font info for 100 fonts, out of 8000000 for 9000
+ 27471 strings out of 478994
+ 498756 string characters out of 5858184
+ 984414 words of memory out of 5000000
+ 44012 multiletter control sequences out of 15000+600000
+ 447908 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,14n,117p,3004b,2051s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.pdf (34 pages, 231892 bytes).
+ 86i,12n,117p,2348b,702s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/arunkrishnavajjala/Documents/GMU/PhD/Proposal/ProposalDoc/.texpadtmp/proposal.pdf (71 pages, 9858978 bytes).
 PDF statistics:
- 531 PDF objects out of 1000 (max. 8388607)
- 481 compressed objects within 5 object streams
- 119 named destinations out of 1000 (max. 500000)
- 309 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1793 PDF objects out of 2073 (max. 8388607)
+ 1571 compressed objects within 16 object streams
+ 356 named destinations out of 1000 (max. 500000)
+ 627 words of extra memory for PDF output out of 10000 (max. 10000000)
 
